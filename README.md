@@ -17,6 +17,18 @@ $ yarn start
 This command starts a local development server at http://localhost:3000/ and opens up a browser window.
 Most changes are reflected live without having to restart the server.
 
+### Generate Update API Documentation
+
+```
+yarn docusaurus gen-api-docs all
+```
+
+Clean up existing documentation with:
+
+```
+yarn docusaurus clean-api-docs all
+```
+
 ### Build
 
 ```
