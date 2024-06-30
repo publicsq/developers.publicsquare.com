@@ -1,0 +1,139 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+
+# Issue Refunds
+
+After completing the [Process Process](/guides/process-payments) guide, you may need to issue a full or partial refund to the customer.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Secret Key
+
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.credova.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+
+<Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
+
+
+## Issue a Refund
+
+We will need to reference the payment's `id` from the previously processed payment to create a refund.
+
+For example, given you have a payment:
+
+```json showLineNumbers
+{
+  // highlight-next-line
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "status": "successful",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  "amount": "1000",
+  "amount_charged": "1000",
+  "amount_refunded": "0",
+  "refunded": "false",
+  "currency": "USD",
+  "payment_method": {
+    "card": {
+      "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "cardholder_name": "John Smith",
+      "last4": "4242",
+      "exp_month": "12",
+      "exp_year": "2025",
+      "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+    }
+  },
+  "customer": {
+    "id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com",
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "shipping_address": {
+    "address_line_1": "111 Colorado Ave.",
+    "address_line_2": "Apt 403",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+We need to make a call to (Create Refund)(/api/create-refund) endpoint:
+
+```shell showLineNumbers title="Create a Refund"
+curl 'https://api.credova.com/refunds' \
+-X 'POST' \
+-H 'X-API-KEY: <API_KEY>' \
+-H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
+-H 'Content-Type: application/json' \
+-d '{
+  "amount": 1000,
+  "currency": "USD",
+  "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "reason": "Customer returned the item"
+}'
+```
+
+<Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
+
+<Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate refunds being issued.</Alert>
+
+Given the above examples, you should see a payment result similar to:
+
+```json showLineNumbers
+{
+  "id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "status": "successful",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "amount": "1000",
+  "currency": "USD",
+  "reason": "Customer returned the item",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+Now if you [retrieve the payment](/api/get-payment-by-id), you will see the payment info has updated:
+
+Given the above examples, you should see a payment result similar to:
+
+```json showLineNumbers
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  ...
+  //highlight-start
+  "amount": "0",
+  "amount_charged": "1000",
+  "amount_refunded": "1000",
+  "refunded": "true",
+  //highlight-end
+  ...
+}
+```
+
+<Alert>The total you can refund cannot exceed the original amount of the payment.</Alert>
+
+## Conclusion
+
+This guide showed you how to issuea a refund for a payment.
+You can issue multiple refunds towards the original payment as long as the total refunded amount does not exceed the original payment amount.
+

@@ -1,0 +1,147 @@
+---
+title: React Elements SDK
+sidebar_label: React Elements
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert, Alerts } from "@site/src/components/shared/Alert";
+import { GithubCard } from "@site/src/components/sdks/GithubCard";
+import { SDK } from "@site/src/components/types";
+
+# React Elements SDK
+
+<GithubCard
+  heading="React Elements SDK"
+  icon={SDK.REACT}
+  organization="credova-financial"
+  repository="credova-elements"
+/>
+
+###
+
+Credova React Elements is a [package](https://www.npmjs.com/package/@credova/elements-react) designed to allow you to easily integrate Credova JS SDK and Elements features in your React solution.
+
+This section provides specific documentation for how to initialize a `Credova` instance using [Hooks](https://reactjs.org/docs/hooks-intro.html), pass it to your component tree with [Context](https://reactjs.org/docs/context.html) and then declare Elements [Components](https://reactjs.org/docs/components-and-props.html) in your code use the underlying Element.
+
+Creating, mounting, updating and unmounting Elements is as simple as declaring them as a typical React Components and passing props.
+
+## Before You Begin
+
+This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.credova.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+
+## Installation
+
+<Tabs className="bt-tabs">
+  <TabItem value="npm" label="npm">
+
+```shell showLineNumbers
+npm install --save @credova/elements-react
+```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+```shell showLineNumbers
+yarn add @credova/elements-react
+```
+
+  </TabItem>
+</Tabs>
+
+<Alert>You don't need to install <code>@credova/elements-js</code> separately when using our React package, unless you need to direct import a capability from it.</Alert>
+
+## Initialization
+
+### CredovaProvider
+
+This [Context Provider](https://reactjs.org/docs/context.html) shares an instance of the React Elements SDK to your component tree, making it available for Elements Components or other custom components.
+
+```javascript showLineNumbers
+import {
+  CredovaProvider,
+  TextElement,
+  useCredova,
+} from "@credova/credova-react";
+
+const App = () => {
+  return (
+    <CredovaProvider apiKey={apiKey}>
+      <MyComponent />
+    </CredovaProvider>
+  );
+};
+
+const MyComponent = () => {
+  // calling this hook with no attributes grabs the instance from Context
+  const { credova } = useCredova();
+
+  if (credova) {
+    // able to call Credova methods
+  }
+
+  return <CardElement id="myInput" />; // Element will also grab it from the Context
+};
+```
+
+## Using Refs
+
+[Refs](https://react.dev/learn/referencing-values-with-refs) are a way to access DOM nodes or React component instances.
+
+`refs` are utilized to store or receive (in the case of a [callback ref](https://react.dev/learn/referencing-values-with-refs)) the underlying Credova Elements instance, to tokenize their value or call one of its methods.
+
+```javascript showLineNumbers
+import { useRef } from "react";
+import {
+  CardElement,
+  useBasisTheory,
+} from "@credova/credova-react";
+
+const MyForm = () => {
+  const { credova } = useCredova();
+  const cardRef = useRef(null);
+
+  const submit = async () => {
+    const card = cardRef.current;
+
+    try {
+      const tokens = await credova.cards.create({
+        cardholder_name: 'John Smith',
+        card,
+      });
+    } catch (error) {
+      // check error details
+    }
+  };
+
+  return (
+    <CredovaProvider apiKey={apiKey}>
+      <CardEleemnt
+        id="card"
+        ref={cardRef}
+      />
+      <div>
+        <button type="submit" onClick={submit} disabled={!credova}>
+          Submit
+        </button>
+      </div>
+    </CredovaProvider>
+  );
+};
+```
+
+When using Typescript, you can type-cast the element `ref` to safely to a specific Elements Component type.
+
+```javascript showLineNumbers
+import { useRef } from "react";
+import type { CardExpirationDateElement } from "@credova/credova-react/types";
+
+const expirationDateRef = useRef(null);
+
+expirationDateRef.current.month(); // Error TS2551: property doesn't exist
+
+const expirationDateRef = useRef < CardExpirationDateElement > null;
+
+expirationDateRef.current.month(); // no error
+```

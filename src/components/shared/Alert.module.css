@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 13px 18px 13px 18px;
+  gap: 12px;
+  border-radius: var(--ifm-global-radius);
+  margin: 15px 0;
+}
+
+.container > div:first-child {
+  padding-right: 14px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.15px;
+  margin-bottom: 10px;
+}
+
+.content {
+  margin: 0;
+  text-align: justify;
+  line-height: 145%;
+}
+
+.error {
+  background: var(--alert-error-background);
+  border: 1px solid rgba(245, 108, 157, 0.3);
+  color: var(--alert-error-color);
+}
+
+.warning {
+  background: var(--alert-warning-background);
+  border: 1px solid rgba(255, 167, 38, 0.3);
+  color: var(--alert-warning-color);
+}
+
+.info {
+  background: var(--alert-info-background);
+  border: 1px solid rgba(2, 136, 209, 0.3);
+  color: var(--alert-info-color);
+}
+
+.success {
+  background: var(--alert-success-background);
+  border: 1px solid rgba(2, 136, 209, 0.3);
+  color: var(--alert-success-color);
+}
+
+.neutral {
+  background: var(--alert-neutral-background);
+  border: 1px solid var(--alert-neutral-border-color);
+  color: var(--alert-neutral-color);
+}
+
+.svg {
+  margin: 0 auto;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.error .svg path {
+  fill: var(--alert-error-color);
+}
+
+.info .svg path {
+  fill: var(--alert-info-color);
+}
+
+.warning .svg path {
+  fill: var(--alert-warning-color);
+}
+
+.success .svg path {
+  fill: var(--alert-success-color);
+}
