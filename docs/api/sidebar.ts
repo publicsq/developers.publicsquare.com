@@ -176,6 +176,30 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Business Documents",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-latest-contract",
+          label: "Get latest contract",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-contract-by-id",
+          label: "Get contract by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-contract",
+          label: "Create contract",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Business Tax Information",
       items: [
         {
@@ -266,6 +290,78 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Business Ultimate Beneficial Owners",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-ultimate-beneficial-owners",
+          label: "Get all ultimate beneficial owners",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-ultimate-beneficial-owner",
+          label: "Create ultimate beneficial owner",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-ultimate-beneficial-owner-by-id",
+          label: "Get ultimate beneficial owner by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/update-ultimate-beneficial-owner",
+          label: "Update ultimate beneficial owner",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/delete-ultimate-beneficial-owner",
+          label: "Delete ultimate beneficial owner",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Customers",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-customers",
+          label: "Get all customers",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-customer",
+          label: "Create customer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-customer-by-id",
+          label: "Get customer by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/update-customer",
+          label: "Update customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/delete-customer",
+          label: "Delete customer",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Payment Methods",
       items: [
         {
@@ -315,42 +411,6 @@ const sidebar: SidebarsConfig = {
           id: "api/detach-card-from-customer",
           label: "Detach card from customer",
           className: "api-method put",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Customers",
-      items: [
-        {
-          type: "doc",
-          id: "api/get-all-customers",
-          label: "Get all customers",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/create-customer",
-          label: "Create customer",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/get-customer-by-id",
-          label: "Get customer by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/update-customer",
-          label: "Update customer",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "api/delete-customer",
-          label: "Delete customer",
-          className: "api-method delete",
         },
       ],
     },
@@ -423,42 +483,6 @@ const sidebar: SidebarsConfig = {
           id: "api/get-transaction-by-id",
           label: "Get transaction by ID",
           className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Business Ultimate Beneficial Owners",
-      items: [
-        {
-          type: "doc",
-          id: "api/get-all-ultimate-beneficial-owners",
-          label: "Get all ultimate beneficial owners",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/create-ultimate-beneficial-owner",
-          label: "Create ultimate beneficial owner",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/get-ultimate-beneficial-owner-by-id",
-          label: "Get ultimate beneficial owner by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/update-ultimate-beneficial-owner",
-          label: "Update ultimate beneficial owner",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "api/delete-ultimate-beneficial-owner",
-          label: "Delete ultimate beneficial owner",
-          className: "api-method delete",
         },
       ],
     },
