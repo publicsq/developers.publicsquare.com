@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/credova-financial/developers.credova.com/compare/v1.0.0...v1.1.0) (2024-07-01)
+
+
+### Features
+
+* add contract endpoints ([0acec3e](https://github.com/credova-financial/developers.credova.com/commit/0acec3e9c89a8ea9053082982d387984a0ca2060))
+
 # 1.0.0 (2024-06-30)
 
 
