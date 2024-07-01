@@ -8,14 +8,16 @@
 
 @use "tabs";
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #80A860;
+  --ifm-color-primary-dark: #97B77D;
+  --ifm-color-primary-darker: #80A860;
+  --ifm-color-primary-darkest: #6B8E4E;
+  --ifm-color-primary-light: #B8CEA6;
+  --ifm-color-primary-lighter: #C2D5B3;
+  --ifm-color-primary-lightest: #747476;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --site-primary-hue-saturation: 167 68%;
@@ -47,6 +49,9 @@
   --alert-neutral-color: #606376;
   --alert-neutral-border-color: rgba(7, 10, 27, 0.23);
   --alert-neutral-background: linear-gradient(90deg, rgba(232, 240, 255, 0.20) 0.78%, rgba(255, 255, 255, 0.05) 41.41%);
+
+  /* Fonts */
+  --font-family: 'Plus Jakarta Sans';
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -86,6 +91,10 @@
   --alert-neutral-color: #EBEDFF;
   --alert-neutral-border-color: rgba(234, 239, 255, 0.10);
   --alert-neutral-background: linear-gradient(90deg, rgba(234, 239, 255, 0.08) 0.78%, rgba(234, 239, 255, 0.05) 41.41%);
+}
+
+body {
+  font-family: var(--font-family);
 }
 
 .theme-code-block-highlighted-line {

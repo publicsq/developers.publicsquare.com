@@ -1,16 +1,16 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 import type * as Plugin from "@docusaurus/types/src/plugin";
-import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: 'Credova Developer Documentation',
-  favicon: 'img/favicon.ico',
+  title: "Credova Developer Documentation",
+  favicon: "img/favicon.ico",
   url: "https://developers.credova.com",
-  baseUrl: '/',
-  organizationName: 'credova-financial',
-  projectName: 'developers.basistheory.com',
+  baseUrl: "/",
+  organizationName: "credova-financial",
+  projectName: "developers.credova.com",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
 
@@ -18,8 +18,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   // Mermaid
@@ -27,10 +27,7 @@ const config: Config = {
     mermaid: true,
   },
 
-  themes: [
-    "@docusaurus/theme-mermaid",
-    "docusaurus-theme-openapi-docs"
-  ],
+  themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-openapi-docs"],
 
   stylesheets: [
     {
@@ -44,8 +41,8 @@ const config: Config = {
       "classic",
       {
         docs: {
-          routeBasePath: '/',
-          sidebarPath: './sidebars.ts',
+          routeBasePath: "/",
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -54,7 +51,7 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.scss',
+          customCss: "./src/css/custom.scss",
         },
       } satisfies Preset.Options,
     ],
@@ -62,12 +59,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
       logo: {
-        alt: 'Credova',
-        src: 'img/credova-dark.svg',
-        srcDark: 'img/credova-light.svg',
+        alt: "Credova",
+        src: "img/credova-dark.svg",
+        srcDark: "img/credova-light.svg",
       },
       items: [
         {
@@ -89,9 +86,9 @@ const config: Config = {
           label: "SDKs",
         },
         {
-          href: 'https://github.com/credova-financial/developers.credova.com',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/credova-financial/developers.credova.com",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
@@ -120,8 +117,8 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
-      }
-    ]
+      },
+    ],
   ],
 };
 
