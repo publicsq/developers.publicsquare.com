@@ -329,3 +329,8 @@ html[data-theme="dark"] .header-github-link:before {
     width: var(--ifm-container-width-xl);
   }
 }
+
+.openapi-left-panel__container .tabs-container {
+  padding-left: 1em;
+  padding-right: 1em;
+}
