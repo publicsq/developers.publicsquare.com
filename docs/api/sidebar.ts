@@ -176,30 +176,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Business Documents",
-      items: [
-        {
-          type: "doc",
-          id: "api/get-latest-contract",
-          label: "Get latest contract",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/get-contract-by-id",
-          label: "Get contract by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/create-contract",
-          label: "Create contract",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Business Tax Information",
       items: [
         {
@@ -228,8 +204,14 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/onboard-business",
-          label: "Onboard business",
+          id: "api/review-business-onboarding",
+          label: "Review business onboarding",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/onboard-merchant",
+          label: "Onboard merchant",
           className: "api-method post",
         },
       ],
@@ -357,6 +339,30 @@ const sidebar: SidebarsConfig = {
           id: "api/delete-customer",
           label: "Delete customer",
           className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Business Documents",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-latest-contract",
+          label: "Get latest contract",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-contract-by-id",
+          label: "Get contract by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-contract",
+          label: "Create contract",
+          className: "api-method post",
         },
       ],
     },
