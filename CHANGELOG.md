@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/credova-financial/developers.credova.com/compare/v1.2.0...v1.3.0) (2024-07-08)
+
+
+### Features
+
+* add get payments for a customer endpoint ([e99e483](https://github.com/credova-financial/developers.credova.com/commit/e99e483430e5e98e796a4a8716da8e35d131e77b))
+
 # [1.2.0](https://github.com/credova-financial/developers.credova.com/compare/v1.1.0...v1.2.0) (2024-07-07)
 
 
