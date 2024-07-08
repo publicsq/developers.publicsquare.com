@@ -1710,6 +1710,11 @@
   resolved "https://registry.yarnpkg.com/@exodus/schemasafe/-/schemasafe-1.3.0.tgz#731656abe21e8e769a7f70a4d833e6312fe59b7f"
   integrity sha512-5Aap/GaRupgNx/feGBwLLTVv8OQFfv3pq2lPRzPg9R+IOBnDgghTGW7l7EuVXOvg5cc/xSAlRW8rBrjIC3Nvqw==
 
+"@faker-js/faker@5.5.3":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-5.5.3.tgz#18e3af6b8eae7984072bbeb0c0858474d7c4cefe"
+  integrity sha512-R11tGE6yIFwqpaIqcfkcg7AICXzFg14+5h5v0TfF/9+RMDL6jhzCy/pxHVOfbALGdtVYdt6JdR21tuxEgl34dw==
+
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -2144,16 +2149,6 @@
     oas-resolver-browser "2.5.2"
     path-browserify "1.0.1"
     yaml "1.10.2"
-
-"@paloaltonetworks/postman-code-generators@1.1.15-patch.2":
-  version "1.1.15-patch.2"
-  resolved "https://registry.yarnpkg.com/@paloaltonetworks/postman-code-generators/-/postman-code-generators-1.1.15-patch.2.tgz#012051485269a2da6bd9a6b60031ddbc53e5e363"
-  integrity sha512-tRnAKtV4M8wLxcVnAx6ZCjCqbrR1xiqJNQkf1A71K8UxEP3N/+EspT82N5c0555w02oYFk21ViHuzuhm4gaGLw==
-  dependencies:
-    "@paloaltonetworks/postman-collection" "^4.1.0"
-    async "^3.2.4"
-    path "^0.12.7"
-    shelljs "^0.8.5"
 
 "@paloaltonetworks/postman-collection@^4.1.0":
   version "4.1.1"
@@ -3228,6 +3223,11 @@ aggregate-error@^5.0.0:
     clean-stack "^5.2.0"
     indent-string "^5.0.0"
 
+ajv-draft-04@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ajv-draft-04/-/ajv-draft-04-1.0.0.tgz#3b64761b268ba0b9e668f0b41ba53fce0ad77fc8"
+  integrity sha512-mv00Te6nmYbRp5DCwclxtt7yV/joXJPGS7nM+97GdxvuttCOfgI3K4U25zboyeX0O+myI8ERluxQe5wljMmVIw==
+
 ajv-formats@2.1.1, ajv-formats@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.1.1.tgz#6e669400659eb74973bbf2e33327180a0996b520"
@@ -3251,6 +3251,16 @@ ajv@8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.1.0.tgz#45d5d3d36c7cdd808930cc3e603cf6200dbeb736"
   integrity sha512-B/Sk2Ix7A36fs/ZkuGLIR86EdjbgR6fsAcbx9lOP/QBSXujDNbVmIS/U4Itz5k8fPFDeVZl/zQ/gJW4Jrq6XjQ==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    json-schema-traverse "^1.0.0"
+    require-from-string "^2.0.2"
+    uri-js "^4.2.2"
+
+ajv@8.11.0:
+  version "8.11.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.11.0.tgz#977e91dd96ca669f54a11e23e378e33b884a565f"
+  integrity sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
@@ -3465,10 +3475,15 @@ async@3.2.1:
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.1.tgz#d3274ec66d107a47476a4c49136aacdb00665fc8"
   integrity sha512-XdD5lRO/87udXCMC9meWdYiR+Nq6ZjUfXidViUZGu2F1MO4T3XwZ1et0hb2++BgLfhyJwy44BGB/yx80ABx8hg==
 
-async@^3.2.4:
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.5.tgz#ebd52a8fdaf7a2289a24df399f8d8485c8a46b66"
-  integrity sha512-baNZyqaaLhyLVKm/DlvdW051MSgO6b8eVfIezl9E5PqWxFgzLm/wQntEW4zOytVburDEr0JlALEpdOFwvErLsg==
+async@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.2.tgz#2eb7671034bb2194d45d30e31e24ec7e7f9670cd"
+  integrity sha512-H0E+qZaDEfx/FY4t7iLRv1W2fFI6+pyCeTw1uN20AQPiwqwM6ojPxHxdLv4z8hi2DtnW9BOckSspLucW7pIE5g==
+
+async@3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.4.tgz#2d22e00f8cddeb5fde5dd33522b56d1cf569a81c"
+  integrity sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==
 
 at-least-node@^1.0.0:
   version "1.0.0"
@@ -5263,17 +5278,15 @@ docusaurus-plugin-openapi-docs@0.0.0-beta.742:
     swagger2openapi "^7.0.8"
     xml-formatter "^2.6.1"
 
-docusaurus-plugin-openapi-docs@^3.0.0-beta.10:
-  version "3.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-3.0.0-beta.10.tgz#f0c303ee852487c852c163d019678a92b53abf81"
-  integrity sha512-BtMBH4TzCiMM0WbO2ZAMXSuL7Ge9yyASZhAycb5vX+KSUnUgp47/Ex2f6/evBfaadnr6vXYEr1UBT1fSiJYh5w==
+docusaurus-plugin-openapi-docs@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-3.0.1.tgz#954fdc4103d7e47133aede210a98353b3e0f0f99"
+  integrity sha512-6SRqwey/TXMNu2G02mbWgxrifhpjGOjDr30N+58AR0Ytgc+HXMqlPAUIvTe+e7sOBfAtBbiNlmOWv5KSYIjf3w==
   dependencies:
     "@apidevtools/json-schema-ref-parser" "^11.5.4"
     "@docusaurus/plugin-content-docs" "^3.0.1"
     "@docusaurus/utils" "^3.0.1"
     "@docusaurus/utils-validation" "^3.0.1"
-    "@paloaltonetworks/openapi-to-postmanv2" "3.1.0-hotfix.1"
-    "@paloaltonetworks/postman-collection" "^4.1.0"
     "@redocly/openapi-core" "^1.10.5"
     chalk "^4.1.2"
     clsx "^1.1.1"
@@ -5283,6 +5296,8 @@ docusaurus-plugin-openapi-docs@^3.0.0-beta.10:
     json5 "^2.2.3"
     lodash "^4.17.20"
     mustache "^4.2.0"
+    openapi-to-postmanv2 "^4.21.0"
+    postman-collection "^4.4.0"
     slugify "^1.6.5"
     swagger2openapi "^7.0.8"
     xml-formatter "^2.6.1"
@@ -5294,24 +5309,24 @@ docusaurus-plugin-sass@^0.2.3, docusaurus-plugin-sass@^0.2.5:
   dependencies:
     sass-loader "^10.1.1"
 
-docusaurus-theme-openapi-docs@3.0.0-beta.10:
-  version "3.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/docusaurus-theme-openapi-docs/-/docusaurus-theme-openapi-docs-3.0.0-beta.10.tgz#f9a790b1ef88ff01f266224064f4b2f80d0892ff"
-  integrity sha512-8oUMMZSrRJ9EssrjWwbM9aYuHOt1AAm6wQDzWr8k6VvefGvVAibg4Y9PK7GeZ243lJikq9s45KqUA0SMwsm+Fg==
+docusaurus-theme-openapi-docs@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-theme-openapi-docs/-/docusaurus-theme-openapi-docs-3.0.1.tgz#49789c63377f294e624a9632eddb8265a421020f"
+  integrity sha512-tqypV91tC3wuWj9O+4n0M/e5AgHOeMT2nvPj1tjlPkC7/dLinZvpwQStT4YDUPYSoHRseqxd7lhivFQHcmlryg==
   dependencies:
     "@docusaurus/theme-common" "^3.0.1"
     "@hookform/error-message" "^2.0.1"
-    "@paloaltonetworks/postman-code-generators" "1.1.15-patch.2"
-    "@paloaltonetworks/postman-collection" "^4.1.0"
     "@reduxjs/toolkit" "^1.7.1"
     clsx "^1.1.1"
     copy-text-to-clipboard "^3.1.0"
     crypto-js "^4.1.1"
-    docusaurus-plugin-openapi-docs "^3.0.0-beta.10"
+    docusaurus-plugin-openapi-docs "^3.0.1"
     docusaurus-plugin-sass "^0.2.3"
     file-saver "^2.0.5"
     lodash "^4.17.20"
     node-polyfill-webpack-plugin "^2.0.1"
+    postman-code-generators "^1.10.1"
+    postman-collection "^4.4.0"
     prism-react-renderer "^2.3.0"
     react-hook-form "^7.43.8"
     react-live "^4.0.0"
@@ -5914,6 +5929,11 @@ extend@^3.0.0:
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
+faker@5.5.3:
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/faker/-/faker-5.5.3.tgz#c57974ee484431b25205c2c8dc09fda861e51e0e"
+  integrity sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==
+
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -6493,6 +6513,13 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.11,
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
+graphlib@2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/graphlib/-/graphlib-2.1.8.tgz#5761d414737870084c92ec7b5dbcb0592c9d35da"
+  integrity sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==
+  dependencies:
+    lodash "^4.17.15"
 
 gray-matter@^4.0.3:
   version "4.0.3"
@@ -7799,7 +7826,7 @@ js-yaml@3.14.1, js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@^4.1.0:
+js-yaml@4.1.0, js-yaml@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
   integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
@@ -8214,7 +8241,7 @@ lodash.uniqby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
   integrity sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==
 
-lodash@4.17.21, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
+lodash@4.17.21, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -9269,6 +9296,11 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
+mime-db@1.48.0:
+  version "1.48.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.48.0.tgz#e35b31045dd7eada3aaad537ed88a33afbef2d1d"
+  integrity sha512-FM3QwxV+TnZYQ2aRqhlKBMHxk10lTbMt3bBkMAp54ddrNeVSfcQYOOKuGuy3Ddrm38I04If834fOUSq1yzslJQ==
+
 mime-db@1.51.0:
   version "1.51.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.51.0.tgz#d9ff62451859b18342d960850dc3cfb77e63fb0c"
@@ -9298,6 +9330,13 @@ mime-types@2.1.18:
   dependencies:
     mime-db "~1.33.0"
 
+mime-types@2.1.31:
+  version "2.1.31"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.31.tgz#a00d76b74317c61f9c2db2218b8e9f8e9c5c9e6b"
+  integrity sha512-XGZnNzm3QvgKxa8dpzyhFTHmpP3l5YNusmne07VUOXxou9CqUqYa/HBy124RqtVh/O2pECas/MOcsDgpilPOPg==
+  dependencies:
+    mime-db "1.48.0"
+
 mime-types@2.1.34:
   version "2.1.34"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.34.tgz#5a712f9ec1503511a945803640fafe09d3793c24"
@@ -9305,7 +9344,7 @@ mime-types@2.1.34:
   dependencies:
     mime-db "1.51.0"
 
-mime-types@^2.1.27, mime-types@^2.1.31, mime-types@~2.1.17, mime-types@~2.1.24, mime-types@~2.1.34:
+mime-types@2.1.35, mime-types@^2.1.27, mime-types@^2.1.31, mime-types@~2.1.17, mime-types@~2.1.24, mime-types@~2.1.34:
   version "2.1.35"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
   integrity sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==
@@ -9882,6 +9921,18 @@ oas-resolver-browser@2.5.2:
     yaml "^1.10.0"
     yargs "^15.3.1"
 
+oas-resolver-browser@2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/oas-resolver-browser/-/oas-resolver-browser-2.5.6.tgz#1974db66d594fa8c67d3aa866b46b9e2156a8b55"
+  integrity sha512-Jw5elT/kwUJrnGaVuRWe1D7hmnYWB8rfDDjBnpQ+RYY/dzAewGXeTexXzt4fGEo6PUE4eqKqPWF79MZxxvMppA==
+  dependencies:
+    node-fetch-h2 "^2.3.0"
+    oas-kit-common "^1.0.8"
+    path-browserify "^1.0.1"
+    reftools "^1.1.9"
+    yaml "^1.10.0"
+    yargs "^17.0.1"
+
 oas-resolver@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/oas-resolver/-/oas-resolver-2.5.6.tgz#10430569cb7daca56115c915e611ebc5515c561b"
@@ -9916,6 +9967,11 @@ object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
+
+object-hash@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-3.0.0.tgz#73f97f753e7baffc0e2cc9d6e079079744ac82e9"
+  integrity sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==
 
 object-inspect@^1.13.1:
   version "1.13.2"
@@ -9991,6 +10047,28 @@ open@^8.0.9, open@^8.4.0:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
+
+openapi-to-postmanv2@^4.21.0:
+  version "4.21.0"
+  resolved "https://registry.yarnpkg.com/openapi-to-postmanv2/-/openapi-to-postmanv2-4.21.0.tgz#4bc5b19ccbd1514c2b3466268a7f5dd64b61f535"
+  integrity sha512-UyHf2xOjDfl4bIaYrUP6w4UiR894gsiOt1HR93cWOxv33Ucw4rGG0B6ewQczSGBpvFMgri+KSSykNEVjsmB55w==
+  dependencies:
+    ajv "8.11.0"
+    ajv-draft-04 "1.0.0"
+    ajv-formats "2.1.1"
+    async "3.2.4"
+    commander "2.20.3"
+    graphlib "2.1.8"
+    js-yaml "4.1.0"
+    json-schema-merge-allof "0.8.1"
+    lodash "4.17.21"
+    oas-resolver-browser "2.5.6"
+    object-hash "3.0.0"
+    path-browserify "1.0.1"
+    postman-collection "4.2.1"
+    swagger2openapi "7.0.8"
+    traverse "0.6.6"
+    yaml "1.10.2"
 
 opener@^1.5.2:
   version "1.5.2"
@@ -10382,7 +10460,7 @@ path-type@^5.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-5.0.0.tgz#14b01ed7aea7ddf9c7c3f46181d4d04f9c785bb8"
   integrity sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==
 
-path@^0.12.7:
+path@0.12.7:
   version "0.12.7"
   resolved "https://registry.yarnpkg.com/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
   integrity sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q==
@@ -10750,6 +10828,75 @@ postcss@^8.4.21, postcss@^8.4.24, postcss@^8.4.26, postcss@^8.4.33, postcss@^8.4
     nanoid "^3.3.7"
     picocolors "^1.0.0"
     source-map-js "^1.2.0"
+
+postman-code-generators@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/postman-code-generators/-/postman-code-generators-1.10.1.tgz#5d8d8500616b2bb0cac7417e923c36b2e73cbffe"
+  integrity sha512-VGjqIFezG6tZRP3GvSbYjLDq3bQtXUeNDnBrN5CUIbgc9siu5Ubkva9hZnFpk+/qfi+PXs3CUR5mvV+WzpMhsg==
+  dependencies:
+    async "3.2.2"
+    lodash "4.17.21"
+    path "0.12.7"
+    postman-collection "4.0.0"
+    shelljs "0.8.5"
+
+postman-collection@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postman-collection/-/postman-collection-4.0.0.tgz#4a72c60f0d9725656d0e02d44e294e1c22ef3ffa"
+  integrity sha512-vDrXG/dclSu6RMqPqBz4ZqoQBwcj/a80sJYsQZmzWJ6dWgXiudPhwu6Vm3C1Hy7zX5W8A6am1Z6vb/TB4eyURA==
+  dependencies:
+    faker "5.5.3"
+    file-type "3.9.0"
+    http-reasons "0.1.0"
+    iconv-lite "0.6.3"
+    liquid-json "0.3.1"
+    lodash "4.17.21"
+    mime-format "2.0.1"
+    mime-types "2.1.31"
+    postman-url-encoder "3.0.1"
+    semver "7.3.5"
+    uuid "8.3.2"
+
+postman-collection@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/postman-collection/-/postman-collection-4.2.1.tgz#86e3c8ee11530a1f00a30864503d487846ee516f"
+  integrity sha512-DFLt3/yu8+ldtOTIzmBUctoupKJBOVK4NZO0t68K2lIir9smQg7OdQTBjOXYy+PDh7u0pSDvD66tm93eBHEPHA==
+  dependencies:
+    "@faker-js/faker" "5.5.3"
+    file-type "3.9.0"
+    http-reasons "0.1.0"
+    iconv-lite "0.6.3"
+    liquid-json "0.3.1"
+    lodash "4.17.21"
+    mime-format "2.0.1"
+    mime-types "2.1.35"
+    postman-url-encoder "3.0.5"
+    semver "7.5.4"
+    uuid "8.3.2"
+
+postman-collection@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/postman-collection/-/postman-collection-4.4.0.tgz#6acb6e3796fcd9f6ac5a94e6894185e42387d7da"
+  integrity sha512-2BGDFcUwlK08CqZFUlIC8kwRJueVzPjZnnokWPtJCd9f2J06HBQpGL7t2P1Ud1NEsK9NHq9wdipUhWLOPj5s/Q==
+  dependencies:
+    "@faker-js/faker" "5.5.3"
+    file-type "3.9.0"
+    http-reasons "0.1.0"
+    iconv-lite "0.6.3"
+    liquid-json "0.3.1"
+    lodash "4.17.21"
+    mime-format "2.0.1"
+    mime-types "2.1.35"
+    postman-url-encoder "3.0.5"
+    semver "7.5.4"
+    uuid "8.3.2"
+
+postman-url-encoder@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postman-url-encoder/-/postman-url-encoder-3.0.1.tgz#a7434a169567c45f022dc435d46a86d71de6a8aa"
+  integrity sha512-dMPqXnkDlstM2Eya+Gw4MIGWEan8TzldDcUKZIhZUsJ/G5JjubfQPhFhVWKzuATDMvwvrWbSjF+8VmAvbu6giw==
+  dependencies:
+    punycode "^2.1.1"
 
 postman-url-encoder@3.0.5:
   version "3.0.5"
@@ -11855,6 +12002,13 @@ semver@7.3.5:
   dependencies:
     lru-cache "^6.0.0"
 
+semver@7.5.4:
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
+  dependencies:
+    lru-cache "^6.0.0"
+
 semver@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
@@ -12007,7 +12161,7 @@ shell-quote@^1.7.3, shell-quote@^1.8.1:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.1.tgz#6dbf4db75515ad5bac63b4f1894c3a154c766680"
   integrity sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==
 
-shelljs@^0.8.5:
+shelljs@0.8.5, shelljs@^0.8.5:
   version "0.8.5"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.5.tgz#de055408d8361bed66c669d2f000538ced8ee20c"
   integrity sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==
@@ -12608,7 +12762,7 @@ svgo@^3.0.2, svgo@^3.2.0:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
-swagger2openapi@^7.0.8:
+swagger2openapi@7.0.8, swagger2openapi@^7.0.8:
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/swagger2openapi/-/swagger2openapi-7.0.8.tgz#12c88d5de776cb1cbba758994930f40ad0afac59"
   integrity sha512-upi/0ZGkYgEcLeGieoz8gT74oWHA0E7JivX7aN9mAf+Tc7BQoRBvnIGHoPDw+f9TXTW4s6kGYCZJtauP6OYp7g==
@@ -12778,6 +12932,11 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
+traverse@0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
+  integrity sha512-kdf4JKs8lbARxWdp7RKdNzoJBhGUcIalSYibuGyHJbmk40pOysQ0+QPvlkCOICOivDWU2IJo2rkrxyTK2AH4fw==
 
 traverse@~0.6.6:
   version "0.6.9"
