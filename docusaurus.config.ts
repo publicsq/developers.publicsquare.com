@@ -75,7 +75,7 @@ const config: Config = {
         },
         {
           type: "doc",
-          docId: "api/payments/credova-payments-api",
+          docId: "api/credova-payments-api",
           position: "left",
           label: "API",
         },
@@ -109,7 +109,7 @@ const config: Config = {
         config: {
           payments: {
             specPath: "https://api.credova.com/swagger/v1/swagger.yaml",
-            outputDir: "docs/api/payments",
+            outputDir: "docs/api",
             template: "api.mustache",
             showExtensions: true,
             sidebarOptions: {
