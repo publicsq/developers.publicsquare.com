@@ -364,6 +364,30 @@ const sidebar: SidebarsConfig = {
           label: "Create contract",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/get-all-documents",
+          label: "Get all documents",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/upload-document",
+          label: "Upload document",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-document-by-id",
+          label: "Get document by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-all-document-types",
+          label: "Get all document types",
+          className: "api-method get",
+        },
       ],
     },
     {
