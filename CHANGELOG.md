@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/credova-financial/developers.credova.com/compare/v1.3.0...v1.4.0) (2024-07-22)
+
+
+### Features
+
+* add webhooks and events ([f04503a](https://github.com/credova-financial/developers.credova.com/commit/f04503a680e6076ee8a927ed3317d62efc5b5951))
+
 # [1.3.0](https://github.com/credova-financial/developers.credova.com/compare/v1.2.0...v1.3.0) (2024-07-08)
 
 
