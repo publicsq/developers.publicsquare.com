@@ -200,24 +200,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Business Onboarding",
-      items: [
-        {
-          type: "doc",
-          id: "api/review-business-onboarding",
-          label: "Review business onboarding",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/onboard-merchant",
-          label: "Onboard merchant",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Business Representative",
       items: [
         {
@@ -308,8 +290,62 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Connections",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-connection-invitations",
+          label: "Get all connection invitations",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-connection-invitation",
+          label: "Create connection invitation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-connection-invitation-by-id",
+          label: "Get connection invitation by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-all-merchant-connections",
+          label: "Get all merchant connections",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-all-seller-connections",
+          label: "Get all seller connections",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-connection-by-id",
+          label: "Get connection by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/delete-connection",
+          label: "Delete connection",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Customers",
       items: [
+        {
+          type: "doc",
+          id: "api/delete-connection-invitation",
+          label: "Delete connection invitation",
+          className: "api-method delete",
+        },
         {
           type: "doc",
           id: "api/get-all-customers",
@@ -348,24 +384,6 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/get-latest-contract",
-          label: "Get latest contract",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/get-contract-by-id",
-          label: "Get contract by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/create-contract",
-          label: "Create contract",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/get-all-documents",
           label: "Get all documents",
           className: "api-method get",
@@ -384,9 +402,111 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/delete-document",
+          label: "Delete document",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
           id: "api/get-all-document-types",
           label: "Get all document types",
           className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Events",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-events",
+          label: "Get all events",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-event-by-id",
+          label: "Get event by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-all-event-types",
+          label: "Get all event types",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Contracts",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-latest-merchant-contract",
+          label: "Get latest merchant contract",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-merchant-contract-by-id",
+          label: "Get merchant contract by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-merchant-contract",
+          label: "Create merchant contract",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-latest-seller-contract",
+          label: "Get latest seller contract",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-seller-contract-by-id",
+          label: "Get seller contract by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-seller-contract",
+          label: "Create seller contract",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Onboarding",
+      items: [
+        {
+          type: "doc",
+          id: "api/review-merchant-onboarding",
+          label: "Review merchant onboarding",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/onboard-merchant",
+          label: "Onboard merchant",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/review-seller-onboarding",
+          label: "Review seller onboarding",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/onboard-seller",
+          label: "Onboard seller",
+          className: "api-method post",
         },
       ],
     },
@@ -519,6 +639,42 @@ const sidebar: SidebarsConfig = {
           id: "api/get-transaction-by-id",
           label: "Get transaction by ID",
           className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Webhooks",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-webhooks",
+          label: "Get all webhooks",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-webhook",
+          label: "Create webhook",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/get-webhook-by-id",
+          label: "Get webhook by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/update-webhook",
+          label: "Update webhook",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/delete-webhook",
+          label: "Delete webhook",
+          className: "api-method delete",
         },
       ],
     },
