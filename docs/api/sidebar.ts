@@ -660,8 +660,8 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/get-all-events",
-          label: "Get all events",
+          id: "api/get-all-webhook-events",
+          label: "Get all webhook events",
           className: "api-method get",
         },
         {
