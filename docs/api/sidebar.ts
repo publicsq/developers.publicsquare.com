@@ -592,6 +592,18 @@ const sidebar: SidebarsConfig = {
           label: "Get all payments for a customer",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/captures-a-payment",
+          label: "Captures a payment",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/cancels-a-payment",
+          label: "Cancels a payment",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -646,6 +658,18 @@ const sidebar: SidebarsConfig = {
       type: "category",
       label: "Webhooks",
       items: [
+        {
+          type: "doc",
+          id: "api/get-all-events",
+          label: "Get all events",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-webhook-event-by-id",
+          label: "Get webhook event by ID",
+          className: "api-method get",
+        },
         {
           type: "doc",
           id: "api/get-all-webhooks",
