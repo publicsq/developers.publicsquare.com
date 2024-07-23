@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/credova-financial/developers.credova.com/compare/v1.5.0...v1.5.1) (2024-07-23)
+
+
+### Bug Fixes
+
+* update webhook events endpoint ([2a70dc5](https://github.com/credova-financial/developers.credova.com/commit/2a70dc5135a80678a2532c39bb204ae29f49c757))
+
 # [1.5.0](https://github.com/credova-financial/developers.credova.com/compare/v1.4.0...v1.5.0) (2024-07-23)
 
 
