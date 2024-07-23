@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/credova-financial/developers.credova.com/compare/v1.4.0...v1.5.0) (2024-07-23)
+
+
+### Features
+
+* add capture and cancel payment flows ([30137d6](https://github.com/credova-financial/developers.credova.com/commit/30137d6a1165075080c7005d91411498f1c9cbdf))
+
 # [1.4.0](https://github.com/credova-financial/developers.credova.com/compare/v1.3.0...v1.4.0) (2024-07-22)
 
 
