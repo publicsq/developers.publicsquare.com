@@ -8,6 +8,42 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Accounts",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-account-invitations",
+          label: "Get all account invitations",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/create-account-invitation",
+          label: "Create account invitation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/delete-account-invitation",
+          label: "Delete account invitation",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/get-all-account-members",
+          label: "Get all account members",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/delete-account-member",
+          label: "Delete account member",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "API Keys",
       items: [
         {
@@ -303,12 +339,6 @@ const sidebar: SidebarsConfig = {
           id: "api/create-connection-invitation",
           label: "Create connection invitation",
           className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/get-connection-invitation-by-id",
-          label: "Get connection invitation by ID",
-          className: "api-method get",
         },
         {
           type: "doc",

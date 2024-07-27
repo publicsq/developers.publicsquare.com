@@ -1,11 +1,11 @@
 ---
-id: delete-connection
-title: "Delete connection"
-description: "    Delete a connection by ID from the Account."
-sidebar_label: "Delete connection"
+id: delete-account-member
+title: "Delete account member"
+description: "    Delete a member by ID from the Account."
+sidebar_label: "Delete account member"
 hide_title: true
 hide_table_of_contents: true
-api: eJztVUtP4zAQ/ivWcNiHDOV1yq2iRapYrardRdoVVMKNp8SQ2MGeVNuN/N/RJOmLlhUnTlzaZDyP7/N8mamB1H2A5AYunLWYknE2wESCxpB6U/I7JCCEEAPMkVAoka48xXQhRgMx864QlKHop6mrLB3d2lvLIQcHB2KMvjAhcN7W+FXcrTMkusl6BxJciV6xbaQhga7a2hMklMqrAgk9A67BqgIhAaNBgmGUpaIMJHh8qoxHDQn5CiWENMNCQVIDLUqOCOSNvYcYJ+wcSmcDBj4/PT7nv23u3524cJbQEkQJ58cnuy7XVlWUOW/+IYNJO/ekBlWWuUkbWr2HwM71Lh43fcCUmKDnSyDTomlPX6KWYKs8V9McW35RAhnK3+YZSFG1kRyMJbxHDxJmzheKWtPZ6b5gjaRM/qY6xgZSNn0LqChBaW34hlQ+3ryANTMYezfNsRg0CALEGJtWnO224tL5qdEa7Ucf3q8Pe78aEpeush/fwzv1gdlgWnlDi2Y69ktzhfwIO9MWJjz5CqTM8ajtjLKdnwn01gGhVxsdgVP7+XLuVj6HBDKiMiS9nirNUepRu7k6Sl0BnHoJ5Cd3tm3eEs6Kv2oNLzdNvxukarlf+uORuMKFMDYYjYKHOwb6FMTvw/54dHg1/CMyVLrpWbcRVifLxdA5xKYTM9eg6G7yooUuxmpRoKXA9UACk20BzU947JcuUKEauXZF9i2oLSr1Wvfvsj+7eyX8S70yV8Yy7qZXddfZTSkEkJAYzas+c4H4sK6nKuC1z2Nk81OFnvUzkTBX3rQSvalBm8DPGpKZygP+h/XnH90m/iJew7cUg2UlzFVe8RtIeGSt8GqPkyiX/ePq7UE/TbGkjZCdubKl8MHw2/DXECTwmt7W4GOjwe6BC+xFtKmoFgH/RvmKe1236o5x5d8evRqxknBHnAnEGJ8BsxBI0g==
+api: eJztVU1PGzEQ/SvWcOiHDAHKaW8RCVJEVUVtkVpBJJz1hBh27cWejZqu/N+rWW8CIUnFiROXxGvPeN7Me55pgNRdgOwa+nnuaksBJhI0htybioyzkIEQQgywQEKhRInlFL2YLsVoIGbelYLmKDrnoxt7Y9n84OBAjNGXJgTjbEibn8WtSnaH6ZZMt7feggRXoVccb6Qhg1W0ZN3FBAmV8qpEQs+IG7CqRMjAaJBgGGmlaA4SPD7WxqOGjHyNEkI+x1JB1gAtK/YI5I29gxgnbBwqZwMGPj89PuO/zfy/OXHuLKEliBLOjk+2Ta6sqmnuvPmLDCbvzLMGVFUVJm9T690HNm628bjpPebECXouBJmEJp2+RC3B1kWhpgWm/KIEMlS8zjKQovrZ5WAs4V1b3JnzpaK09eV0l7NGUqZ4VRxjAymbvwZUlKC0NlwhVYyfF+ApMxh7Ny2wHLQIAsQYWyq+bFNx4fzUaI32nYe342HnqyFx4Wr7/h7eiAfOBvPaG1q23bFfmUvkJezsujDh7lcizR233G5Tph6aQW/TKfQaoyNwCL9Y9d/aF5DBnKgKWa+nKnOUe9RuoY5yVwJfvwL0gxlOJK5greug0sbLqdPvGmorFZ43/fFIXOJSGBuMRsFNHgN9COLXYX88Orwc/hZzVLrlrpsM65PVgOgMYsvIzLUouoqeJ+hirJYlWgocDyRwsgnQ4oTbf+UClaqVbRdk37DaSKd5egNvMk+72hL+oV5VKGMZe8tX0zH8UhYBJGRG8/ifu0Bs0DRTFfDKFzHy9mONnvU0kbBQ3iTJXjegTeC1hmymioD/yfzj924yfxL7MK5EYVkRC1XU/AUSHlgzPOrjJMoVjxw9HfTzHCt65rLVZzbUPhh+Hf4cggQe25tafGi12C04wE5Ez5WVEPBvlHvMmyapPMa1fTra67GWcpc4JxBj/Ae/lU2z
 sidebar_class_name: "delete api-method"
 info_path: api/credova-payments-api
 custom_edit_url: null
@@ -29,23 +29,23 @@ import TabItem from "@theme/TabItem";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Delete connection"}
+  children={"Delete account member"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"delete"}
-  path={"/connections/{id}"}
+  path={"/account-members/{id}"}
 >
   
 </MethodEndpoint>
 
 
 
-    Delete a connection by ID from the Account.
+    Delete a member by ID from the Account.
 
     ### Permissions
-    * `connection:delete`
+    * `account-member:delete`
 
 <Heading
   id={"request"}
