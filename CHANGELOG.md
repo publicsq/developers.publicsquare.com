@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/credova-financial/developers.credova.com/compare/v1.5.1...v1.6.0) (2024-07-27)
+
+
+### Features
+
+* add account invitations and member endpoints ([0a90e97](https://github.com/credova-financial/developers.credova.com/commit/0a90e971ff3fc16738c6ace8df15a5090b853ce2))
+
 ## [1.5.1](https://github.com/credova-financial/developers.credova.com/compare/v1.5.0...v1.5.1) (2024-07-23)
 
 
