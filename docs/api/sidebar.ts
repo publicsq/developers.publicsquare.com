@@ -24,6 +24,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/resend-account-invitation",
+          label: "Resend account invitation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/delete-account-invitation",
           label: "Delete account invitation",
           className: "api-method delete",
