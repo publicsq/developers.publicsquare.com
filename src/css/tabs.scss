@@ -1,5 +1,9 @@
 .tabs-container {
 
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--tabs-border-color);
+  background-color: var(--code-block-background-color);
+
   /* tabs-in-tabs */
   .tabs-container {
     border-left: none;
@@ -10,7 +14,7 @@
     &:not(:first-child) {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      .bt-tabs {
+      .credova-tabs {
         border-radius: 0;
       }
     }
@@ -22,10 +26,6 @@
       border-bottom-right-radius: 0;
     }
   }
-
-  border-radius: var(--ifm-global-radius);
-  border: 1px solid var(--tabs-border-color);
-  background-color: var(--code-block-background-color);
 
   .credova-tabs {
     background-color: var(--code-title-background-color);

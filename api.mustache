@@ -3,7 +3,7 @@ id: {{{id}}}
 title: "{{{title}}}"
 description: "{{{frontMatter.description}}}"
 {{^api}}
-sidebar_label: Introduction
+sidebar_label: Overview
 slug: /api
 {{/api}}
 {{#api}}
@@ -15,6 +15,9 @@ sidebar_position: 0
 hide_title: true
 {{#api}}
 hide_table_of_contents: true
+{{/api}}
+{{^api}}
+hide_table_of_contents: false
 {{/api}}
 {{#json}}
 api: {{{json}}}
@@ -37,4 +40,13 @@ show_extensions: true
 {{/frontMatter.show_extensions}}
 ---
 
+
+{{#api}}
 {{{markdown}}}
+{{/api}}
+
+{{^api}}
+import ApiIntroduction from "@site/src/components/docs/_api-introduction.mdx";
+
+<ApiIntroduction />
+{{/api}}
