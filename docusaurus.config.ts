@@ -45,8 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/credova-financial/developers.credova.com/tree/master/",
+          editUrl: "https://github.com/credova-financial/developers.credova.com/tree/master/",
           docItemComponent: "@theme/ApiItem",
         },
         blog: false,
@@ -95,6 +94,21 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    mermaid: {
+      theme: {
+        light: "base",
+        dark: "base",
+      },
+      options: {
+        themeVariables: {
+          darkMode: false,
+          primaryColor: "#80A860",
+          primaryBorderColor: "var(--mermaid-primary-border-color)",
+          textColor: "var(--mermaid-text-color)",
+          actorTextColor: "var(--mermaid-actor-color)",
+        },
+      },
     },
   } satisfies Preset.ThemeConfig,
 

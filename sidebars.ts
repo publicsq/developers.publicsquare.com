@@ -19,12 +19,32 @@ import apiSidebar from "./docs/api/sidebar";
     },
     {
       type: "category",
-      label: "Guides",
+      label: "Merchants",
       items: [
-        "guides/collect-cards",
-        "guides/process-payments",
-        "guides/issue-refunds",
-        "guides/view-transactions",
+        "guides/merchants/collect-cards",
+        "guides/merchants/process-payments",
+        "guides/merchants/issue-refunds",
+        "guides/merchants/view-transactions",
+      ],
+    },
+    {
+      type: "category",
+      label: "Marketplaces",
+      items: [
+        "guides/marketplaces/onboard-sellers",
+      ],
+    },
+    {
+      type: "html",
+      value: "<hr />",
+    },
+    {
+      type: "category",
+      label: "Concepts",
+      items: [
+        "concepts/accounts",
+        "concepts/connections",
+        "concepts/webhooks",
       ],
     },
     {
