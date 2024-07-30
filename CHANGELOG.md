@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/credova-financial/developers.credova.com/compare/v1.6.0...v1.7.0) (2024-07-30)
+
+
+### Features
+
+* add seller onboarding guide ([a6b6b68](https://github.com/credova-financial/developers.credova.com/commit/a6b6b68bd4bbc94a422f0a981b508af406bcd551))
+
 # [1.6.0](https://github.com/credova-financial/developers.credova.com/compare/v1.5.1...v1.6.0) (2024-07-27)
 
 
