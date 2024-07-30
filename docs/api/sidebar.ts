@@ -348,6 +348,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/delete-connection-invitation",
+          label: "Delete connection invitation",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
           id: "api/get-all-merchant-connections",
           label: "Get all merchant connections",
           className: "api-method get",
@@ -376,12 +382,6 @@ const sidebar: SidebarsConfig = {
       type: "category",
       label: "Customers",
       items: [
-        {
-          type: "doc",
-          id: "api/delete-connection-invitation",
-          label: "Delete connection invitation",
-          className: "api-method delete",
-        },
         {
           type: "doc",
           id: "api/get-all-customers",
