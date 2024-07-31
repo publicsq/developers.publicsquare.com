@@ -1,1 +1,143 @@
+import { Alert } from "@site/src/components/shared/Alert";
+
 # Webhooks
+
+Webhooks provide asynchronous notifications from the Credova platform to your system. These are important for events around onboarding, connections, and settlements where an event may happen in the Credova platform and your system needs to be notified so it can take action.
+
+## Webhook Request
+
+Every webhook notification will contain an [Event](/api/get-event-by-id) as the body of the request.
+
+```json showLineNumbers title="Webhook example"
+{
+  "id": "evnt_5jxWRFNLCAWeegrkCAG3a9DGc",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  "event_type": "connection:update",
+  "entity_type": "connection",
+  "entity_id": "conn_73t7igFxDZvN9hypi7yoPwbxy",
+  "entity": {
+    "id": "conn_73t7igFxDZvN9hypi7yoPwbxy",
+    "merchant_account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "merchant_account_name": "Test Company, LLC",
+    "seller_account_id": "acc_8ooQs32UCdriBvrHnVWbTmJbY",
+    "seller_account_name": "Widgets Co",
+    "status": "verified",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
+  "created_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+The key parts of the webhook request are:
+
+| Attribute     | Description                                                                                      |
+|---------------|--------------------------------------------------------------------------------------------------|
+| `id`          | This is the ID of the event and can be used to retrieve the [event by ID](/api/get-event-by-id). |
+| `environment` | The account environment where the event was triggered.                                           |
+| `event_type`  | This is the event in the Credova platform that triggered the webhook notification.               |
+| `entity_id`   | The ID for the entity.                                                                           |
+| `entity_type` | The entity type.                                                                                 |
+| `entity`      | The current instance of the entity at the time of the notification.                              |
+
+## Event Types
+
+Credova publishes several events which can be subscribed to via webhooks:
+
+| Event Type                     | Description                                                                                                                                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `connection:update`            | This event publishes a [Connection](/api/get-connection-by-id) entity when a seller invitation is accepted, a seller completes onboarding, or when a seller's onboarding has been approved. |
+| `connection:delete`            | This event publishes a [Connection](/api/get-connection-by-id) entity with a `removed` status when a seller or merchant removes the connection.                                             |
+| `connection-invitation:accept` | This event publishes a [Connection Invitation](/api/create-connection-invitation) entity when a seller accepts the invitation.                                                              |
+| `onboarding:merchant:update`   | This event publishes the Account entity when the merchant onboarding status changes.                                                                                                        |
+| `onboarding:seller:update`     | This event publishes the Account entity when the seller onboarding status changes.                                                                                                          |
+
+<Alert>Credova always publishes the current instance of the entity in the webhook notification.</Alert>
+
+## Notification Delivery Attempts
+
+Credova will attempt to deliver a notification once an hour, for up to 24 hours. Credova requires a `2XX` status code response from the registered endpoint to mark the webhook notification as being successfully delivered.
+
+When the webhook notification has been successfully delivered, Credova will mark the Webhook Event status as `delivered`. If the number of delivery attempts has been exhausted, the Webhook Event will be marked as `failed`.
+
+Webhook Events can be viewed from the [Webhook page](https://portal.credova.com/developers/webhooks) in the Credova Portal or cam be [retrieved from the API](/api/get-all-webhook-events) for the Webhook.
+
+The Webhook Event will contain information about the last delivery attempt:
+
+```json showLineNumbers
+{
+  "id": "whe_2S8RsJECwUKHGbfL2AAaDM2AW",
+  "event_id": "evnt_5jxWRFNLCAWeegrkCAG3a9DGc",
+  "webhook_id": "wbhk_BcA4TAFibe9UHgkY6pEjxzrya",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  "event_type": "connection:update",
+  "last_delivery_attempt": "2024-06-30T01:02:29.212Z",
+  "delivery_attempts": 2,
+  "status": "delivered",
+  "response_status_code": 200,
+  "request": {
+    "id": "conn_73t7igFxDZvN9hypi7yoPwbxy",
+    "merchant_account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "merchant_account_name": "Test Company, LLC",
+    "seller_account_id": "acc_8ooQs32UCdriBvrHnVWbTmJbY",
+    "seller_account_name": "Widgets Co",
+    "status": "verified",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
+  "response": {
+    "success": true
+  }
+  "created_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+This will show the raw request made and the response received (if any) as well as the status code.
+
+## Verifying the Notification
+
+Every webhook notification will contain a `X-SIGNATURE` header which will be a signed HMAC signature of the request body.
+
+In order to verify the signature, you will need to get the `key` from your Webhook:
+
+```json showLineNumbers
+{
+  "id": "wbhk_BcA4TAFibe9UHgkY6pEjxzrya",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  //highlight-next-line
+  "key": "TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUEzK0ViU1hacTBpYXlmN1FOdStwN1I5OUxPQzltN0crZUhrY1VvUTdYNnFja05vaGxhMjViVW0xZXZBZ1RiN2RXZkxiT3kwVHZsczNBdkFKdEI0QVh5VjJtczJ4Y3d2NXhXakprbnl6MzNRUFVNNWRKQmQ1Z29oYmdLL2dwcVUzMWpkR0NCN2UyR0J4NWZhWEp4L0VnVEZrZjZoaDVBU3NlV0hSSEx2RjRIUk5zcmRVd1ovak5jODlnM2hHb0VPTWdSK240ZmVTYjBaSEw4ZmpYc2RIaVJkbG84VVhxRDZKRFdWcnJNbUdGZTZudXdYRUhaUGt5NnJhMTM1VG9yQThZOUlpWXhybEN1NFNncGhTN3N1Y0cwVnJMTGF0TVVOdW9ZRW9PVFBJMFVGRmtLY3EwdlRCRzhINXdUMFNvR2xpNUVpL1FYK0RoWWRPMFN3OGdXZUY4aHdJREFRQUI=",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z",
+  "url": "https://examplewebsite.com/notification",
+  "event_types": [
+    "connection-invitation:accept",
+    "connection-invitation:decline",
+    "seller-onboarding:update"
+  ]
+}
+```
+
+Using this key, we verify the signature passed by Credova:
+
+```csharp showLineNumbers
+// Gets the signature from the request header
+var signature = request.Headers["X-SIGNATURE"].First();
+
+// Create an RSA instance and import the Webhook Key
+using var rsa = RSA.Create();
+rsa.ImportRSAPublicKey(Convert.FromBase64String(webhook.key), out _);
+
+// Use SHA256 as the hashing aigorithm
+var rsaFormatter = new RSAPKCS1SignatureDeformatter(rsa);
+rsaFormatter.SetHashAlgorithm(nameof(SHA256));
+
+// Generate a SHA256 hash of the Webhook request body
+var data = Encoding.UTF8.GetBytes(requestBody);
+var hash = SHA256.HashData(data);
+
+// Verify the signature from the RSA key
+var verified = rsaFormatter.VerifySignature(hash, Convert.FromBase64String(signature));
+```
