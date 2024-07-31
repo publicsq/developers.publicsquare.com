@@ -1,1 +1,74 @@
+import { Alert } from "@site/src/components/shared/Alert";
+
 # Accounts
+
+An Account in the Credova platform is equivalent to a business. If you have several businesses, you can create one or more Accounts to represent each business. All data such as your business information, members and settings are associated at the Account.
+
+When you sign up with Credova, your first account is automatically created for you using your name (e.g. John Smith). You can optionally rename this to match your business name from the settings page.
+
+### Environments
+
+Credova offers two environments for each Account, `Test` and `Production`. When you initially create a new Account, you will only have the Test environment available until you have successfully onboarded.
+
+<div style={{textAlign: 'center'}}>
+  <img alt="Environment Toggle" src="/img/concepts/accounts/environment-toggle.png" width="250" />
+</div>
+
+Data such as payments, webhooks, and customers are all scoped to an environment. This enables you to start using the Credova platform, even if you haven't been fully onboarded.
+
+Any resource that is scoped to an environment will have the `environment` attribute on the response informing which environment the data is for:
+
+```json showLineNumbers
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  //highlight-next-line
+  "environment": "production",
+  "external_id": "e797ef3c-b586-4333-af90-7168d8427d85",
+  "status": "successful",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  ...
+}
+```
+
+The two environments have unique behaviors:
+
+* **Test Environment** - This environment is meant for testing and developer integration. You can have a production-like experience without actually processing real payment methods or incurring charges.
+* **Production Environment** - This is your live environment where payments will be charged and settlements will transfer to your bank account on record. This environment is only available after your Account has been successfully onboarded.
+
+### Onboarding
+
+All Accounts must complete onboarding to be able to use the Production environment. There are two types of onboarding that can take place for an account:
+
+* **Merchant** - This type of onboarding is available immediately after logging into your account. This is meant for Indenedent Sales Organizations (ISO) merchants who want to collect payment methods and process payments directly within their systems.
+* **Seller** - This type of onboarding is available when an account is [invited by a marketplace as a seller](/guides/marketplaces/onboard-sellers). Accounts onboarded only as a seller cannot process payments directly with Credova.
+
+<Alert>Each account is required to complete onboarding as they are tracked as independent businesses.</Alert>
+
+All business-related information is shared between both Merchant and Seller onboarding. Once you have provided your business details, that information can be re-used to streamline onboarding in the future.
+
+For both Merchant and Seller onboarding status changes, it is recommended to leverage [webhooks](/concepts/webhooks) to subscribe to notifications about the onboarding progress:
+
+```shell showLineNumbers title="Create an Onboarding Status Webhook"
+curl -L 'https://api.credova.com/webhooks' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <API_KEY>' \
+-d '{
+  "url": "https://merchantwebsite.com/notification",
+  "event_types": [
+    "onboarding:merchant:update",
+    "onboarding:seller:update"
+  ]
+}'
+```
+
+### Members
+
+You can invite one or more users to join your Account as a member. This enables you invite other members of your organization to help manage the account or integrate with Credova.
+
+<div style={{textAlign: 'center'}}>
+  <img alt="Environment Toggle" src="/img/concepts/accounts/account-invitations.png" width="800" />
+</div>
+
+Once the user has accepted the invitation, they will be added as a member to your Account and can perform actions in the account based upon their assigned role.
