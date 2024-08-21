@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/credova-financial/developers.credova.com/compare/v1.7.0...v1.8.0) (2024-08-21)
+
+
+### Features
+
+* add settlement and payment transfers ([4be5884](https://github.com/credova-financial/developers.credova.com/commit/4be58845e2ac184d673a4a65bd206a83e031176c))
+
 # [1.7.0](https://github.com/credova-financial/developers.credova.com/compare/v1.6.0...v1.7.0) (2024-07-30)
 
 

@@ -178,6 +178,18 @@ const sidebar: SidebarsConfig = {
           label: "Get all countries",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/get-business-firearms-questionnaire",
+          label: "Get business firearms questionnaire",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/save-business-firearms-questionnaire",
+          label: "Save business firearms questionnaire",
+          className: "api-method put",
+        },
       ],
     },
     {
@@ -255,6 +267,12 @@ const sidebar: SidebarsConfig = {
           id: "api/save-business-representative",
           label: "Save business representative",
           className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/copy-business-representative-as-owner",
+          label: "Copy business representative as owner",
+          className: "api-method post",
         },
       ],
     },
@@ -668,6 +686,24 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/get-all-refunds-for-payment",
           label: "Get all refunds for payment",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Settlements",
+      items: [
+        {
+          type: "doc",
+          id: "api/get-all-settlements",
+          label: "Get all settlements",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/get-settlement-by-id",
+          label: "Get settlement by ID",
           className: "api-method get",
         },
       ],
