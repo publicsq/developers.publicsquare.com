@@ -5105,10 +5105,10 @@ docusaurus-lunr-search@^3.4.0:
     unified "^9.0.0"
     unist-util-is "^4.0.2"
 
-docusaurus-plugin-openapi-docs@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.0.0.tgz#190174fc35ffb608de4c0d6f100cc5fcdeac8547"
-  integrity sha512-CMiHVTJ7Xd39KxXf7VbSwWR4fwCEIDaXprZGlzdMAUKoi6LO3rjpLHmv4HPZPEOQpZJkQ+/FpPtL0+iEQN36yg==
+docusaurus-plugin-openapi-docs@^4.0.0, docusaurus-plugin-openapi-docs@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.0.1.tgz#2c767cd7af363b24413f7249e85b26ac154d803a"
+  integrity sha512-ST0VLbRMTNz2O0NFIezWcF0dNYrGf34/oUmn3wH3hdMcStGQIOCEwD3JvuzyQ7WygjAR8md2kITHeRBRB2yhAA==
   dependencies:
     "@apidevtools/json-schema-ref-parser" "^11.5.4"
     "@docusaurus/plugin-content-docs" "^3.0.1"
