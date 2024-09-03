@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/credova-financial/developers.credova.com/compare/v1.8.0...v1.9.0) (2024-09-03)
+
+
+### Features
+
+* add payment transfer and fraud decision ([3c92dc7](https://github.com/credova-financial/developers.credova.com/commit/3c92dc78c3bc7820c575e1f9d5cffb0b5ea9fa20))
+
 # [1.8.0](https://github.com/credova-financial/developers.credova.com/compare/v1.7.0...v1.8.0) (2024-08-21)
 
 
