@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/publicsquare-financial/developers.credova.com/compare/v1.9.0...v1.10.0) (2024-09-12)
+
+
+### Features
+
+* add split payment refunds ([bd6083a](https://github.com/publicsquare-financial/developers.credova.com/commit/bd6083a46ac4ef8879d3652c60412c9c1386de9d))
+
 # [1.9.0](https://github.com/credova-financial/developers.credova.com/compare/v1.8.0...v1.9.0) (2024-09-03)
 
 
