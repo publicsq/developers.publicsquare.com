@@ -4,7 +4,7 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "api/credova-payments-api",
+      id: "api/publicsquare-payments-api",
     },
     {
       type: "category",

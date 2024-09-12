@@ -74,7 +74,7 @@ const config: Config = {
         },
         {
           type: "doc",
-          docId: "api/credova-payments-api",
+          docId: "api/publicsquare-payments-api",
           position: "left",
           label: "API",
         },
