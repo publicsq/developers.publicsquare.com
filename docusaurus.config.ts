@@ -45,7 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/credova-financial/developers.credova.com/tree/master/",
+          editUrl: "https://github.com/publicsquare-financial/developers.publicsquare.com/tree/master/",
           docItemComponent: "@theme/ApiItem",
         },
         blog: false,
