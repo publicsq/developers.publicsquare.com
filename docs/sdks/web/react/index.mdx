@@ -16,14 +16,14 @@ import { SDK } from "@site/src/components/types";
   heading="React Elements SDK"
   icon={SDK.REACT}
   organization="publicsquare-financial"
-  repository="credova-elements"
+  repository="publicsquare-elements"
 />
 
 ###
 
-PublicSquare React Elements is a [package](https://www.npmjs.com/package/@credova/elements-react) designed to allow you to easily integrate PublicSquare JS SDK and Elements features in your React solution.
+PublicSquare React Elements is a [package](https://www.npmjs.com/package/@publicsquare/elements-react) designed to allow you to easily integrate PublicSquare JS SDK and Elements features in your React solution.
 
-This section provides specific documentation for how to initialize a `Credova` instance using [Hooks](https://reactjs.org/docs/hooks-intro.html), pass it to your component tree with [Context](https://reactjs.org/docs/context.html) and then declare Elements [Components](https://reactjs.org/docs/components-and-props.html) in your code use the underlying Element.
+This section provides specific documentation for how to initialize a `PublicSquare` instance using [Hooks](https://reactjs.org/docs/hooks-intro.html), pass it to your component tree with [Context](https://reactjs.org/docs/context.html) and then declare Elements [Components](https://reactjs.org/docs/components-and-props.html) in your code use the underlying Element.
 
 Creating, mounting, updating and unmounting Elements is as simple as declaring them as a typical React Components and passing props.
 
@@ -37,48 +37,48 @@ This SDK requires the use of a Publishable API Key. [Go to your Developers secti
   <TabItem value="npm" label="npm">
 
 ```shell showLineNumbers
-npm install --save @credova/elements-react
+npm install --save @publicsquare/elements-react
 ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
 ```shell showLineNumbers
-yarn add @credova/elements-react
+yarn add @publicsquare/elements-react
 ```
 
   </TabItem>
 </Tabs>
 
-<Alert>You don't need to install <code>@credova/elements-js</code> separately when using our React package, unless you need to direct import a capability from it.</Alert>
+<Alert>You don't need to install <code>@publicsquare/elements-js</code> separately when using our React package, unless you need to direct import a capability from it.</Alert>
 
 ## Initialization
 
-### CredovaProvider
+### PublicSquareProvider
 
 This [Context Provider](https://reactjs.org/docs/context.html) shares an instance of the React Elements SDK to your component tree, making it available for Elements Components or other custom components.
 
 ```javascript showLineNumbers
 import {
-  CredovaProvider,
+  PublicSquareProvider,
   TextElement,
-  useCredova,
-} from "@credova/credova-react";
+  usePublicSquare,
+} from "@publicsquare/publicsquare-react";
 
 const App = () => {
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <MyComponent />
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 };
 
 const MyComponent = () => {
   // calling this hook with no attributes grabs the instance from Context
-  const { credova } = useCredova();
+  const { publicsquare } = usePublicSquare();
 
-  if (credova) {
-    // able to call Credova methods
+  if (publicsquare) {
+    // able to call PublicSquare methods
   }
 
   return <CardElement id="myInput" />; // Element will also grab it from the Context
@@ -95,18 +95,18 @@ const MyComponent = () => {
 import { useRef } from "react";
 import {
   CardElement,
-  useCredova,
-} from "@credova/credova-react";
+  usePublicSquare,
+} from "@publicsquare/publicsquare-react";
 
 const MyForm = () => {
-  const { credova } = useCredova();
+  const { publicsquare } = usePublicSquare();
   const cardRef = useRef(null);
 
   const submit = async () => {
     const card = cardRef.current;
 
     try {
-      const tokens = await credova.cards.create({
+      const tokens = await publicsquare.cards.create({
         cardholder_name: 'John Smith',
         card,
       });
@@ -116,17 +116,17 @@ const MyForm = () => {
   };
 
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <CardEleemnt
         id="card"
         ref={cardRef}
       />
       <div>
-        <button type="submit" onClick={submit} disabled={!credova}>
+        <button type="submit" onClick={submit} disabled={!publicsquare}>
           Submit
         </button>
       </div>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 };
 ```
@@ -135,7 +135,7 @@ When using Typescript, you can type-cast the element `ref` to safely to a specif
 
 ```javascript showLineNumbers
 import { useRef } from "react";
-import type { CardExpirationDateElement } from "@credova/credova-react/types";
+import type { CardExpirationDateElement } from "@publicsquare/publicsquare-react/types";
 
 const expirationDateRef = useRef(null);
 

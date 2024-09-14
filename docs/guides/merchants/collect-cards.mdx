@@ -45,25 +45,25 @@ Once installed and configured, add the Card Elements to your application.
 ```
 
 ```javascript showLineNumbers title=index.js
-import { Credova } from '@credova/elements-js';
+import { PublicSquare } from '@publicsquare/elements-js';
 
-let credova;
+let publicsquare;
 let cardNumberElement;
 let cardExpirationDateElement;
 let cardVerificationCodeElement;
 
 async function init() {
-  credova = await new Credova().init('<API_KEY>');
+  publicsquare = await new PublicSquare().init('<API_KEY>');
 
   //highlight-start
   // Creates Elements instances
-  cardNumberElement = credova.createCardNumberElement();
+  cardNumberElement = publicsquare.createCardNumberElement();
   cardNumberElement.mount('#cardNumber');
 
-  cardExpirationDateElement = credova.createCardExpirationDateElement();
+  cardExpirationDateElement = publicsquare.createCardExpirationDateElement();
   cardExpirationDateElement.mount('#cardExpirationDate');
 
-  cardVerificationCodeElement = credova.createCardVerificationCodeElement();
+  cardVerificationCodeElement = publicsquare.createCardVerificationCodeElement();
   cardExpirationDateElement.mount('#cardVerificationCode');
   //highlight-end
 }
@@ -77,17 +77,17 @@ init();
 ```jsx showLineNumbers title=App.jsx
 import React, { useRef, useState } from 'react';
 import {
-  CredovaProvider,
+  PublicSquareProvider,
   // highlight-start
   CardNumberElement,
   CardExpirationDateElement,
   CardVerifcationCodeElement,
   //highlight-end
-  useCredova,
-} from '@credova/elements-react';
+  usePublicSquare,
+} from '@publicsquare/elements-react';
 
 export default function App() {
-  const { credova } = useCredova();
+  const { publicsquare } = usePublicSquare();
   // highlight-start
   // Refs to get access to the Elements instance
   const cardholderNameRef = useRef(null);
@@ -97,7 +97,7 @@ export default function App() {
   // highlight-end
 
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <input
         type="text"
         id="cardholderName"
@@ -131,7 +131,7 @@ export default function App() {
           // highlight-end
         </div>
       </div>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```
@@ -168,7 +168,7 @@ async function submit (e: FormEvent<HTMLFormElement>,) {
   try {
     const formData = new FormData(e.currentTarget)
 
-    const card = await credova.cards.create({
+    const card = await publicsquare.cards.create({
       cardholder_name: formData.cardholderName,
       card: {
         number: cardNumberElement,
@@ -194,7 +194,7 @@ export default function App() {
   // highlight-start
   const submit = async () => {
     try {
-      const card = await credova?.tokens.create({
+      const card = await publicsquare?.cards.create({
         cardholder_name: cardholderNameRef.current,
         card: {
           number: cardNumberRef.current,
@@ -211,11 +211,11 @@ export default function App() {
   // highlight-end
 
   return (
-    <CredovaProvider bt={bt}>
+    <PublicSquareProvider bt={bt}>
       ...
       // highlight-next-line
       <button onClick={submit}>Submit</button>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```
