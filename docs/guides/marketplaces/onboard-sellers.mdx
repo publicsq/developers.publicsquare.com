@@ -13,13 +13,13 @@ sequenceDiagram
 	participant pq as PublicSquare
 
 	se ->> mk: Start seller onboarding
-	mk ->> cr: Create seller invitation
-	cr -->> mk: Seller invitation
+	mk ->> pq: Create seller invitation
+	pq -->> mk: Seller invitation
   mk -->> se: Returns seller invitation link
 	se ->> pq: Seller navigates to invitation URL
-  cr ->> pq: Seller accepts invitation
-  cr ->> pq: Seller completes onboarding form
-  cr -->> mk: Redirect seller to success URL
+  pq ->> pq: Seller accepts invitation
+  pq ->> pq: Seller completes onboarding form
+  pq -->> mk: Redirect seller to success URL
   mk -->> se: Complete seller onboarding
 ```
 

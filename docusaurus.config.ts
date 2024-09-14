@@ -62,8 +62,8 @@ const config: Config = {
     navbar: {
       logo: {
         alt: "PublicSquare",
-        src: "img/credova-dark.svg",
-        srcDark: "img/credova-light.svg",
+        src: "img/publicsquare-logo-dark.svg",
+        srcDark: "img/publicsquare-logo-light.svg",
       },
       items: [
         {
@@ -104,10 +104,11 @@ const config: Config = {
       options: {
         themeVariables: {
           darkMode: false,
-          primaryColor: "#80A860",
+          primaryColor: "#004B68",
           primaryBorderColor: "var(--mermaid-primary-border-color)",
           textColor: "var(--mermaid-text-color)",
           actorTextColor: "var(--mermaid-actor-color)",
+          nodeTextColor: "var(--bt-mermaid-node-text-color)",
         },
       },
     },

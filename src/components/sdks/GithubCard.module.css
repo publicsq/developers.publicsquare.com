@@ -1,8 +1,8 @@
 :root {
   --gh-card-background-color: linear-gradient(
     100.66deg,
-    #f0fffc 18.43%,
-    #f0fffc 120.94%
+    rgba(183, 236, 243, .2) 18.43%,
+    rgba(183, 236, 243, .2) 120.94%
   );
 }
 
