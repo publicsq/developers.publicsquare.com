@@ -9,8 +9,8 @@
 [data-theme="dark"] {
   --gh-card-background-color: linear-gradient(
     273.61deg,
-    #193230 19.2%,
-    #193230 82.55%
+    rgba(21, 56, 73, .7) 19.2%,
+    rgba(21, 56, 73, .7) 82.55%
   );
 }
 

@@ -3,7 +3,7 @@
 }
 
 [data-theme="dark"] {
-  --background-color: var(--sidebar-background-color);
+  --background-color: rgba(21, 56, 73, .7);
 }
 
 .card-container {
