@@ -2,7 +2,7 @@ import { Alert } from "@site/src/components/shared/Alert";
 
 # Webhooks
 
-Webhooks provide asynchronous notifications from the Credova platform to your system. These are important for events around onboarding, connections, and settlements where an event may happen in the Credova platform and your system needs to be notified so it can take action.
+Webhooks provide asynchronous notifications from the PublicSquare platform to your system. These are important for events around onboarding, connections, and settlements where an event may happen in the PublicSquare platform and your system needs to be notified so it can take action.
 
 ## Webhook Request
 
@@ -36,14 +36,14 @@ The key parts of the webhook request are:
 |---------------|--------------------------------------------------------------------------------------------------|
 | `id`          | This is the ID of the event and can be used to retrieve the [event by ID](/api/get-event-by-id). |
 | `environment` | The account environment where the event was triggered.                                           |
-| `event_type`  | This is the event in the Credova platform that triggered the webhook notification.               |
+| `event_type`  | This is the event in the PublicSquare platform that triggered the webhook notification.          |
 | `entity_id`   | The ID for the entity.                                                                           |
 | `entity_type` | The entity type.                                                                                 |
 | `entity`      | The current instance of the entity at the time of the notification.                              |
 
 ## Event Types
 
-Credova publishes several events which can be subscribed to via webhooks:
+PublicSquare publishes several events which can be subscribed to via webhooks:
 
 | Event Type                     | Description                                                                                                                                                                                 |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,15 +53,15 @@ Credova publishes several events which can be subscribed to via webhooks:
 | `onboarding:merchant:update`   | This event publishes the Account entity when the merchant onboarding status changes.                                                                                                        |
 | `onboarding:seller:update`     | This event publishes the Account entity when the seller onboarding status changes.                                                                                                          |
 
-<Alert>Credova always publishes the current instance of the entity in the webhook notification.</Alert>
+<Alert>PublicSquare always publishes the current instance of the entity in the webhook notification.</Alert>
 
 ## Notification Delivery Attempts
 
-Credova will attempt to deliver a notification once an hour, for up to 24 hours. Credova requires a `2XX` status code response from the registered endpoint to mark the webhook notification as being successfully delivered.
+PublicSquare will attempt to deliver a notification once an hour, for up to 24 hours. PublicSquare requires a `2XX` status code response from the registered endpoint to mark the webhook notification as being successfully delivered.
 
-When the webhook notification has been successfully delivered, Credova will mark the Webhook Event status as `delivered`. If the number of delivery attempts has been exhausted, the Webhook Event will be marked as `failed`.
+When the webhook notification has been successfully delivered, PublicSquare will mark the Webhook Event status as `delivered`. If the number of delivery attempts has been exhausted, the Webhook Event will be marked as `failed`.
 
-Webhook Events can be viewed from the [Webhook page](https://portal.credova.com/developers/webhooks) in the Credova Portal or cam be [retrieved from the API](/api/get-all-webhook-events) for the Webhook.
+Webhook Events can be viewed from the [Webhook page](https://portal.publicsquare.com/developers/webhooks) in the PublicSquare Portal or cam be [retrieved from the API](/api/get-all-webhook-events) for the Webhook.
 
 The Webhook Event will contain information about the last delivery attempt:
 
@@ -120,7 +120,7 @@ In order to verify the signature, you will need to get the `key` from your Webho
 }
 ```
 
-Using this key, we verify the signature passed by Credova:
+Using this key, we verify the signature passed by PublicSquare:
 
 ```csharp showLineNumbers
 // Gets the signature from the request header

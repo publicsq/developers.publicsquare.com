@@ -5,12 +5,12 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: "Credova Developer Documentation",
+  title: "PublicSquare Developer Documentation",
   favicon: "img/favicon.ico",
-  url: "https://developers.credova.com",
+  url: "https://developers.publicsquare.com",
   baseUrl: "/",
-  organizationName: "credova-financial",
-  projectName: "developers.credova.com",
+  organizationName: "publicsq",
+  projectName: "developers.publicsquare.com",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
 
@@ -45,7 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/publicsquare-financial/developers.publicsquare.com/tree/master/",
+          editUrl: "https://github.com/publicsq/developers.publicsquare.com/tree/master/",
           docItemComponent: "@theme/ApiItem",
         },
         blog: false,
@@ -61,7 +61,7 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       logo: {
-        alt: "Credova",
+        alt: "PublicSquare",
         src: "img/credova-dark.svg",
         srcDark: "img/credova-light.svg",
       },
@@ -85,7 +85,7 @@ const config: Config = {
           label: "SDKs",
         },
         {
-          href: "https://github.com/credova-financial/developers.credova.com",
+          href: "https://github.com/publicsq/developers.publicsquare.com",
           label: "GitHub",
           position: "right",
         },

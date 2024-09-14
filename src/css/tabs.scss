@@ -14,7 +14,7 @@
     &:not(:first-child) {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      .credova-tabs {
+      .publicsquare-tabs {
         border-radius: 0;
       }
     }
@@ -27,7 +27,7 @@
     }
   }
 
-  .credova-tabs {
+  .publicsquare-tabs {
     background-color: var(--code-title-background-color);
     border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
     border-bottom: 1px solid var(--tabs-border-color);

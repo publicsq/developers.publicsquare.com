@@ -10,15 +10,15 @@ In this guide, we will walk through the process to invite and onboard a seller f
 sequenceDiagram
 	actor se as Seller
 	participant mk as Marketplace
-	participant cr as Credova
+	participant pq as PublicSquare
 
 	se ->> mk: Start seller onboarding
 	mk ->> cr: Create seller invitation
 	cr -->> mk: Seller invitation
   mk -->> se: Returns seller invitation link
-	se ->> cr: Seller navigates to invitation URL
-  cr ->> cr: Seller accepts invitation
-  cr ->> cr: Seller completes onboarding form
+	se ->> pq: Seller navigates to invitation URL
+  cr ->> pq: Seller accepts invitation
+  cr ->> pq: Seller completes onboarding form
   cr -->> mk: Redirect seller to success URL
   mk -->> se: Complete seller onboarding
 ```
@@ -29,7 +29,7 @@ sequenceDiagram
 
 ### Get your Secret Key
 
-Next you will need your `Secret Key`. [Go to your Developers section](https://portal.credova.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
@@ -61,7 +61,7 @@ The connection invitation should contain an `invitation_url` where we will send 
   "account_name": "Test Company, LLC",
   "status": "pending",
   //highlight-next-line
-  "invitation_url": "https://portal.credova.com/connections/invitations/invt_41vV8UVXrEgpT5AWYr2ry4SKN?merchant_name=Test%20Company",
+  "invitation_url": "https://portal.publicsquare.com/connections/invitations/invt_41vV8UVXrEgpT5AWYr2ry4SKN?merchant_name=Test%20Company",
   "created_at": "2024-06-30T01:02:29.212Z",
   "modified_at": "2024-06-30T01:02:29.212Z",
   "success_url": "https://merchantwebsite.com/success",
@@ -83,7 +83,7 @@ This will create a [Connection](/concepts/connections) between your Marketplace 
   <img alt="Seller Onboarding" src="/img/guides/marketplaces/seller-onboarding.png" width="500" />
 </div>
 
-Once the Seller has completed their onboarding, Credova will redirect the seller back to the `success_url` provided when creating the invitation.
+Once the Seller has completed their onboarding, PublicSquare will redirect the seller back to the `success_url` provided when creating the invitation.
 
 ## Getting the Connection
 
@@ -143,7 +143,7 @@ curl -L 'https://api.credova.com/webhooks' \
 
 This webhook will notify us whenever a connection invitation is accepted, when the seller's status has changed due to completing onboarding, or when either the seller or merchant has removed the connection.
 
-Webhooks are a great way to keep your system in sync with Credova.
+Webhooks are a great way to keep your system in sync with PublicSquare.
 
 ## Conclusion
 

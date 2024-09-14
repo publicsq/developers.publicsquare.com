@@ -7,13 +7,13 @@ export const AuthButtons = () => {
   return (
     <div className={styles.container}>
       <div>
-        <Button href="https://portal.credova.com/api/auth/signup" target="_blank">
+        <Button href="https://portal.publicsquare.com/api/auth/signup" target="_blank">
           Sign Up
         </Button>
       </div>
       <div>
         <Button
-          href="https://portal.credova.com/"
+          href="https://portal.publicsquare.com/"
           target="_blank"
           variant="secondary"
         >
