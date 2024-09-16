@@ -1,5 +1,6 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
-import apiSidebar from "./docs/api/sidebar";
+import apiSidebar from "./docs/api/accounts/sidebar";
+import financialApiSidebar from "./docs/api/financial/sidebar";
 
 /**
  * Creating a sidebar enables you to:
@@ -63,14 +64,24 @@ import apiSidebar from "./docs/api/sidebar";
     },
   ],
   api: [
+    "api/index",
     {
       type: "category",
-      label: "API Reference",
+      label: "Accounts",
       link: {
         type: "generated-index",
-        title: "API Reference",
+        title: "Accounts Reference",
       },
       items: apiSidebar,
+    },
+    {
+      type: "category",
+      label: "Payments",
+      link: {
+        type: "generated-index",
+        title: "Payments Reference",
+      },
+      items: financialApiSidebar,
     },
     {
       type: "html",

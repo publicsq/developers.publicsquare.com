@@ -74,7 +74,7 @@ const config: Config = {
         },
         {
           type: "doc",
-          docId: "api/publicsquare-payments-api",
+          docId: "api/index",
           position: "left",
           label: "API",
         },
@@ -123,13 +123,22 @@ const config: Config = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          payments: {
-            specPath: "https://api.credova.com/swagger/v1/swagger.yaml",
-            outputDir: "docs/api",
-            template: "api.mustache",
+          accounts: {
+            specPath: "https://api.credova.com/swagger/accounts/swagger.yaml",
+            outputDir: "docs/api/accounts",
             showExtensions: true,
             sidebarOptions: {
               groupPathsBy: "tag",
+              categoryLinkSource: "tag"
+            },
+          } satisfies OpenApiPlugin.Options,
+          financial: {
+            specPath: "https://api.credova.com/swagger/financial/swagger.yaml",
+            outputDir: "docs/api/financial",
+            showExtensions: true,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag"
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,

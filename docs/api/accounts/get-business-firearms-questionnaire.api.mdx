@@ -1,0 +1,902 @@
+---
+id: get-business-firearms-questionnaire
+title: "Get business firearms questionnaire"
+description: "    Get the business firearms questionnaire for the Account."
+sidebar_label: "Get business firearms questionnaire"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get business firearms questionnaire"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/business/firearms-questionnaire"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get the business firearms questionnaire for the Account.
+
+    ### Permissions
+    * `business:read`
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"id"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Business representative ID","nullable":true,"example":"frq_2eaN9wk5jaLJKCXKpBJYQJ6sB"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"account_id"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"created_at"}
+                        required={false}
+                        schemaName={"date-time"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Date firearms questionnaire was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"modified_at"}
+                        required={false}
+                        schemaName={"date-time"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Date firearms questionnaire was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"products_sold"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty` and `<= 250 characters`"}
+                        schema={{"maxLength":250,"minLength":1,"type":"string","description":"List of products sold by merchant (i.e. Firearms (in accordance with ATF definition), firearms parts, accessories, ammunition, explosives).","example":"Weapons and munitions"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"states_shipped"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty` and `<= 250 characters`"}
+                        schema={{"maxLength":250,"minLength":1,"type":"string","description":"List all states that merchant ships to.","example":"TX, IA, and AL"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"shipment_controls"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty` and `<= 250 characters`"}
+                        schema={{"maxLength":250,"minLength":1,"type":"string","description":"What controls are in place to ensure proper shipment of firearms in accordance with Federal law (i.e. shipping only to licensed FFL, completing Form 1508 to ship via UPS, USPS, or Fedex, etc). It not applicable, state ‘N/A’.","example":"Form 1508 with USPS"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_federal_firearms_license"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Merchant has an active and good-standing FFL license: 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"federal_firearms_license"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Federal firearms license","nullable":true,"example":"1-22-333-44-5X-66666"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_federal_firearms_license_adverse_actions"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Has Merchant or any principal of company had adverse action taken against an FFL license (i.e. revocation, willful violations, etc)? 'yes' or 'no'","example":"no"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"federal_firearms_license_adverse_actions_reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Description of adverse actions taken against FFL license","nullable":true,"example":"None"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_export_controls"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Merchant has controls in place to block/prohibit transactions & shipment outside of the United States: 'yes' or 'no'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"routing_controls"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty` and `<= 250 characters`"}
+                        schema={{"maxLength":250,"minLength":1,"type":"string","description":"What controls does merchant have in place to ensure proper MCC coding and routing in accordance with state law? If not applicable, state ‘N/A’.","example":"N/A"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_nfa_registration"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Merchant has obtained NFA registration and registered inventory with the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF): 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"are_customers_identified"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Customers are identified via government issued identification: 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"customers_identified_not_applicable_reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Reason why customer identification is not applicable","nullable":true,"example":"Not required by state law"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"are_background_checks_performed"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Background checks are performed on all customers via NICS or state point of contact: 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"background_checks_performed_not_applicable_reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Reason why customer background checks are not applicable","nullable":true,"example":"Not required by state law"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_sales_only_to_non_prohibited_person"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"Gun sales are only completed if the buyer is not a prohibited person: 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_buyer_complete_atf_form_4473"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"The prospective buyer must complete and ATF Form 4473 (Firearms Transaction Record): 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"atf_form_4473_retention_period"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"If yes, completed ATF Forms 4473 are retained by the dealer for a period of.","nullable":true,"example":"3 years"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"has_buyer_complete_atf_form_33104"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** `non-empty`"}
+                        schema={{"minLength":1,"type":"string","description":"The prospective buyer will complete Form 3310.4 (Report of Multiple Sale or Other Disposition of Pistols and Revolvers) if they are an unlicensed person purchasing or acquiring two or more handguns at one time or during five consecutive business days: 'yes', 'no', or 'not_applicable'","example":"yes"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"atf_form_33104_retention_period"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"If yes, completed Form 3310.4 are retained by the dealer for a period of","nullable":true,"example":"1 year"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"id\": \"frq_2eaN9wk5jaLJKCXKpBJYQJ6sB\",\n  \"account_id\": \"acc_B518niGwGYKzig6vtrRVZGGGV\",\n  \"created_at\": \"2024-06-30T01:02:29.212Z\",\n  \"modified_at\": \"2024-06-30T01:02:29.212Z\",\n  \"products_sold\": \"Weapons and munitions\",\n  \"states_shipped\": \"TX, IA, and AL\",\n  \"shipment_controls\": \"Form 1508 with USPS\",\n  \"has_federal_firearms_license\": \"yes\",\n  \"federal_firearms_license\": \"1-22-333-44-5X-66666\",\n  \"has_federal_firearms_license_adverse_actions\": \"no\",\n  \"federal_firearms_license_adverse_actions_reason\": \"None\",\n  \"has_export_controls\": \"yes\",\n  \"routing_controls\": \"N/A\",\n  \"has_nfa_registration\": \"yes\",\n  \"are_customers_identified\": \"yes\",\n  \"customers_identified_not_applicable_reason\": \"Not required by state law\",\n  \"are_background_checks_performed\": \"yes\",\n  \"background_checks_performed_not_applicable_reason\": \"Not required by state law\",\n  \"has_sales_only_to_non_prohibited_person\": \"yes\",\n  \"has_buyer_complete_atf_form_4473\": \"yes\",\n  \"atf_form_4473_retention_period\": \"3 years\",\n  \"has_buyer_complete_atf_form_33104\": \"yes\",\n  \"atf_form_33104_retention_period\": \"1 year\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          Bad Request
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                errors
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__nullable"}
+                              >
+                                nullable
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <SchemaItem
+                              collapsible={true}
+                              className={"schemaItem"}
+                            >
+                              <details
+                                style={{}}
+                                className={"openapi-markdown__details"}
+                              >
+                                <summary
+                                  style={{}}
+                                >
+                                  <span
+                                    className={"openapi-schema__container"}
+                                  >
+                                    <strong
+                                      className={"openapi-schema__property"}
+                                    >
+                                      property name*
+                                    </strong><span
+                                      className={"openapi-schema__name"}
+                                    >
+                                       string[]
+                                    </span><span
+                                      className={"openapi-schema__divider"}
+                                    >
+                                      
+                                    </span><span
+                                      className={"openapi-schema__nullable"}
+                                    >
+                                      nullable
+                                    </span>
+                                  </span>
+                                </summary><div
+                                  style={{"marginLeft":"1rem"}}
+                                >
+                                  <li>
+                                    <div
+                                      style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                                    >
+                                      Array [
+                                    </div>
+                                  </li><div
+                                    style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                  >
+                                    
+                                    
+                                    string
+                                    
+                                    
+                                  </div><li>
+                                    <div
+                                      style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                                    >
+                                      ]
+                                    </div>
+                                  </li>
+                                </div>
+                              </details>
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"type"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"title"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"status"}
+                        required={false}
+                        schemaName={"int32"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"integer","format":"int32","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"detail"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"instance"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        name={"property name*"}
+                        required={false}
+                        schemaName={"any"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}
+                        collapsible={false}
+                        discriminator={false}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"errors\": {},\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 0,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"401"}
+        value={"401"}
+      >
+        <div>
+          
+          
+          Unauthorized
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"type"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"title"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"status"}
+                        required={false}
+                        schemaName={"int32"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"integer","format":"int32","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"detail"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"instance"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        name={"property name*"}
+                        required={false}
+                        schemaName={"any"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}
+                        collapsible={false}
+                        discriminator={false}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 0,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"403"}
+        value={"403"}
+      >
+        <div>
+          
+          
+          Forbidden
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"type"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"title"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"status"}
+                        required={false}
+                        schemaName={"int32"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"integer","format":"int32","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"detail"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"instance"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        name={"property name*"}
+                        required={false}
+                        schemaName={"any"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}
+                        collapsible={false}
+                        discriminator={false}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 0,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          Not Found
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"type"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"title"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"status"}
+                        required={false}
+                        schemaName={"int32"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"integer","format":"int32","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"detail"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"instance"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","nullable":true}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        name={"property name*"}
+                        required={false}
+                        schemaName={"any"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}
+                        collapsible={false}
+                        discriminator={false}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 0,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

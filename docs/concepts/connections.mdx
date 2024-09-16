@@ -2,13 +2,13 @@
 
 Connections are links between [Accounts](/concepts/accounts). A connection enables a merchant to process payments on behalf of a seller in a marketplace scenario.
 
-A connection is created automatically when a seller accepts a [Connection Invitation](/api/create-connection-invitation).
+A connection is created automatically when a seller accepts a [Connection Invitation](/api/accounts/create-connection-invitation).
 
 When the Connection is created, the `id` of the Connection will be the same as the ID of the Connection Invitation.
 
 ## Retrieving Connections
 
-You can [retrieve a Connection by ID](/api/get-connection-by-id) or get a list of Connections where you are the [Merchant side](/api/get-all-merchant-connections) of the Connection or where you are the [Seller](/api/get-all-seller-connections).
+You can [retrieve a Connection by ID](/api/accounts/get-connection-by-id) or get a list of Connections where you are the [Merchant side](/api/accounts/get-all-merchant-connections) of the Connection or where you are the [Seller](/api/accounts/get-all-seller-connections).
 This enables you to see what other Accounts you are connected to.
 
 ```json showLineNumbers
@@ -28,14 +28,14 @@ The connection contains several important pieces of information.
 
 | Attribute             | Description                                                                                                                                                                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                  | This is the ID of the connection and can be used to retrieve the [connection by ID](/api/get-connection-by-id). This should be the same ID as the Connection Invitation.                                                          |
+| `id`                  | This is the ID of the connection and can be used to retrieve the [connection by ID](/api/accounts/get-connection-by-id). This should be the same ID as the Connection Invitation.                                                 |
 | `merchant_account_id` | If you were the one to invite a seller to connect with your account, this should be your account ID.                                                                                                                              |
 | `seller_account_id`   | This is the seller's account ID. If you were invited to connect with a merchant's account, this should be your account ID.                                                                                                        |
 | `status`              | This is the status of the connection. When a connection is first made, the status is `accepted`. This will move to `pending` when the seller completes onboarding and `verified` when the seller has been successfully onboarded. |
 
 ## Remove a Connection
 
-At any given time, you can [remove a connection](/api/delete-connection) as either the seller or the merchant relationship in the connection. You can do this from within the [PublicSquare Portal](https://portal.publicsquare.com/connections) or as an API call:
+At any given time, you can [remove a connection](/api/accounts/delete-connection) as either the seller or the merchant relationship in the connection. You can do this from within the [PublicSquare Portal](https://portal.publicsquare.com/connections) or as an API call:
 
 ```shell showLineNumbers
 curl -L -X DELETE 'https://api.credova.com/connections/conn_73t7igFxDZvN9hypi7yoPwbxy' \
