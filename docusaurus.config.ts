@@ -124,7 +124,7 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           accounts: {
-            specPath: "https://api.credova.com/swagger/accounts/swagger.yaml",
+            specPath: "https://api.publicsquare.com/swagger/accounts/swagger.yaml",
             outputDir: "docs/api/accounts",
             showExtensions: true,
             sidebarOptions: {
@@ -133,7 +133,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
           financial: {
-            specPath: "https://api.credova.com/swagger/financial/swagger.yaml",
+            specPath: "https://api.publicsquare.com/swagger/financial/swagger.yaml",
             outputDir: "docs/api/financial",
             showExtensions: true,
             sidebarOptions: {

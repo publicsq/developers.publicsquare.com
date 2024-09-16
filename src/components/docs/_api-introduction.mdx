@@ -21,7 +21,7 @@ PublicSquare requires the API key to be included in all API requests to the serv
 #### Request
 
 ```shell showLineNumbers
-curl "https://api.credova.com" \
+curl "https://api.publicsquare.com" \
   -H "X-API-KEY: <API_KEY>"
 ```
 
@@ -36,7 +36,7 @@ If a `X-CORRELATION-ID` Correlation ID is not provided by the client, a new Corr
 #### Example
 
 ```shell showLineNumbers
-curl "https://api.credova.com" \
+curl "https://api.publicsquare.com" \
   -H "X-API-KEY: <API_KEY>" \
   -H "X-CORRELATION-ID: aa5d3379-6385-4ef4-9fdb-ca1341572153"
 ```
@@ -69,7 +69,7 @@ All idempotency keys and their respective results are deleted after 24 hours. Th
 #### Example
 
 ```shell showLineNumbers
-curl "https://api.credova.com" \
+curl "https://api.publicsquare.com" \
 -H "X-API-KEY: <API_KEY>" \
 -H "IDEMPOTENCY-KEY: aa5d3379-6385-4ef4-9fdb-ca1341572153"
 ```
@@ -81,7 +81,7 @@ Most `List` endpoints support pagination to allow bulk fetching multiple items. 
 #### Request
 
 ```shell showLineNumbers
-  curl "https://api.credova.com/payments?page=2&size=10" \
+  curl "https://api.publicsquare.com/payments?page=2&size=10" \
   -H "X-API-KEY: <API_KEY>"
 ```
 

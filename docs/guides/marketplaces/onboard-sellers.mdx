@@ -40,7 +40,7 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 In order to connect a merchant and seller, we first need to [create a connection invitation](/api/accounts/create-connection-invitation).
 
 ```shell showLineNumbers
-curl 'https://api.credova.com/connection-invitations' \
+curl 'https://api.publicsquare.com/connection-invitations' \
 -X 'POST' \
 -H 'X-API-KEY: <API_KEY>' \
 -H 'Content-Type: application/json' \
@@ -90,7 +90,7 @@ Once the Seller has completed their onboarding, PublicSquare will redirect the s
 Now that the seller is connected to your account, we can re-use the connection invitation `id` to retrieve the [Connection](/api/accounts/get-connection-by-id):
 
 ```shell showLineNumber
-curl -L 'https://api.credova.com/connections/conn_41vV8UVXrEgpT5AWYr2ry4SKN' \
+curl -L 'https://api.publicsquare.com/connections/conn_41vV8UVXrEgpT5AWYr2ry4SKN' \
 -H 'Accept: application/json' \
 -H 'X-API-KEY: <API_KEY>'
 ```
@@ -127,7 +127,7 @@ Webhooks can be configured send notifications for various events such as a conne
 with the merchant's account.
 
 ```shell showLineNumbers title="Create a Webhook"
-curl -L 'https://api.credova.com/webhooks' \
+curl -L 'https://api.publicsquare.com/webhooks' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'X-API-KEY: <API_KEY>' \

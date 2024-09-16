@@ -44,7 +44,7 @@ For example, given you have a previously collected card:
 We need to make a call to (Create Payment)(/api/create-payment) endpoint:
 
 ```shell showLineNumbers title="Create a Payment"
-curl 'https://api.credova.com/payments' \
+curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
 -H 'X-API-KEY: <API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -77,7 +77,7 @@ curl 'https://api.credova.com/payments' \
 If you [created a customer](/api/accounts/create-customer), then you can pass the `customer_id` when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.credova.com/payments' \
+curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
 -H 'X-API-KEY: <API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -104,7 +104,7 @@ curl 'https://api.credova.com/payments' \
 If you [attached the card to a customer](/api/financial/attach-card-to-customer), then you can omit the `customer` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.credova.com/payments' \
+curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
 -H 'X-API-KEY: <API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -128,7 +128,7 @@ curl 'https://api.credova.com/payments' \
 If you supplied the `billing_details` or [updated the card](/api/financial/update-card), then you can omit the `billing_details` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.credova.com/payments' \
+curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
 -H 'X-API-KEY: <API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
