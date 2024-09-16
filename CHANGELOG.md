@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.10.0...v1.11.0) (2024-09-16)
+
+
+### Features
+
+* update api route ([07c14da](https://github.com/publicsq/developers.publicsquare.com/commit/07c14dad843abbddf30efc4dfeabca1e9cafed72))
+* update Elements usage ([f8b7d73](https://github.com/publicsq/developers.publicsquare.com/commit/f8b7d7341a5c1345acdb87772654c379fa35739c))
+
 # [1.10.0](https://github.com/publicsquare-financial/developers.publicsquare.com/compare/v1.9.0...v1.10.0) (2024-09-12)
 
 
