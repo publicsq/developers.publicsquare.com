@@ -12,6 +12,48 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/financial/get-all-bank-accounts-for-a-customer",
+          label: "Get all bank accounts for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-bank-account-by-id",
+          label: "Get bank account by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/update-bank-account",
+          label: "Update bank account",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/delete-bank-account",
+          label: "Delete bank account",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-bank-account",
+          label: "Create bank account",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/attach-bank-account-to-customer",
+          label: "Attach bank account to customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/detach-bank-account-from-customer",
+          label: "Detach bank account from customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-cards",
           label: "Get all cards",
           className: "api-method get",
