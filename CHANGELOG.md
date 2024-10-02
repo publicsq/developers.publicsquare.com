@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.12.0...v1.12.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* update examples for guides ([5dc2522](https://github.com/publicsq/developers.publicsquare.com/commit/5dc252242f37918a0d1a89f9c5e072d18c30758d))
+
 # [1.12.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.11.0...v1.12.0) (2024-10-02)
 
 
