@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.11.0...v1.12.0) (2024-10-02)
+
+
+### Features
+
+* add bank account payment method and fraud decision rules ([46157ef](https://github.com/publicsq/developers.publicsquare.com/commit/46157efa484b8230fc8d15d0cf27e2d29cf7b171))
+
 # [1.11.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.10.0...v1.11.0) (2024-09-16)
 
 
