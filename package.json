@@ -1,6 +1,6 @@
 {
   "name": "developers-publicsquare-com",
-  "version": "1.12.1",
+  "version": "1.13.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -27,13 +27,13 @@
     "add": "^2.0.6",
     "clsx": "^2.0.0",
     "docusaurus-lunr-search": "^3.5.0",
-    "docusaurus-plugin-openapi-docs": "^4.0.0",
+    "docusaurus-plugin-openapi-docs": "^4.1.0",
     "docusaurus-plugin-sass": "^0.2.5",
-    "docusaurus-theme-openapi-docs": "^4.0.0",
+    "docusaurus-theme-openapi-docs": "^4.1.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.79.4",
+    "sass": "^1.79.5",
     "semver": "^7.6.3",
     "yarn": "^1.22.22"
   },
@@ -48,7 +48,7 @@
     "@semantic-release/github": "^11.0.0",
     "@semantic-release/release-notes-generator": "^14.0.1",
     "semantic-release": "^24.1.2",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.3"
   },
   "resolutions": {
     "semver": "^7.6.3"
