@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.12.1...v1.13.0) (2024-10-12)
+
+
+### Features
+
+* add avs and cvv fraud response and payment method endpoints ([48726f3](https://github.com/publicsq/developers.publicsquare.com/commit/48726f3e7ad929316082740d9010078de8e05a7c))
+
 ## [1.12.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.12.0...v1.12.1) (2024-10-02)
 
 
