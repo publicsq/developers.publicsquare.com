@@ -100,6 +100,24 @@ const sidebar: SidebarsConfig = {
           label: "Detach card from customer",
           className: "api-method put",
         },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods",
+          label: "Get all payment methods",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods-for-a-customer",
+          label: "Get all payment methods for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payment-method-by-id",
+          label: "Get payment method by ID",
+          className: "api-method get",
+        },
       ],
     },
     {
