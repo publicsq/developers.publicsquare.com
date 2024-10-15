@@ -8,8 +8,20 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Payment Methods",
+      label: "Bank Accounts",
       items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-bank-accounts",
+          label: "Get all bank accounts",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-bank-account",
+          label: "Create bank account",
+          className: "api-method post",
+        },
         {
           type: "doc",
           id: "api/financial/get-all-bank-accounts-for-a-customer",
@@ -36,12 +48,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/create-bank-account",
-          label: "Create bank account",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/financial/attach-bank-account-to-customer",
           label: "Attach bank account to customer",
           className: "api-method put",
@@ -52,6 +58,12 @@ const sidebar: SidebarsConfig = {
           label: "Detach bank account from customer",
           className: "api-method put",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Cards",
+      items: [
         {
           type: "doc",
           id: "api/financial/get-all-cards",
@@ -100,6 +112,12 @@ const sidebar: SidebarsConfig = {
           label: "Detach card from customer",
           className: "api-method put",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Payment Methods",
+      items: [
         {
           type: "doc",
           id: "api/financial/get-all-payment-methods",
