@@ -230,6 +230,42 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Business Documents",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-business-documents",
+          label: "Get all business documents",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/upload-business-document",
+          label: "Upload business document",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-document-by-id",
+          label: "Get business document by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/delete-business-document",
+          label: "Delete business document",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-all-business-document-types",
+          label: "Get all business document types",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Business Tax Information",
       items: [
         {
@@ -434,42 +470,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Documents",
-      items: [
-        {
-          type: "doc",
-          id: "api/accounts/get-all-documents",
-          label: "Get all documents",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/upload-document",
-          label: "Upload document",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-document-by-id",
-          label: "Get document by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/delete-document",
-          label: "Delete document",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-all-document-types",
-          label: "Get all document types",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Events",
       items: [
         {
@@ -561,6 +561,18 @@ const sidebar: SidebarsConfig = {
           id: "api/accounts/onboard-seller",
           label: "Onboard seller",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Product Types",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-product-types",
+          label: "Get all product types",
+          className: "api-method get",
         },
       ],
     },
