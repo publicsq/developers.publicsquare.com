@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.13.0...v1.14.0) (2024-10-17)
+
+
+### Features
+
+* add test cards ([a05c1e7](https://github.com/publicsq/developers.publicsquare.com/commit/a05c1e7d1cc034f5878bf52719bb6edc8ba0ec06))
+
 # [1.13.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.12.1...v1.13.0) (2024-10-12)
 
 
