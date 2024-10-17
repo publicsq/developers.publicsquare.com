@@ -1,0 +1,48 @@
+---
+title: Errors
+---
+
+# Errors
+
+PublicSquare uses standard HTTP status codes to indicate whether an API request succeeded or failed.
+A response with a `2xx` status code indicates success, a `4xx` status code indicates a failure due to information provided with the request,
+and a `5xx` status code indicates an unexpected error occurred within PublicSquare.
+
+In general, errors are returned with a response body that conforms to the
+[RFC 7807 - Problem Details for HTTP APIs](https://datatracker.ietf.org/doc/html/rfc7807) specification, as illustrated below.
+
+```shell showLineNumbers
+{
+  "type": "string",
+  "title": "string",
+  "status": 400,
+  "detail": "string",
+  "instance": "string",
+  "errors": {
+    "additionalProp1": ["string"],
+    "additionalProp2": ["string"],
+    "additionalProp3": ["string"]
+  }
+}
+```
+
+### Response
+
+| Attribute           | Type      | Description                                                                 |
+|---------------------|-----------|-----------------------------------------------------------------------------|
+| `title`             | _string_  | A short, human-readable summary of the problem                              |
+| `detail`            | _string_  | A human-readable explanation specific to this occurrence of the problem     |
+| `errors.{property}` | _array_   | An array of human readable error messages returned per request `{property}` |
+| `status`            | _integer_ | HTTP status code of the response                                            |
+
+### Error Codes
+
+| Error Code | Meaning                                                          |
+|------------|------------------------------------------------------------------|
+| `400`      | Invalid request body                                             |
+| `401`      | A missing or invalid `X-API-KEY` was provided                    |
+| `403`      | The provided `X-API-KEY` does not have the required permissions  |
+| `404`      | Resource was not found                                           |
+| `409`      | Conflict with the current state of the request entity            |
+| `422`      | Request does not satisfy requirements for processing             |
+| `500`      | Something went wrong on PublicSquare's side                      |

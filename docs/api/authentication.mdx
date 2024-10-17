@@ -1,0 +1,22 @@
+---
+title: Authentication
+---
+
+import { Alert } from "@site/src/components/shared/Alert";
+
+# Authentication
+
+PublicSquare uses API keys to allow access to the API.
+
+PublicSquare requires the API key to be included in all API requests to the server in a header that looks like the following:
+
+`X-API-KEY: <API_KEY>`
+
+<Alert>You must replace <code>&lt;API_KEY></code> with your `Secret` or a `Restricted` API key.</Alert>
+
+### Request
+
+```shell showLineNumbers
+curl "https://api.publicsquare.com" \
+  -H "X-API-KEY: <API_KEY>"
+```

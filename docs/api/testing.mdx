@@ -1,0 +1,51 @@
+---
+title: Testing
+---
+
+# Testing
+
+To confirm that your integration works correctly, simulate transactions without moving any money using special values in `Test` environment.
+
+Retrieve your `Test` API Keys from your [Account](https://portal.publicsquare.com/developers/api-keys).
+
+Test payment methods let you simulate several scenarios:
+
+* Successful payments by card brand
+* Card errors due to declines, fraud, or invalid data
+* Refunds
+
+When you're ready to take your integration live, replace your `Test` publishable and secret API keys with `Production` ones. You can't process live payments if your integration is still using your test API keys.
+
+## Cards
+
+### Cards by Brand
+
+| Brand            | Number             | CVC          | Expiration Date |
+|------------------|--------------------|--------------|-----------------|
+| Visa             | `4242424242424242` | Any 3 digits | Any future date |
+| Mastercard       | `5555555555554444` | Any 3 digits | Any future date |
+| American Express | `378282246310005`  | Any 4 digits | Any future date |
+| Discover         | `6011111111111117` | Any 3 digits | Any future date |
+| Diners Club      | `3056930009020004` | Any 3 digits | Any future date |
+| UnionPay         | `6200000000000005` | Any 3 digits | Any future date |
+
+
+### Declined payments
+
+| Decline Reason     | Number             | Payment Status |
+|--------------------|--------------------|----------------|
+| Decline            | `4000000000000002` | `declined`     |
+| Insufficient Funds | `4000000000000002` | `declined`     |
+| Lost/Stolen        | `4000000000009987` | `declined`     |
+
+
+### Fraudulent payments
+
+| Description               | Number             | Payment Status | Fraud decision | AVS Code | CVV2 Reply |
+|---------------------------|--------------------|----------------|----------------|----------|------------|
+| Rejected fraud decision   | `4100000000000019` | `rejected`     | `reject`       | `Y`      | `M`        |
+| Review fraud decision     | `4000000000009235` | `succeeded`    | `review`       | `Y`      | `M`        |
+| CVC check fails           | `4000000000000101` | `rejected`     | `reject`       | `Y`      | `N`        |
+| Postal code check fails   | `4000000000000036` | `succeeded`    | `review`       | `A`      | `M`        |
+| Address Line1 check fails | `4000000000000028` | `succeeded`    | `review`       | `Z`      | `M`        |
+| Address check fails       | `4000000000000010` | `rejected`     | `reject`       | `N`      | `M`        |

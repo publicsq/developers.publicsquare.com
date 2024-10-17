@@ -64,7 +64,26 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
     },
   ],
   api: [
-    "api/index",
+    {
+      type: "category",
+      label: "Overview",
+      collapsed: false,
+      link: {
+        type: "doc",
+        id: "api/index",
+      },
+      items: [
+        "api/index",
+        "api/authentication",
+        "api/request-correlation",
+        "api/pagination",
+        "api/errors",
+        "api/ip-addresses",
+        "api/rate-limits",
+        "api/idempotency",
+        "api/testing",
+      ],
+    },
     {
       type: "category",
       label: "Accounts",

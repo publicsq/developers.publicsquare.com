@@ -1,0 +1,58 @@
+---
+title: Pagination
+---
+
+# Pagination
+
+Most `Get All` endpoints support pagination to allow bulk fetching multiple items. Each `Get All` endpoint shares a common response structure.
+
+## Offset Pagination
+
+### Request
+
+```shell showLineNumbers
+  curl "https://api.publicsquare.com/payments?page=2&size=10" \
+  -H "X-API-KEY: <API_KEY>"
+```
+
+#### Query Parameters
+
+| Parameter | Required | Type      | Default | Description                                                        |
+| --------- | -------- | --------- | ------- | ------------------------------------------------------------------ |
+| `page`    | false    | _integer_ | 1       | Page number of the results to return.                              |
+| `size`    | false    | _integer_ | 20      | Number of results per page to return. Maximum size of 100 results. |
+
+### Response
+
+```json showLineNumbers
+{
+  "pagination": {
+    "total_items": 924,
+    "page_number": 2,
+    "page_size": 10,
+    "total_pages": 93
+  },
+  "data": [
+    {...},
+    {...},
+    {...}
+  ]
+}
+```
+
+### Offset Pagination Object
+
+| Attribute    | Type                                                        | Description                                                                             |
+|--------------|-------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `pagination` | _[pagination metadata](#offset-pagination-metadata-object)_ | Pagination metadata for the response                                                    |
+| `data`       | _array_                                                     | Query results of the request. See list endpoint resource for response schema definition |
+
+#### Offset Pagination Metadata Object
+
+| Attribute     | Type      | Description                                                 |
+| ------------- | --------- | ----------------------------------------------------------- |
+| `total_items` | _integer_ | Total number of items in the Tenant                         |
+| `page_number` | _integer_ | Current page number. Should match `page` query parameter.   |
+| `page_size`   | _integer_ | The size of each page. Should match `size` query parameter. |
+| `total_pages` | _integer_ | The total number of pages.                                  |
+
