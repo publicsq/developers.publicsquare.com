@@ -434,6 +434,48 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Contracts",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-latest-product-contract",
+          label: "Get latest product contract",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-contract-by-id",
+          label: "Get contract by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/create-contract",
+          label: "Create contract",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Products",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-credit-product-lines",
+          label: "Get all credit product lines",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-all-product-types",
+          label: "Get all product types",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Customers",
       items: [
         {
@@ -494,85 +536,19 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Contracts",
-      items: [
-        {
-          type: "doc",
-          id: "api/accounts/get-latest-merchant-contract",
-          label: "Get latest merchant contract",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-merchant-contract-by-id",
-          label: "Get merchant contract by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/create-merchant-contract",
-          label: "Create merchant contract",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-latest-seller-contract",
-          label: "Get latest seller contract",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-seller-contract-by-id",
-          label: "Get seller contract by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/create-seller-contract",
-          label: "Create seller contract",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Onboarding",
       items: [
         {
           type: "doc",
-          id: "api/accounts/review-merchant-onboarding",
-          label: "Review merchant onboarding",
+          id: "api/accounts/review-onboarding",
+          label: "Review onboarding",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/accounts/onboard-merchant",
-          label: "Onboard merchant",
+          id: "api/accounts/onboard",
+          label: "Onboard",
           className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/review-seller-onboarding",
-          label: "Review seller onboarding",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/onboard-seller",
-          label: "Onboard seller",
-          className: "api-method post",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Product Types",
-      items: [
-        {
-          type: "doc",
-          id: "api/accounts/get-all-product-types",
-          label: "Get all product types",
-          className: "api-method get",
         },
       ],
     },
