@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.0...v1.14.1) (2024-10-19)
+
+
+### Bug Fixes
+
+* update onboarding and contract routes ([541b3f5](https://github.com/publicsq/developers.publicsquare.com/commit/541b3f539782d907b15d04f53bb09efda9ff3406))
+
 # [1.14.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.13.0...v1.14.0) (2024-10-17)
 
 
