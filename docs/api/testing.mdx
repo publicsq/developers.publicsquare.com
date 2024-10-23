@@ -18,6 +18,8 @@ When you're ready to take your integration live, replace your `Test` publishable
 
 ## Cards
 
+The following card numbers can be used for testing your integration while in `Test` environment.
+
 ### Cards by Brand
 
 | Brand            | Number             | CVC          | Expiration Date |
@@ -49,3 +51,19 @@ When you're ready to take your integration live, replace your `Test` publishable
 | Postal code check fails   | `4000000000000036` | `succeeded`    | `review`       | `A`      | `M`        |
 | Address Line1 check fails | `4000000000000028` | `succeeded`    | `review`       | `Z`      | `M`        |
 | Address check fails       | `4000000000000010` | `rejected`     | `reject`       | `N`      | `M`        |
+
+
+## Bank Accounts
+
+The following bank accounts can be used for testing your integration while in `Test` environment. The payment status will initially be `pending`. After a short period of time, the payment status will be updated and
+a `payment:update` [Webhook](/concepts/webhooks) will be sent with the payment in the `entity` of the payload.
+
+| Routing     | Number         | Payment Status | Decline Reason                 |
+|-------------|----------------|----------------|--------------------------------|
+| `110000000` | `000123456789` | `succeeded`    | N/A                            |
+| `110000000` | `000111111113` | `declined`     | Account Closed                 |
+| `110000000` | `000111111116` | `declined`     | Invalid Account Number         |
+| `110000000` | `000222222227` | `declined`     | Insufficient Funds             |
+| `110000000` | `000555555559` | `declined`     | Decline. Customer cancellation |
+| `110000000` | `000333333335` | `declined`     | Stop Payment Order             |
+| `110000000` | `000444444440` | `declined`     | Account Locked                 |
