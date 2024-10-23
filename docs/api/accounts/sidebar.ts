@@ -194,6 +194,24 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Business Credit Information",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-credit-information",
+          label: "Get credit information",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-credit-information",
+          label: "Save credit information",
+          className: "api-method put",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Business Directors",
       items: [
         {
