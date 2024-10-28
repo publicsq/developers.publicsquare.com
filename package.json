@@ -33,7 +33,7 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.80.3",
+    "sass": "^1.80.4",
     "semver": "^7.6.3",
     "yarn": "^1.22.22"
   },
