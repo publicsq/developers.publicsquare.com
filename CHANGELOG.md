@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.2...v1.14.3) (2024-10-29)
+
+
+### Bug Fixes
+
+* fix insufficient funds test card number ([a44dbd0](https://github.com/publicsq/developers.publicsquare.com/commit/a44dbd082133983044296e44d076303c99cc4c65))
+
 ## [1.14.2](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.1...v1.14.2) (2024-10-29)
 
 
