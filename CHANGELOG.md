@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.1...v1.14.2) (2024-10-29)
+
+
+### Bug Fixes
+
+* update created endpoints to return 201 status code ([46c28b9](https://github.com/publicsq/developers.publicsquare.com/commit/46c28b9301a899b6e359d846e7fa68fa4ca12493))
+
 ## [1.14.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.0...v1.14.1) (2024-10-19)
 
 
