@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.3...v1.15.0) (2024-11-17)
+
+
+### Features
+
+* add additional document type requirements and search options for transactions ([a0dc7fc](https://github.com/publicsq/developers.publicsquare.com/commit/a0dc7fc82f782c44e6dd171a80ba58929ae93554))
+
 ## [1.14.3](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.2...v1.14.3) (2024-10-29)
 
 

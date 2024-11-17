@@ -1,6 +1,6 @@
 {
   "name": "developers-publicsquare-com",
-  "version": "1.14.3",
+  "version": "1.15.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
