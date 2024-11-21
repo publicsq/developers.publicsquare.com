@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.15.0...v1.16.0) (2024-11-21)
+
+
+### Features
+
+* plugins docs ([#58](https://github.com/publicsq/developers.publicsquare.com/issues/58)) ([be11069](https://github.com/publicsq/developers.publicsquare.com/commit/be11069f4636b84594d3105263f7d7c06fbea24f))
+
 # [1.15.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.14.3...v1.15.0) (2024-11-17)
 
 
