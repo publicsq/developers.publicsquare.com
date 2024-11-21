@@ -85,6 +85,12 @@ const config: Config = {
           label: "SDKs",
         },
         {
+          type: "doc",
+          docId: "plugins/index",
+          position: "left",
+          label: "Plugins",
+        },
+        {
           href: "https://github.com/publicsq/developers.publicsquare.com",
           label: "GitHub",
           position: "right",
@@ -129,7 +135,7 @@ const config: Config = {
             showExtensions: true,
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "tag"
+              categoryLinkSource: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           financial: {
@@ -138,7 +144,7 @@ const config: Config = {
             showExtensions: true,
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "tag"
+              categoryLinkSource: "tag",
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,

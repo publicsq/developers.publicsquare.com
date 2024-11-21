@@ -2,13 +2,13 @@ import React from "react";
 
 import { Button } from "../shared/Button";
 import styles from "./GithubCard.module.css";
-import utils from "./utils.module.css";
+import utils from "../utils.module.css";
 
 import Package from "@site/static/img/sdk/package.svg";
 import Github from "@site/static/img/shared/github.svg";
 import { Card } from "../shared/Card";
 import { isValidSdk, SDK } from "../types";
-import { getSdkIcon } from "./utils";
+import { getSdkIcon } from "../utils";
 import clsx from "clsx";
 
 interface GithubCard {
