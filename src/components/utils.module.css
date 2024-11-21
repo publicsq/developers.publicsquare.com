@@ -19,6 +19,19 @@
   height: 100%;
 }
 
+.plugin-platform-icon {
+  object-fit: contain;
+  object-position: center;
+}
+
+.plugin-platform-icon svg {
+  border: 1px solid var(--default-border-color);
+  border-radius: 50%;
+  width: 74px;
+  height: 74px;
+  padding: 5px;
+}
+
 .repository {
   display: flex;
   margin-bottom: 18px;

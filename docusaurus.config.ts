@@ -129,7 +129,7 @@ const config: Config = {
             showExtensions: true,
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "tag"
+              categoryLinkSource: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           financial: {
@@ -138,7 +138,7 @@ const config: Config = {
             showExtensions: true,
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "tag"
+              categoryLinkSource: "tag",
             },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,

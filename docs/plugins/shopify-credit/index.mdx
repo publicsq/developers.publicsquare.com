@@ -1,0 +1,59 @@
+---
+title: JavaScript Elements SDK
+description: The PublicSquare JavaScript SDK makes it easy to build secure web applications that collect cardholder data using Elements.
+sidebar_label: JavaScript Elements
+toc_max_heading_level: 2
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert, Alerts } from "@site/src/components/shared/Alert";
+import { GithubCard } from "@site/src/components/sdks/GithubCard";
+import { SDK } from "@site/src/components/types";
+
+# JavaScript Elements SDK
+
+<GithubCard heading="JavaScript Elements SDK" icon={SDK.JAVASCRIPT} organization="publicsquare-financial" repository="publicsquare-elements" />
+
+###
+
+The PublicSquare JavaScript SDK makes it easy to build secure web applications that collect cardholder data using Elements.
+
+Get started with our [guide](/guides/merchants/collect-cards).
+
+## Before You Begin
+
+This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+
+## Installation
+
+<Tabs className="publicsquare-tabs">
+  <TabItem value="npm" label="npm">
+```shell showLineNumbers
+npm install --save @publicsquare/elements-js
+```
+  </TabItem>
+
+  <TabItem value="yarn" label="yarn">
+```shell showLineNumbers
+yarn add @publicsquare/elements-js
+```
+  </TabItem>
+</Tabs>
+
+## Initialization
+
+```javascript showLineNumbers
+import { PublicSquare } from "@publicsquare/elements-js";
+
+// In this context PublicSquare is a class
+const publicsquare = await new PublicSquare().init("<API_KEY>");
+// use Elements
+```
+
+| Parameter | Required | Type                     | Description                     |
+| --------- | -------- | ------------------------ | ------------------------------- |
+| `apiKey`  | true     | _string_                 | The Publishable API Key         |
+
+<Alert type={Alerts.WARNING}>If you try to to use any Elements feature before calling <code>PublicSquare.init</code>, or before its Promise has been fulfilled, you will get an error.</Alert>

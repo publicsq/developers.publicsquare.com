@@ -1,14 +1,14 @@
 import React, { ReactNode, ComponentProps } from "react";
 
 import styles from "./SdkCard.module.css";
-import utils from "./utils.module.css";
+import utils from "../utils.module.css";
 
 import clsx from "clsx";
 import { Card } from "../shared/Card";
 import { isValidSdk, SDK } from "../types";
 
 import Package from "@site/static/img/sdk/package.svg";
-import { getSdkIcon } from "./utils";
+import { getSdkIcon } from "../utils";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 

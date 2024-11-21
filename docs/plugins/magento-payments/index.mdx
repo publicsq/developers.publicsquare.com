@@ -1,0 +1,80 @@
+---
+title: Magento Payments Plugin
+sidebar_label: Magento Plugin
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert, Alerts } from "@site/src/components/shared/Alert";
+import { GithubCard } from "@site/src/components/sdks/GithubCard";
+import { SDK } from "@site/src/components/types";
+
+# Magento Payments Plugin
+
+PublicSquare Magento Payments Plugin is a 1-click plugin for Magento that allows you to accept credit and debit card payments instantly.
+
+## Before You Begin
+
+This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+
+If you have not yet created an account, [schedule a demo](https://payments.publicsquare.com/#demo) with our team to get started.
+
+## Installation
+
+Find the app in the Magento marketplace and install it.
+
+## Getting started
+
+### Configure Payment Method
+
+1. Navigate to **Stores > Configuration** in your Magento Admin panel
+2. Under the Sales section, select **Payment Methods**
+3. Locate the PublicSquare Payment Method settings
+4. Fill in the following fields:
+   - Checkout page payment method title: Enter "Credit/Debit Card (PSQ - Staging Keys)" or your desired title
+   - PublicSquare Public API Key
+   - PublicSquare Secret API Key
+5. Click **Save Config** in the top right corner to save the changes
+
+### Default Settings Configuration
+
+Configure the following fields within the PublicSquare Payment Method section:
+
+- **Security Type**: Set to Hosted iFrame - PCI SAQ A (default, not configurable)
+- **Pre-Authorization Type**: Set to Test (Card number validation only) for testing purposes
+- **CVV Verification**: Ensure this is set to Yes
+- **3D Secure Authentication**: Set to No (if applicable)
+- **Payment Capture Action**: Ensure this is set to Authorize & Capture
+- **AVS Check**: Enable this to include address and phone validation in payment requests
+- **Vault Enabled**: Ensure this is set to Yes for card storage
+
+### Testing Setup
+
+#### Test Card Details
+Use the following test card for transaction testing:
+- **Card Number**: 4242 4242 4242 4242
+- **Expiration Date**: Any future date
+- **CVC**: Any 3 digits
+
+#### Testing Process
+
+1. Go to your Magento storefront
+2. Add any product to the cart and proceed to checkout
+3. In the payment method selection, choose the configured Credit/Debit Card (PublicSquare) option
+4. Enter the provided test card details to simulate a transaction
+
+#### Verification
+
+1. Log in to your Magento Admin panel
+2. Navigate to **Sales > Orders** to review the order
+3. Confirm that the payment method displays as Credit/Debit Card (PublicSquare)
+4. Check for the Transaction ID, which should follow the format `pmt_XXXXXXXXXXXXXXXXXX`
+
+### Additional Notes
+
+- Ensure that the transaction status and order details are displayed accurately
+- For further guidance or troubleshooting, please refer to the PublicSquare API Documentation
+- If you encounter issues, ensure your API keys and configuration settings are correctly entered
+
+

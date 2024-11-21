@@ -13,143 +13,140 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
  Create as many sidebars as you want.
  */
  const sidebars: SidebarsConfig = {
-  docs: [
-    {
-      id: "index",
-      type: "doc",
-    },
-    {
-      type: "category",
-      label: "Merchants",
-      items: [
-        "guides/merchants/collect-cards",
-        "guides/merchants/process-payments",
-        "guides/merchants/issue-refunds",
-        "guides/merchants/view-transactions",
-      ],
-    },
-    {
-      type: "category",
-      label: "Marketplaces",
-      items: [
-        "guides/marketplaces/onboard-sellers",
-      ],
-    },
-    {
-      type: "html",
-      value: "<hr />",
-    },
-    {
-      type: "category",
-      label: "Concepts",
-      items: [
-        "concepts/accounts",
-        "concepts/connections",
-        "concepts/webhooks",
-      ],
-    },
-    {
-      type: "html",
-      value: "<hr />",
-    },
-    {
-      type: "link",
-      label: "API Reference",
-      href: "/api",
-    },
-    {
-      type: "link",
-      label: "SDKs",
-      href: "/sdks",
-    },
-  ],
-  api: [
-    {
-      type: "category",
-      label: "Overview",
-      collapsed: false,
-      link: {
-        type: "doc",
-        id: "api/index",
-      },
-      items: [
-        "api/index",
-        "api/authentication",
-        "api/request-correlation",
-        "api/pagination",
-        "api/errors",
-        "api/ip-addresses",
-        "api/rate-limits",
-        "api/idempotency",
-        "api/testing",
-      ],
-    },
-    {
-      type: "category",
-      label: "Accounts",
-      link: {
-        type: "generated-index",
-        title: "Accounts Reference",
-      },
-      items: apiSidebar,
-    },
-    {
-      type: "category",
-      label: "Payments",
-      link: {
-        type: "generated-index",
-        title: "Payments Reference",
-      },
-      items: financialApiSidebar,
-    },
-    {
-      type: "html",
-      value: "<hr />",
-    },
-    {
-      type: "link",
-      label: "Guides",
-      href: "/",
-    },
-    {
-      type: "link",
-      label: "SDKs",
-      href: "/sdks",
-    },
-  ],
-  sdk: [
-    "sdks/index",
-    {
-      type: "category",
-      label: "Web SDKs",
-      items: [
-        {
-          id: "sdks/web/javascript/index",
-          type: "doc",
-          label: "JavaScript Elements",
-        },
-        {
-          id: "sdks/web/react/index",
-          type: "doc",
-          label: "React Elements",
-        },
-      ],
-    },
-    {
-      type: "html",
-      value: "<hr />",
-    },
-    {
-      type: "link",
-      label: "Guides",
-      href: "/",
-    },
-    {
-      type: "link",
-      label: "API Reference",
-      href: "/api",
-    },
-  ],
-};
+   docs: [
+     {
+       id: "index",
+       type: "doc",
+     },
+     {
+       type: "category",
+       label: "Merchants",
+       items: ["guides/merchants/collect-cards", "guides/merchants/process-payments", "guides/merchants/issue-refunds", "guides/merchants/view-transactions"],
+     },
+     {
+       type: "category",
+       label: "Marketplaces",
+       items: ["guides/marketplaces/onboard-sellers"],
+     },
+     {
+       type: "html",
+       value: "<hr />",
+     },
+     {
+       type: "category",
+       label: "Concepts",
+       items: ["concepts/accounts", "concepts/connections", "concepts/webhooks"],
+     },
+     {
+       type: "html",
+       value: "<hr />",
+     },
+     {
+       type: "link",
+       label: "API Reference",
+       href: "/api",
+     },
+     {
+       type: "link",
+       label: "SDKs",
+       href: "/sdks",
+     },
+   ],
+   api: [
+     {
+       type: "category",
+       label: "Overview",
+       collapsed: false,
+       link: {
+         type: "doc",
+         id: "api/index",
+       },
+       items: ["api/index", "api/authentication", "api/request-correlation", "api/pagination", "api/errors", "api/ip-addresses", "api/rate-limits", "api/idempotency", "api/testing"],
+     },
+     {
+       type: "category",
+       label: "Accounts",
+       link: {
+         type: "generated-index",
+         title: "Accounts Reference",
+       },
+       items: apiSidebar,
+     },
+     {
+       type: "category",
+       label: "Payments",
+       link: {
+         type: "generated-index",
+         title: "Payments Reference",
+       },
+       items: financialApiSidebar,
+     },
+     {
+       type: "html",
+       value: "<hr />",
+     },
+     {
+       type: "link",
+       label: "Guides",
+       href: "/",
+     },
+     {
+       type: "link",
+       label: "SDKs",
+       href: "/sdks",
+     },
+   ],
+   sdk: [
+     "sdks/index",
+     {
+       type: "category",
+       label: "Web SDKs",
+       items: [
+         {
+           id: "sdks/web/javascript/index",
+           type: "doc",
+           label: "JavaScript Elements",
+         },
+         {
+           id: "sdks/web/react/index",
+           type: "doc",
+           label: "React Elements",
+         },
+       ],
+     },
+     {
+       type: "category",
+       label: "Payments Plugins",
+       items: [
+         {
+           id: "plugins/bigcommerce-payments/index",
+           type: "doc",
+         },
+         {
+           id: "plugins/magento-payments/index",
+           type: "doc",
+         },
+         {
+           id: "plugins/woocommerce-payments/index",
+           type: "doc",
+         },
+       ],
+     },
+     {
+       type: "html",
+       value: "<hr />",
+     },
+     {
+       type: "link",
+       label: "Guides",
+       href: "/",
+     },
+     {
+       type: "link",
+       label: "API Reference",
+       href: "/api",
+     },
+   ],
+ };
 
 export default sidebars;

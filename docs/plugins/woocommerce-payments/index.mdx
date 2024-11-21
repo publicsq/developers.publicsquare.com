@@ -1,0 +1,78 @@
+---
+title: WooCommerce Payments Plugin
+sidebar_label: WooCommerce Plugin 
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert, Alerts } from "@site/src/components/shared/Alert";
+import { GithubCard } from "@site/src/components/sdks/GithubCard";
+import { SDK } from "@site/src/components/types";
+
+# WooCommerce Payments Plugin
+
+PublicSquare WooCommerce Payments Plugin is a 1-click plugin for WooCommerce that allows you to accept credit and debit card payments instantly.
+
+## Before You Begin
+
+This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+
+If you have not yet created an account, [schedule a demo](https://payments.publicsquare.com/#demo) with our team to get started.
+
+## Installation
+
+Find the app in the WooCommerce marketplace and install it.
+
+## Getting started
+
+### 1. Configure Payment Method in WooCommerce
+
+1. Go to **PublicSq App Settings** within your WooCommerce admin panel
+2. Locate the fields for **Public Key** and **Secret Key**
+3. Paste the **Publishable Key** into the **Public Key** field
+   1. NOTE: The key will start with `pk_`
+4. Paste the **Secret Key** or **Restricted Key** into the **Secret Key** field
+   1. NOTE: The key will start with `sk_` for secret keys and `rk_` for restricted keys
+
+### 2. Set Up Bank Deposit Payment Method for PublicSquare
+
+1. Navigate to **Payment Settings** in WooCommerce
+2. Enable the **Bank Deposit** payment method for PublicSquare
+3. Change the **Display Name** to "Credit/Debit Card"
+4. In the **Account Information** field, erase any existing text and add a single space to meet the input validation requirement
+5. Click **Save** (blue button in the lower right corner)
+
+### 3. Default Settings Configuration
+
+- Ensure **Authorize and Capture** is enabled in the payment settings
+
+### 4. Add Test Card for Transaction Testing
+
+Refer to [PublicSquare Testing Card Details](/api/testing#cards) for test card numbers.
+
+Recommended Test Card:
+- **Card Number:** `4242 4242 4242 4242`
+- **Expiration Date:** Any future date
+- **CVC:** Any 3 digits
+
+### 5. Testing the Checkout Process
+
+1. Go to your WooCommerce storefront
+2. Add any product to the cart
+3. Begin the checkout process
+4. In the payment method selection, choose **Credit/Debit Card** (PublicSquare)
+5. Enter the provided test card details
+
+### 6. Place Order and Verify Transaction
+
+1. Complete the order placement
+2. Go to the **WooCommerce Admin Portal** to review the order
+3. Confirm the payment method displays as **Credit Card (PublicSquare)** and check for the **Transaction ID** in the format `pmt_XXXXXXXXXXXXXXXXXX`
+
+### Additional Notes
+
+- Ensure that the transaction status and order details are correct and displayed as expected
+- For further testing guidance or troubleshooting, please refer to the **PublicSquare API**
+
+
