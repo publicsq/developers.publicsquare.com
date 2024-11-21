@@ -51,11 +51,6 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
        label: "SDKs",
        href: "/sdks",
      },
-     {
-       type: "link",
-       label: "Plugins",
-       href: "/plugins",
-     },
    ],
    api: [
      {
@@ -100,11 +95,6 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
        label: "SDKs",
        href: "/sdks",
      },
-     {
-       type: "link",
-       label: "Plugins",
-       href: "/plugins",
-     },
    ],
    sdk: [
      "sdks/index",
@@ -125,30 +115,8 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
        ],
      },
      {
-       type: "html",
-       value: "<hr />",
-     },
-     {
-       type: "link",
-       label: "Guides",
-       href: "/",
-     },
-     {
-       type: "link",
-       label: "API Reference",
-       href: "/api",
-     },
-     {
-       type: "link",
-       label: "Plugins",
-       href: "/plugins",
-     },
-   ],
-   plugins: [
-     "plugins/index",
-     {
        type: "category",
-       label: "Credit/Debit Cards",
+       label: "Payments Plugins",
        items: [
          {
            id: "plugins/bigcommerce-payments/index",
@@ -177,11 +145,6 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
        type: "link",
        label: "API Reference",
        href: "/api",
-     },
-     {
-       type: "link",
-       label: "SDKs",
-       href: "/sdks",
      },
    ],
  };
