@@ -85,12 +85,6 @@ const config: Config = {
           label: "SDKs",
         },
         {
-          type: "doc",
-          docId: "plugins/index",
-          position: "left",
-          label: "Plugins",
-        },
-        {
           href: "https://github.com/publicsq/developers.publicsquare.com",
           label: "GitHub",
           position: "right",
