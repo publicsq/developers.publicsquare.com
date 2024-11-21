@@ -1,5 +1,5 @@
 ---
-title: PublicSquare SDKs
+title: PublicSquare SDKs and Plugins
 sidebar_label: Overview
 hide_title: true
 hide_table_of_contents: true
@@ -7,10 +7,11 @@ hide_table_of_contents: true
 
 import { Intro } from "@site/src/components/shared/Intro";
 import { SdkCard } from "@site/src/components/sdks/SdkCard";
-import { SDK } from "@site/src/components/types";
+import { PlatformCard } from "@site/src/components/plugins/PlatformCard";
+import { PLATFORM, SDK } from "@site/src/components/types";
 
 <Intro
-  title="PublicSquare SDKs"
+  title="PublicSquare SDKs and Plugins"
   caption="Libraries and tools for interacting with your PublicSquare integration."
 />
 
@@ -31,3 +32,49 @@ import { SDK } from "@site/src/components/types";
     repository="publicsquare-elements"
   />
 </SdkCard.TwoColumnLayout>
+
+## Payments E-Commerce Plugins
+
+<PlatformCard.TwoColumnLayout>
+  <PlatformCard
+    href="/plugins/bigcommerce-payments"
+    heading="BigCommerce"
+    icon={PLATFORM.BIGCOMMERCE}
+    body="By PublicSquare Financial"
+  />
+  <PlatformCard
+    href="/plugins/magento-payments"
+    heading="Magento"
+    icon={PLATFORM.MAGENTO}
+    body="By PublicSquare Financial"
+  />
+  <PlatformCard
+    href="/plugins/woocommerce-payments"
+    heading="WooCommerce"
+    icon={PLATFORM.WOOCOMMERCE}
+    body="By PublicSquare Financial"
+  />
+</PlatformCard.TwoColumnLayout>
+
+## Buy Now Pay Later E-Commerce Plugins
+
+<PlatformCard.TwoColumnLayout>
+  <PlatformCard
+    href="https://dev.credova.com/docs/ecommerce/bigcommerce"
+    heading="BigCommerce"
+    icon={PLATFORM.BIGCOMMERCE}
+    body="By Credova Financial"
+  />
+  <PlatformCard
+    href="https://dev.credova.com/docs/ecommerce/magento2"
+    heading="Magento"
+    icon={PLATFORM.MAGENTO}
+    body="By Credova Financial"
+  />
+  <PlatformCard
+    href="https://dev.credova.com/docs/ecommerce/woocommerce"
+    heading="WooCommerce"
+    icon={PLATFORM.WOOCOMMERCE}
+    body="By Credova Financial"
+  />
+</PlatformCard.TwoColumnLayout>

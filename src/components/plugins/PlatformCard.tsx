@@ -7,7 +7,6 @@ import clsx from "clsx";
 import { Card } from "../shared/Card";
 import { isValidPlatform, PLATFORM } from "../types";
 
-import Package from "@site/static/img/sdk/package.svg";
 import { getPlatformIcon } from "../utils";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
