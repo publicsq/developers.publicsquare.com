@@ -20,7 +20,10 @@ jobs:
       - name: Install deps (with cache)
         uses: bahmutov/npm-install@v1
         with:
-          install-command: yarn --frozen-lockfile --no-progress --ignore-scripts && yarn add sharp
+          install-command: yarn --frozen-lockfile --no-progress --ignore-scripts
+      
+      - name: Install sharp
+        run: yarn add sharp
 
       - name: Build
         run: yarn build
