@@ -1483,7 +1483,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-docs@3.6.1", "@docusaurus/plugin-content-docs@^3.5.0":
+"@docusaurus/plugin-content-docs@3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-docs/-/plugin-content-docs-3.6.1.tgz#7c461b33ecc41e27fc02830bcde54378f68b2512"
   integrity sha512-Uq8kyn5DYCDmkUlB9sWChhWghS4lUFNiQU+RXcAXJ3qCVXsBpPsh6RF+npQG1N+j4wAbjydM1iLLJJzp+x3eMQ==
@@ -1733,7 +1733,7 @@
     "@docusaurus/types" "3.6.1"
     tslib "^2.6.0"
 
-"@docusaurus/utils-validation@3.6.1", "@docusaurus/utils-validation@^3.5.0":
+"@docusaurus/utils-validation@3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/utils-validation/-/utils-validation-3.6.1.tgz#8e4b5bd8b71f55228543e3fda1301e9fb83df1c6"
   integrity sha512-+iMd6zRl5cJQm7nUP+7pSO/oAXsN79eHO34ME7l2YJt4GEAr70l5kkD58u2jEPpp+wSXT70c7x2A2lzJI1E8jw==
@@ -1747,7 +1747,7 @@
     lodash "^4.17.21"
     tslib "^2.6.0"
 
-"@docusaurus/utils@3.6.1", "@docusaurus/utils@^3.5.0":
+"@docusaurus/utils@3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/utils/-/utils-3.6.1.tgz#4e4f80be294671bfb83910352d3625878134bf48"
   integrity sha512-nS3WCvepwrnBEgSG5vQu40XG95lC9Jeh/odV5u5IhU1eQFEGDst9xBi6IK5yZdsGvbuaXBZLZtOqWYtuuFa/rQ==
@@ -5721,15 +5721,12 @@ docusaurus-lunr-search@^3.5.0:
     unified "^9.0.0"
     unist-util-is "^4.0.2"
 
-docusaurus-plugin-openapi-docs@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.2.0.tgz#80fc3c3a7eafe6d613b9cd4f42b595641ceaa300"
-  integrity sha512-6G8LtpQlb4nCTyDnjkRwxg/oq3WIZ05GCFQFfTqbdiI5D8d9Glya0vp6TF9InEyXtAkc8ozi1HP8It2zEUwNGw==
+docusaurus-plugin-openapi-docs@^4.2.0, docusaurus-plugin-openapi-docs@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.3.0.tgz#1e5891c10194e3ce585d894e911c80e352f0ed77"
+  integrity sha512-IOxJzLfH8vhGvzQSd9TI99w2naD705r838gaa1/oDlmcaajXYtKePkk7YwcqjLLKgJ/roQcvQAK2qNX/sijQvQ==
   dependencies:
     "@apidevtools/json-schema-ref-parser" "^11.5.4"
-    "@docusaurus/plugin-content-docs" "^3.5.0"
-    "@docusaurus/utils" "^3.5.0"
-    "@docusaurus/utils-validation" "^3.5.0"
     "@redocly/openapi-core" "^1.10.5"
     allof-merge "^0.6.6"
     chalk "^4.1.2"
