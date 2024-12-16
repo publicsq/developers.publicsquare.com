@@ -5,10 +5,17 @@ sidebar_label: BigCommerce Plugin
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
+import Image from "@theme/IdealImage";
 import { Alert, Alerts } from "@site/src/components/shared/Alert";
 import { GithubCard } from "@site/src/components/sdks/GithubCard";
 import { SDK } from "@site/src/components/types";
+import MerchantDashboardImage from "@site/static/img/plugins/bigcommerce/merchant-dashboard.png";
+import MerchantSettingsImage from "@site/static/img/plugins/bigcommerce/merchant-settings.png";
+import MerchantApiKeysImage from "@site/static/img/plugins/bigcommerce/merchant-api-keys.png";
+import MerchantCreateApiKeyImage from "@site/static/img/plugins/bigcommerce/merchant-create-api-key.png";
+import MerchantSettingsPaymentsImage from "@site/static/img/plugins/bigcommerce/merchant-settings-payments.png";
+import MerchantPaymentSettingsImage from "@site/static/img/plugins/bigcommerce/merchant-payment-settings.png";
+import MerchantBankdepositSettingsImage from "@site/static/img/plugins/bigcommerce/merchant-bankdeposit-settings.png";
 
 # Integrating PublicSquare Payments with BigCommerce
 
@@ -30,14 +37,23 @@ To enable the plugin to connect with BigCommerce, you'll need to create an API a
 
 1. **Log In to Your BigCommerce Admin Panel**
    - Navigate to your BigCommerce store admin panel
-2. **Go to API Accounts**
-   - From the dashboard, go to **Settings > Advanced Settings > API Accounts**
+
+<Image img={MerchantDashboardImage} alt="BigCommerce Merchant Dashboard" />
+
+2. From the dashboard, go to **Settings > Advanced Settings > API Accounts**
+
+<Image img={MerchantSettingsImage} alt="BigCommerce Merchant Settings" />
+
 3. **Create a New API Account**
    - Click the **Create API Account** button
    - Select **Token Type:** V2/V3 API Token
+
+<Image img={MerchantApiKeysImage} alt="BigCommerce Merchant API Keys" />
+
 4. **Set Account Details**
    - **Name:** Enter a descriptive name (e.g., PublicSquare Payments)
    - **API Path:** This is auto-generated and will look like: `https://api.bigcommerce.com/stores/{store_hash}/v3/`
+
 5. **Configure OAuth Scopes**
    
    Assign the following scopes:
@@ -46,50 +62,56 @@ To enable the plugin to connect with BigCommerce, you'll need to create an API a
    - **Orders:** Modify
    - **Carts:** Modify
    - **Checkouts:** Modify
+
+<Image img={MerchantCreateApiKeyImage} alt="BigCommerce Merchant Create API Key" />
+
 6. **Save the API Account**
    - Click **Save** to generate the credentials. A file containing the API credentials will be downloaded and saved to your computer
 
 ## Step 2: Upload the API Credentials to the Plugin
 
-1. Navigate to the PublicSquare plugin setup page:
-   
-   `https://bigcommerce-plugin.publicsquare.com/installation/setup`
-
+1. Navigate to the [PublicSquare plugin setup page](https://bigcommerce-plugin.publicsquare.com/installation/setup)
 2. **Upload the File**
    - Drag and drop the API credentials file
 
 ## Step 3: Add Payment API Keys
 
-1. Grab the **API Keys** from your [PublicSquare Portal](https://portal.publicsquare.com/developers/api-keys)
+1. Copy the **API Keys** from your [PublicSquare Portal](https://portal.publicsquare.com/developers/api-keys)
    - Ensure the correct scope is selected (e.g., Test Mode for initial setup)
-2. Navigate back to the plugin setup page:
-   
-   `https://bigcommerce-plugin.publicsquare.com/installation/setup`
-
+2. Navigate back to the [plugin setup page](https://bigcommerce-plugin.publicsquare.com/installation/setup):
 3. Input the keys and save your changes
 
 ## Step 4: Configure Payment Settings in BigCommerce
 
 1. **Log in to your BigCommerce Admin Panel**
    - Use your administrator credentials to access the dashboard
+
+<Image img={MerchantDashboardImage} alt="BigCommerce Merchant Dashboard" />
+
 2. **Navigate to Settings > Payments**
-   - Under **Offline Payment Methods**, select **Bank Deposit**
-3. Configure the following payment details:
+
+<Image img={MerchantSettingsPaymentsImage} alt="BigCommerce Merchant Payment Settings" />
+
+3. Enable the **Bank Deposit** field:
+   - Scroll down to find the **Offline Payment Methods** section
+   - Enable the **Bank Deposit** field
+
+<Image img={MerchantPaymentSettingsImage} alt="BigCommerce Merchant Payment Settings" />
+
+4. Configure the following payment details:
    - **Display Name:** Credit/Debit Card
    - **Available Locations:** USA Only
    - **Account Information:** Press the space bar once in this field to add a single space (do not leave it blank)
 4. Save your payment settings
+
+<Image img={MerchantBankdepositSettingsImage} alt="BigCommerce Merchant Bank Deposit Settings" />
 
 ## Step 5: Place Test Orders
 
 1. Your setup is now complete! Proceed to place **test orders** in your BigCommerce store
 2. Test the following scenarios:
    - **Successful payments**
-   - **Failed payments** (using test cards)
-   
-   Use test cards available at:
-   
-   `https://developers.publicsquare.com/api/testing#cards`
+   - **Failed payments** (using [test cards](https://developers.publicsquare.com/api/testing#cards))
 
 ## Testing Cards
 
