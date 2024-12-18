@@ -144,6 +144,12 @@ const config: Config = {
         } satisfies Plugin.PluginOptions,
       },
     ],
+    [
+      "@docusaurus/plugin-ideal-image",
+      {
+        disableInDev: false,
+      },
+    ],
   ],
 };
 
