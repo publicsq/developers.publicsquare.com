@@ -37,12 +37,12 @@ This quick guide will walk you through the steps to set up your account and star
 ### Test vs Production Mode
 
 
-When you sign up for a PublicSquare account, you’ll automatically gain access to a `test` environment. 
+When you sign up for a PublicSquare account, you’ll automatically gain access to a `test` environment.
 This environment lets you perform dummy transactions, test your integration, and ensure everything functions as expected.
 
 When you're ready to go live, you can switch to `production` mode.
 
-Please note that to enable the `production` environment and process live transactions, 
+Please note that to enable the `production` environment and process live transactions,
 you'll need to [complete your account setup](https://portal.publicsquare.com/onboarding/verify-business/business-details) and go through the onboarding process.
 
 <div style={{textAlign: 'center'}}>
@@ -101,8 +101,8 @@ For detailed information on SDKs and instructions on how to configure them, plea
 #### Get your Publishable Key
 
 
-You'll need your `Publishable Key` to set up PublicSquare Elements and collect card information. 
-Navigate to the [Developers](https://portal.publicsquare.com/developers/api-keys) section of your account, 
+You'll need your `Publishable Key` to set up PublicSquare Elements and collect card information.
+Navigate to the [Developers](https://portal.publicsquare.com/developers/api-keys) section of your account,
 click `Reveal` next to your `Publishable Key`, and copy the displayed value.
 
 
@@ -227,8 +227,8 @@ The Card Element should now be visible on your page:
 
 #### Create Card Object
 
-After collecting the card details, you can create a card object by calling the `createCard` method from the SDK. 
-Pass the Card Element as part of the payload in the request. 
+After collecting the card details, you can create a card object by calling the `createCard` method from the SDK.
+Pass the Card Element as part of the payload in the request.
 To initiate this process, associate a submit function with a button to trigger the card creation.
 
 
@@ -311,7 +311,7 @@ You can learn more about the `card` object in the [API Reference](https://develo
 #### Get your Secret Key
 
 
-Next, you'll need your Secret Key. Navigate to the [Developers](https://portal.publicsquare.com/developers/api-keys) section on your account, 
+Next, you'll need your Secret Key. Navigate to the [Developers](https://portal.publicsquare.com/developers/api-keys) section on your account,
 click "Reveal" next to your Secret Key, and copy the displayed value.
 
 <div style={{textAlign: 'center'}}>
@@ -326,7 +326,7 @@ click "Reveal" next to your Secret Key, and copy the displayed value.
 #### Create Payment
 
 Now, we will create a payment object using the card object we created earlier.
-To achieve this, we will construct a [payment request](https://developers.publicsquare.com/api/financial/create-payment) object 
+To achieve this, we will construct a [payment request](https://developers.publicsquare.com/api/financial/create-payment) object
 and send it to the PublicSquare API.
 
 <Tabs >
@@ -338,27 +338,28 @@ and send it to the PublicSquare API.
       -H 'IDEMPONTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
       -H 'Content-Type: application/json' \
       -d '{
-        "amount": 1000,
-        "currency": "USD",
-        "paymentMethod": {
-          "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
-        },
-        "customer": {
-          "first_name": "John",
-          "last_name": "Smith",
-          "email": "john.smith@email.com"
-        },
-        "billing_details": {
-          "address_line_1": "111 Test St.",
-          "city": "Des Moines",
-          "state": "IA",
-          "postal_code": "51111",
-          "country": "US"
-        }
+          "amount": 16734,
+          "currency": "USD",
+          "paymentMethod": {
+            "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+          },
+            "customer": {
+            "first_name": "Addison",
+            "last_name": "Daniel",
+            "email": "Ethelyn50@hotmail.com"
+          },
+            "billing_details": {
+            "address_line_1": "355 Pearl Way",
+            "address_line_2": "Suite 345",
+            "city": "Camden",
+            "state": "OR",
+            "postal_code": "59969",
+            "country": "US"
+          }
       }'
     ```
   </TabItem>
-  <TabItem value="fetch" label="FETCH">
+  <TabItem value="nodejs" label="Node.js">
   ```javascript showLineNumbers title="Create a Payment"
     fetch('https://api.publicsquare.com/payments', {
       method: 'POST',
@@ -368,23 +369,24 @@ and send it to the PublicSquare API.
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: 1000,
-        currency: 'USD',
-        paymentMethod: {
-          card: 'card_AjkCFKAYiTsjghXWMzoXFPMxj',
-        },
-        customer: {
-          first_name: 'John',
-          last_name: 'Smith',
-          email: 'john.smith@email.com',
-        },
-        billing_details: {
-          address_line_1: '111 Test St.',
-          city: 'Des Moines',
-          state: 'IA',
-          postal_code: '51111',
-          country: 'US',
-        },
+          "amount": 16734,
+          "currency": "USD",
+          "paymentMethod": {
+            "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+          },
+            "customer": {
+            "first_name": "Addison",
+            "last_name": "Daniel",
+            "email": "Ethelyn50@hotmail.com"
+          },
+            "billing_details": {
+            "address_line_1": "355 Pearl Way",
+            "address_line_2": "Suite 345",
+            "city": "Camden",
+            "state": "OR",
+            "postal_code": "59969",
+            "country": "US"
+          }
       }),
     })
     .then(response => response.json())
@@ -392,30 +394,31 @@ and send it to the PublicSquare API.
     .catch(error => console.error('Error:', error));
   ```
   </TabItem>
-  <TabItem value="axios" label="Axios"> 
+  <TabItem value="axios" label="Axios">
     ```javascript showLineNumbers title="Create a Payment"
     const axios = require('axios');
 
     axios.post(
     'https://api.publicsquare.com/payments',
     {
-      amount: 1000,
-      currency: 'USD',
-      paymentMethod: {
-        card: 'card_AjkCFKAYiTsjghXWMzoXFPMxj',
-      },
-      customer: {
-        first_name: 'John',
-        last_name: 'Smith',
-        email: 'john.smith@email.com',
-      },
-      billing_details: {
-        address_line_1: '111 Test St.',
-        city: 'Des Moines',
-        state: 'IA',
-        postal_code: '51111',
-        country: 'US',
-      },
+        "amount": 16734,
+        "currency": "USD",
+        "paymentMethod": {
+          "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+        },
+          "customer": {
+          "first_name": "Addison",
+          "last_name": "Daniel",
+          "email": "Ethelyn50@hotmail.com"
+        },
+          "billing_details": {
+          "address_line_1": "355 Pearl Way",
+          "address_line_2": "Suite 345",
+          "city": "Camden",
+          "state": "OR",
+          "postal_code": "59969",
+          "country": "US"
+        }
     },
     {
       headers: {
@@ -439,22 +442,23 @@ and send it to the PublicSquare API.
 
         String json = """
         {
-            "amount": 1000,
+            "amount": 16734,
             "currency": "USD",
             "paymentMethod": {
-                "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+              "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
             },
-            "customer": {
-                "first_name": "John",
-                "last_name": "Smith",
-                "email": "john.smith@email.com"
+              "customer": {
+              "first_name": "Addison",
+              "last_name": "Daniel",
+              "email": "Ethelyn50@hotmail.com"
             },
-            "billing_details": {
-                "address_line_1": "111 Test St.",
-                "city": "Des Moines",
-                "state": "IA",
-                "postal_code": "51111",
-                "country": "US"
+              "billing_details": {
+              "address_line_1": "355 Pearl Way",
+              "address_line_2": "Suite 345",
+              "city": "Camden",
+              "state": "OR",
+              "postal_code": "59969",
+              "country": "US"
             }
         }
         """;
@@ -487,22 +491,23 @@ and send it to the PublicSquare API.
       "Content-Type": "application/json"
   }
   payload = {
-      "amount": 1000,
+      "amount": 16734,
       "currency": "USD",
       "paymentMethod": {
           "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
       },
       "customer": {
-          "first_name": "John",
-          "last_name": "Smith",
-          "email": "john.smith@email.com"
+        "first_name": "Addison",
+        "last_name": "Daniel",
+        "email": "Ethelyn50@hotmail.com"
       },
       "billing_details": {
-          "address_line_1": "111 Test St.",
-          "city": "Des Moines",
-          "state": "IA",
-          "postal_code": "51111",
-          "country": "US"
+        "address_line_1": "355 Pearl Way",
+        "address_line_2": "Suite 345",
+        "city": "Camden",
+        "state": "OR",
+        "postal_code": "59969",
+        "country": "US"
       }
   }
 
@@ -514,7 +519,7 @@ and send it to the PublicSquare API.
   </TabItem>
 </Tabs>
 
-<Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
+<Alert>The amount is provided in cents. 16734 is the equivalent of $167.34</Alert>
 
 <Alert type="warning">The `IDEMPONTENCY-KEY` header can be passed to protect against duplicate payments being processed.</Alert>
 
@@ -526,8 +531,8 @@ You should see a payment object similar to:
     "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
     "environment": "test",
     "status": "successful",
-    "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-    "amount": "1000",
+    "transaction_id": "Iccc2b54-eb27-4eb4-9d3e-2763156123a8",
+    "amount": "16734",
     "amount_charged": "1000",
     "amount_refunded": "0",
     "refunded": "false",
@@ -535,8 +540,8 @@ You should see a payment object similar to:
     "payment_method": {
       "card": {
         "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
-        "cardholder_name": "John Smith",
-        "last4": "4242",
+        "cardholder_name": "Joy Dicki",
+        "last4": "93c7",
         "exp_month": "12",
         "exp_year": "2025",
         "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
@@ -544,23 +549,24 @@ You should see a payment object similar to:
     },
     "customer": {
       "id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
-      "first_name": "John",
-      "last_name": "Smith",
-      "email": "john.smith@email.com"
+      "first_name": "Addison",
+      "last_name": "Daniel",
+      "email": "Ethelyn50@hotmail.com"
     },
     "billing_details": {
-      "address_line_1": "111 Test St.",
-      "city": "Des Moines",
-      "state": "IA",
-      "postal_code": "51111",
+      "address_line_1": "355 Pearl Way",
+      "address_line_2": "Suite 345",
+      "city": "Camden",
+      "state": "OR",
+      "postal_code": "59969",
       "country": "US"
     },
     "shipping_address": {
-      "address_line_1": "111 Colorado Ave.",
-      "address_line_2": "Apt 403",
-      "city": "Des Moines",
-      "state": "IA",
-      "postal_code": "51111",
+      "address_line_1": "740 Douglas Road",
+      "address_line_2": "Suite 415",
+      "city": "Port Miguel",
+      "state": "WA",
+      "postal_code": "68848",
       "country": "US"
     },
     "fraud_decision": {
@@ -570,6 +576,16 @@ You should see a payment object similar to:
     "modified_at": "2024-06-30T01:02:29.212Z"
   }
   ```
+
+Additionally, if you open the portal and navigate to [Payments](https://portal.publicsquare.com/payments), you'll find the payment object listed. Click on it to view more details.
+
+<div style={{textAlign: 'center'}}>
+
+  <img style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} alt="Secret Key" src="/img/guides/merchants/payment-details.png" />
+
+</div>
+
+You can learn more about the `payment` object in the [API Reference](https://developers.publicsquare.com/api/financial/create-payment).
 
 ## Conclusion
 
