@@ -6070,10 +6070,10 @@ docusaurus-lunr-search@^3.5.0:
     unified "^9.0.0"
     unist-util-is "^4.0.2"
 
-docusaurus-plugin-openapi-docs@^4.2.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.3.0.tgz#1e5891c10194e3ce585d894e911c80e352f0ed77"
-  integrity sha512-IOxJzLfH8vhGvzQSd9TI99w2naD705r838gaa1/oDlmcaajXYtKePkk7YwcqjLLKgJ/roQcvQAK2qNX/sijQvQ==
+docusaurus-plugin-openapi-docs@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.3.1.tgz#8e0a440e3073050e6e29cf8783e61b5749c3b2b8"
+  integrity sha512-uVv/mipiQzgqHIhgnTmJmsBW3UuuAufmuyXeHzQR8PGovsjMOKJU6YVDTd8qHlkXQ09IdoBLKG0RUZ9daNxt0w==
   dependencies:
     "@apidevtools/json-schema-ref-parser" "^11.5.4"
     "@redocly/openapi-core" "^1.10.5"
@@ -9018,10 +9018,10 @@ marked@^13.0.2:
   resolved "https://registry.yarnpkg.com/marked/-/marked-13.0.3.tgz#5c5b4a5d0198060c7c9bc6ef9420a7fed30f822d"
   integrity sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==
 
-math-intrinsics@^1.0.2:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/math-intrinsics/-/math-intrinsics-1.0.0.tgz#4e04bf87c85aa51e90d078dac2252b4eb5260817"
-  integrity sha512-4MqMiKP90ybymYvsut0CH2g4XWbfLtmlCkXmtmdcDCxNB+mQcu1w/1+L/VD7vi/PSv7X2JYV7SCcR+jiPXnQtA==
+math-intrinsics@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/math-intrinsics/-/math-intrinsics-1.1.0.tgz#a0dd74be81e2aa5c2f27e65ce283605ee4e2b7f9"
+  integrity sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==
 
 md5.js@^1.3.4:
   version "1.3.5"
