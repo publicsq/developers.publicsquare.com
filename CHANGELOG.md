@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.16.0...v1.17.0) (2025-01-16)
+
+
+### Features
+
+* add settlement transactions, customer government identifier, and ability to cancel a refund ([5f90994](https://github.com/publicsq/developers.publicsquare.com/commit/5f90994186f1a44c9b51ab609788bc96143b4d08))
+
 # [1.16.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.15.0...v1.16.0) (2024-11-21)
 
 
