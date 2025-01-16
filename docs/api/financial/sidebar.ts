@@ -208,6 +208,12 @@ const sidebar: SidebarsConfig = {
           label: "Get all refunds for payment",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/cancels-a-refund",
+          label: "Cancels a refund",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -224,6 +230,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/financial/get-settlement-by-id",
           label: "Get settlement by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-transactions-for-a-settlement",
+          label: "Get all transactions for a settlement",
           className: "api-method get",
         },
       ],
