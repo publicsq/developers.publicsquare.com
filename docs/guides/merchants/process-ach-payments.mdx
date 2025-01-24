@@ -4,9 +4,9 @@ import TabItem from "@theme/TabItem";
 import { Alert } from "@site/src/components/shared/Alert";
 import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
 
-# Process Card Payments
+# Process ACH Payments
 
-Now that you have completed the [Collect Cards](/guides/merchants/collect-cards) guide, let's process a card payment with the newly captured card.
+Now that you have completed the [Collect Bank Accounts](/guides/merchants/collect-bank-accounts) guide, let's process an ACH payment with the newly captured bank account.
 
 ## Getting Started
 
@@ -18,7 +18,6 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
-
 ## Process the Payment
 
 We will need to use the information from the previously collected card to create a new payment.
@@ -28,16 +27,25 @@ For example, given you have a previously collected card:
 ```json showLineNumbers title=card.json
 {
   // highlight-next-line
-  "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+  "id": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "cardholder_name": "John Smith",
-  "last4": "4242",
-  "exp_month": "12",
-  "exp_year": "2025",
-  "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL",
+  "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+  "billing_details": {
+    "address_line_1": "111 Colorado Ave.",
+    "address_line_2": "Apt 403",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
   "created_at": "2024-06-30T01:02:29.212Z",
-  "modified_at": "2024-06-30T01:02:29.212Z"
+  "modified_at": "2024-06-30T01:02:29.212Z",
+  "account_holder_name": "John Doe",
+  "account_holder_type": "individual",
+  "account_type": "checking",
+  "routing_number": "110000000",
+  "account_number_last4": "1011"
 }
 ```
 
@@ -53,7 +61,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "paymentMethod": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "customer": {
     "first_name": "John",
@@ -86,7 +94,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "paymentMethod": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "customer": {
     "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
@@ -113,7 +121,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "paymentMethod": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "billing_details": {
     "address_line_1": "111 Test St.",
@@ -125,7 +133,7 @@ curl 'https://api.publicsquare.com/payments' \
 }'
 ```
 
-If you supplied the `billing_details` or [updated the card](/api/financial/update-card), then you can omit the `billing_details` section when processing the payment:
+If you supplied the `billing_details` or [updated the bank account](/api/financial/update-bank-account), then you can omit the `billing_details` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Customer"
 curl 'https://api.publicsquare.com/payments' \
@@ -137,7 +145,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "paymentMethod": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   }
 }'
 ```
@@ -157,13 +165,17 @@ Given the above examples, you should see a payment result similar to:
   "refunded": "false",
   "currency": "USD",
   "payment_method": {
-    "card": {
-      "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
-      "cardholder_name": "John Smith",
-      "last4": "4242",
-      "exp_month": "12",
-      "exp_year": "2025",
-      "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+    "bank_account": {
+      "id": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+      "account_holder_name": "John Doe",
+      "account_holder_type": "individual",
+      "account_type": "individual",
+      "routing_number": "123456789",
+      "account_number_last4": "1011"
+    },
+    "account_balance": {
+      "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+      "account_name": "Test Company, LLC"
     }
   },
   "customer": {
@@ -197,7 +209,7 @@ Given the above examples, you should see a payment result similar to:
 
 ## Conclusion
 
-Now that we have seen how to process payments with a collected card, we may need to manage the payment or view information about the payment.
+Now that we have seen how to process payments with a collected bank account, we may need to manage the payment or view information about the payment.
 Follow these guides to learn more:
 
 - [Issue a Refund](/guides/merchants/issue-refunds)
