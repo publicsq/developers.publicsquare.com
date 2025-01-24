@@ -182,6 +182,30 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Payouts",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-payouts",
+          label: "Get all payouts",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-payout",
+          label: "Create payout",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payout-by-id",
+          label: "Get payout by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Refunds",
       items: [
         {
