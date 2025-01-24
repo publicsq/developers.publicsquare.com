@@ -13,6 +13,7 @@ Test payment methods let you simulate several scenarios:
 * Successful payments by card brand
 * Card errors due to declines, fraud, or invalid data
 * Refunds
+* Payouts
 
 When you're ready to take your integration live, replace your `Test` publishable and secret API keys with `Production` ones. You can't process live payments if your integration is still using your test API keys.
 
@@ -40,6 +41,13 @@ The following card numbers can be used for testing your integration while in `Te
 | Insufficient Funds | `4000000000009995` | `declined`     |
 | Lost/Stolen        | `4000000000009987` | `declined`     |
 
+### Declined payouts
+
+| Decline Reason     | Number             | Payment Status |
+|--------------------|--------------------|----------------|
+| Decline            | `4000000000000002` | `declined`     |
+| Lost/Stolen        | `4000000000009987` | `declined`     |
+
 ### Declined payments during capture
 
 | Decline Reason                                      | Number             | Payment Status |
@@ -60,8 +68,9 @@ The following card numbers can be used for testing your integration while in `Te
 
 ## Bank Accounts
 
-The following bank accounts can be used for testing your integration while in `Test` environment. The payment status will initially be `pending`. After a short period of time, the payment status will be updated and
-a `payment:update` [Webhook](/concepts/webhooks) will be sent with the payment in the `entity` of the payload.
+The following bank accounts can be used for testing your integration while in `Test` environment. The payment/payment status will initially be `pending`. For payments, after a short period of time, the payment status will be updated and
+a `payment:update` [Webhook](/concepts/webhooks) will be sent with the payment in the `entity` of the payload. For payouts, the payout status will be updated and
+a `payout:update` [Webhook](/concepts/webhooks) will be sent with the payout in the `entity` of the payload.
 
 | Routing     | Number         | Payment Status | Decline Reason                 |
 |-------------|----------------|----------------|--------------------------------|
