@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.17.0...v1.18.0) (2025-01-24)
+
+
+### Features
+
+* add payout docs ([a301d56](https://github.com/publicsq/developers.publicsquare.com/commit/a301d5692f8aa907db4f6c25c872962148f972bc))
+
 # [1.17.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.16.0...v1.17.0) (2025-01-16)
 
 
