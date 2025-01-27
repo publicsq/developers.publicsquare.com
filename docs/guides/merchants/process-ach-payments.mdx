@@ -20,11 +20,11 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 ## Process the Payment
 
-We will need to use the information from the previously collected card to create a new payment.
+We will need to use the information from the previously collected bank account to create a new payment.
 
-For example, given you have a previously collected card:
+For example, given you have a previously collected bank account:
 
-```json showLineNumbers title=card.json
+```json showLineNumbers title=bankAccount.json
 {
   // highlight-next-line
   "id": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
@@ -109,7 +109,7 @@ curl 'https://api.publicsquare.com/payments' \
 }'
 ```
 
-If you [attached the card to a customer](/api/financial/attach-card-to-customer), then you can omit the `customer` section when processing the payment:
+If you [attached the bank account to a customer](/api/financial/attach-bank-account-to-customer), then you can omit the `customer` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Customer"
 curl 'https://api.publicsquare.com/payments' \
@@ -157,7 +157,7 @@ Given the above examples, you should see a payment result similar to:
   "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "pending",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "amount": "1000",
   "amount_charged": "1000",
@@ -172,10 +172,6 @@ Given the above examples, you should see a payment result similar to:
       "account_type": "individual",
       "routing_number": "123456789",
       "account_number_last4": "1011"
-    },
-    "account_balance": {
-      "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-      "account_name": "Test Company, LLC"
     }
   },
   "customer": {

@@ -99,11 +99,11 @@ export default function App() {
   </TabItem>
 </Tabs>
 
-## Storing Cards
+## Storing Bank Accounts
 
-Now that you are cardholder data in your web application, it is time to store the card in your account.
+Now that you are capturing bank account data in your web application, it is time to store the bank account in your account.
 
-To do this, we will call the `create card` method from the SDK, passing the Card Elements as data points in the payload.
+To do this, we will call the `create bank account` method from the SDK, passing the Bank Account Elements as data points in the payload.
 
 Add a submit function along with a button to trigger it:
 
@@ -153,7 +153,7 @@ async function handleSubmit(e) {
 
 The created `bank account` object contains the non-sensitive information about the bank account:
 
-```json showLineNumbers title=card.json
+```json showLineNumbers title=bankAccount.json
 {
   "id": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
@@ -183,4 +183,4 @@ You can optionally pass in a `customer_id` to associate with an existing [Create
 
 ## Conclusion
 
-Following this guide, you have successfully collected a customer's bank account. To use this bank account, proceed with the [Process Payments](/guides/merchants/process-payments) guide.
+Following this guide, you have successfully collected a customer's bank account. To use this bank account, proceed with the [Process ACH Payments](/guides/merchants/process-ach-payments) guide.
