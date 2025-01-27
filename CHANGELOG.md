@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.18.0...v1.19.0) (2025-01-27)
+
+
+### Features
+
+* new doc, style fixes, wording fixes, link fixes ([#79](https://github.com/publicsq/developers.publicsquare.com/issues/79)) ([d624dc7](https://github.com/publicsq/developers.publicsquare.com/commit/d624dc7cb4dac16721b03a4d7155843759bf045a))
+
 # [1.18.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.17.0...v1.18.0) (2025-01-24)
 
 
