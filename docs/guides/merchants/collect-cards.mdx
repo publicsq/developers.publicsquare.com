@@ -141,7 +141,7 @@ export default function App() {
 
 ## Storing Cards
 
-Now that you are cardholder data in your web application, it is time to store the card in your account.
+Now that you are capturing cardholder data in your web application, it is time to store the card in your account.
 
 To do this, we will call the `create card` method from the SDK, passing the Card Elements as data points in the payload.
 
@@ -194,9 +194,12 @@ export default function App() {
   // highlight-start
   const submit = async () => {
     try {
-      const card = await publicsquare?.cards.create({
-        cardholder_name: cardholderNameRef.current,
+      const card = await publicsquare.cards.create({
+        // This can be any string text from the dom
+        cardholder_name: cardholderNameRef.current.el.value,
         card: {
+          // cardNumberRef.current is the CardNumberElement instance that will be decrypted within the secure
+          // iFrame on the DOM so that the client never sees the card information.
           number: cardNumberRef.current,
           expiration_month: cardExpirationRef.current.month(),
           expiration_year: cardExpirationRef.current.year(),
