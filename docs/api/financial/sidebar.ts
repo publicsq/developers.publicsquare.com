@@ -280,6 +280,12 @@ const sidebar: SidebarsConfig = {
           label: "Get transaction by ID",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/export-transactions",
+          label: "Export transactions",
+          className: "api-method get",
+        },
       ],
     },
   ],

@@ -1,0 +1,75 @@
+---
+id: export-transactions
+title: "Export transactions"
+description: "    Export a list of transactions for the Account."
+sidebar_label: "Export transactions"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1v20YM/isH5sOAQYlf4haDvrlI0hnBNmNNgQWtkZ51tH2NdKfcUVk8Q/99oGTZcuy4cjsMCOAviV545POQj5iQCyA59RB+ghsnjZcRaWs8jAJQ6COnU76HEIQQ4vIptY6EFLH2JOxEUO2ImFgnaIaiH0U2M3T22Xw2fOrk5EQM0SXae7YrH/4svtQOhw6l+gIB2BSd5CcDBSEs49WjQACpdDJBQseoF2BkghCCJ+noThEEoBnvQ4ZuDs9ZDEwUZ14/oijshZKEgqyY6JjQCYeRdcqLMZ/00QwTCeECaJ6WIZw20x/yiU8ySWN21m13e6ftN6fn7ZtON+z0wjdvIc+DFR806ptsLp+qyGjUf8KluUeTxbEcMxVyGW4ze3va7t10fgm73bDX2WDmSVLm9zO7KiOO5/Xii/Ik+l2EpHOS/WjCxG8TzQ+O8DJBn0URokK1SQuJYkzQ0J1WDVSocPfns/YjBheHyrCp0xfJ8W2dVUWgUa2q900hb598OelpQnfd22v8+50173s0ve90f5vh7flQ/3oxhzwfBeDQp9Zw9cIFdNtt/rUZ8I9rCCCyhtBQAQ+fqBX5R75+GfTEukQShDDWRjoOFoBM01hHRatqffXs/DAP7KO3C+I7qcSf+JChpwOw2vFXjPhA6riFksbaN7CNZzPNeQCkKW5mufx616baEE7R1VlqQ+fdXYcVktRxozjaeJImagKKy6GU5gTKeFhPwJoZDJ0dx5hcFAh88xoeM3twZkttd7a1/dHIjGbW6X9QHcV9FPdrzGwp7vNtcV9ZN9ZKoTkq+6js15jZUtm9bWX/bklc2cwce/ZR2a8ys4W0PUaZ0zQvlgb9VF8jX8LzLQSMeJRIkGaWVxBTLFItaQYhtOqzVQuL7QSPO+geq21E5mIIYUaU+rDVkqk+S7NxrCP/kEmHZ5FNgP1XYD5wdcsCVpDWE2354PnQ1F/+C1XIhGen/nAgrnEutPFaoXDl8PCTF3+d9oeD0+vLWzFDqYq6Lae61Ztqslsa5EU1JrZAUWWzwP+hwC+Gcs5DpOegEADTLlE9dnjETq2nRBa6XUbavcLZYLRYN5X/acu0THDRwNJYasPYi8otlqXe0IUvFjdFsUcBzKwnNlgsxtLjRxfnOT8uJ1iWgNKeFasgnMjY4x62h2yOdmK+Z8HUV1+PMs7YDHiEbw6k+dpnD4zVxuo7QXxzI7M/BeVO6TtjH7Q82Yfj2RLoh1NRLUb2xKxM1rFGfON02Tc/jfKg+r5ZnuWhfhRhWi/W6q/5Rvt7f3kDAfDUttmY7ovGtLxgr9UrU0dSbzNlWP7JqdhpvliULS/PV/blqxdPrPpaac1ZGeV5/i+MiOY+
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export transactions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/transactions/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Export a list of transactions for the Account.
+
+    ### Permissions
+    * `transaction:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"start_dt","in":"query","description":"Inclusive start date to filter records by","schema":{"type":"string","description":"Inclusive start date to filter records by","example":"2024-05-30T12:14:56"}},{"name":"end_dt","in":"query","description":"Exclusive end date to filter records by","schema":{"type":"string","description":"Exclusive end date to filter records by","nullable":true,"example":"2024-06-04T18:22:41"}},{"name":"status","in":"query","description":"Filter by transaction statuses","schema":{"type":"array","items":{"type":"string"},"description":"Filter by transaction statuses","nullable":true,"example":"succeeded"}},{"name":"settlement_id","in":"query","description":"Include transactions for the settlement ID","schema":{"type":"string","description":"Include transactions for the settlement ID","nullable":true,"example":true}},{"name":"query","in":"query","description":"Filter by query","schema":{"type":"string","description":"Filter by query","nullable":true,"example":"pmt_2YKewBonG4tgk12MheY3PiHDy"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string","format":"binary"}},"application/json":{"schema":{"type":"string","format":"binary"}}}},"400":{"description":"Bad Request","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
