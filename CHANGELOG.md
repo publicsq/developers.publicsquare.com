@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.19.0...v1.20.0) (2025-02-02)
+
+
+### Features
+
+* add export transactions endpoint ([783622c](https://github.com/publicsq/developers.publicsquare.com/commit/783622cb9b6bd9e1d2223c67bbeee1828bd44110))
+
 # [1.19.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.18.0...v1.19.0) (2025-01-27)
 
 
