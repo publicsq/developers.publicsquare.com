@@ -34,8 +34,8 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.83.4",
-    "semver": "^7.7.0",
+    "sass": "^1.84.0",
+    "semver": "^7.7.1",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "@docusaurus/types": "^3.7.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/exec": "^7.0.2",
+    "@semantic-release/exec": "^7.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.1",
     "@semantic-release/release-notes-generator": "^14.0.3",

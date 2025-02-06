@@ -21,7 +21,7 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
      {
        type: "category",
        label: "Merchants",
-       items: ["guides/merchants/quick-start", "guides/merchants/collect-cards", "guides/merchants/process-payments", "guides/merchants/collect-bank-accounts", "guides/merchants/process-ach-payments", "guides/merchants/issue-refunds", "guides/merchants/view-transactions"],
+       items: ["guides/merchants/quick-start", "guides/merchants/collect-cards", "guides/merchants/process-payments", "guides/merchants/collect-bank-accounts", "guides/merchants/process-ach-payments", "guides/merchants/issue-refunds", "guides/merchants/capture-payments", "guides/merchants/view-transactions", "guides/merchants/transaction-statuses"],
      },
      {
        type: "category",
@@ -35,7 +35,7 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
      {
        type: "category",
        label: "Concepts",
-       items: ["concepts/accounts", "concepts/connections", "concepts/webhooks"],
+       items: ["concepts/accounts", "concepts/connections", "concepts/refunds", "concepts/webhooks"],
      },
      {
        type: "html",
