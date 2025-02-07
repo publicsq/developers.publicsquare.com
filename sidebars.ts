@@ -134,6 +134,10 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
            id: "plugins/woocommerce-payments/index",
            type: "doc",
          },
+         {
+           id: "plugins/shopify-payments/index",
+           type: "doc",
+         },
        ],
      },
      {
