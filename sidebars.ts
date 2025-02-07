@@ -29,6 +29,10 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
        items: ["guides/marketplaces/onboard-sellers"],
      },
      {
+       id: "fraud-prevention",
+       type: "doc",
+     },
+     {
        type: "html",
        value: "<hr />",
      },
