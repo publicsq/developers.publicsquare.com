@@ -1,0 +1,92 @@
+---
+title: Shopify Payments
+sidebar_label: Shopify Payments
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Image from "@theme/IdealImage";
+import { Alert, Alerts } from "@site/src/components/shared/Alert";
+import { GithubCard } from "@site/src/components/sdks/GithubCard";
+import { SDK } from "@site/src/components/types";
+import AppDashboardImage from "@site/static/img/plugins/shopify/app_dashboard.png";
+import PaymentMethodSettingsImage from "@site/static/img/plugins/shopify/payment_method_settings.png";
+import CardFormImage from "@site/static/img/plugins/shopify/card_form.png";
+import RefundImage from "@site/static/img/plugins/shopify/refund.png";
+import PartialRefundImage from "@site/static/img/plugins/shopify/partial_refund.png";
+
+# Shopify Payments Plugin
+
+This document outlines the steps to install, configure, and test the PublicSquare Payments Shopify app. It includes details on accessing the PublicSquare Payments Portal, retrieving API keys, and enabling the payment provider in Shopify.
+
+## Before You Begin
+
+This SDK requires the use of a Publishable and Secret API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and `Secret Key` and copy the values. You will need these keys in this guide to complete installation.
+
+If you have not yet created an account, [schedule a demo](https://payments.publicsquare.com/#demo) with our team to get started.
+
+## Installation
+
+This document outlines the steps to install, configure, and test the PublicSquare Payments Shopify app. It includes details on accessing the PublicSquare Payments Portal, retrieving API keys, and enabling the payment provider in Shopify.
+
+## Step 1: Install the PublicSquare Payments App
+
+1. Navigate to the Shopify App Store and search for "PublicSquare Payments".
+2. Click on the "PublicSquare Payments" app and click "Install".
+3. Follow the instructions to install the app.
+
+## Step 2: Configure the App
+
+<Image img={AppDashboardImage} alt="App Dashboard" />
+
+1. Once the app is installed, you will be redirected to the app dashboard within your Shopify admin.
+2. Copy and paste your `Publishable Key` and `Secret Key` from the PublicSquare Portal developers page into the `Publishable Key` and `Secret Key` fields.
+3. Click on the "Update Keys" button to save your API keys.
+
+## Step 3: Enable the Payment Provider
+
+<Image img={PaymentMethodSettingsImage} alt="Payment Method Settings" />
+
+1. Once you have added your API keys and clicked "Update Keys", you will be redirected to the payment settings page to activate the payment method.
+2. (Optional) Enable test mode to test the payment method before going live.
+3. Click on the "Activate" button to activate the payment method.
+
+## Step 4: Test the Payment Method
+
+1. Navigate to the frontend of your Shopify test store.
+2. Add a product to the cart.
+3. Proceed to checkout.
+4. (Test mode only) Complete the payment using the following test card credentials:
+    - Card Number: 4242 4242 4242 4242
+    - Expiration Date: Any future date
+    - CVV: Any three-digit number
+
+<Image img={CardFormImage} alt="Card Form" />
+
+5. Ensure the order is successfully processed.
+
+<Alert>
+**Test cards for PublicSquare Payments**
+
+Available test cards: https://developers.publicsquare.com/api/testing#cards
+
+Use the test card details provided in the PublicSquare Developers docs to simulate successful and failed transactions.
+</Alert>
+
+## Step 5: Test Refunds
+
+1.	**Log in** to Shopify Admin and navigate to **Orders**.
+2.	**Select the order** to refund.
+3.	Click **“Refund”** at the top right.
+
+### Full refunds
+
+Ensure full item quantity is selected. The Refund Amount field should auto-fill with the full order amount.
+
+<Image img={RefundImage} alt="Refund" />
+
+### Partial refunds
+
+Select the item quantity to refund. The Refund Amount field should auto-fill with the full order amount. Adjust the refund amount to a value less than the full order amount.
+
+<Image img={PartialRefundImage} alt="Partial Refund" />

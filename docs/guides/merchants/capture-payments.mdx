@@ -1,0 +1,140 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Image from "@theme/IdealImage";
+
+import { Alert } from "@site/src/components/shared/Alert";
+import FAQ from "@site/src/components/shared/FAQ";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+import ConfigureElementsSection from "@site/src/components/docs/_configure-elements-section.mdx";
+import LoginImage from "@site/static/img/guides/merchants/login.png";
+import TransactionsImage from "@site/static/img/guides/merchants/sidenav_transactions.png";
+import TransactionsFiltersImage from "@site/static/img/guides/merchants/transactions_filters.png"
+import PaymentDetailsImage from "@site/static/img/guides/merchants/transaction_row.png"
+import PaymentCanceledImage from "@site/static/img/guides/merchants/payment_canceled.png"
+import CapturePaymentImage from "@site/static/img/guides/merchants/payment_capture_button.png"
+import CapturePaymentSuccessImage from "@site/static/img/guides/merchants/payment_capture_success.png"
+
+# Capture Payments
+
+This guide outlines the steps to capture a payment in the PSQ Payment Portal for transactions set to `requires_capture`. Merchants can use this functionality to manage payments that are authorized but not yet settled. This is particularly useful for fraud review scenarios or cases where orders were not successfully created.
+
+## Steps to Capture a Payment
+
+### 1. Navigate to the PSQ Portal
+
+Go to the [PSQ Payment Portal](https://portal.publicsquare.com/payments) and log in with your credentials.
+
+<Image img={LoginImage} alt="PSQ Payment Portal Login" style={{ width: 512, margin: "0 auto" }} />
+
+### 2. Access Transactions or Payments
+
+Click on the [Transactions](https://portal.publicsquare.com/transactions), [Payments](https://portal.publicsquare.com/payments) or [Fraud Review](https://portal.publicsquare.com/payments/fraud-review) tabs to view the list of transactions or payments.
+
+<Image img={TransactionsImage} alt="PSQ Payment Portal Login" style={{ width: 400, margin: "0 auto" }} />
+
+### 3. Search for the Payment
+
+Use the search bar to find transaction.
+
+<Image img={TransactionsFiltersImage} alt="PSQ Payment Portal Login" style={{ margin: "0 auto" }} />
+
+*You can search by:*
+
+- Name
+- Email
+- Payment ID (e.g. `pmt_1234567890`)
+- Transaction ID (e.g. `tx_1234567890`)
+
+*You can also filter the results by:*
+
+- Start date
+- End date
+- Status
+
+### 4. View Payment Details
+
+Once the transaction is found, click **View Payment** to view the payment details.
+
+<Image img={PaymentDetailsImage} alt="PSQ Payment Portal Login" style={{ margin: "0 auto" }} />
+
+*Review the transaction information, including:*
+
+- Name and email
+- Billing details
+- Shipping address
+- Fraud review status
+
+### 5. Assess the Payment
+
+<Alert>
+  <p><strong>Important note</strong></p>
+  <p>Payments may enter the system without a corresponding eCommerce platform order if the order creation failed.</p>
+  <p>In such cases, you should cancel the payment, or the authorization will automatically expire based on the customer’s bank or credit card company settings.</p>
+</Alert>
+
+If an order is canceled in the eCommerce platform, the portal will automatically update the payment status to canceled. The payment will not be able to be captured.
+
+<Image img={PaymentCanceledImage} alt="PSQ Payment Portal Login" style={{ margin: "0 auto" }} />
+
+### 6. Capture the Payment
+
+If the payment and associated order details check out and has a status of `requires_capture`, you can proceed to capture the payment.
+
+Click the **Capture Payment** button in the top-right corner of the payment details page.
+
+<Image img={CapturePaymentImage} alt="PSQ Payment Portal Login" style={{ margin: "0 auto" }} />
+
+*This will:*
+
+1. Capture the authorized funds from the payment.
+2. Update the payment status to `captured`.
+3. Notify the bank to settle the funds in the next settlement batch.
+
+<Image img={CapturePaymentSuccessImage} alt="PSQ Payment Portal Login" style={{ margin: "0 auto" }} />
+
+## Additional notes
+
+1. **Fraud review**
+    - Payments flagged for fraud review will remain authorized until the merchant captures or cancels them.
+    - Always review the fraud status and associated order details before taking any action.
+
+2. **Automatic authorization expiry**
+    - If no action is taken, the authorization will automatically expire based on the customer’s bank or credit card company policies.
+
+3. **Order cancelation**
+    - If an order is canceled in the eCommerce platform, the portal will update the payment status to `canceled` automatically.
+
+<FAQ faqs={[{
+  question: 'What happens if I capture a payment for an invalid order?',
+  answer: 'Capturing a payment for an invalid order could result in refund or dispute scenarios. Always verify order and payment details before capturing.'
+}, {
+  question: 'Can I bulk capture or cancel payments?',
+  answer: 'Currently, capturing and canceling payments must be done individually. Contact support if bulk functionality is required.'
+}, {
+  question: 'How do I know if a payment has succeeded?',
+  answer: 'After capturing, the payment status will update to succeeded, and the funds will be reflected in the bank system.'
+}, {
+  question: 'Can I capture a partial amount instead of the full payment?',
+  answer: 'Yes, you can capture a partial amount for most transactions, <strong>but partial captures are not supported for AMEX (American Express) transactions.</strong> For AMEX, you must capture the full authorized amount or cancel the authorization.'
+}, {
+  question: 'What should I do if the Capture Payment button is not visible?',
+  answer: 'Ensure the payment status is `requires_capture`. If the status is different or the button is missing, verify the transaction details and contact PublicSquare Support for assistance.'
+}, {
+  question: 'What happens if I cancel a payment after capturing it?',
+  answer: 'Payments cannot be canceled after being captured. If a mistake was made, you will need to process a refund through the PSQ Portal or your eCommerce platform.'
+}, {
+  question: 'Can I capture a payment flagged for fraud review?',
+  answer: 'Yes, but you should review the fraud details and ensure the order is legitimate before capturing the payment. If in doubt, cancel the payment to avoid potential disputes or chargebacks.'
+}, {
+  question: 'How do I know when an authorization will expire?',
+  answer: 'Authorization expiration times vary by bank or card issuer, typically ranging from 7–10 days.'
+}, {
+  question: 'What should I do if I miss the authorization window?',
+  answer: 'If the authorization expires, the payment will no longer be valid. You’ll need to ask the customer to complete the transaction again.'
+}, {
+  question: 'Can I track changes to payment statuses?',
+  answer: 'Yes, the PSQ Portal provides a transaction history log, showing all status updates, including captures, cancellations, and fraud review actions.'
+}, {
+  question: 'Who should I contact if I encounter technical issues?',
+  answer: 'If you experience any issues with capturing or canceling payments, contact PublicSquare Support for assistance. Provide the payment ID and a description of the issue for faster resolution.'
+}]} />

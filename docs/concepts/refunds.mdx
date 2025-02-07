@@ -1,0 +1,157 @@
+import { Alert } from "@site/src/components/shared/Alert";
+import FAQ from "@site/src/components/shared/FAQ";
+
+# Refunds
+
+This document explains the refund process for merchants using PublicSquare Payments and highlights factors that may cause delays for customers receiving their refunds. Merchants are encouraged to process refunds through their eCommerce platform whenever possible to ensure system synchronization, though refunds can also be managed through the PSQ Portal for full or partial refunds.
+
+## Refund Process Overview
+
+### 1. Payment Authorization and Settlement
+
+-	When a customer initiates a payment, the amount is authorized by the customer’s bank.
+-	Once the order is confirmed, the payment is settled and credited to the merchant’s account.
+
+### 2. Refund Initiation
+
+-	Refunds can be issued in two ways:
+  -	**Through the eCommerce platform:** Preferred for ensuring synchronization between systems and accurate reporting.
+  - **Via the PSQ Portal:** Allows merchants to process full or partial refunds directly, even if initiated outside the eCommerce platform.
+-	The refund request is transmitted to the payment processor, which then communicates with the customer’s bank or credit card issuer.
+
+### 3. Refund Processing and Completion
+
+-	The payment processor ensures that the refund is debited from the merchant’s account and credited to the customer’s account.
+-	The status of the refund (e.g., refunded or partially refunded) is updated in the PSQ Portal.
+
+## Common reasons for refund delays
+
+### 1. Bank processing times
+
+-	Refunds typically take 5–7 business days to be processed and reflected in the customer’s account.
+
+| Day             | Step                                        | Action taken                                        |
+|-----------------|---------------------------------------------|-----------------------------------------------------|
+| Day 0 (Monday)  | Refund initiated by merchant                | Refund request sent to the payment processor.       |
+| Day 1 (Tuesday) | Processor communicates with the bank/issuer | Refund request validated by the payment processor.  |
+| Day 3 (Thursday)| Bank begins processing the refund           | Refund enters the customer's account system.        |
+| Day 5 (Saturday)| Refund appears in the customer's account    | Customer sees the refund as a pending transaction.  |
+| Day 7 (Monday)  | Refund is fully posted to the account       | Customer confirms receipt of the refund.            |
+
+Delays may occur if:
+
+- The customer's bank has slower processing cycles.
+- Refunds are queued and processed in batches, especially over weekends and holidays.
+
+### 2. Temporary holds by banks
+
+Some banks temporarily hold refunded amounts before posting them to the customer's account.
+
+These holds are often due to internal bank reviews or account-specific policies.
+
+### 3. Credit card-specific delays
+
+Refunds to credit cards may take longer due to additional verification steps, including:
+
+-	Reconciling the refund with the original transaction.
+-	Processing delays on the part of the credit card issuer.
+-	Debit card refunds, though typically faster, may also experience delays if funds need to be transferred between accounts.
+
+### 4. High-value refunds
+
+- Large refunds may be flagged for additional validation, either by the payment processor or the customer’s bank, leading to extended processing times.
+
+## Next steps for merchants
+
+### 1. Verify the refund in your system
+
+-	Confirm that the refund was successfully processed through the PSQ Portal or eCommerce platform.
+-	Check the transaction status (e.g., refunded or partially refunded) and note the refund date.
+
+### 2. Advise the Customer to Check Their Account
+
+-	Ask the customer to review their card or bank statement, including pending transactions.
+-	Share the following details to help the customer locate the refund:
+  -	**Refund Amount:** The exact amount refunded.
+  -	**Refund Date:** The date the refund was processed.
+  -	**Merchant Name:** The name as it appears on the customer’s statement.
+  -	**Order Number:** For easy reference with their bank.
+
+### 3. Suggest Contacting the Issuing Bank
+
+-	If the refund is not visible after the expected processing time, the customer should contact their bank or card issuer.
+-	They can provide the details listed above to help locate the refund in the bank’s system.
+
+### 4. Seek Support Assistance
+
+-	If the bank cannot locate the refund, contact PublicSquare Support with the refund transaction ID or other relevant details.
+-	The support team can verify the refund with the payment processor and provide additional documentation if needed.
+
+**Additional Tips for Communicating with Customers**
+
+-	Set Expectations: Let customers know that refunds can take 5–7 business days to appear, depending on their bank or card issuer.
+-	Provide Transparency: Share refund confirmation details promptly to build trust.
+-	Monitor High-Value Refunds: For larger refunds, proactively communicate with customers about possible additional processing times.
+
+## Real-World Examples of Refund Delays
+
+### Example 1: Credit Card-Specific Delay
+
+**Scenario:**
+
+-	A customer requests a refund of $4,000, which is processed successfully on 1/9/2025.
+-	The customer uses a credit card, and the issuer flags the refund for review due to its high amount.
+-	The issuer reconciles the refund with the original transaction and credits the customer’s account after 9 business days.
+
+**Key Insight:**
+
+Large refunds often trigger additional review steps, leading to extended processing times. Merchants should advise customers to contact their card issuer if delays occur.
+
+### Example 2: Bank Posting Delay
+
+**Scenario:**
+
+-	A merchant issues a $500 refund via the PSQ Portal on a Friday afternoon.
+-	The customer’s bank processes refunds in daily batches, excluding weekends and holidays.
+-	The refund appears in the customer’s account the following Wednesday, taking 5 calendar days.
+
+**Key Insight:**
+
+Batch processing by banks or processing over weekends/holidays can delay refund posting.
+
+### Example 3: Closed Account or Expired Card
+
+**Scenario:**
+
+-	A customer requests a refund of $200 to a debit card that has since expired.
+-	The bank reroutes the refund to the customer’s new card or account, but the process adds a 7-day delay.
+
+**Key Insight:**
+
+Closed accounts or expired cards require the bank to reroute funds, often causing noticeable delays for the customer.
+
+<FAQ faqs={[{
+  question: 'Why should refunds be processed through the eCommerce platform?',
+  answer: 'Processing refunds through the eCommerce platform ensures that all systems (e.g., order management and financial records) stay synchronized, reducing errors or discrepancies.'
+}, {
+  question: 'How long does it take for a refund to process?',
+  answer: 'Refunds typically take <strong>5–7 business days</strong> to appear in the customer’s account. However, depending on the customer’s bank or card issuer, this timeline may vary.'
+}, {
+  question: 'Why might a refund take longer than expected?',
+  answer: 'Delays can occur due to bank-specific processing times, temporary holds by the customer’s bank, additional validation for high-value refunds, weekends or holidays delaying batch processing.'
+}, {
+  question: 'What should I do if a customer doesn’t see their refund after 7 business days?',
+  answer: '<ol><li>Confirm that the refund was successfully processed in the PSQ Portal or eCommerce platform.</li><li>Advise the customer to contact their bank with refund details, including the transaction amount, refund date, and order number.</li><li>If the bank cannot locate the refund, contact PublicSquare Support for further investigation.</li></ol>'
+}, {
+  question: 'Can partial refunds be issued through the PSQ Portal?',
+  answer: 'Yes, partial refunds can be processed through the PSQ Portal. Merchants can specify the refund amount, and the transaction status will update to <strong>Partially Refunded</strong>.'
+}, {
+  question: 'Are refunds processed differently for credit and debit cards?',
+  answer: '<strong>Credit card</strong> refunds often take longer due to additional reconciliation steps by the card issuer. <strong>Debit card</strong> refunds are typically faster but may be delayed if funds are held temporarily by the bank.'
+}, {
+  question: 'Can a Refund Be Canceled?',
+  answer: 'Yes, a refund can be canceled <strong>if it has not yet been fully processed by the payment processor</strong>. The cancellation must occur before the refund moves to the settlement stage. This requires quick action to ensure the refund does not complete.'
+}, {
+  question: 'What happens if the customer closes their account or card?',
+  answer: 'If the refund is issued to a closed account or card, most banks will reroute the funds to the customer’s new account or issue a check. The customer should contact their bank for assistance.'
+}]} />
