@@ -21,12 +21,16 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
      {
        type: "category",
        label: "Merchants",
-       items: ["guides/merchants/quick-start", "guides/merchants/collect-cards", "guides/merchants/process-payments", "guides/merchants/collect-bank-accounts", "guides/merchants/process-ach-payments", "guides/merchants/issue-refunds", "guides/merchants/view-transactions"],
+       items: ["guides/merchants/quick-start", "guides/merchants/collect-cards", "guides/merchants/process-payments", "guides/merchants/collect-bank-accounts", "guides/merchants/process-ach-payments", "guides/merchants/issue-refunds", "guides/merchants/capture-payments", "guides/merchants/view-transactions", "guides/merchants/transaction-statuses"],
      },
      {
        type: "category",
        label: "Marketplaces",
        items: ["guides/marketplaces/onboard-sellers"],
+     },
+     {
+       id: "fraud-prevention",
+       type: "doc",
      },
      {
        type: "html",
@@ -35,7 +39,7 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
      {
        type: "category",
        label: "Concepts",
-       items: ["concepts/accounts", "concepts/connections", "concepts/webhooks"],
+       items: ["concepts/accounts", "concepts/connections", "concepts/refunds", "concepts/webhooks"],
      },
      {
        type: "html",
@@ -128,6 +132,10 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
          },
          {
            id: "plugins/woocommerce-payments/index",
+           type: "doc",
+         },
+         {
+           id: "plugins/shopify-payments/index",
            type: "doc",
          },
        ],
