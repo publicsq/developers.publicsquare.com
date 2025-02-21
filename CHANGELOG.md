@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.20.0...v1.21.0) (2025-02-19)
+
+
+### Features
+
+* add cancel payout endpoint ([c520df4](https://github.com/publicsq/developers.publicsquare.com/commit/c520df47bce60087988415c946a00f36f32b5790))
+
 # [1.20.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.19.0...v1.20.0) (2025-02-02)
 
 

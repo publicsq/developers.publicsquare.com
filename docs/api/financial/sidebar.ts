@@ -202,6 +202,18 @@ const sidebar: SidebarsConfig = {
           label: "Get payout by ID",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payouts-for-a-customer",
+          label: "Get all payouts for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/cancels-a-payout",
+          label: "Cancels a payout",
+          className: "api-method post",
+        },
       ],
     },
     {
