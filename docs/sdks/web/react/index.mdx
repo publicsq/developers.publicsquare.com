@@ -50,7 +50,7 @@ yarn add @publicsquare/elements-react
   </TabItem>
 </Tabs>
 
-<Alert>You don't need to install <code>@publicsquare/elements-js</code> separately when using our React package, unless you need to direct import a capability from it.</Alert>
+<Alert>You don't need to install <code>@publicsquare/elements-js</code> separately when using our React package. Types are available via the <code>@publicsquare/elements-react/types</code> module.</Alert>
 
 ## Initialization
 
@@ -63,9 +63,9 @@ import {
   PublicSquareProvider,
   TextElement,
   usePublicSquare,
-} from "@publicsquare/publicsquare-react";
+} from "@publicsquare/elements-react";
 
-const App = () => {
+export default function App() {
   return (
     <PublicSquareProvider apiKey={apiKey}>
       <MyComponent />
@@ -94,9 +94,18 @@ const MyComponent = () => {
 ```javascript showLineNumbers
 import { useRef } from "react";
 import {
+  PublicSquareProvider,
   CardElement,
   usePublicSquare,
-} from "@publicsquare/publicsquare-react";
+} from "@publicsquare/elements-react";
+
+export default function App() {
+  return (
+    <PublicSquareProvider apiKey={apiKey}>
+      <MyComponent />
+    </PublicSquareProvider>
+  );
+};
 
 const MyForm = () => {
   const { publicsquare } = usePublicSquare();
@@ -116,7 +125,7 @@ const MyForm = () => {
   };
 
   return (
-    <PublicSquareProvider apiKey={apiKey}>
+    <>
       <CardEleemnt
         id="card"
         ref={cardRef}
@@ -126,7 +135,7 @@ const MyForm = () => {
           Submit
         </button>
       </div>
-    </PublicSquareProvider>
+    </>
   );
 };
 ```
@@ -135,13 +144,13 @@ When using Typescript, you can type-cast the element `ref` to safely to a specif
 
 ```javascript showLineNumbers
 import { useRef } from "react";
-import type { CardExpirationDateElement } from "@publicsquare/publicsquare-react/types";
+import type { CardExpirationDateElement } from "@publicsquare/elements-react/types";
 
 const expirationDateRef = useRef(null);
 
 expirationDateRef.current.month(); // Error TS2551: property doesn't exist
 
-const expirationDateRef = useRef < CardExpirationDateElement > null;
+const expirationDateRef = useRef<CardExpirationDateElement>(null);
 
 expirationDateRef.current.month(); // no error
 ```
