@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.22.0...v1.23.0) (2025-03-03)
+
+
+### Features
+
+* add device information to payments, payouts, and refunds ([a47e4d3](https://github.com/publicsq/developers.publicsquare.com/commit/a47e4d3c3bd34ac1a5087caf0267a9157bf57c1c))
+
 # [1.22.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.21.0...v1.22.0) (2025-02-22)
 
 
