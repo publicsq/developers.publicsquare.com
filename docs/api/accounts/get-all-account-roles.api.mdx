@@ -1,0 +1,64 @@
+---
+id: get-all-account-roles
+title: "Get all account roles"
+description: "Get a list of account roles."
+sidebar_label: "Get all account roles"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v4jAQ/SvRXPbiln6dcmPVD1VIW9RuV7tCHEwygFvHTu0JWzbyf1+Nk1BYQK1WVU/lAJb9Mm/mvQmeGkjOPKQjuLUaPYwF5Ogzp0pS1kAKV0iJTLTylNhpIrPMVoYSx+BDEGBLdJKh13kH1noTBgIc+tIajx7SGk6Ojvhnk+ZmAAIyawgN8aksS62yGLn34BlSg8/mWEhe0bJESEE6J5cgQBEWfm3fTh4wIxBQOs6PVEO8kLrCNZgnp8wM/q243ybPgoAAU2ktJxohJVehAHyWRakjzW+DDoIAI4v3jHvTxA0CZJ4rflrq4VolU6k9CiBFER7jBf4IONul7VeZJ7f4VKGn/xB5j5jonHU7Rd+d9KumtapxFZvSBNFCtgXeBjaavAHpSVK1zq8M4QwdCJhaV0hqtk5Pdj2cI0ml38SjjCdpsrcktdfw+qUy+CG1yqNlQ2cnGovzmIuHrgGOtxvg3siK5tapP5i/Xwd8mrIyZY8Vp9tWXFo3UXmO5tOHj/PhbNuHb5aSS1uZz/fhg3zgajCrnKIlpKMa+qUaIC/HYSygQJpbniBmGIWVNIcUet384NEtkG+bUQ2V05DCnKj0aa8nS3VYVhOtMv9USYeHmS2AI3Zkd+xeY1BH+XIVNRtbF3X7ZxnbIJksk/7wOhngMlHGqxwT19ylX3zy86A/vD4YXPxK5ijz6EszC8DqhG86DtoCQlR7amMWnVox/7uYf9JOCZ5JQQCX3WS1OOZRo7SeChn7smXaN3Nt1FS/NPlrE12rDeEz9UotlWHaKHrd+jIC182Kc+uJN+p6Ij3eOx0Cbz9V6KK3AhbSqaZ9RuMgOhnYyEf2gqciLNnzdjrbfgU3+uPq4juPGBXnse7jY/SxXXD07sgs12Kvu9LQ83cQe+B13XRICCt8c7T3iVUbNGgWbxxC+AuJ1O6A
+sidebar_class_name: "get api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all account roles"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/roles"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of account roles.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string","description":"Account Role","nullable":true,"example":"owner"},"name":{"type":"string","description":"Account Role","nullable":true,"example":"Owner"}},"additionalProperties":false,"title":"Role"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

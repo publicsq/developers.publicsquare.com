@@ -46,6 +46,12 @@ const sidebar: SidebarsConfig = {
           label: "Delete account member",
           className: "api-method delete",
         },
+        {
+          type: "doc",
+          id: "api/accounts/update-account-member",
+          label: "Update account member",
+          className: "api-method put",
+        },
       ],
     },
     {
@@ -567,6 +573,18 @@ const sidebar: SidebarsConfig = {
           id: "api/accounts/onboard",
           label: "Onboard",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Roles",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-account-roles",
+          label: "Get all account roles",
+          className: "api-method get",
         },
       ],
     },

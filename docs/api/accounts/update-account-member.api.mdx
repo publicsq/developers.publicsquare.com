@@ -1,0 +1,75 @@
+---
+id: update-account-member
+title: "Update account member"
+description: "    Update an existing account member in the Account."
+sidebar_label: "Update account member"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1T3DYQ/iua5UPaju8Vkrb+VCgJJZCU8jZNCEN0lu4sYktGku84PP7vnZXse+Hu4JgyfOIL+OTdfXafXa20LsDSgYHwArajSOXSGrgMgHETaZFZoSSEQAghZxmjlhMqCb8Vxgo5INQrkJSnPa6JkMTGnFRmmt/kN4mKGxsb5IjrVBgjlDR+8RfyvdJueO1wpIXl3yEAlXFNEXifQQg17BwUBJBRTVNuuUbXC5A05RCCYBCAQJczamMIQPObXGjOILQ65wGYKOYphbAAO85Qw1gt5ADK8tILc2N3FBujRKSk5dLiI82yRETOq9a1QU6KGVNTkAvQKuFIYGVe9a55ZNFfjXFZwY3TQKmwgJTeHnI5sDGEb9sBpELWPzvBPQ/v56SimThTAfBbmmZoFChLhYSyDIAyJlCaJkcz6H2aGB6AFdaJn9Ahr2x9cuQeexagRBPz/LkFkylpfBjddhv/zTv29wEE63P3ME+CLaZqFRFVFe7vQgAyTxLaw/h82mfYidKrnV/T6PTwU67Tsb3rfv4r7sUn/8R55wSQNG/u6inQj2JGVztvO79JsTfa+3JwJwbvhlYfn3/d29s7R0yeUpE8Dufz88YQJ08oY5ob8yD0tYpl06TCxn9Ui81IpYjZF9rYK79v1gZ2SsQpPYT6UcUSMRL6dAjUeRzhBENCiExENtdrAJwdHxLVdx0qrbEyrfoi4aQ28hBibG1mwlarWhnxnhHWsdnKDdemVRlrZthOgskWf9IufqCG/K4OINKcWs6uqH3c+i62Th+tiUVGRtSQSh8C6CudohXADtuw4hHKu+3uVqP9rrHZPm13wnY37P7e7Ha6X9GpVDHRF//Dq9rAc7q1bgec637Y9soAtpZ1th3KSN0dn63Fca2VNsvkljs/kaNa0zEed5anZtmJdp+1sj5SFhO0KOi5WUPSWGrzWXwhLR+4M3qSSSHtZneZMuN2RedbEBXSWCqjdZxamfhiGhmc00Qwl7IjrXoJT3edL2ZSAJ3FAjiTNLex0uLOVeozVcBrUiZJWZGKzcVUfFC6Jxjj8jUPL5eHrcU8fFaWfFC5fN0PL5QHjIZHuRZ27Caf7UwccHyEZQMVXOJgk3IbK5ymstzRjbNRCK15BdMqBCsBzethPVflOpm5+9BMNLO8l4jI3ORUV3fJy6lHJ5hin8Xar+l55RcWbkBVR3W1Qnpjsn20Tw74mAhpBOOkGsreGPJvY/tov3Hw/guJOWUuedXYN3lTT3+VAJKF1Xc8Heze1xeHegib3qyE7Cvnb02+i/TERVpPtQbdgwCQIO//sOOuocrYlLoyr3xaNbjORT8zZL7skF3lxPJb28oS6glwyS6q8rhfTzhnhILhbBsrY1GgKHrU8DOdlCUu3+RcYyFeBjCkWvhavyiACYPPbHLxWknBT8fVuPkzWeVjXUwSK2lIkxx/QQA/sNZwXiwvy6DOP6L7F396jMYpqk8VF9pUGdQa21HEM/ug7OzOOjo7hQB61aeDVDFU0XSE3yDoyPuoXMj+AwCuFZBQOcjpwE1qzqRrCznyP7tvfrh9Uz1gUEtZmN0FPgb8ixEtFS8KvyPLciLvX63UmGy7imykoCzL/wAKRkeU
+sidebar_class_name: "put api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update account member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/account-members/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Update an existing account member in the Account.
+
+    ### Permissions
+    * `account-member:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["role"],"type":"object","properties":{"role":{"maxLength":50,"minLength":1,"type":"string","description":"Account role","example":"admin"}},"additionalProperties":false,"title":"SaveAccountMemberRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"Account member ID","nullable":true,"example":"acm_B7mcTLMurmytz2NHhbhSQhu1S"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"email":{"type":"string","description":"Member's email address","nullable":true,"example":"john.smith@example.com"},"first_name":{"type":"string","description":"Member's first name","nullable":true,"example":"John"},"last_name":{"type":"string","description":"Member's last name","nullable":true,"example":"Smith"},"picture":{"type":"string","description":"URL of the member's profile picture","nullable":true,"example":"https://examplewebsite.com/users/profile.png"},"role":{"type":"string","description":"Account role","nullable":true,"example":"admin"},"created_at":{"type":"string","description":"Date membership was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date membership was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}},"additionalProperties":false,"title":"AccountMember"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
