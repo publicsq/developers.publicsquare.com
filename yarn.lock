@@ -5758,10 +5758,10 @@ docusaurus-plugin-sass@^0.2.5:
   dependencies:
     sass-loader "^16.0.2"
 
-docusaurus-theme-openapi-docs@^4.3.3:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/docusaurus-theme-openapi-docs/-/docusaurus-theme-openapi-docs-4.3.5.tgz#26b276b447f657ac5bd8e3c99124de9cce1cc49c"
-  integrity sha512-+X08etQtsk1/MiOsGMaxBBeH6YBPvO49UHH1KWF4HzV+I1RoZHUjSPFHNM0RULon+Cpm0r0Ed0Xbfl7C2Sr2+w==
+docusaurus-theme-openapi-docs@^4.3.6:
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/docusaurus-theme-openapi-docs/-/docusaurus-theme-openapi-docs-4.3.6.tgz#7dbc20cae69cc81c20d28fc47e0227b2dfb8072e"
+  integrity sha512-p1d4i1/fXm854XiDPk4qheaRQGmZy7LgZs/qe7AX1ebcyyCxOURzLhdiwWv8YdAqwx1ZHfe9Vx05hWF13+wQKg==
   dependencies:
     "@hookform/error-message" "^2.0.1"
     "@reduxjs/toolkit" "^1.7.1"
@@ -12519,18 +12519,7 @@ sass-loader@^16.0.2:
   dependencies:
     neo-async "^2.6.2"
 
-sass@^1.80.4:
-  version "1.85.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.85.0.tgz#0127ef697d83144496401553f0a0e87be83df45d"
-  integrity sha512-3ToiC1xZ1Y8aU7+CkgCI/tqyuPXEmYGJXO7H4uqp0xkLXUqp88rQQ4j1HmP37xSJLbCJPaIiv+cT1y+grssrww==
-  dependencies:
-    chokidar "^4.0.0"
-    immutable "^5.0.2"
-    source-map-js ">=0.6.2 <2.0.0"
-  optionalDependencies:
-    "@parcel/watcher" "^2.4.1"
-
-sass@^1.85.1:
+sass@^1.80.4, sass@^1.85.1:
   version "1.85.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.85.1.tgz#18ab0bb48110ae99163778f06445b406148ca0d5"
   integrity sha512-Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==
