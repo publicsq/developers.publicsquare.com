@@ -7,35 +7,23 @@ toc_max_heading_level: 4
 ---
 
 import Tabs from "@theme/Tabs";
-
 import TabItem from "@theme/TabItem";
-
-
 import { Alert } from "@site/src/components/shared/Alert";
-
 import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
-
-import { SdkList } from "../../../src/components/docs/SdkList";
-
+import { SdkList } from "../../src/components/docs/SdkList";
 import JavaScript from "@site/static/img/sdk/logos/javascript.svg";
 
-# Quick Start
-
+# Quick Start Guide
 
 This quick guide will walk you through the steps to set up your account and start accepting payments with PublicSquare.
 
-
 ## Setup
-
 
 ### Create an Account
 
-
 <GettingStartedSection/>
 
-
 ### Test vs Production Mode
-
 
 When you sign up for a PublicSquare account, you’ll automatically gain access to a `test` environment.
 This environment lets you perform dummy transactions, test your integration, and ensure everything functions as expected.
@@ -304,7 +292,7 @@ The created `card` object contains non-sensitive information:
   }
 ```
 In the next step, we will use the `id` to process the payment.
-You can learn more about the `card` object in the [API Reference](https://developers.publicsquare.com/api/financial/create-card).
+You can learn more about the `card` object in the [API Reference](/api/financial/create-card).
 
 ### Process a Payment
 
@@ -326,7 +314,7 @@ click "Reveal" next to your Secret Key, and copy the displayed value.
 #### Create Payment
 
 Now, we will create a payment object using the card object we created earlier.
-To achieve this, we will construct a [payment request](https://developers.publicsquare.com/api/financial/create-payment) object
+To achieve this, we will construct a [payment request](/api/financial/create-payment) object
 and send it to the PublicSquare API.
 
 <Tabs >
@@ -580,19 +568,17 @@ You should see a payment object similar to:
 Additionally, if you open the portal and navigate to [Payments](https://portal.publicsquare.com/payments), you'll find the payment object listed. Click on it to view more details.
 
 <div style={{textAlign: 'center'}}>
-
   <img style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} alt="Secret Key" src="/img/guides/merchants/payment-details.png" />
-
 </div>
 
-You can learn more about the `payment` object in the [API Reference](https://developers.publicsquare.com/api/financial/create-payment).
+You can learn more about the `payment` object in the [API Reference](/api/financial/create-payment).
 
 ## Conclusion
 
 You have successfully collected card information, created a card object, and processed a payment using PublicSquare Elements.
 Follow these guides to learn more:
 
-  - [Collect Cards](/guides/merchants/collect-cards)
-  - [Process Payments](/guides/merchants/process-payments)
-  - [Issue a Refund](/guides/merchants/issue-refunds)
-  - [View Transactions](/guides/merchants/view-transactions)
+  - [Collect Cards](/guides/payment-methods/collect-cards)
+  - [Process Card Payments](/guides/payments/process-card-payments)
+  - [Issue a Refund](/guides/refunds/refund-payments)
+  - [View Transactions](/guides/transactions/search-and-view-transactions)

@@ -1,12 +1,9 @@
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 import { Alert } from "@site/src/components/shared/Alert";
 import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
 
 # Process ACH Payments
 
-Now that you have completed the [Collect Bank Accounts](/guides/merchants/collect-bank-accounts) guide, let's process an ACH payment with the newly captured bank account.
+Now that you have completed the [Collect Bank Accounts](/guides/payment-methods/collect-bank-accounts) guide, let's process an ACH payment with the newly captured bank account.
 
 ## Getting Started
 
@@ -54,7 +51,7 @@ We need to make a call to [Create Payment](/api/financial/create-payment) endpoi
 ```shell showLineNumbers title="Create a Payment"
 curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -87,7 +84,7 @@ If you [created a customer](/api/accounts/create-customer), then you can pass th
 ```shell showLineNumbers title="Create a Payment with Customer"
 curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -114,7 +111,7 @@ If you [attached the bank account to a customer](/api/financial/attach-bank-acco
 ```shell showLineNumbers title="Create a Payment with Customer"
 curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -138,7 +135,7 @@ If you supplied the `billing_details` or [updated the bank account](/api/financi
 ```shell showLineNumbers title="Create a Payment with Customer"
 curl 'https://api.publicsquare.com/payments' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
@@ -159,10 +156,11 @@ Given the above examples, you should see a payment result similar to:
   "environment": "test",
   "status": "pending",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-  "amount": "1000",
-  "amount_charged": "1000",
-  "amount_refunded": "0",
-  "refunded": "false",
+  "amount": 1000,
+  "amount_capturable": 0,
+  "amount_charged": 1000,
+  "amount_refunded": 0,
+  "refunded": false,
   "currency": "USD",
   "payment_method": {
     "bank_account": {
@@ -198,6 +196,22 @@ Given the above examples, you should see a payment result similar to:
   "fraud_decision": {
     "decision": "accept"
   },
+  "transaction": {
+    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    "status": "pending",
+    "amount": 1000,
+    "fee_amount": 0,
+    "net_amount": 1000,
+    "currency": "USD",
+    "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+    "type": "payment",
+    "processor": "nuvei",
+    "processor_id": "7110000000010554769",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
   "created_at": "2024-06-30T01:02:29.212Z",
   "modified_at": "2024-06-30T01:02:29.212Z"
 }
@@ -208,5 +222,5 @@ Given the above examples, you should see a payment result similar to:
 Now that we have seen how to process payments with a collected bank account, we may need to manage the payment or view information about the payment.
 Follow these guides to learn more:
 
-- [Issue a Refund](/guides/merchants/issue-refunds)
-- [View Transactions](/guides/merchants/view-transactions)
+- [Issue a Refund](/guides/refunds/refund-payments)
+- [Search and View Transactions](/guides/transactions/search-and-view-transactions)

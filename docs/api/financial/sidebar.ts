@@ -162,6 +162,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/financial/update-payment",
+          label: "Update payment",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-payments-for-a-customer",
           label: "Get all payments for a customer",
           className: "api-method get",
@@ -204,6 +210,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/financial/update-payout",
+          label: "Update payout",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-payouts-for-a-customer",
           label: "Get all payouts for a customer",
           className: "api-method get",
@@ -237,6 +249,12 @@ const sidebar: SidebarsConfig = {
           id: "api/financial/get-refund-by-id",
           label: "Get refund by ID",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/update-refund",
+          label: "Update refund",
+          className: "api-method put",
         },
         {
           type: "doc",

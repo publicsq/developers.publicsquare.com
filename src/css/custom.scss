@@ -367,3 +367,7 @@ html[data-theme="dark"] .header-github-link:before {
 .openapi-schema__list-item > div > *:not(:first-child) {
   margin-left: 2rem;
 }
+
+.openapi-explorer__request-btn {
+  color: var(--primary-button-color) !important;
+}
