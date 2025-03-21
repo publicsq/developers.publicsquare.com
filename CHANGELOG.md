@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.23.0...v1.24.0) (2025-03-21)
+
+
+### Features
+
+* updates guides and concept page structure and adds update payment/payout/refund endpoints ([#102](https://github.com/publicsq/developers.publicsquare.com/issues/102)) ([da767a1](https://github.com/publicsq/developers.publicsquare.com/commit/da767a1b3450359f06964d020f3675a264d88947))
+
 # [1.23.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.22.0...v1.23.0) (2025-03-03)
 
 
