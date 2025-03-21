@@ -36,6 +36,8 @@ For example, given you have a payment:
 }
 ```
 
+### Get Transaction by ID
+
 We need to make a call to [Get Transaction](/api/financial/get-transaction-by-id) endpoint:
 
 ```shell showLineNumbers title="Get Transaction by ID"
@@ -43,6 +45,8 @@ curl 'https://api.publicsquare.com/transactions/trx_95rvMJvAVeG68W4NtLdfkN3LG?in
 -H 'Accept: application/json' \
 -H 'X-API-KEY: <SECRET_API_KEY>'
 ```
+
+### Transaction Response
 
 Given the above examples, you should see a transaction response similar to:
 
@@ -160,6 +164,8 @@ This should return a [paginated result](/api/pagination):
   ]
 }
 ```
+
+### Searchable Fields
 
 The following fields are searchable using the `query` parameter:
 

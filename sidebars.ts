@@ -33,11 +33,11 @@ const sidebars: SidebarsConfig = {
       label: "Refunds",
       items: ["guides/refunds/refund-payments", "guides/refunds/cancel-refunds"],
     },
-    // {
-    //   type: "category",
-    //   label: "Payouts",
-    //   items: ["guides/payouts/process-card-payouts", "guides/payouts/process-ach-payouts", "guides/payouts/cancel-payouts"],
-    // },
+    {
+      type: "category",
+      label: "Payouts",
+      items: ["guides/payouts/process-card-payouts", "guides/payouts/process-ach-payouts", "guides/payouts/cancel-payouts"],
+    },
     {
       type: "category",
       label: "Transactions",

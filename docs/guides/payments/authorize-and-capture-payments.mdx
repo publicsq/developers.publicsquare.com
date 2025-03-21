@@ -39,6 +39,8 @@ For example, given you have a previously collected card:
 }
 ```
 
+### Create Authorized Payment
+
 We need to make a call to [Create Payment](/api/financial/create-payment) endpoint passing `"capture": false` in the request body:
 
 ```shell showLineNumbers title="Create a Payment"
@@ -51,7 +53,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "capture": false,
-  "paymentMethod": {
+  "payment_method": {
     "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
   },
   "customer": {
@@ -72,6 +74,8 @@ curl 'https://api.publicsquare.com/payments' \
 <Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
 
 <Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payments being processed.</Alert>
+
+### Authorized Payment Response
 
 You should see a payment response with a `requires_capture` status similar to:
 
@@ -165,6 +169,8 @@ curl 'https://api.publicsquare.com/payments/capture' \
 ```
 
 You can capture up to, but not exceeding, the original authorized payment amount. If no `amount` is passed, the full authorized amount of the payment will be captured.
+
+### Captured Payment Response
 
 You should see a payment response with a `successful` status similar to:
 

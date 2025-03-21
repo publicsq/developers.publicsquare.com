@@ -38,6 +38,8 @@ For example, given you have a payment:
 }
 ```
 
+### Create the Refund
+
 We need to make a call to [Create Refund](/api/financial/create-refund) endpoint:
 
 ```shell showLineNumbers title="Create a Refund"
@@ -57,6 +59,8 @@ curl 'https://api.publicsquare.com/refunds' \
 <Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
 
 <Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate refunds being issued.</Alert>
+
+### Refund Response
 
 Given the above examples, you should see a refund result similar to:
 
@@ -92,6 +96,8 @@ Given the above examples, you should see a refund result similar to:
 }
 ```
 
+### View Refunded Payment
+
 Now if you [retrieve the payment](/api/financial/get-payment-by-id), you will see the payment info has updated:
 
 ```shell showLineNumbers title="Get Payment by ID"
@@ -123,6 +129,8 @@ Given the above examples, you should see a payment result similar to:
 ## Payment Cancellation
 
 PublicSquare will attempt to cancel a payment first if it has not been settled and the refund amount matches the payment amount. In that situation, a successful refund will still be created, but the associated payment will be cancelled.
+
+### Refund Response
 
 You should see a refund result similar to:
 
@@ -157,6 +165,8 @@ You should see a refund result similar to:
   "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
+
+### View Cancelled Payment
 
 Now if you [retrieve the payment](/api/financial/get-payment-by-id), you will see the payment info has updated:
 
