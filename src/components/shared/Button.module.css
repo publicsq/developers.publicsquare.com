@@ -14,11 +14,11 @@
 .primary {
   background: var(--ifm-color-primary);
   border: 1px solid var(--ifm-color-primary);
-  color: var(--primary-button-color);
+  color: var(--psq-primary-button-color);
 }
 
 .primary svg path {
-  fill: var(--primary-button-color);
+  fill: var(--psq-primary-button-color);
 }
 
 .primary.button:hover {
@@ -45,7 +45,7 @@
 .button:hover {
   cursor: pointer;
   text-decoration: none !important;
-  color: var(--primary-button-color-focus);
+  color: var(--psq-primary-button-color-focus);
 }
 
 .button svg {

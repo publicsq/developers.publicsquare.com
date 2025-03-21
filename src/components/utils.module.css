@@ -3,11 +3,11 @@
 }
 
 [data-theme="dark"] {
-  --sdk-logo-background-color: var(--sidebar-background-color);
+  --sdk-logo-background-color: var(--psq-sidebar-background-color);
 }
 
 .round-border {
-  border: 1px solid var(--default-border-color);
+  border: 1px solid var(--psq-default-border-color);
   border-radius: 50%;
   width: 74px;
   height: 74px;
@@ -25,7 +25,7 @@
 }
 
 .plugin-platform-icon svg {
-  border: 1px solid var(--default-border-color);
+  border: 1px solid var(--psq-default-border-color);
   border-radius: 50%;
   width: 74px;
   height: 74px;

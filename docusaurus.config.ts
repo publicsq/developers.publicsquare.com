@@ -62,13 +62,15 @@ const config: Config = {
     navbar: {
       logo: {
         alt: "PublicSquare",
+        href: "/",
+        target: "_self",
         src: "img/publicsquare-logo-dark.svg",
         srcDark: "img/publicsquare-logo-light.svg",
       },
       items: [
         {
           type: "doc",
-          docId: "index",
+          docId: "guides/index",
           position: "left",
           label: "Guides",
         },
@@ -105,12 +107,15 @@ const config: Config = {
         themeVariables: {
           darkMode: false,
           primaryColor: "#004B68",
-          primaryBorderColor: "var(--mermaid-primary-border-color)",
-          textColor: "var(--mermaid-text-color)",
-          actorTextColor: "var(--mermaid-actor-color)",
-          nodeTextColor: "var(--bt-mermaid-node-text-color)",
+          primaryBorderColor: "var(--psq-mermaid-primary-border-color)",
+          textColor: "var(--psq-mermaid-text-color)",
+          actorTextColor: "var(--psq-mermaid-actor-color)",
+          nodeTextColor: "var(--psq-mermaid-node-text-color)",
         },
       },
+    },
+    colorMode: {
+      defaultMode: "dark",
     },
   } satisfies Preset.ThemeConfig,
 

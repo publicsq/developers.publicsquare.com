@@ -3,7 +3,7 @@
   place-content: space-between;
   padding: 0px 0px 24px;
   margin-bottom: 40px;
-  border-bottom: 1px solid var(--default-border-color);
+  border-bottom: 1px solid var(--psq-default-border-color);
 }
 
 .content {
@@ -20,6 +20,6 @@
     place-content: space-between;
     padding: 0px 0px 24px;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--default-border-color);
+    border-bottom: 1px solid var(--psq-default-border-color);
   }
 }
