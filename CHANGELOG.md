@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.24.0...v1.25.0) (2025-03-21)
+
+
+### Features
+
+* add fraud details concept page, add base concept page, update docs styling, add landing page ([9462970](https://github.com/publicsq/developers.publicsquare.com/commit/9462970c9d6eba35c2dd5c21fcfadcbdc93f9db7))
+
 # [1.24.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.23.0...v1.24.0) (2025-03-21)
 
 
