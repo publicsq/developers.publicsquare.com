@@ -78,14 +78,40 @@ const sidebars: SidebarsConfig = {
   ],
   api: [
     {
-      type: "category",
-      label: "Overview",
-      collapsed: false,
-      link: {
-        type: "doc",
-        id: "api/index",
-      },
-      items: ["api/index", "api/authentication", "api/request-correlation", "api/pagination", "api/errors", "api/ip-addresses", "api/rate-limits", "api/idempotency", "api/testing"],
+      id: "api/index",
+      type: "doc",
+    },
+    {
+      id: "api/authentication",
+      type: "doc",
+    },
+    {
+      id: "api/request-correlation",
+      type: "doc",
+    },
+    {
+      id: "api/pagination",
+      type: "doc",
+    },
+    {
+      id: "api/errors",
+      type: "doc",
+    },
+    {
+      id: "api/ip-addresses",
+      type: "doc",
+    },
+    {
+      id: "api/rate-limits",
+      type: "doc",
+    },
+    {
+      id: "api/idempotency",
+      type: "doc",
+    },
+    {
+      id: "api/testing",
+      type: "doc",
     },
     {
       type: "category",
