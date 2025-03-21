@@ -1,0 +1,157 @@
+# Fraud Details and Prevention
+
+This document provides an overview of fraud prevention tools available through PublicSquare. It includes steps for setting up
+Address Verification Service (AVS) and Card Verification Value (CVV) checks, essential tools for minimizing fraudulent transactions and chargebacks.
+
+## Why use Fraud Prevention Tools?
+
+Fraud prevention tools like AVS and CVV checks add layers of security by verifying critical payment details. These tools help:
+
+- Prevent unauthorized transactions
+- Reduce the likelihood of chargebacks
+- Increase customer trust by safeguarding sensitive information
+
+## Address Verification Service (AVS)
+
+AVS verifies the billing address provided by the customer during a transaction. It checks this information against the card issuer's records and returns a response code indicating the level of match.
+
+When a configured AVS rule is triggered to cause the payment to fail, the payment status will be set to `declined`.
+
+### How does AVS work?
+
+1.	Customer enters their billing address at checkout.
+2.	The address is sent to the card issuer for verification.
+3.	The issuer compares the address with the one on file.
+4.	A response code is returned, indicating whether the address matches.
+
+### Recommended AVS Best Practices
+
+- Require a full AVS match for high-value transactions.
+- For partial matches, flag the transaction for manual review.
+- Regularly review AVS reports to refine your risk settings.
+
+### AVS Response Codes
+
+| Code | Description                                                 |
+|------|-------------------------------------------------------------|
+| Y    | Address and 5-digit ZIP code match.                         |
+| A    | Address matches, but ZIP code does not.                     |
+| Z    | 5-digit ZIP code matches, but address does not.             |
+| N    | Neither address nor ZIP code match.                         |
+| U    | Address information unavailable.                            |
+| R    | System unavailable or timed out.                            |
+| S    | Service not supported by issuer.                            |
+| E    | AVS data is invalid or formatted incorrectly.               |
+| G    | Address verification not supported for international cards. |
+| C    | Address and postal code match for international cards.      |
+| I    | Address only matches for international cards.               |
+| X    | Address and 9-digit ZIP code match.                         |
+| W    | 9-digit ZIP code matches, but address does not.             |
+| B    | Address matches, but ZIP code not verified.                 |
+| D    | Address and postal code match for international cards.      |
+
+## Card Verification Value (CVV)
+
+CVV is the 3-digit or 4-digit code printed on a customer's payment card. It verifies that the cardholder has physical access to the card,
+adding a layer of protection against card-not-present (CNP) fraud.
+
+When a configured CVV rule is triggered to cause the payment to fail, the payment status will be set to `declined`.
+
+### How does CVV Work?
+
+1.	Customer enters their card details, including the CVV, during checkout.
+2.	The CVV is sent to the card issuer for verification.
+3.	The issuer verifies the CVV and returns a response indicating whether it matches.
+
+### Recommended CVV Best Practices
+
+-	Always require CVV for card-not-present transactions.
+-	Decline transactions with missing or invalid CVVs.
+-	Use CVV in combination with AVS for enhanced fraud protection.
+
+### CVV Response Codes
+
+| Code | Description                                                   |
+|------|---------------------------------------------------------------|
+| M    | CVV matches.                                                  |
+| N    | CVV does not match.                                           |
+| P    | CVV not processed.                                            |
+| S    | CVV should have been present but was not indicated.           |
+| U    | Issuer is not certified or has not provided CVV verification. |
+| I    | Invalid CVV.                                                  |
+
+## Fraud Details
+
+Based upon your fraud decisioning tool, a payment can be rejected or marked for review.
+This enables you to customize a level of control suitable to your business type, average transaction size, and payment methods accepted.
+
+All payments will contain a `fraud_details` section with a `decision` and list of `rules`. This information is set based upon the response from your fraud decisioning tool.
+Any payment that has a fraud decision of `reject` will have the payment status set to `rejected`.
+
+### Recommended Fraud Best Practices
+
+-	Periodically review your payments marked for review to adjust thresholds and rules.
+-	Set rules for your businesses risk based upon product, size of sale, accepted payment methods, and customer purchasing behaviors.
+
+### Fraud Decisions
+
+| Type     | Description                                                                                                                                   |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `accept` | All fraud decision rules passed and the payment was accepted.                                                                                 |
+| `review` | Some fraud decision rules failed, but the payment was still processed.                                                                        |
+| `reject` | The payment was not processed because the risk of the payment exceeded a threshold or a rule to trigger an automatic rejection was triggered. |
+
+## Payment Response with Fraud information
+
+```json showLineNumbers
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  //highlight-next-line
+  "status": "rejected",
+  ...
+  "payment_method": {
+    "card": {
+      "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "cardholder_name": "John Smith",
+      "last4": "4242",
+      "exp_month": "12",
+      "exp_year": "2025",
+      "brand": "visa",
+      //highlight-start
+      "avs_code": "Y",
+      "cvv2_reply": "M",
+      //highlight-end
+      "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+    }
+  },
+  ...
+  //highlight-start
+  "fraud_decision": {
+    "decision": "reject",
+    "rules": [
+      {
+        "rule_id": "1",
+        "rule_engine": "nuvei",
+        "rule_description": "Gift cards are not accepted for payments."
+      },
+      {
+        "rule_id": "2",
+        "rule_engine": "nuvei",
+        "rule_description": "Total of payments exceeds velocity threshold."
+      }
+    ]
+  },
+  //highlight-end
+  "transaction":
+    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    //highlight-next-line
+    "status": "rejected",
+    ...
+  },
+  ...
+}
+```

@@ -55,7 +55,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Concepts",
-      items: ["concepts/accounts", "concepts/api-keys", "concepts/connections", "concepts/transactions", "concepts/fraud-prevention", "concepts/webhooks"],
+      items: ["concepts/accounts", "concepts/api-keys", "concepts/connections", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
     },
     {
       type: "html",
