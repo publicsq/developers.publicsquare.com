@@ -1,0 +1,37 @@
+:root {
+  --docusaurus-highlighted-code-line-bg: #dee6ed;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --docusaurus-highlighted-code-line-bg: #383b4c;
+}
+
+.theme-code-block {
+  box-shadow: none !important;
+  border: 1px solid var(--psq-tabs-border-color);
+
+  div:first-child:not(:only-child) {
+    // code title
+    background-color: var(--psq-code-title-background-color);
+    border-bottom: 1px solid var(--psq-tabs-border-color);
+    padding-top: 8px;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+
+  & pre {
+    background-color: transparent !important;
+  }
+  & code {
+    border-radius: var(--ifm-global-radius);
+  }
+}
+
+.theme-code-block-highlighted-line {
+  display: table-row !important;
+}
+
+.theme-code-block-highlighted-line .codeLineNumber_Tfdd {
+  background-color: var(--docusaurus-highlighted-code-line-bg);
+}

@@ -1,0 +1,59 @@
+:root {
+  /* Sidebar */
+  /* Sidebar */
+  --psq-sidebar-background-color: #f3f5fd;
+  --psq-default-border-color: rgba(209, 215, 255, 0.4);
+  --psq-menu-color-background-hover: #e5e9ff;
+  --psq-menu-color-background-active: linear-gradient(90deg, #e5e9ff 0%, rgba(229, 233, 255, 0) 100%);
+  --psq-menu-color-background-active-hover: linear-gradient(90deg, rgba(229, 233, 255, 0.5) 0%, rgba(229, 233, 255, 0) 100%);
+
+  /* Code */
+  --psq-code-block-background-color: #F1F6F6;
+  --psq-code-title-background-color: #F1F6F6;
+
+  /* Cards */
+  --psq-card-border-radius: 4px;
+  --psq-primary-button-color: #fff;
+  --psq-primary-button-color-focus: #fff;
+  --psq-card-border-shadow: 0 1px 2px 0 #004B68;
+  --psq-card-border-shadow-hover: 0px 10px 15px -3px rgba(7, 10, 27, 0.05), 0px 4px 6px -4px rgba(7, 10, 27, 0.05), inset 0px 0px 0px 1px #b9bcd1;
+
+  /* Alerts */
+  --psq-alert-warning-color: rgba(238, 193, 67, 1);
+  --psq-alert-warning-background: rgba(238, 193, 67, .1);
+  --psq-alert-error-color: #EF3E36;
+  --psq-alert-error-background: linear-gradient(90deg, rgba(246, 81, 136, 0.2) 0.78%, rgba(246, 81, 136, 0.05) 41.41%);
+  --psq-alert-info-color: rgba(0, 152, 179, 1);
+  --psq-alert-info-background: rgba(0, 152, 179, .1);
+
+  --psq-mermaid-text-color: #000;
+  --psq-mermaid-actor-color: #FFF;
+  --psq-mermaid-primary-border-color: var(--ifm-color-primary-lighter);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --psq-tabs-border-color: rgba(21, 56, 73, 1);
+
+  /* Code */
+  --psq-code-block-background-color: #242526;
+  --psq-code-title-background-color: #242526;
+
+  /* Sidebar */
+  --psq-sidebar-background-color: #242526;
+  --psq-default-border-color: rgba(209, 215, 255, 0.15);
+  --psq-menu-color-background-hover: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
+  --psq-menu-color-background-active: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  --psq-menu-color-background-active-hover: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Cards */
+  --psq-primary-button-color: #000;
+  --psq-card-border-shadow-hover: 0px 8px 10px rgba(4, 6, 17, 0.2), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.18);
+
+  /* Mermaid */
+  /* Base */
+  /* Flowchart */
+  --psq-mermaid-text-color: #FFF;
+  --psq-mermaid-actor-color: #FFF;
+  --psq-mermaid-primary-border-color: var(--ifm-color-primary-lighter);
+}

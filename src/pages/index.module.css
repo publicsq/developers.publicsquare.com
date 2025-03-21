@@ -1,0 +1,208 @@
+:root {
+  --psq-card-text-color: var(--ifm-font-color-base);
+
+  --psq-card-gradient-background: linear-gradient(99.18deg, #ffffff 12.27%, #fafbff 71.38%);
+
+  --psq-step-getting-started-default-box-shadow: 0px 2px 4px -2px rgba(7, 10, 27, 0.05), 0px 4px 6px -1px rgba(7, 10, 27, 0.05), inset 0px 0px 0px 1px #9fd8e0;
+  --psq-step-getting-started-border-hover: 2px solid #10c0d9;
+  --psq-step-getting-started-box-shadow-hover: 0px 0px 6px rgba(16, 192, 217, 0.3), 0px 2px 4px -2px rgba(7, 10, 27, 0.05), 0px 4px 6px -1px rgba(7, 10, 27, 0.05), inset 0px 0px 0px 1px #9fd8e0;
+}
+
+[data-theme="dark"] {
+  --psq-card-text-color: var(--ifm-heading-color);
+  --psq-card-gradient-background: linear-gradient(104.37deg, #1c2036 10.89%, #0d1025 83.51%);
+
+  --psq-step-getting-started-default-box-shadow: 0px 2px 4px -2px rgba(7, 10, 27, 0.2), 0px 4px 6px -1px rgba(7, 10, 27, 0.1), inset 0px 0px 0px 1px rgba(159, 216, 224, 0.2);
+  --psq-step-getting-started-border-hover: 2px solid #10c0d9;
+  --psq-step-getting-started-box-shadow-hover: 0px 0px 10px rgba(16, 192, 217, 0.4), 0px 2px 4px -2px rgba(7, 10, 27, 0.5), 0px 4px 6px -1px rgba(7, 10, 27, 0.1), inset 0px 0px 0px 1px rgba(159, 216, 224, 0.2);
+}
+
+.container {
+  width: var(--ifm-container-width);
+  margin: 48px auto;
+}
+
+.container > main > div:not(:first-of-type),
+.container > main > div:not(:last-of-type) {
+  margin-top: 48px;
+}
+
+.card {
+  padding: 56px;
+}
+
+.card > div {
+  display: block;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-body > a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.step p {
+  color: var(--ifm-heading-color) !important;
+}
+
+.card-body p {
+  margin: 0;
+  color: var(--ifm-font-color-base);
+}
+
+.sdks {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--psq-card-text-color);
+}
+
+.sdks-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 64px;
+  row-gap: 32px;
+}
+.sdks-container > div {
+  display: flex;
+  gap: 16px;
+  flex-flow: column wrap;
+}
+
+.sdk-column {
+  display: flex;
+  gap: 16px;
+  flex-flow: row wrap;
+  margin-bottom: var(--ifm-leading);
+}
+
+.sdk-column > div {
+  flex: 0 1;
+  white-space: nowrap;
+}
+
+.sdk {
+  border-radius: 8px;
+  height: 44px;
+  padding: 6px 12px 6px 12px;
+}
+
+.sdk * {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.sdk div:first-child {
+  margin-right: 8px;
+}
+
+.sdk .logo-container {
+  width: 32px;
+  height: 32px;
+  margin: 0px !important;
+}
+
+.explore-cards-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-cards {
+  display: flex;
+  gap: 24px;
+  flex-flow: row wrap;
+}
+
+.explore-cards-image {
+  max-height: 56px;
+}
+
+.explore-cards > div {
+  flex: 1 1 30%;
+}
+
+@media only screen and (max-width: 600px) {
+  .sdk {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .card {
+    align-items: flex-start;
+    padding: inherit;
+  }
+
+  .card-body {
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-body div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card-body a:not(:first-child) {
+    margin-top: 24px;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .sdks-container {
+    flex-direction: column;
+  }
+
+  .sdk-column {
+    gap: 16px;
+  }
+
+  .sdk-column > div {
+    flex: 0 0;
+    flex-flow: row nowrap;
+  }
+  .sdk div:has(svg),
+  .sdk div:has(img) {
+    margin: 0px;
+    margin-right: 8px;
+  }
+
+  .sdk svg,
+  .sdk img {
+    height: 42px;
+    width: 42px;
+  }
+
+  .explore-cards > div {
+    flex: 1 1 auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sdk div:has(svg),
+  .sdk div:has(img) {
+    margin-right: 8px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    width: var(--ifm-container-width-xl);
+  }
+}

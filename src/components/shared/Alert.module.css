@@ -27,33 +27,33 @@
 }
 
 .error {
-  background: var(--alert-error-background);
+  background: var(--psq-alert-error-background);
   border: 1px solid rgba(245, 108, 157, 0.3);
-  color: var(--alert-error-color);
+  color: var(--psq-alert-error-color);
 }
 
 .warning {
-  background: var(--alert-warning-background);
+  background: var(--psq-alert-warning-background);
   border: 1px solid rgba(255, 167, 38, 0.3);
-  color: var(--alert-warning-color);
+  color: var(--psq-alert-warning-color);
 }
 
 .info {
-  background: var(--alert-info-background);
+  background: var(--psq-alert-info-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--alert-info-color);
+  color: var(--psq-alert-info-color);
 }
 
 .success {
-  background: var(--alert-success-background);
+  background: var(--psq-alert-success-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--alert-success-color);
+  color: var(--psq-alert-success-color);
 }
 
 .neutral {
-  background: var(--alert-neutral-background);
+  background: var(--psq-alert-neutral-background);
   border: 1px solid var(--alert-neutral-border-color);
-  color: var(--alert-neutral-color);
+  color: var(--psq-alert-neutral-color);
 }
 
 .svg {
@@ -64,17 +64,17 @@
 }
 
 .error .svg path {
-  fill: var(--alert-error-color);
+  fill: var(--psq-alert-error-color);
 }
 
 .info .svg path {
-  fill: var(--alert-info-color);
+  fill: var(--psq-alert-info-color);
 }
 
 .warning .svg path {
-  fill: var(--alert-warning-color);
+  fill: var(--psq-alert-warning-color);
 }
 
 .success .svg path {
-  fill: var(--alert-success-color);
+  fill: var(--psq-alert-success-color);
 }

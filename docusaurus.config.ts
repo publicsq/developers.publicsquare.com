@@ -62,13 +62,15 @@ const config: Config = {
     navbar: {
       logo: {
         alt: "PublicSquare",
+        href: "/",
+        target: "_self",
         src: "img/publicsquare-logo-dark.svg",
         srcDark: "img/publicsquare-logo-light.svg",
       },
       items: [
         {
           type: "doc",
-          docId: "index",
+          docId: "guides/index",
           position: "left",
           label: "Guides",
         },
@@ -111,6 +113,9 @@ const config: Config = {
           nodeTextColor: "var(--bt-mermaid-node-text-color)",
         },
       },
+    },
+    colorMode: {
+      defaultMode: "dark",
     },
   } satisfies Preset.ThemeConfig,
 

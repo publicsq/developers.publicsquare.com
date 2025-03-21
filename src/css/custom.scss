@@ -6,196 +6,17 @@
 
 /* You can override the default Infima variables here. */
 
+@use "ifm-variables";
+@use "psq-variables";
+@use "global";
+@use "sidebar";
 @use "tabs";
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-:root {
-  --ifm-color-primary: #27282B;
-  --ifm-color-primary-focus: #3F4146;
-  --ifm-color-primary-light: var(--ifm-color-primary);
-  --ifm-color-primary-lighter: #006F91;
-  --ifm-color-primary-lightest: var(--ifm-color-primary-focus);
-
-  --ifm-link-color: var(--ifm-color-primary-lighter);
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary-lighter);
-  --ifm-breadcrumb-color-active: var(--ifm-color-primary-lighter);
-
-  --ifm-menu-color-active: var(--ifm-color-primary-lighter);
-  --ifm-menu-color-background-active: #F1F6F6;
-  --ifm-menu-color-background-hover: #F1F6F6;
-
-
-  --ifm-color-primary-dark: #97B77D;
-  --ifm-color-primary-darkest: #6B8E4E;
-  // --ifm-color-primary-light: #B8CEA6;
-  // --ifm-color-primary-lightest: #747476;
-  --ifm-color-success: #80A860;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: #dee6ed;
-  --site-primary-hue-saturation: 167 68%;
-
-  /* Sidebar */
-  --sidebar-background-color: #f3f5fd;
-  --default-border-color: rgba(209, 215, 255, 0.4);
-  --tabs-border-color: #d1d7ff;
-  --component-border-color: #cacddb;
-
-  /* Code */
-  --code-block-background-color: #F1F6F6;
-  --code-title-background-color: #F1F6F6;
-
-  /* Cards */
-  --card-border-radius: 4px;
-  --primary-button-color: #fff;
-  --primary-button-color-focus: #fff;
-  --card-border-shadow: 0 1px 2px 0 #004B68;
-  --card-border-shadow-hover: 0px 10px 15px -3px rgba(7, 10, 27, 0.05), 0px 4px 6px -4px rgba(7, 10, 27, 0.05), inset 0px 0px 0px 1px #b9bcd1;
-
-  /* Alerts */
-  --alert-warning-color: rgba(238, 193, 67, 1);
-  --alert-warning-background: rgba(238, 193, 67, .1);
-  --alert-error-color: #EF3E36;
-  --alert-error-background: linear-gradient(90deg, rgba(246, 81, 136, 0.2) 0.78%, rgba(246, 81, 136, 0.05) 41.41%);
-  --alert-info-color: rgba(0, 152, 179, 1);
-  --alert-info-background: rgba(0, 152, 179, .1);
-
-  /* Fonts */
-  --font-family: 'Plus Jakarta Sans';
-
-  --mermaid-text-color: #000;
-  --mermaid-actor-color: #FFF;
-  --mermaid-primary-border-color: var(--ifm-color-primary-lighter);
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #FFFFFF;
-  --ifm-color-primary-focus: #CDCDCD;
-  --primary-button-color-focus: #000;
-  --ifm-color-primary-light: var(--ifm-color-primary);
-  --ifm-color-primary-lighter: rgba(92, 200, 221, 1);
-  --ifm-color-primary-lightest: var(--ifm-color-primary-focus);
-
-  --ifm-menu-color-background-active: #3F4146;
-  --ifm-menu-color-background-hover: #3F4146;
-
-  --docusaurus-highlighted-code-line-bg: #383b4c;
-
-  --tabs-border-color: rgba(21, 56, 73, 1);
-
-  /* Code */
-  --code-block-background-color: #242526;
-  --code-title-background-color: #242526;
-
-  /* Sidebar */
-  --sidebar-background-color: #242526;
-  --default-border-color: rgba(209, 255, 249, 0.15);
-
-  /* Cards */
-  --primary-button-color: #000;
-  --card-border-shadow-hover: 0px 8px 10px rgba(4, 6, 17, 0.2), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.18);
-
-  --ifm-background-color: #070a1b !important;
-
-  /* Mermaid */
-  /* Base */
-  /* Flowchart */
-  --mermaid-text-color: #FFF;
-  --mermaid-actor-color: #FFF;
-  --mermaid-primary-border-color: var(--ifm-color-primary-lighter);
-}
-
-body {
-  font-family: var(--font-family);
-}
-
-.theme-code-block-highlighted-line {
-  display: table-row !important;
-}
-
-.theme-code-block-highlighted-line .codeLineNumber_Tfdd {
-  background-color: var(--docusaurus-highlighted-code-line-bg);
-}
-
-/* Override --ifm text-decoration */
-a:any-link:hover {
-  text-decoration: none;
-}
-
-/* Sidebar Method labels */
-.api-method > .menu__link,
-.schema > .menu__link {
-  align-items: center;
-  justify-content: start;
-}
-
-.api-method > .menu__link::before,
-.schema > .menu__link::before {
-  width: 55px;
-  height: 20px;
-  font-size: 12px;
-  line-height: 20px;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-radius: 0.25rem;
-  border: 1px solid;
-  margin-right: var(--ifm-spacing-horizontal);
-  text-align: center;
-  flex-shrink: 0;
-  border-color: transparent;
-  color: white;
-}
-
-.badge--primary {
-  background-color: var(--openapi-code-green);
-  border-color: var(--openapi-code-green);
-}
-
-.badge--success {
-  background-color: var(--ifm-link-color);
-  border-color: var(--ifm-link-color);
-}
-
-.get > .menu__link::before {
-  content: "get";
-  background-color: var(--openapi-code-green);
-}
-
-.post > .menu__link::before {
-  content: "post";
-  background-color: var(--ifm-link-color);
-}
-
-.delete > .menu__link::before {
-  content: "del";
-  background-color: var(--openapi-code-red);
-}
-
-.put > .menu__link::before {
-  content: "put";
-  background-color: var(--openapi-code-blue);
-}
-
-.patch > .menu__link::before {
-  content: "patch";
-  background-color: var(--openapi-code-orange);
-}
-
-.head > .menu__link::before {
-  content: "head";
-  background-color: var(--ifm-color-secondary-darkest);
-}
-
-.event > .menu__link::before {
-  content: "event";
-  background-color: var(--ifm-color-secondary-darkest);
-}
-
-.schema > .menu__link::before {
-  content: "schema";
-  background-color: var(--ifm-color-secondary-darkest);
-}
+@use "footer";
+@use "navbar";
+@use "code-block";
+@use "openapi";
+@use "doc";
+@use "fonts";
 
 /* GitHub Header Link */
 .header-github-link:hover {
@@ -233,7 +54,7 @@ html[data-theme="dark"] .header-github-link:before {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: var(--card-text-color);
+  color: var(--psq-card-text-color);
 }
 
 .sdks-container {
@@ -288,30 +109,6 @@ html[data-theme="dark"] .header-github-link:before {
   }
 }
 
-@media only screen and (max-width: 770px) {
-  .card {
-    align-items: flex-start;
-    padding: inherit;
-  }
-
-  .card-body {
-    padding: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card-body div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .card-body a:not(:first-child) {
-    margin-top: 24px;
-  }
-
-}
-
 @media only screen and (max-width: 800px) {
   .sdks-container {
     flex-direction: column;
@@ -347,27 +144,4 @@ html[data-theme="dark"] .header-github-link:before {
   .sdk div:has(img) {
     margin-right: 8px;
   }
-}
-
-@media only screen and (min-width: 1280px) {
-  .container {
-    width: var(--ifm-container-width-xl);
-  }
-}
-
-.openapi-left-panel__container .tabs-container {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-.menu__link--sublist, .menu__link--active, .menu__link:hover, .menu__list-item-collapsible {
-  margin-right: 1px;
-}
-
-.openapi-schema__list-item > div > *:not(:first-child) {
-  margin-left: 2rem;
-}
-
-.openapi-explorer__request-btn {
-  color: var(--primary-button-color) !important;
 }

@@ -1,9 +1,5 @@
 .tabs-container {
 
-  border-radius: var(--ifm-global-radius);
-  border: 1px solid var(--tabs-border-color);
-  background-color: var(--code-block-background-color);
-
   /* tabs-in-tabs */
   .tabs-container {
     border-left: none;
@@ -14,7 +10,7 @@
     &:not(:first-child) {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      .publicsquare-tabs {
+      .bt-tabs {
         border-radius: 0;
       }
     }
@@ -27,10 +23,14 @@
     }
   }
 
-  .publicsquare-tabs {
-    background-color: var(--code-title-background-color);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--psq-tabs-border-color);
+  background-color: var(--psq-code-block-background-color);
+
+  .psq-tabs {
+    background-color: var(--psq-code-title-background-color);
     border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
-    border-bottom: 1px solid var(--tabs-border-color);
+    border-bottom: 1px solid var(--psq-tabs-border-color);
     overflow-y: hidden;
 
     & + div {
@@ -71,28 +71,6 @@
       bottom: -1px;
       left: 50%;
       margin-left: -12px;
-    }
-  }
-
-  .theme-code-block {
-    border: none;
-    margin-bottom: 0;
-    border-radius: 0;
-    &:not(:first-child) {
-      // avoid double border with tabs menu
-      border-top: 1px solid var(--tabs-border-color);
-    }
-    & + .theme-code-block {
-      // avoids double border between sibling code blocks
-      border-top: none;
-    }
-    &:last-child {
-      // avoids glitch with background and tab container border
-      border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
-    }
-    &:not(:last-child) {
-      // avoids double border with tab container
-      border-bottom: 1px solid var(--tabs-border-color);
     }
   }
 

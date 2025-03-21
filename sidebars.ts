@@ -15,7 +15,7 @@ import financialApiSidebar from "./docs/api/financial/sidebar";
 const sidebars: SidebarsConfig = {
   docs: [
     {
-      id: "index",
+      id: "guides/index",
       type: "doc",
     },
     {
@@ -55,6 +55,10 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Concepts",
+      link: {
+        type: "doc",
+        id: "concepts/index",
+      },
       items: ["concepts/accounts", "concepts/api-keys", "concepts/connections", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
     },
     {
@@ -136,7 +140,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Payments Plugins",
+      label: "eCommerce Plugins",
       items: [
         {
           id: "plugins/bigcommerce-payments/index",
