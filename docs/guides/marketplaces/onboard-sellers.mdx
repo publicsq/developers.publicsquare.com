@@ -42,7 +42,7 @@ In order to connect a merchant and seller, we first need to [create a connection
 ```shell showLineNumbers
 curl 'https://api.publicsquare.com/connection-invitations' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'Content-Type: application/json' \
 -d '{
   "success_url": "https://merchantwebsite.com/success",
@@ -92,7 +92,7 @@ Now that the seller is connected to your account, we can re-use the connection i
 ```shell showLineNumber
 curl -L 'https://api.publicsquare.com/connections/conn_41vV8UVXrEgpT5AWYr2ry4SKN' \
 -H 'Accept: application/json' \
--H 'X-API-KEY: <API_KEY>'
+-H 'X-API-KEY: <SECRET_API_KEY>'
 ```
 
 This will return a connection containing both the merchant and seller account information as well as the connection status:
@@ -130,7 +130,7 @@ with the merchant's account.
 curl -L 'https://api.publicsquare.com/webhooks' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
--H 'X-API-KEY: <API_KEY>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -d '{
   "url": "https://merchantwebsite.com/notification",
   "event_types": [

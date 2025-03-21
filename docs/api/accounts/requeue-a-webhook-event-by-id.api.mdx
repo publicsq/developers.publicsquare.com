@@ -1,0 +1,75 @@
+---
+id: requeue-a-webhook-event-by-id
+title: "Requeue a webhook event by ID"
+description: "    Requeue a webhook event for delivery by ID in the Account."
+sidebar_label: "Requeue a webhook event by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWFtT2zoQ/iua7cO5jCEh0E7xW8ol5dBLJkA5LWWCbC1EYEtGkgPB4/9+ZmXnQpNAeqbDU1/AsVf6vt3vk+R1AY5fWQjP4BSjgdY3Fs4DEGhjIzMntYIQGGOsh7c55sg4u6viGA5ROXapDROYyCGaEYtG7GCXScXcAFk7jnWu3Pp39V3RDK9evWJdNKm0Vmplq5t/s4t6vvDOSIcXEIDO0HCCPhAQwjJgjwUBZNzwFB0aSqIAxVOEEOrYAwEBSMoh424AARi8zaVBAaEzOQZg4wGmHMIC3CijgdYZqa6gLIPJXPL/T3JOwTbTyqKl561mk/49Lu/nQwgg1sqhcvSUZ1kiY1+BxrWlkGIeQkfXGDvK31C9nKwApJin8aOcp4/q6Iuo8iThUYLjjPCep1niCznAfuvobc/+s7dzd3L4vhNdfmi123z3Y6t9CmUAfpb+Krh7q+DhULn+6+v7097+pw877VPEK3Oz0+5s8u3dTkyAtbQrQY5TfS7JaHDTfxe3t47b+zLC7ZP3Vzdf32R71/cPZsQJlFdmXgm0Nv5zoDyO++9eb7xVsnPX+Xr4IK/eDJ3pffnW6XS++MqqoTRapbUtninuNJitsR2uWITswqF1F0wbdpEZLfKYgi+eZDWNm4pbIa8mr495CiDWSqEHCPNMcIeEk3Dr+uNtpM+dwzRbIeld7nCyLdxxy2geVg9H8WhzggAutUm5gxAIds3J9GmmrWZra635Zm2zedzcCJutsLW93tpofSPCP3K1M2SlcniFZo7tpzyN0DB9Od0wJ6NnyEnlNlswQ6RVBmAdd7n92bVdj3oqyZoKCsqKNja0KxS+VwWySIvR3PTldNPrVwz6sRa4QoV69TD2/vi4W7NnfuyC+iwFXYV+jbOMf2yQOxR9/rMmrOpOVqyn+JW2o31ICEm4POnO7PuXPLEYgJPOz1CbwC9IKEsat7Xo4HnHBauV/HUnEBqjjV0Ut5j7JI4bw0kM6TBd4HTKYk6nZTvTfGBVmhUi51ba1KzPW1Cg4zJZCUcq67iKVyG1VPdimhl84YkUXrKu0VGC6a7nYicG2Jg3wIniuRtoIx+8UX+RA36LMhFliRSb81LsaxNJIVD91uHldNia1+GTdmxf5+r3enghHSgbjHMj3cg3cO1MHiJdwqPGEM6pmUrRDTR1hZn2Z5ZvyEJo1KG2UUwav7Lhz2LbKKQoG6bqIoHAzHDcLOYmgRAGzmU2bDR4JtezPEpkbG9zbnA91ikQ6pjfEQleaTpmOT29qhtzvUC9v3rnUM/a7h6wQxwxqawUyOo3rj8s+3et3T1YO9z7ygbIhZey7j8nT8ZtaB1QeoEutWcxLrDnf+T5jztwS6AQAKVdsRpu0Nse1TDl3so10nO99qPciun6eOkvBHXNHd67RpZw6XsVL2ZRW2LiHnr7DWe/BlSuoLu+rx8b4zyAAXkqPIOiiLjFE5OUJd2+zal7CM/OAxhyIyvLnxUgpKVrMXn9WlqdP3v1B4O/2DLyYxcpstCQJzn9ggBuyGQzXzPos8QLAksB5XkZjB1HaVcP2nGMmZsZMrdBPlqu3c9Hx/QGmJM2s2vmxq+Z+oKmX8hndgVU+PSXarEwvCiq1ViWk/jq0dIRkyVXp030y7L8D8OekDM=
+sidebar_class_name: "post api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Requeue a webhook event by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/webhooks/{webhookId}/events/{id}/requeue"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Requeue a webhook event for delivery by ID in the Account.
+
+    ### Permissions
+    * `webhook:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"webhookId","in":"path","required":true,"schema":{"type":"string"}},{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"Webhook event ID","nullable":true,"example":"whe_2S8RsJECwUKHGbfL2AAaDM2AW"},"event_id":{"type":"string","description":"Event ID","nullable":true,"example":"evnt_5jxWRFNLCAWeegrkCAG3a9DGc"},"webhook_id":{"type":"string","description":"Webhook ID","nullable":true,"example":"wbhk_BcA4TAFibe9UHgkY6pEjxzrya"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"type":"string","description":"Environment - Can be `test` or `production`","nullable":true,"example":"production"},"event_type":{"type":"string","description":"Event type","nullable":true,"example":"connection:update"},"last_delivery_attempt":{"type":"string","description":"Date webhook was last attempted for delivery","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"delivery_attempts":{"type":"integer","description":"Number of delivery attempts","format":"int32","example":2},"status":{"type":"string","description":"Webhook event status","nullable":true,"example":"delivered"},"request":{"type":"string","description":"Request body","nullable":true},"response_status_code":{"type":"integer","description":"Response HTTP status code","format":"int32","nullable":true},"response":{"type":"string","description":"Response body","nullable":true},"created_at":{"type":"string","description":"Date webhook event was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}},"additionalProperties":false,"title":"WebhookEvent"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

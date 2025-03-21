@@ -492,8 +492,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/accounts/get-all-product-types",
-          label: "Get all product types",
+          id: "api/accounts/get-all-products",
+          label: "Get all products",
           className: "api-method get",
         },
       ],
@@ -603,6 +603,12 @@ const sidebar: SidebarsConfig = {
           id: "api/accounts/get-webhook-event-by-id",
           label: "Get webhook event by ID",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/requeue-a-webhook-event-by-id",
+          label: "Requeue a webhook event by ID",
+          className: "api-method post",
         },
         {
           type: "doc",

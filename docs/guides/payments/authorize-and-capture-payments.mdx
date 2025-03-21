@@ -1,0 +1,215 @@
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+
+# Authorize and Capture Payments
+
+In some scenarios, your checkout process may collect and pre-authorize a purchase before the customer completes checkout. This is useful when you want to run a customer and card information against your fraud rules, enable pre-orders, or a multi-step checkout process.
+
+Now that you have completed the [Collect Cards](/guides/payment-methods/collect-cards) guide, let's authorize and capture a card payment.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Secret Key
+
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+
+<Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
+
+## Authorize the Payment
+
+We will need to use the information from the previously collected card to create a new payment.
+
+For example, given you have a previously collected card:
+
+```json showLineNumbers title=card.json
+{
+  // highlight-next-line
+  "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "cardholder_name": "John Smith",
+  "last4": "4242",
+  "exp_month": "12",
+  "exp_year": "2025",
+  "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+### Create Authorized Payment
+
+We need to make a call to [Create Payment](/api/financial/create-payment) endpoint passing `"capture": false` in the request body:
+
+```shell showLineNumbers title="Create a Payment"
+curl 'https://api.publicsquare.com/payments' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
+-H 'Content-Type: application/json' \
+-d '{
+  "amount": 1000,
+  "currency": "USD",
+  "capture": false,
+  "payment_method": {
+    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+  },
+  "customer": {
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com"
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  }
+}'
+```
+
+<Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
+
+<Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payments being processed.</Alert>
+
+### Authorized Payment Response
+
+You should see a payment response with a `requires_capture` status similar to:
+
+```json showLineNumbers title="Authorized Payment Response"
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  // highlight-next-line
+  "status": "requires_capture",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  "amount": 0,
+  "amount_charged": 0,
+  "amount_capturable": 1000,
+  "amount_refunded": 0,
+  "refunded": false,
+  "currency": "USD",
+  "payment_method": {
+    "card": {
+      "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "cardholder_name": "John Smith",
+      "last4": "4242",
+      "exp_month": "12",
+      "exp_year": "2025",
+      "brand": "visa",
+      "avs_code": "Y",
+      "cvv2_reply": "M",
+      "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+    }
+  },
+  "customer": {
+    "id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com",
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "shipping_address": {
+    "address_line_1": "111 Colorado Ave.",
+    "address_line_2": "Apt 403",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "fraud_decision": {
+    "decision": "accept"
+  },
+  "transaction": {
+    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    // highlight-next-line
+    "status": "requires_capture",
+    "amount": 1000,
+    "fee_amount": 0,
+    "net_amount": 1000,
+    "currency": "USD",
+    "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+    "type": "payment",
+    "processor": "nuvei",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+If the payment authorization was declined by the processor or rejected because of fraud decisioning rules, you will see a payment `status` of `rejected` or `declined`. These payments cannot be captured.
+
+## Capture the Payment
+
+Using the authorized payment from the previous step, we now need to make a call to [Capture Payment](/api/financial/captures-a-payment) endpoint:
+
+```shell showLineNumbers title="Capture a Payment"
+curl 'https://api.publicsquare.com/payments/capture' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'Content-Type: application/json' \
+-d '{
+  "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "amount": 1000
+}'
+```
+
+You can capture up to, but not exceeding, the original authorized payment amount. If no `amount` is passed, the full authorized amount of the payment will be captured.
+
+### Captured Payment Response
+
+You should see a payment response with a `successful` status similar to:
+
+```json showLineNumbers title="Captured Payment Response"
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  // highlight-next-line
+  "status": "successful",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  "amount": 1000,
+  "amount_charged": 1000,
+  "amount_capturable": 0,
+  ...
+  "transaction": {
+    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    // highlight-next-line
+    "status": "successful",
+    "amount": 1000,
+    "fee_amount": 0,
+    "net_amount": 1000,
+    "processor": "nuvei",
+    "processor_id": "7110000000010554769"
+    ...
+  },
+  ...
+}
+```
+
+## Conclusion
+
+Authorize and capturing payments also works with ACH payments using a bank account payment method.
+See our [Process ACH payments](/guides/payments/process-ach-payments) guide to see how to collect bank accounts and process ACH payments following similar steps in this guide.
+
+Now that we have seen how to authorize and capture payments with a collected card, we may need to manage the payment or view information about the payment.
+Follow these guides to learn more:
+
+- [Issue a Refund](/guides/refunds/refund-payments)
+- [Search and View Transactions](/guides/transactions/search-and-view-transactions)

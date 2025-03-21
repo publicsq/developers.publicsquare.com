@@ -1,0 +1,205 @@
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+
+# Search and View Transactions
+
+Every payment, payout, transfer, refund, and settlement in the PublicSquare system is associated with a transaction. PublicSquare leverages double entry accounting to track debit credits.
+This helps with end of day reconciliation processes.
+
+After completing the [Process Card Payments](/guides/payments/process-card-payments) guide, you may want to pull detailed information about the transaction.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Secret Key
+
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+
+<Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
+
+## Retrieve a Transaction
+
+We will need to reference the payment's `transaction_id` to pull information about the payment.
+
+For example, given you have a payment:
+
+```json showLineNumbers
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "status": "successful",
+  // highlight-next-line
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  ...
+}
+```
+
+### Get Transaction by ID
+
+We need to make a call to [Get Transaction](/api/financial/get-transaction-by-id) endpoint:
+
+```shell showLineNumbers title="Get Transaction by ID"
+curl 'https://api.publicsquare.com/transactions/trx_95rvMJvAVeG68W4NtLdfkN3LG?include_type=true' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+### Transaction Response
+
+Given the above examples, you should see a transaction response similar to:
+
+```json showLineNumbers
+{
+  "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "status": "successful",
+  "amount": 1000,
+  "fee_amount": 36,
+  "net_amount": 964,
+  "currency": "USD",
+  "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "type": "payment",
+  "processor": "nuvei",
+  "processor_id": "7110000000010554769",
+  "payment": {
+    "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    "status": "successful",
+    "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "amount": 1000,
+    "amount_capturable": 0,
+    "amount_charged": 1000,
+    "amount_refunded": 0,
+    "refunded": false,
+    "currency": "USD",
+    "payment_method": {
+      "card": {
+        "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+        "cardholder_name": "John Smith",
+        "last4": "4242",
+        "exp_month": "12",
+        "exp_year": "2025",
+        "brand": "visa",
+        "avs_code": "Y",
+        "cvv2_reply": "M",
+        "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+      }
+    },
+    "customer": {
+      "id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "john.smith@email.com",
+    },
+    "billing_details": {
+      "address_line_1": "111 Test St.",
+      "city": "Des Moines",
+      "state": "IA",
+      "postal_code": "51111",
+      "country": "US"
+    },
+    "shipping_address": {
+      "address_line_1": "111 Colorado Ave.",
+      "address_line_2": "Apt 403",
+      "city": "Des Moines",
+      "state": "IA",
+      "postal_code": "51111",
+      "country": "US"
+    },
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+## Search Transactions
+
+In many cases, you may need to search transactions to find records associated with a specific customer, payment method, or an order ID from your system.
+PublicSquare offers the ability to [search](/api/financial/get-all-transactions) and [export](/api/financial/export-transactions) across most fields of a customer, payment method, and transaction.
+
+To perform a search, we can do the following:
+
+```shell showLineNumbers title="Search Transactions"
+curl 'https://api.publicsquare.com/transactions?query=order1234' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+This should return a [paginated result](/api/pagination):
+
+```json showLineNumbers
+{
+  "pagination": {
+    "total_items": 924,
+    "page_number": 1,
+    "page_size": 10,
+    "total_pages": 93
+  },
+  "data": [
+    {
+      "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+      "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+      "environment": "test",
+      "status": "successful",
+      // highlight-next-line
+      "external_id": "order1234",
+      "amount": 1000,
+      "fee_amount": 36,
+      "net_amount": 964,
+      "currency": "USD",
+      "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+      "type": "payment",
+      "processor": "nuvei",
+      "processor_id": "7110000000010554769",
+      "created_at": "2024-06-30T01:02:29.212Z",
+      "modified_at": "2024-06-30T01:02:29.212Z"
+    },
+    ...
+  ]
+}
+```
+
+### Searchable Fields
+
+The following fields are searchable using the `query` parameter:
+
+| Entity         | Field                         |
+|----------------|-------------------------------|
+| `payment`      | `id`                          |
+| `payment`      | `fraud_decision`              |
+| `refund`       | `id`                          |
+| `refund`       | `amount`                      |
+| `payout`       | `id`                          |
+| `transaction`  | `id`                          |
+| `transaction`  | `type`                        |
+| `transaction`  | `status`                      |
+| `transaction`  | `external_id`                 |
+| `transaction`  | `processor`                   |
+| `transaction`  | `processor_id`                |
+| `transaction`  | `amount`                      |
+| `transaction`  | `net_amount`                  |
+| `transaction`  | `settlement_id`               |
+| `customer`     | `id`                          |
+| `customer`     | `external_id`                 |
+| `customer`     | `first_name`                  |
+| `customer`     | `last_name`                   |
+| `customer`     | `business_name`               |
+| `customer`     | `email`                       |
+| `customer`     | `phone`                       |
+| `customer`     | `government_identifier_last4` |
+| `card`         | `cardholder_name`             |
+| `card`         | `last4`                       |
+| `bank_account` | `account_holder_name`         |
+| `bank_account` | `account_number_last4`        |
+
+<Alert>If there are additional fields you want to be able to search over, please <a href="mailto:payment-support@publicsq.com?subject=Transaction Search Fields">contact support</a>.</Alert>
+
+## Conclusion
+
+This guide showed you how to retrieve and search transactions. Every payment, refund, payout, and settlement in the system generates a transaction.

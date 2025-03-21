@@ -1,12 +1,9 @@
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 import { Alert } from "@site/src/components/shared/Alert";
 import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
 
-# Process ACH Payments
+# Process ACH Payouts
 
-Now that you have completed the [Collect Bank Accounts](/guides/merchants/collect-bank-accounts) guide, let's process an ACH payment with the newly captured bank account.
+Now that you have completed the [Collect Bank Accounts](/guides/payment-methods/collect-bank-accounts) guide, let's process an ACH payout with the newly captured bank account.
 
 ## Getting Started
 
@@ -18,9 +15,9 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
-## Process the Payment
+## Process the Payout
 
-We will need to use the information from the previously collected bank account to create a new payment.
+We will need to use the information from the previously collected bank account to create a new payout.
 
 For example, given you have a previously collected bank account:
 
@@ -31,6 +28,11 @@ For example, given you have a previously collected bank account:
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
   "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+  "account_holder_name": "John Doe",
+  "account_holder_type": "individual",
+  "account_type": "checking",
+  "routing_number": "110000000",
+  "account_number_last4": "1011",
   "billing_details": {
     "address_line_1": "111 Colorado Ave.",
     "address_line_2": "Apt 403",
@@ -40,27 +42,24 @@ For example, given you have a previously collected bank account:
     "country": "US"
   },
   "created_at": "2024-06-30T01:02:29.212Z",
-  "modified_at": "2024-06-30T01:02:29.212Z",
-  "account_holder_name": "John Doe",
-  "account_holder_type": "individual",
-  "account_type": "checking",
-  "routing_number": "110000000",
-  "account_number_last4": "1011"
+  "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
 
-We need to make a call to [Create Payment](/api/financial/create-payment) endpoint:
+### Create a Payout
 
-```shell showLineNumbers title="Create a Payment"
-curl 'https://api.publicsquare.com/payments' \
+We need to make a call to [Create Payout](/api/financial/create-payout) endpoint:
+
+```shell showLineNumbers title="Create a Payout"
+curl 'https://api.publicsquare.com/payouts' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
   "amount": 1000,
   "currency": "USD",
-  "paymentMethod": {
+  "payment_method": {
     "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "customer": {
@@ -80,20 +79,22 @@ curl 'https://api.publicsquare.com/payments' \
 
 <Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
 
-<Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payments being processed.</Alert>
+<Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payouts being processed.</Alert>
 
-If you [created a customer](/api/accounts/create-customer), then you can pass the `customer_id` when processing the payment:
+### Create with Existing Customer
 
-```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.publicsquare.com/payments' \
+If you [created a customer](/api/accounts/create-customer), then you can pass the `customer_id` when processing the payout:
+
+```shell showLineNumbers title="Create a Payout with Customer"
+curl 'https://api.publicsquare.com/payouts' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
   "amount": 1000,
   "currency": "USD",
-  "paymentMethod": {
+  "payment_method": {
     "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "customer": {
@@ -109,18 +110,20 @@ curl 'https://api.publicsquare.com/payments' \
 }'
 ```
 
-If you [attached the bank account to a customer](/api/financial/attach-bank-account-to-customer), then you can omit the `customer` section when processing the payment:
+### Create with Customer's Payment Method
 
-```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.publicsquare.com/payments' \
+If you [attached the bank account to a customer](/api/financial/attach-bank-account-to-customer), then you can omit the `customer` section when processing the payout:
+
+```shell showLineNumbers title="Create a Payout with Payment Method"
+curl 'https://api.publicsquare.com/payouts' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
   "amount": 1000,
   "currency": "USD",
-  "paymentMethod": {
+  "payment_method": {
     "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
   "billing_details": {
@@ -133,36 +136,37 @@ curl 'https://api.publicsquare.com/payments' \
 }'
 ```
 
-If you supplied the `billing_details` or [updated the bank account](/api/financial/update-bank-account), then you can omit the `billing_details` section when processing the payment:
+### Create with Payment Method's Billing Details
 
-```shell showLineNumbers title="Create a Payment with Customer"
-curl 'https://api.publicsquare.com/payments' \
+If you supplied the `billing_details` or [updated the bank account](/api/financial/update-bank-account), then you can omit the `billing_details` section when processing the payout:
+
+```shell showLineNumbers title="Create a Payout with Payment Method"
+curl 'https://api.publicsquare.com/payouts' \
 -X 'POST' \
--H 'X-API-KEY: <API_KEY_SECRET>' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
 -H 'Content-Type: application/json' \
 -d '{
   "amount": 1000,
   "currency": "USD",
-  "paymentMethod": {
+  "payment_method": {
     "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   }
 }'
 ```
 
-Given the above examples, you should see a payment result similar to:
+## Payout Response
+
+Given the above examples, you should see a payout result similar to:
 
 ```json showLineNumbers
 {
-  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pyt_24NFPd3jSZFTxiaH9UwjuqNdP",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
   "status": "pending",
-  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-  "amount": "1000",
-  "amount_charged": "1000",
-  "amount_refunded": "0",
-  "refunded": "false",
+  "transaction_id": "trx_6QgmXzQzk3S5K5EsR3DfEiMRj",
+  "amount": 1000,
   "currency": "USD",
   "payment_method": {
     "bank_account": {
@@ -187,16 +191,21 @@ Given the above examples, you should see a payment result similar to:
     "postal_code": "51111",
     "country": "US"
   },
-  "shipping_address": {
-    "address_line_1": "111 Colorado Ave.",
-    "address_line_2": "Apt 403",
-    "city": "Des Moines",
-    "state": "IA",
-    "postal_code": "51111",
-    "country": "US"
-  },
-  "fraud_decision": {
-    "decision": "accept"
+  "transaction": {
+    "id": "trx_6QgmXzQzk3S5K5EsR3DfEiMRj",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    "status": "pending",
+    "amount": -1000,
+    "fee_amount": 0,
+    "net_amount": -1000,
+    "currency": "USD",
+    "type_id": "pyt_24NFPd3jSZFTxiaH9UwjuqNdP",
+    "type": "payout",
+    "processor": "nuvei",
+    "processor_id": "7110000000010554769",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
   },
   "created_at": "2024-06-30T01:02:29.212Z",
   "modified_at": "2024-06-30T01:02:29.212Z"
@@ -205,8 +214,8 @@ Given the above examples, you should see a payment result similar to:
 
 ## Conclusion
 
-Now that we have seen how to process payments with a collected bank account, we may need to manage the payment or view information about the payment.
+Now that we have seen how to process payouts with a collected bank account, we may need to manage the payout or view information about the payout.
 Follow these guides to learn more:
 
-- [Issue a Refund](/guides/merchants/issue-refunds)
-- [View Transactions](/guides/merchants/view-transactions)
+- [Cancel a Payout](/guides/payouts/cancel-payouts)
+- [Search and View Transactions](/guides/transactions/search-and-view-transactions)
