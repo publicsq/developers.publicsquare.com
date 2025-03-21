@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.25.0...v1.25.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* handle ecommerce sdk wrapping ([f554e7d](https://github.com/publicsq/developers.publicsquare.com/commit/f554e7d3802f9cd0377a11ff4c4045077aa30166))
+
 # [1.25.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.24.0...v1.25.0) (2025-03-21)
 
 
