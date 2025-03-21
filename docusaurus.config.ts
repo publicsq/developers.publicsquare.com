@@ -64,8 +64,7 @@ const config: Config = {
         alt: "PublicSquare",
         href: "/",
         target: "_self",
-        src: "img/publicsquare-logo-dark.svg",
-        srcDark: "img/publicsquare-logo-light.svg",
+        src: "-",
       },
       items: [
         {

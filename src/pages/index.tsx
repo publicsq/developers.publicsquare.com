@@ -53,7 +53,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles["sdk-column"]}>
+              <div>
                 eCommerce Plugins
                 <div className={styles["sdk-column"]}>
                   <Card href="/plugins/magento-payments" img={<Magento />} className={styles.sdk}>
