@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.25.1...v1.26.0) (2025-03-22)
+
+
+### Features
+
+* add dynamic descriptor ([b2240a3](https://github.com/publicsq/developers.publicsquare.com/commit/b2240a3b125b5930c2f59448192c26a893e9871f))
+
 ## [1.25.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.25.0...v1.25.1) (2025-03-21)
 
 
