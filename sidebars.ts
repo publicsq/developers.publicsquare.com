@@ -49,6 +49,10 @@ const sidebars: SidebarsConfig = {
       items: ["guides/marketplaces/onboard-sellers"],
     },
     {
+      id: "guides/production-checklist/index",
+      type: "doc",
+    },
+    {
       type: "html",
       value: "<hr />",
     },

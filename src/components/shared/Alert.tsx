@@ -7,13 +7,15 @@ import error from "@site/static/img/alert/error.svg";
 import warning from "@site/static/img/alert/warning.svg";
 import success from "@site/static/img/alert/success.svg";
 import info from "@site/static/img/alert/info.svg";
+import question from "@site/static/img/alert/question.svg";
 
 export enum Alerts {
   ERROR = "error",
   WARNING = "warning",
   INFO = "info",
   SUCCESS = "success",
-  NEUTRAL = "neutral"
+  NEUTRAL = "neutral",
+  QUESTION = "question"
 }
 
 interface Alert {
@@ -34,6 +36,7 @@ export const Alert = ({
     [styles.info]: type == Alerts.INFO,
     [styles.success]: type == Alerts.SUCCESS,
     [styles.neutral]: type == Alerts.NEUTRAL,
+    [styles.question]: type == Alerts.QUESTION,
   });
 
   const Svg = {
@@ -41,6 +44,7 @@ export const Alert = ({
     [Alerts.WARNING]: warning,
     [Alerts.INFO]: info,
     [Alerts.SUCCESS]: success,
+    [Alerts.QUESTION]: question,
   }[type];
 
   return (

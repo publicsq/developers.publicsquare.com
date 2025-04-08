@@ -1,0 +1,25 @@
+---
+title: Production Chechlist
+description: An interactive checklist to help you review best practices before going to production.
+hide_title: true
+sidebar_label: Production Chechlist
+hide_table_of_contents: true
+---
+
+import { Alert } from "@site/src/components/shared/Alert";
+import { Intro } from "@site/src/components/shared/Intro";
+import { Content, QuestionCard } from "@site/src/components/question/QuestionCard";
+
+<Intro
+  title="Production Chechlist"
+  caption="An interactive checklist to help you review best practices before going to production."
+/>
+
+
+## Account & Setup
+
+<QuestionCard question="Has your PSQ merchant account been fully approved and verified?">
+  <Content type="no">
+    <Alert type="warning">Complete your onboarding [here](/guides/marketplaces/onboard-sellers).</Alert>
+  </Content>
+</QuestionCard>

@@ -1,14 +1,19 @@
 .container {
   display: flex;
   align-items: flex-start;
+  align-self: stretch;
   padding: 13px 18px 13px 18px;
   gap: 12px;
   border-radius: var(--ifm-global-radius);
   margin: 15px 0;
+  align-items: center;
 }
 
 .container > div:first-child {
-  padding-right: 14px;
+  padding: 4px 0px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .title {
@@ -29,31 +34,35 @@
 .error {
   background: var(--psq-alert-error-background);
   border: 1px solid rgba(245, 108, 157, 0.3);
-  color: var(--psq-alert-error-color);
+  color: var(--psq-mermaid-text-color);
 }
 
 .warning {
   background: var(--psq-alert-warning-background);
   border: 1px solid rgba(255, 167, 38, 0.3);
-  color: var(--psq-alert-warning-color);
+  color: var(--psq-mermaid-text-color);
 }
 
 .info {
   background: var(--psq-alert-info-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--psq-alert-info-color);
+  color: var(--psq-mermaid-text-color);
 }
 
 .success {
   background: var(--psq-alert-success-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--psq-alert-success-color);
+  color: var(--psq-mermaid-text-color);
 }
 
 .neutral {
   background: var(--psq-alert-neutral-background);
   border: 1px solid var(--alert-neutral-border-color);
-  color: var(--psq-alert-neutral-color);
+  color: var(--psq-mermaid-text-color);
+}
+
+.question {
+  border: 1px solid rgb(198, 198, 198);
 }
 
 .svg {
