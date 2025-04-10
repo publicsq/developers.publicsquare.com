@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, ReactElement, ReactNode, useEffect, useMemo, useState } from "react";
+import React, { PropsWithChildren, ReactElement, ReactNode, useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { Card } from "@site/src/components/shared/Card";
 
 import { AnswerButtons } from "./AnswerButtons";
@@ -8,6 +9,7 @@ import { Answer, AnswerType, State } from "./types";
 
 interface Props extends PropsWithChildren {
   question: string;
+  showDefault?: boolean;
   yesType?: AnswerType;
   noType?: AnswerType;
 }
@@ -34,13 +36,14 @@ const resolveState = (answer: Answer, yesType: AnswerType, noType: AnswerType): 
   }
   return "wrong";
 };
-export const QuestionCard = ({ question, yesType = "right", noType = "wrong", children }: Props) => {
+export const QuestionCard = ({ question, showDefault = false, yesType = "right", noType = "wrong", children }: Props) => {
   const [answer, setAnswer] = useState<Answer>(null);
 
   const childrenArray = React.Children.toArray(children);
   const yesContent = filterContent(childrenArray, "yes");
   const noContent = filterContent(childrenArray, "no");
   const naContent = filterContent(childrenArray, "na");
+  const defaultContent = filterContent(childrenArray, "default");
 
   const state = resolveState(answer, yesType, noType);
   const key = `Question: ${question}`;
@@ -63,7 +66,9 @@ export const QuestionCard = ({ question, yesType = "right", noType = "wrong", ch
         <div className={styles.icon}>
           <QuestionCheckbox state={state} />
         </div>
-        <div className={styles.question}>{question}</div>
+        <div className={styles.question}>
+          <ReactMarkdown>{question}</ReactMarkdown>
+        </div>
         <div className={styles["button-group"]}>
           <AnswerButtons state={state} value={answer} onChange={updateAnswer} />
         </div>
@@ -71,6 +76,7 @@ export const QuestionCard = ({ question, yesType = "right", noType = "wrong", ch
           {answer === "yes" && yesContent}
           {answer === "no" && noContent}
           {answer === "na" && naContent}
+          {answer === null && showDefault && defaultContent}
         </div>
       </div>
     </Card>

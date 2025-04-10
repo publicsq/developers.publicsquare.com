@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React, { PropsWithChildren } from "react";
+import ReactMarkdown from "react-markdown";
 
 import styles from "./Alert.module.css";
 
@@ -8,6 +9,8 @@ import warning from "@site/static/img/alert/warning.svg";
 import success from "@site/static/img/alert/success.svg";
 import info from "@site/static/img/alert/info.svg";
 import question from "@site/static/img/alert/question.svg";
+import neutral from "@site/static/img/alert/neutral.svg";
+import Question from "@site/static/img/alert/question.svg";
 
 export enum Alerts {
   ERROR = "error",
@@ -22,12 +25,14 @@ interface Alert {
   type: Alerts;
   title: string;
   content: string;
+  subQuestion?: string;
 }
 
 export const Alert = ({
   type = Alerts.INFO,
   title,
   content,
+  subQuestion,
   children,
 }: PropsWithChildren<Alert>) => {
   const containerClass = clsx({
@@ -44,6 +49,7 @@ export const Alert = ({
     [Alerts.WARNING]: warning,
     [Alerts.INFO]: info,
     [Alerts.SUCCESS]: success,
+    [Alerts.NEUTRAL]: neutral,
     [Alerts.QUESTION]: question,
   }[type];
 
@@ -55,6 +61,11 @@ export const Alert = ({
       <div>
         {title && <div className={styles.title}>{title}</div>}
         <div className={styles.content}>{content ?? children}</div>
+        {subQuestion && 
+        <div className={styles.subquestion}>
+          <div className={styles.subquestionSvg}><Question /></div>
+          <ReactMarkdown>{subQuestion}</ReactMarkdown>
+        </div>}
       </div>
     </div>
   );

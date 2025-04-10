@@ -20,11 +20,12 @@
 
   /* Alerts */
   --psq-alert-warning-color: rgba(255, 147, 100, 1);
-  --psq-alert-warning-background: rgba(255, 147, 100, .1);
+  --psq-alert-warning-background: linear-gradient(90deg, rgba(255, 147, 100, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
   --psq-alert-error-color: #EF3E36;
   --psq-alert-error-background: linear-gradient(90deg, rgba(246, 81, 136, 0.2) 0.78%, rgba(246, 81, 136, 0.05) 41.41%);
   --psq-alert-info-color: rgba(0, 152, 179, 1);
   --psq-alert-info-background: rgba(0, 152, 179, .1);
+  --psq-alert-neutral-background: linear-gradient(90deg, rgba(119, 119, 119, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
 
   --psq-mermaid-text-color: #000;
   --psq-mermaid-actor-color: #FFF;

@@ -1,8 +1,8 @@
 ---
-title: Production Chechlist
+title: Production Checklist
 description: An interactive checklist to help you review best practices before going to production.
 hide_title: true
-sidebar_label: Production Chechlist
+sidebar_label: Production Checklist
 hide_table_of_contents: true
 ---
 
@@ -11,15 +11,116 @@ import { Intro } from "@site/src/components/shared/Intro";
 import { Content, QuestionCard } from "@site/src/components/question/QuestionCard";
 
 <Intro
-  title="Production Chechlist"
+  title="Production Checklist"
   caption="An interactive checklist to help you review best practices before going to production."
 />
-
 
 ## Account & Setup
 
 <QuestionCard question="Has your PSQ merchant account been fully approved and verified?">
   <Content type="no">
-    <Alert type="warning">Complete your onboarding [here](/guides/marketplaces/onboard-sellers).</Alert>
+    <Alert type="warning">Complete your onboarding [here](https://portal.publicsquare.com/).</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard showDefault={true} question="Is your descriptor properly configured with the processor?">
+  <Content type="default">
+    <Alert type="question">What is a [descriptor](## "Descriptor info here")?</Alert>
+  </Content>
+  <Content type="no">
+    <Alert type="warning" subQuestion="What is a [descriptor](## 'Descriptor info here')?">Configure your onboarding [here].</Alert>
+  </Content>
+  <Content type="na">
+    <Alert type="neutral" subQuestion="What is a [descriptor](## 'Descriptor info here')?">This is not necessary, but many merchants prefer to control how their charges look on a customer’s bank statements.</Alert>
+  </Content>
+</QuestionCard>
+
+## Payment Method Testing
+
+<QuestionCard showDefault={true} question="Have you integrated PSQ payments into your test environment for your website?">
+  <Content type="default">
+    <Alert type="question">What is a test [environment](## "Environment info here")?</Alert>
+  </Content>
+  <Content type="no">
+    <Alert type="warning" subQuestion="What is a test [environment](## 'Environment info here')?">Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
+  </Content>
+  <Content type="na">
+    <Alert type="question">What is a test [environment](## "Environment info here")?</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you successfully tested a **credit card** transaction?">
+  <Content type="no">
+    <Alert type="warning">Testing this is as simple as checking out like a normal customer would on the test environment of your website using one of these [test cards](https://developers.publicsquare.com/api/testing).</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you tested at least one **ACH** transaction, if applicable?">
+  <Content type="no">
+    <Alert type="warning">Testing this is as simple as checking out like a normal customer would and selecting ACH as your payment option using one of these [test bank accounts](https://developers.publicsquare.com/api/testing).</Alert>
+  </Content>
+  <Content type="na">
+    <Alert type="neutral">You can request ACH transactions to be enabled in your [merchant portal settings].</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Did each test payment display the correct status and amount in the PSQ Portal?">
+  <Content type="no">
+    <Alert type="warning">Did you run into one of these common [issues/errors](mailto:payment-support@publicsq.com)?</Alert>
+  </Content>
+</QuestionCard>
+
+## Refund & Reconciliation
+
+<QuestionCard question="Have you successfully processed both **full and partial refunds**?">
+  <Content type="no">
+    <Alert type="warning">Follow the steps to process a refund [here].</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you tested a **same-day refund** (pre-settlement) by marking the order as “Cancelled” in the PSQ Portal?">
+  <Content type="no">
+    <Alert type="warning">Follow the steps to cancel a payment [here].</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Did the refunded amounts reflect in both the PSQ Portal and your eCommerce platform?">
+  <Content type="no">
+    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
+  </Content>
+</QuestionCard>
+
+## Additional Testing
+
+<QuestionCard question="Did each payment correctly associate with the order in your eCommerce platform?">
+  <Content type="no">
+    <Alert type="warning">Did you run into one of these [common issues/errors](mailto:payment-support@publicsq.com)?</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you verified that PSQ is receiving **order creation webhooks** from your eCommerce platform (e.g., BigCommerce, Woo, Magento)?">
+  <Content type="no">
+    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Do **payment statuses** sync correctly between PSQ Portal and your eCommerce platform?">
+</QuestionCard>
+
+<QuestionCard question="Do you understand how the Authorization → Capture Flow works for a payment?">
+  <Content type="no">
+    <Alert type="warning">Learn how this works [here].</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you manually captured a payment using the portal?">
+  <Content type="no">
+    <Alert type="warning">Capture a payment in your merchant portal by following [these steps].</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you tested error handling in cases where the webhook fails or is delayed?">
+  <Content type="no">
+    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
   </Content>
 </QuestionCard>
