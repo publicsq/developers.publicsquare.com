@@ -27,7 +27,7 @@ PublicSquare uses a `status` field on every transaction and transaction type to 
 | `rejected`         | Set when the `fraud_details.decision` field on a payment is marked as `reject`. This is set when your fraud decision rules trigger a `reject` decision.                           |
 | `declined`         | Set when the bank rejects the payment or payout. Usually due to AVS or CVV2 checks failing or the payment method being declined such as invalid card or bank account details.     |
 | `cancelled`        | Set when a payment, payout, or refund has been successfully cancelled before being settled. 
-| `error`            | The payment or refund attempt failed due to an unexpected system or integration issue, such as an invalid response from the processor, network errors, or a missing required parameter. This status applies to all payment types.|
+| `error`            | The payment, payout, or refund attempt failed due to an unexpected system or integration issue, such as an invalid response from the processor, network errors, or a missing required parameter. |
 
 ## Processing Schedules
 
