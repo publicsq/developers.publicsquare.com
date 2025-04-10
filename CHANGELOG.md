@@ -1,3 +1,5 @@
+## [1.26.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.26.0...v1.26.1) (2025-04-10)
+
 # [1.26.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.25.1...v1.26.0) (2025-03-22)
 
 
