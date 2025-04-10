@@ -10,7 +10,7 @@ import success from "@site/static/img/alert/success.svg";
 import info from "@site/static/img/alert/info.svg";
 import question from "@site/static/img/alert/question.svg";
 import neutral from "@site/static/img/alert/neutral.svg";
-import Question from "@site/static/img/alert/question.svg";
+import Subquestion from "@site/static/img/alert/subquestion.svg";
 
 export enum Alerts {
   ERROR = "error",
@@ -55,17 +55,20 @@ export const Alert = ({
 
   return (
     <div className={clsx([styles.container, containerClass])}>
-      {Svg &&<div>
-         <Svg className={styles.svg} />
-      </div>}
       <div>
-        {title && <div className={styles.title}>{title}</div>}
-        <div className={styles.content}>{content ?? children}</div>
-        {subQuestion && 
-        <div className={styles.subquestion}>
-          <div className={styles.subquestionSvg}><Question /></div>
-          <ReactMarkdown>{subQuestion}</ReactMarkdown>
+        {Svg &&<div>
+          <Svg className={styles.svg} />
         </div>}
+        <div className={styles.content}>
+          {title && <div className={styles.title}>{title}</div>}
+
+          <div className={styles.contentText}><div>{content ?? children}</div></div>
+          {subQuestion && 
+          <div className={styles.subquestion}>
+            <Subquestion className={styles.subquestionSvg}/>
+            <ReactMarkdown components={{ p: "span" }}>{subQuestion}</ReactMarkdown>
+          </div>}
+        </div>
       </div>
     </div>
   );
