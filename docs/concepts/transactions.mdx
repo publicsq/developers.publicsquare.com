@@ -19,14 +19,15 @@ PublicSquare uses different transaction types to track the flow of money for dif
 
 PublicSquare uses a `status` field on every transaction and transaction type to specify the state the transaction is in.
 
-| Status             | Description                                                                                                                                                                       |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `requires_capture` | Used for authorized payments that still require capture. This places an authorization on the card. The transaction either needs to be captured or cancelled.                      |
-| `successful`       | When a payment, payout, or refund has been successfully processed. For ACH payments and payouts, this will be set 2-3 days after the transaction was processed.                   |
-| `pending`          | Used for ACH payments and payouts. Once the funds have cleared the bank account, the status will be updated to `successful` usually 2-3 days after the transaction was processed. |
-| `rejected`         | Set when the `fraud_details.decision` field on a payment is marked as `reject`. This is set when your fraud decision rules trigger a `reject` decision.                           |
-| `declined`         | Set when the bank rejects the payment or payout. Usually due to AVS or CVV2 checks failing or the payment method being declined such as invalid card or bank account details.     |
-| `cancelled`        | Set when a payment, payout, or refund has been successfully cancelled before being settled.                                                                                       |
+| Status             | Description                                                                                                                                                                                      |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `requires_capture` | Used for authorized payments that still require capture. This places an authorization on the card. The transaction either needs to be captured or cancelled.                                     |
+| `successful`       | When a payment, payout, or refund has been successfully processed. For ACH payments and payouts, this will be set 2-3 days after the transaction was processed.                                  |
+| `pending`          | Used for ACH payments and payouts. Once the funds have cleared the bank account, the status will be updated to `successful` usually 2-3 days after the transaction was processed.                |
+| `rejected`         | Set when the `fraud_details.decision` field on a payment is marked as `reject`. This is set when your fraud decision rules trigger a `reject` decision.                                          |
+| `declined`         | Set when the bank rejects the payment or payout. Usually due to AVS or CVV2 checks failing or the payment method being declined such as invalid card or bank account details.                    |
+| `cancelled`        | Set when a payment, payout, or refund has been successfully cancelled before being settled.                                                                                                      |
+| `error`            | The payment, payout, or refund attempt failed due to an unexpected system or integration issue, such as an invalid response from the processor, network errors, or a missing required parameter. |
 
 ## Processing Schedules
 
@@ -38,6 +39,6 @@ ACH requires an extra 2-3 business days for the funds to be withdrawn from the s
 |------------------|---------------------|----------------------|
 | `payment`        | `card`              | 2 to 3 business days |
 | `payout`         | `card`              | 2 to 3 business days |
-| `payment`        | `bank_account`               | 5 to 7 business days |
-| `payout`         | `bank_account`               | 5 to 7 business days |
+| `payment`        | `bank_account`      | 5 to 7 business days |
+| `payout`         | `bank_account`      | 5 to 7 business days |
 
