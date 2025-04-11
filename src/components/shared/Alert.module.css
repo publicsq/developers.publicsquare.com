@@ -51,6 +51,15 @@
   line-height: 130%;
 }
 
+.svg {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .error {
   background: var(--psq-alert-error-background);
   border: 1px solid rgba(245, 108, 157, 0.3);
@@ -83,17 +92,8 @@
 
 .question {
   background:  var(--psq-alert-neutral-background);
-  color: var(--psq-alert-neutral-color);
+  color: var(--ifm-font-color-secondary);
   border: 1px solid var(--Neutral-350, #777);
-}
-
-.svg {
-  display: flex;
-  width: 25px;
-  height: 25px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .subquestion {
@@ -103,7 +103,7 @@
   align-self: stretch;
 }
 
-.subquestionSvg {
+.small {
   width: 20px;
   height: 20px;
   aspect-ratio: 1/1;
@@ -123,4 +123,16 @@
 
 .success .svg path {
   fill: var(--psq-alert-success-color);
+}
+
+.neutral .svg path, 
+.question .svg path, 
+.subquestion .svg path {
+  fill: #515151;
+}
+
+[data-theme="dark"] .neutral .svg path, 
+[data-theme="dark"] .question .svg path, 
+[data-theme="dark"] .subquestion .svg path {
+  fill: #FFF !important;
 }

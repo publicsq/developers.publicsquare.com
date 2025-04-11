@@ -56,14 +56,14 @@ export const Alert = ({
     <div className={clsx([styles.container, containerClass])}>
       <div>
         {Svg &&<div>
-          <Svg className={styles.svg} />
+          <Svg className={clsx(styles.svg)} />
         </div>}
         <div className={styles.content}>
           {title && <div className={styles.title}>{title}</div>}
           <div className={styles.contentText}><div>{content ?? children}</div></div>
           {subQuestion && 
           <div className={styles.subquestion}>
-            <Subquestion className={styles.subquestionSvg}/>
+            <Subquestion className={clsx(styles.svg, styles.small)} />
             {subQuestion}
           </div>}
         </div>
