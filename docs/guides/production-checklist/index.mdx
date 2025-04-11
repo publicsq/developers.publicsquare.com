@@ -9,6 +9,7 @@ hide_table_of_contents: true
 import { Alert } from "@site/src/components/shared/Alert";
 import { Intro } from "@site/src/components/shared/Intro";
 import { Content, QuestionCard } from "@site/src/components/question/QuestionCard";
+import { Tooltip } from "@site/src/components/shared/Tooltip";
 
 <Intro
   title="Production Checklist"
@@ -25,13 +26,13 @@ import { Content, QuestionCard } from "@site/src/components/question/QuestionCar
 
 <QuestionCard showDefault={true} question="Is your descriptor properly configured with the processor?">
   <Content type="default">
-    <Alert type="question">What is a [descriptor](## "Descriptor info here")?</Alert>
+    <Alert type="question">What is a <Tooltip text="Missing info here">descriptor</Tooltip>?</Alert>
   </Content>
   <Content type="no">
-    <Alert type="warning" subQuestion="What is a [descriptor](## 'Descriptor info here')?">Configure your onboarding [here].</Alert>
+    <Alert type="warning" subQuestion={<>What is a <Tooltip text='Missing info here'>descriptor</Tooltip>?</>}>Configure your onboarding [here].</Alert>
   </Content>
   <Content type="na">
-    <Alert type="neutral" subQuestion="What is a [descriptor](## 'Descriptor info here')?">This is not necessary, but many merchants prefer to control how their charges look on a customer’s bank statements.</Alert>
+    <Alert type="neutral" subQuestion={<>What is a <Tooltip text='Missing info here'>descriptor</Tooltip>?</>}>This is not necessary, but many merchants prefer to control how their charges look on a customer’s bank statements.</Alert>
   </Content>
 </QuestionCard>
 
@@ -39,13 +40,13 @@ import { Content, QuestionCard } from "@site/src/components/question/QuestionCar
 
 <QuestionCard showDefault={true} question="Have you integrated PSQ payments into your test environment for your website?">
   <Content type="default">
-    <Alert type="question">What is a test [environment](## "Environment info here")?</Alert>
+    <Alert type="question">What is a test <Tooltip text="Missing info here">environment</Tooltip>?</Alert>
   </Content>
   <Content type="no">
-    <Alert type="warning" subQuestion="What is a test [environment](## 'Environment info here')?">Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
+    <Alert type="warning" subQuestion={<>What is a test <Tooltip text='Missing info here'>environment</Tooltip>?</>}>Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
   </Content>
   <Content type="na">
-    <Alert type="question">What is a test [environment](## "Environment info here")?</Alert>
+    <Alert type="question">What is a test <Tooltip text="Missing info here">environment</Tooltip>?</Alert>
   </Content>
 </QuestionCard>
 

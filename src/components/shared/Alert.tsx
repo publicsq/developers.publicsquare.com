@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import React, { PropsWithChildren } from "react";
-import ReactMarkdown from "react-markdown";
 
 import styles from "./Alert.module.css";
 
@@ -25,7 +24,7 @@ interface Alert {
   type: Alerts;
   title: string;
   content: string;
-  subQuestion?: string;
+  subQuestion?: React.ReactNode;
 }
 
 export const Alert = ({
@@ -66,7 +65,7 @@ export const Alert = ({
           {subQuestion && 
           <div className={styles.subquestion}>
             <Subquestion className={styles.subquestionSvg}/>
-            <ReactMarkdown components={{ p: "span" }}>{subQuestion}</ReactMarkdown>
+            {subQuestion}
           </div>}
         </div>
       </div>

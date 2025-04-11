@@ -1,6 +1,9 @@
 .card {
   margin-top: 16px;
   margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-global-shadow-lw);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
 }
 
 .grid {

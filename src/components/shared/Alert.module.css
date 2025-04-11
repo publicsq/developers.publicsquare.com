@@ -42,7 +42,6 @@
   align-items: right;
   gap: 10px;
   align-self: stretch;
-  color: var(--psq-mermaid-text-color);
 }
 
 .contentText > div:first-child {
@@ -50,41 +49,41 @@
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  color: var(--psq-mermaid-text-color);
 }
 
 .error {
   background: var(--psq-alert-error-background);
   border: 1px solid rgba(245, 108, 157, 0.3);
-  color: var(--psq-mermaid-text-color);
+  color: var(--ifm-font-color-base);
 }
 
 .warning {
   background: var(--psq-alert-warning-background);
   border: 1px solid rgba(255, 147, 100, 1);
-  color: var(--psq-mermaid-text-color);
+  color: var(--ifm-font-color-base);
 }
 
 .info {
   background: var(--psq-alert-info-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--psq-mermaid-text-color);
+  color: var(--ifm-font-color-base);
 }
 
 .success {
   background: var(--psq-alert-success-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--psq-mermaid-text-color);
+  color: var(--ifm-font-color-base);
 }
 
 .neutral {
   background:  var(--psq-alert-neutral-background);
-  border: 1px solid #777;
-  color: var(--psq-mermaid-text-color);
+  color: var(--ifm-font-color-base);
+  box-shadow: var(--ifm-global-shadow-lw);
 }
 
 .question {
-  border: 1px solid rgb(198, 198, 198);
+  color: var(--psq-alert-neutral-color);
+  box-shadow: var(--ifm-global-shadow-lw);
 }
 
 .svg {
