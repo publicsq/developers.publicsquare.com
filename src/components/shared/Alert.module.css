@@ -54,36 +54,37 @@
 .error {
   background: var(--psq-alert-error-background);
   border: 1px solid rgba(245, 108, 157, 0.3);
-  color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-secondary);
 }
 
 .warning {
   background: var(--psq-alert-warning-background);
   border: 1px solid rgba(255, 147, 100, 1);
-  color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-secondary);
 }
 
 .info {
   background: var(--psq-alert-info-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-secondary);
 }
 
 .success {
   background: var(--psq-alert-success-background);
   border: 1px solid rgba(2, 136, 209, 0.3);
-  color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-secondary);
 }
 
 .neutral {
   background:  var(--psq-alert-neutral-background);
-  color: var(--ifm-font-color-base);
-  box-shadow: var(--ifm-global-shadow-lw);
+  color: var(--ifm-font-color-secondary);
+  border: 1px solid var(--Neutral-350, #777);
 }
 
 .question {
+  background:  var(--psq-alert-neutral-background);
   color: var(--psq-alert-neutral-color);
-  box-shadow: var(--ifm-global-shadow-lw);
+  border: 1px solid var(--Neutral-350, #777);
 }
 
 .svg {

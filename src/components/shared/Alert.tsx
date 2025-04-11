@@ -60,7 +60,6 @@ export const Alert = ({
         </div>}
         <div className={styles.content}>
           {title && <div className={styles.title}>{title}</div>}
-
           <div className={styles.contentText}><div>{content ?? children}</div></div>
           {subQuestion && 
           <div className={styles.subquestion}>
