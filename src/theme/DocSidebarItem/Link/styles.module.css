@@ -15,7 +15,7 @@
 }
 
 .active {
-  filter: var(--psq-sidebar-icon-active-color);
+  filter: var(--psq-sidebar-icon-active-color) !important;
 }
 
 .label {
