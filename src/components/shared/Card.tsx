@@ -1,7 +1,7 @@
+import React, { ComponentProps, DetailedHTMLProps, HtmlHTMLAttributes, PropsWithChildren } from "react";
 import { useHistory } from "@docusaurus/router";
+import ThemedImage from "@theme/ThemedImage";
 import clsx from "clsx";
-import React, { DetailedHTMLProps, HtmlHTMLAttributes, PropsWithChildren } from "react";
-
 import styles from "./Card.module.css";
 
 const TwoColumnLayout = ({ children }: PropsWithChildren) => <div className={styles["card-container"]}>{children}</div>;

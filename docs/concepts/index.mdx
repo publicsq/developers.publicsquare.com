@@ -6,10 +6,17 @@ hide_table_of_contents: true
 
 import { Intro } from "@site/src/components/shared/Intro";
 import { Card } from "@site/src/components/shared/Card";
+import TransactionsImage from "@site/static/img/icons/money-bill-transfer-gradient.svg";
+import FraudDetailsImage from "@site/static/img/icons/shield-check-gradient.svg";
+import ApiKeysImage from "@site/static/img/icons/key-gradient.svg";
+import WebhooksImage from "@site/static/img/icons/webhook-gradient.svg";
+import AccountsImage from "@site/static/img/icons/file-invoice-dollar-gradient.svg";
+import ConnectionsImage from "@site/static/img/icons/arrows-gradient.svg";
 
 <Intro
   title="Concepts"
   caption="Learn about key concepts of PublicSquare's platform."
+  img="/img/icons/graduation-cap-gradient.svg"
 />
 
 Explore the knowledge base about the core concepts, terminology, and FAQ's related to PublicSquare's platform.
@@ -20,25 +27,36 @@ Explore the knowledge base about the core concepts, terminology, and FAQ's relat
   <Card
     href="/concepts/transactions"
     heading="Transactions"
+    img={<div className="card-img-container"><TransactionsImage /></div>}
   >Learn about transactions types and statuses.</Card>
 
   <Card
     href="/concepts/fraud-details-and-prevention"
     heading="Fraud Details and Prevention"
+    img={<div className="card-img-container"><FraudDetailsImage /></div>}
   >Discover how to reduce fraud and chargebacks.</Card>
 
   <Card
     href="/concepts/api-keys"
     heading="API Keys"
+    img={<div className="card-img-container"><ApiKeysImage /></div>}
   >Learn how to access the PublicSquare API.</Card>
 
   <Card
     href="/concepts/webhooks"
     heading="Webhooks"
+    img={<div className="card-img-container"><WebhooksImage /></div>}
   >Receive notifications for events about your account.</Card>
 
   <Card
     href="/concepts/accounts"
     heading="Accounts"
+    img={<div className="card-img-container"><AccountsImage /></div>}
   >Configure your account for your business use-cases.</Card>
+
+  <Card
+    href="/concepts/connections"
+    heading="Connections"
+    img={<div className="card-img-container"><ConnectionsImage /></div>}
+  >See how to connect and manage seller accounts to your merchant account.</Card>
 </Card.TwoColumnLayout>

@@ -75,6 +75,7 @@
   column-gap: 64px;
   row-gap: 32px;
 }
+
 .sdks-container > div {
   display: flex;
   gap: 16px;
@@ -132,6 +133,15 @@
 
 .explore-cards > div {
   flex: 1 1 30%;
+}
+
+.explore-card > div {
+  place-items: flex-start;
+}
+
+.explore-card > div:first-child {
+  margin-bottom: 10px;
+  place-items: center;
 }
 
 @media only screen and (max-width: 600px) {

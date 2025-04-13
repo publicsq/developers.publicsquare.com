@@ -1,12 +1,8 @@
 import React, { ReactNode, ComponentProps } from "react";
-
 import styles from "./PlatformCard.module.css";
-import utils from "../utils.module.css";
-
 import clsx from "clsx";
 import { Card } from "../shared/Card";
 import { isValidPlatform, PLATFORM } from "../types";
-
 import { getPlatformIcon } from "../utils";
 import ThemedImage from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -29,7 +25,7 @@ const PlatformCard = ({ icon, heading, body, cta, className, href, hoverable, so
       className={clsx([className, styles.card])}
       href={href}
       img={
-        <div className={utils["plugin-platform-icon"]}>
+        <div className={styles["card-img-container"]}>
           {sources ? (
             <ThemedImage
               sources={{

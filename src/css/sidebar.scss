@@ -33,10 +33,18 @@
   background: var(--psq-menu-color-background-active-hover);
 }
 
+.menu__link--active, .menu__link--active:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
 .menu__caret:hover {
   background: none;
 }
 
 .menu__list .menu__list {
   padding-left: calc(var(--ifm-menu-link-padding-horizontal) * 2.25);
+}
+
+.theme-doc-sidebar-item-link, .theme-doc-sidebar-item-link-level-1, .theme-doc-sidebar-item-category > div {
+  align-items: center;
 }

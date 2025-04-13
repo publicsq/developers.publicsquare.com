@@ -7,3 +7,22 @@
 .repository {
   margin: 0px !important;
 }
+
+.card-img-container {
+  min-width: 60px;
+  max-width: 60px;
+  min-height: 60px;
+  max-height: 60px;
+  border: 1px solid var(--psq-default-border-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(0, 152, 179, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  background: var(--teal-transparent-15, #82C4C226);
+}
+
+.card-img-container svg {
+  width: 75%;
+  height: 75%;
+}

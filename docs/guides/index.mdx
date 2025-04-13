@@ -9,10 +9,25 @@ hide_table_of_contents: true
 import { Intro } from "@site/src/components/shared/Intro";
 import { AuthButtons } from "@site/src/components/docs/AuthButtons";
 import { Card } from "@site/src/components/shared/Card";
+import CollectCardsImage from "@site/static/img/icons/hand-holding-card-gradient.svg";
+import CollectBankAccountsImage from "@site/static/img/icons/hand-holding-bank-gradient.svg";
+import ProcessCardPaymentsImage from "@site/static/img/icons/process-card-gradient.svg";
+import ProcessAchPaymentsImage from "@site/static/img/icons/process-bank-gradient.svg";
+import ProcessCardPayoutsImage from "@site/static/img/icons/light-credit-card-circle-arrow-right-gradient.svg";
+import ProcessAchPayoutsImage from "@site/static/img/icons/light-building-columns-circle-arrow-right-gradient.svg";
+import RefundPaymentsImage from "@site/static/img/icons/light-receipt-rotate-left-gradient.svg";
+import SearchTransactionsImage from "@site/static/img/icons/magnifying-glass-dollar-gradient.svg";
+import TransactionsImage from "@site/static/img/icons/money-bill-transfer-gradient.svg";
+import FraudDetailsImage from "@site/static/img/icons/shield-check-gradient.svg";
+import ApiKeysImage from "@site/static/img/icons/key-gradient.svg";
+import WebhooksImage from "@site/static/img/icons/webhook-gradient.svg";
+import AccountsImage from "@site/static/img/icons/file-invoice-dollar-gradient.svg";
+import ConnectionsImage from "@site/static/img/icons/arrows-gradient.svg";
 
 <Intro
   title="Getting Started"
   caption="PublicSquare provides APIs, SDKs, and e-commerce plugins to make capturing cards and managing payments fast and simple."
+  img="/img/icons/rocket-gradient.svg"
 />
 
 ### 1. Set up your Account
@@ -29,41 +44,49 @@ Jump into action with a step-by-step guide tailored to your use case.
   <Card
     href="/guides/payment-methods/collect-cards"
     heading="Collect Cards"
+    img={<div className="card-img-container"><CollectCardsImage /></div>}
   >Collect credit/debit cards in your web application.</Card>
 
   <Card
     href="/guides/payment-methods/collect-bank-accounts"
     heading="Collect Bank Accounts"
+    img={<div className="card-img-container"><CollectBankAccountsImage /></div>}
   >Collect bank accounts in your web application.</Card>
 
   <Card
     href="/guides/payments/process-card-payments"
     heading="Process Card Payments"
+    img={<div className="card-img-container"><ProcessCardPaymentsImage /></div>}
   >Process card payments.</Card>
 
   <Card
     href="/guides/payments/process-ach-payments"
     heading="Process ACH Payments"
+    img={<div className="card-img-container"><ProcessAchPaymentsImage /></div>}
   >Process ACH payments.</Card>
 
   <Card
     href="/guides/payouts/process-card-payouts"
-    heading="Process ACH Payouts"
+    heading="Process Card Payouts"
+    img={<div className="card-img-container"><ProcessCardPayoutsImage /></div>}
   >Process card payouts.</Card>
 
   <Card
     href="/guides/payouts/process-ach-payouts"
     heading="Process ACH Payouts"
+    img={<div className="card-img-container"><ProcessAchPayoutsImage /></div>}
   >Process ACH payouts.</Card>
 
   <Card
     href="/guides/refunds/refund-payments"
     heading="Refund Payments"
+    img={<div className="card-img-container"><RefundPaymentsImage /></div>}
   >Issue refunds to your customers.</Card>
 
   <Card
     heading="Search and View Transactions"
     href="/guides/transactions/view-transactions"
+    img={<div className="card-img-container"><SearchTransactionsImage /></div>}
   >Search and view transactions in your account.</Card>
 </Card.TwoColumnLayout>
 
@@ -75,25 +98,36 @@ Explore the Guides menu for more developer-centric guides.
   <Card
     href="/concepts/transactions"
     heading="Transactions"
+    img={<div className="card-img-container"><TransactionsImage /></div>}
   >Learn about transactions types and statuses.</Card>
 
   <Card
     href="/concepts/fraud-details-and-prevention"
     heading="Fraud Details and Prevention"
+    img={<div className="card-img-container"><FraudDetailsImage /></div>}
   >Discover how to reduce fraud and chargebacks.</Card>
 
   <Card
     href="/concepts/api-keys"
     heading="API Keys"
+    img={<div className="card-img-container"><ApiKeysImage /></div>}
   >Learn how to access the PublicSquare API.</Card>
 
   <Card
     href="/concepts/webhooks"
     heading="Webhooks"
+    img={<div className="card-img-container"><WebhooksImage /></div>}
   >Receive notifications for events about your account.</Card>
 
   <Card
     href="/concepts/accounts"
     heading="Accounts"
+    img={<div className="card-img-container"><AccountsImage /></div>}
   >Configure your account for your business use-cases.</Card>
+
+  <Card
+    href="/concepts/connections"
+    heading="Connections"
+    img={<div className="card-img-container"><ConnectionsImage /></div>}
+  >See how to connect and manage seller accounts to your merchant account.</Card>
 </Card.TwoColumnLayout>
