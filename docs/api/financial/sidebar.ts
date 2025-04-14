@@ -230,6 +230,36 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Transactions",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-processor-responses",
+          label: "Get all processor responses",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-transactions",
+          label: "Get all transactions",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-transaction-by-id",
+          label: "Get transaction by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/export-transactions",
+          label: "Export transactions",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Refunds",
       items: [
         {
@@ -296,24 +326,18 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Transactions",
+      label: "Transfers",
       items: [
         {
           type: "doc",
-          id: "api/financial/get-all-transactions",
-          label: "Get all transactions",
+          id: "api/financial/get-all-transfers",
+          label: "Get all transfers",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/financial/get-transaction-by-id",
-          label: "Get transaction by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/export-transactions",
-          label: "Export transactions",
+          id: "api/financial/get-transfer-by-id",
+          label: "Get transfer by ID",
           className: "api-method get",
         },
       ],

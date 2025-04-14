@@ -52,6 +52,18 @@ const sidebar: SidebarsConfig = {
           label: "Update account member",
           className: "api-method put",
         },
+        {
+          type: "doc",
+          id: "api/accounts/get-all-account-settings",
+          label: "Get all account settings",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/request-account-setting-access",
+          label: "Request account setting access",
+          className: "api-method post",
+        },
       ],
     },
     {
