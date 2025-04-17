@@ -171,7 +171,6 @@
   .card-body a:not(:first-child) {
     margin-top: 24px;
   }
-
 }
 
 @media only screen and (max-width: 800px) {
@@ -195,8 +194,8 @@
 
   .sdk svg,
   .sdk img {
-    height: 42px;
-    width: 42px;
+    height: 32px;
+    width: 32px;
   }
 
   .explore-cards > div {
