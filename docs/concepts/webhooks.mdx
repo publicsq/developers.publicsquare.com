@@ -148,25 +148,26 @@ var verified = rsaFormatter.VerifySignature(hash, Convert.FromBase64String(signa
   </TabItem>
   <TabItem value="php" label="PHP">
 ```php showLineNumbers
-// Get the signature from the X-SIGNATURE header
-$signature = $_SERVER['HTTP_X_SIGNATURE'];
-
 // Get the raw request body
 $requestBody = file_get_contents('php://input');
 
-// Decode the base64-encoded public key
-$decodedKey = base64_decode($encodedSigningSecret);
+// Get the signature from the X-SIGNATURE header
+$signature = $_SERVER['HTTP_X_SIGNATURE'];
 
-// Format the public key in X.509 style
+// Decode the signature from base64
+$decodedSignature = base64_decode($signature);
+
+// Decode the base64-encoded webhook signing secret for this webhook
+// This comes from the webhook detail page in the PSQ portal
+$decodedKey = base64_decode($webhookSigningSecret);
+
+// The signing secret comes to us with PKCS1 padding, however, OpenSSL expects PKCS8. So, format it accordingly.
 $publicKeyPem = "-----BEGIN PUBLIC KEY-----\n" .
   chunk_split("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A" . base64_encode($decodedKey), 64, "\n") .
   "-----END PUBLIC KEY-----\n";
 
 // Create RSA instance and import the public key
 $rsa = openssl_pkey_get_public($publicKeyPem);
-
-// Decode the signature from base64
-$decodedSignature = base64_decode($signature);
 
 // Verify the signature using PKCS1 padding
 $verified = openssl_verify($requestBody, $decodedSignature, $rsa, OPENSSL_ALGO_SHA256);
