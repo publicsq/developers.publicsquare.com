@@ -1,4 +1,6 @@
 import { Alert } from "@site/src/components/shared/Alert";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Webhooks
 
@@ -122,6 +124,8 @@ In order to verify the signature, you will need to get the `key` from your Webho
 
 Using this key, we verify the signature passed by PublicSquare:
 
+<Tabs className="publicsquare-tabs" queryString="sdk">
+  <TabItem value="csharp" label="C#">
 ```csharp showLineNumbers
 // Gets the signature from the request header
 var signature = request.Headers["X-SIGNATURE"].First();
@@ -141,3 +145,31 @@ var hash = SHA256.HashData(data);
 // Verify the signature from the RSA key
 var verified = rsaFormatter.VerifySignature(hash, Convert.FromBase64String(signature));
 ```
+  </TabItem>
+  <TabItem value="php" label="PHP">
+```php showLineNumbers
+// Get the signature from the X-SIGNATURE header
+$signature = $_SERVER['HTTP_X_SIGNATURE'];
+
+// Get the raw request body
+$requestBody = file_get_contents('php://input');
+
+// Decode the base64-encoded public key
+$decodedKey = base64_decode($encodedSigningSecret);
+
+// Format the public key in X.509 style
+$publicKeyPem = "-----BEGIN PUBLIC KEY-----\n" .
+  chunk_split("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A" . base64_encode($decodedKey), 64, "\n") .
+  "-----END PUBLIC KEY-----\n";
+
+// Create RSA instance and import the public key
+$rsa = openssl_pkey_get_public($publicKeyPem);
+
+// Decode the signature from base64
+$decodedSignature = base64_decode($signature);
+
+// Verify the signature using PKCS1 padding
+$verified = openssl_verify($requestBody, $decodedSignature, $rsa, OPENSSL_ALGO_SHA256);
+```
+  </TabItem>
+</Tabs>
