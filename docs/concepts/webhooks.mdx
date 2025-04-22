@@ -1,4 +1,6 @@
 import { Alert } from "@site/src/components/shared/Alert";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Webhooks
 
@@ -100,7 +102,10 @@ This will show the raw request made and the response received (if any) as well a
 
 Every webhook notification will contain a `X-SIGNATURE` header which will be a signed HMAC signature of the request body.
 
-In order to verify the signature, you will need to get the `key` from your Webhook:
+In order to verify the signature, you will need to get the webhook signing secret:
+
+1. By clicking "Reveal" underneath the Signing Secret on the webhook's detail page in the [PSQ portal](https://portal.publicsquare.com/developers/webhooks).
+2. By using the [Webhook API](/api/accounts/get-webhook-event-by-id) to get the `key` field from the webhook object (example below).
 
 ```json showLineNumbers
 {
@@ -122,6 +127,8 @@ In order to verify the signature, you will need to get the `key` from your Webho
 
 Using this key, we verify the signature passed by PublicSquare:
 
+<Tabs className="publicsquare-tabs" queryString="sdk">
+  <TabItem value="csharp" label="C#">
 ```csharp showLineNumbers
 // Gets the signature from the request header
 var signature = request.Headers["X-SIGNATURE"].First();
@@ -141,3 +148,32 @@ var hash = SHA256.HashData(data);
 // Verify the signature from the RSA key
 var verified = rsaFormatter.VerifySignature(hash, Convert.FromBase64String(signature));
 ```
+  </TabItem>
+  <TabItem value="php" label="PHP">
+```php showLineNumbers
+// Get the raw request body
+$requestBody = file_get_contents('php://input');
+
+// Get the signature from the X-SIGNATURE header
+$signature = $_SERVER['HTTP_X_SIGNATURE'];
+
+// Decode the signature from base64
+$decodedSignature = base64_decode($signature);
+
+// Decode the base64-encoded webhook signing secret for this webhook
+// This comes from the webhook detail page in the PSQ portal
+$decodedKey = base64_decode($webhookSigningSecret);
+
+// The signing secret comes to us with PKCS1 padding, however, OpenSSL expects PKCS8. So, format it accordingly.
+$publicKeyPem = "-----BEGIN PUBLIC KEY-----\n" .
+  chunk_split("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A" . base64_encode($decodedKey), 64, "\n") .
+  "-----END PUBLIC KEY-----\n";
+
+// Create RSA instance and import the public key
+$rsa = openssl_pkey_get_public($publicKeyPem);
+
+// Verify the signature
+$verified = openssl_verify($requestBody, $decodedSignature, $rsa, OPENSSL_ALGO_SHA256);
+```
+  </TabItem>
+</Tabs>
