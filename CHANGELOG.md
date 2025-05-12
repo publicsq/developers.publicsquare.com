@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.28.0...v1.29.0) (2025-05-12)
+
+
+### Features
+
+* add payment transfer and seller onboarding endpoints ([87e0d77](https://github.com/publicsq/developers.publicsquare.com/commit/87e0d77bdfb48e30e1799d173c3a30428b37017c))
+
 # [1.28.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.27.0...v1.28.0) (2025-04-22)
 
 
