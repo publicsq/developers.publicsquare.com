@@ -340,6 +340,12 @@ const sidebar: SidebarsConfig = {
           label: "Get transfer by ID",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/create-payment-transfer",
+          label: "Create payment transfer",
+          className: "api-method post",
+        },
       ],
     },
   ],

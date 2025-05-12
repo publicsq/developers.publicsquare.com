@@ -160,6 +160,18 @@ const sidebar: SidebarsConfig = {
           label: "Save bank account",
           className: "api-method put",
         },
+        {
+          type: "doc",
+          id: "api/accounts/get-bank-account-by-account-id",
+          label: "Get bank account by account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-bank-account-by-account-id",
+          label: "Save bank account by account ID",
+          className: "api-method put",
+        },
       ],
     },
     {
@@ -176,6 +188,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/accounts/save-business",
           label: "Save business",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-by-account-id",
+          label: "Get business by account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-by-account-id",
+          label: "Save business by account ID",
           className: "api-method put",
         },
         {
@@ -344,6 +368,24 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/accounts/copy-business-representative-as-owner",
           label: "Copy business representative as owner",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-representative-by-account-id",
+          label: "Get business representative by account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-representative-by-account-id",
+          label: "Save business representative by account ID",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/copy-business-representative-as-owner-by-account-id",
+          label: "Copy business representative as owner by account ID",
           className: "api-method post",
         },
       ],
