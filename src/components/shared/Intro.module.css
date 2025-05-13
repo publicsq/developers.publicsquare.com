@@ -12,6 +12,24 @@
   line-height: 120%;
 }
 
+.img-container {
+  min-width: 90px;
+  max-width: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--psq-default-border-color);
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(0, 152, 179, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.img-container img {
+  width: 50%;
+  height: 50%;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     display: flex;
@@ -21,5 +39,9 @@
     padding: 0px 0px 24px;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--psq-default-border-color);
+  }
+
+  .img-container {
+    display: none;
   }
 }

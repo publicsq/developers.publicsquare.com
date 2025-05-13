@@ -1,0 +1,67 @@
+---
+id: get-all-account-settings
+title: "Get all account settings"
+description: "    Get a list of settings for the Account."
+sidebar_label: "Get all account settings"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV1FP3EYQ/iur4QGpMhwkaVX5DRpyRVe1CBrUlJzInD133mDvmt0x5WL5v1fj9RnDcYimbZ64B5+1Ozvz+fu+9Y5rYFx4iC/gIElsZdjDNIKUfOJ0ydoaiEEppcbEClWuPSs7V56YtVl4NbdOcUaqW7z70Xw0Er61taVOyBXae22ND4PfqU8Y4mJHmH6CCGxJDqXMcQoxtEXyXHVRfRmIwJEvrfHkIa7h1d6e/N1H+dsEIkisYTIss1iWuU7a5KPPXkJq8ElGBcodL0uCGNA5XEIEmqloUzu6rrSjVBhpYyK4wbwiYaVbY2efKWGIoHQCn3UA1YG+1Okgv2enzQIeMtrRpY7f9gwKcodtXlPlOc5ygphdRRHQLRZl3sJNksvD7/d/NHr81/jD5Ite/HDD7vT8z/F4fA7NgzLPRdGrKeFqGPMUliMj42qG5qoXrMRlQYZVQZzZNNjj4KefFTs0HhPJGQaXtnKrVbsC3GBB/xhxANwufQrpoUDs7d1EkKG/FKHJM6WXmCTk/aD4zNqc0KxVPyWunPFqWwpsKz1XBbkkQ8MqQ6/6jCpkVGwVZ9o/tLPqfNUDnGPuqVn5q4ZCm1/ILDiDeD/6CkaGuaGTZKeTJBa9dnBARrC3lMXbvuzeXvSvYISkQxzCGTRNBJimWlZhfjLYPy0HEbDmNrrLdxbSQSO/CN48tu8PMVWngfqveAFs2MzknHX+sbjH4W9+odznTZ7ivlEHuj+keD0wsPOMSM/I1bC+NkwLchDB3LoCOQy9fvXY4pQYdf6sOtp4RpM8B9RG6eu7J4NzzHXaSnbi7Cyn4m2LxcPKAPvrBnhvsOLMOv2F0v/OAS+i9KJskOL1uhTvrJvpNCXzosO30+HNug6/WlbvbGVe9sM30kGehpLKaV5CfFHDQaknJLcw7Hhh2kwjCCcxxLCglmaUExZGXeDOoOn15G5IjqGLGiqXQwwZc+nj0QhLvVtWs1wn/rpCR7uJLUCSr1CciaxBuRWWuzMqDKyd4d1btPWHmi3VwcmxmtBSaeN1Sqv+ZturP3YOTo53JkcfVEaYtoKF/g36GTkCJWkX0LQyzG2LYkVji/+sxd+3Z1JUem5yPqC62ZcmpbSeC2wN21V64lvhQRPcb4D/80Omo5bplkdljtoI6lazulO4t8KdwtMIMutZ5up6hp7eu7xpZPi6Iif2mUp/5nRw6MVUetdAqFjiSlSVVolK7r9T4vVdfs9046PfpYupBNLQEVetI7obyb6aMstB7qG+obxcm2hDeF0HrzVNHx+mNq7oDRWihcdp0zR/A+/tExM=
+sidebar_class_name: "get api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all account settings"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/account-settings"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get a list of settings for the Account.
+
+    ### Permissions
+    * `account:read`
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["type","value"],"type":"object","properties":{"account_id":{"type":"string","description":"Account ID for the contract","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"description":{"type":"string","description":"Account settings type description","nullable":true,"example":"Enable bank account payment methods for ACH transactions for your account."},"name":{"type":"string","description":"Account setting type name","nullable":true,"example":"Bank Accounts"},"has_requested_access":{"type":"boolean","description":"Returns 'true' if merchant has requested access to this account setting type","example":false},"type":{"minLength":1,"type":"string","description":"Account setting type","example":"payment-methods:bank-accounts"},"value":{"maxLength":100,"minLength":1,"type":"string","description":"Account setting value","example":"true"}},"additionalProperties":false,"title":"AccountSetting"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

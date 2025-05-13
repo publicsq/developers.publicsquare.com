@@ -1,0 +1,75 @@
+---
+id: create-account
+title: "Create account"
+description: "    Create a new account."
+sidebar_label: "Create account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1T2zgQ/iua7QdmbgwkKddp/Y2mLcfRaRmg3FGaSTf2JlFrS0aSA6nH//1mZTuYJoSX6/XL9Qs49r4/j7QrFeBwYiE8h90o0rlyFgYBxGQjIzMntYIQhBCibwgdCRSKLgVWoluf1CfFH588eSIOyaTSWqmVrV7+Jj7XcuGlkY4+QwA6I4NsdT+GEBqblRQEYOgiJ+te6ngOYQGRVo6U40fMskRGXnX7i+WoCrDRlFLkJ9aThmJOQ2FKnIKbZwQh6NEXith2Zti5k2RZw0uFBaR49ZbUxE0h7HU6AaRSNb+7CxvWGakm8H1Z3mFKQo+Fm7ZzoCtMs4TVTsg60ddphmoeiLdv+1A2Jos7TJ/MsxWmVZ4kOGLbzuTUdpWSiaaoHJRlABjHku1gctjKeYyJpQCcdF7jGGdUI35UVR1KVr4uJfvwL2ymla3K1ut0+d/NYCsYYwj+S8BkfHfV6nzE/qu1xcIoGr78vftcyb3LvbODb3LybObM0enHvb29U8Yow3lKytmhViONJpZqMrQOXW7vjuH9QkXUKutCmZGRY0kxe7WUJGQe4/PYawr9INdKO3ZgXOU9MhRL9xjvfa/5QO9SDTOjJ4asZe9TtMOGw8NIK0URW297H2mdEKol90fkcqOs2GAXG0KORWNItAwJupLWibE2ty3Xmu4cSY3Ev42jMvOoKDKj4zxybb9oDM4hAOkoXYFKeVs8mCTsiDJHsajtCqlm0vnFKdjMWqzOF+sBGprAoAwgRYUTioej+UNWpqj3EzlKyBfCm2HWuKm099rseP326Tj7eHL2/MVfp0fWmdd/6IM/d2oe82Y0RHd3VK9a3UdcohXRYicba5OyCYjR0aaTKa0Nqdfp7Wx2nm0+7Zx0umGnF/ZebPW6vY8cUapjv8YfF1Kj/WNj+t+3v5qQ3PPKAHY6neW29hJj0bTGB7S29W2MjNHGrpJbHfa9l3/5fX3WFHtZsKrKPSSXmoJUjiZk2vSUyj3trVKOyaFM7uVHKutQRfcJ6lbIi+vM4BQTGXvIDo0eJZS+8rHYBQFWzDUfFOZuqo389rDhZj0DfoGyAOUWKJ4uQ/FGm5GMY1K/cPh5OOws4/BOO/FG5+rXevhJOPhzQZQb6eYQnhewm8kD4ke4cbaGQTkIICU31XywzrTvWRlyI4dtbE72bMzMiBvQeQG5SSCEqXOZDbe3MZNbWT5KZGQvcjS0FekU2Grj/5gBrTBrorjuTtWLpbGv3j+rSXM0F7uH++KA5kIqK2MS9Xl/w4q/N3cP9zcPXp+JKWHsoapmFFh84ebHRmsBLg1z7ej6zuB1MxA05/sVM8hiqrmeGdjuWPtsGiB8HY59HURzL8LBQ8BHNltlN+v6w6K2LkXVcrp0rXGjKK1rjR94sVIn5ejKbWcJSsWheYCLmgYLxvgLnikzJDyHohihpQ8mKUt+fZGTYXYNApihkRWBz3nar6vOvPnK0EO/ymKTZzUuCyZ5xYTvtoIyaDR2/SlkrWybxIfvj08ggFF9GZTqmHUMXvJFEV5CCP5CaXE+8+8KSFBNcpywbGXTr72cS9Cm61dP1/qBs2o+qXkrwjb5qiT4L6e0UrwoqoVQlgv56tOtGgu2V9KM26Asy38AEefE5Q==
+sidebar_class_name: "post api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Create a new account.
+
+    ### Permissions
+    * `account:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["name"],"type":"object","properties":{"name":{"maxLength":200,"minLength":1,"type":"string","description":"Name of the account","example":"Test Company, LLC"},"type":{"type":"string","description":"Type of the account","nullable":true,"example":"merchant"}},"additionalProperties":false,"title":"SaveAccountRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"required":["name"],"type":"object","properties":{"id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"payments_onboarding_status":{"type":"string","description":"Onboarding status","nullable":true,"example":"verified"},"seller_onboarding_status":{"type":"string","description":"Seller onboarding status","nullable":true,"example":"not_started"},"credit_onboarding_status":{"type":"string","description":"Credit onboarding status","nullable":true,"example":"in_progress"},"has_merchant_connections":{"type":"boolean","description":"Returns 'true' if merchant connections exist for the account","example":true},"has_seller_connections":{"type":"boolean","description":"Returns 'true' if seller connections exist for the account","example":true},"products":{"type":"array","items":{"type":"string"},"description":"Returns all accepted product invitation types","nullable":true,"example":["payments","credit"]},"managed_by":{"type":"string","description":"Account ID responsible for managing this account","nullable":true,"example":"acc_CeSpZTY89WVRstrEHoKJ4"},"created_at":{"type":"string","description":"Date account was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date account was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"name":{"maxLength":200,"minLength":1,"type":"string","description":"Name of the account","example":"Test Company, LLC"},"type":{"type":"string","description":"Type of the account","nullable":true,"example":"merchant"}},"additionalProperties":false,"title":"Account"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

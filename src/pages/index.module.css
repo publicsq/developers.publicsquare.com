@@ -75,6 +75,7 @@
   column-gap: 64px;
   row-gap: 32px;
 }
+
 .sdks-container > div {
   display: flex;
   gap: 16px;
@@ -134,6 +135,15 @@
   flex: 1 1 30%;
 }
 
+.explore-card > div {
+  place-items: flex-start;
+}
+
+.explore-card > div:first-child {
+  margin-bottom: 10px;
+  place-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   .sdk {
     width: 100% !important;
@@ -161,7 +171,6 @@
   .card-body a:not(:first-child) {
     margin-top: 24px;
   }
-
 }
 
 @media only screen and (max-width: 800px) {
@@ -185,8 +194,8 @@
 
   .sdk svg,
   .sdk img {
-    height: 42px;
-    width: 42px;
+    height: 32px;
+    width: 32px;
   }
 
   .explore-cards > div {

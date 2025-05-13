@@ -1,3 +1,24 @@
+# [1.29.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.28.0...v1.29.0) (2025-05-12)
+
+
+### Features
+
+* add payment transfer and seller onboarding endpoints ([87e0d77](https://github.com/publicsq/developers.publicsquare.com/commit/87e0d77bdfb48e30e1799d173c3a30428b37017c))
+
+# [1.28.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.27.0...v1.28.0) (2025-04-22)
+
+
+### Features
+
+* add docs for verifying the webhook secret in php ([#115](https://github.com/publicsq/developers.publicsquare.com/issues/115)) ([76f47e3](https://github.com/publicsq/developers.publicsquare.com/commit/76f47e3a5231656d33bb447c7ebe5370401b82ce))
+
+# [1.27.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.26.2...v1.27.0) (2025-04-14)
+
+
+### Features
+
+* add processor responses endpoints ([5958fbe](https://github.com/publicsq/developers.publicsquare.com/commit/5958fbedf48c1aec956c4bdc6ae5330da080b3c6))
+
 ## [1.26.2](https://github.com/publicsq/developers.publicsquare.com/compare/v1.26.1...v1.26.2) (2025-04-10)
 
 ## [1.26.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.26.0...v1.26.1) (2025-04-10)

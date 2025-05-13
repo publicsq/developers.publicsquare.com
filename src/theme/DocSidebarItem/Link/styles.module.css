@@ -1,0 +1,23 @@
+.menuExternalLink {
+  align-items: center;
+}
+
+.no-padding {
+  padding-left: 0;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  margin-left: 0.5rem;
+  width: 22px;
+  height: 22px;
+  filter: var(--psq-sidebar-icon-color);
+}
+
+.active {
+  filter: var(--psq-sidebar-icon-active-color) !important;
+}
+
+.label {
+  flex: 1;
+}

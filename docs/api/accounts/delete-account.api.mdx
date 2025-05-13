@@ -1,0 +1,67 @@
+---
+id: delete-account
+title: "Delete account"
+description: "    Deletes the account. This operation is irreversible."
+sidebar_label: "Delete account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVU1rGzEQ/SticigUxc7XaW+mcSCkFEMSaEkM0e6Os0q0kiJpTd1F/72MtHbsfEBOOeViL9LTzNO8p5kegrj3UNzApKpMp4OHOYcafeWkDdJoKIAxxk5RYUDPQoNMZOSIXTXSM2PRCUIy6Zl0DpfovCwVjm71raaze3t7bIauld5Lo31e/M7uhjhFnWLfAYdNrPMaCsg51+mAg0Nvjfbooejh6OCE/nap/jLsh9EBdYDI4eTg8DXkWosuNMbJf1gDh2qAFz0Ia5WsUv7xgydwD75qsBX0FVYWoQBTPmBFZKwjtkFmNnl3g/LBSX0PHHSnlCgVQhFch5FDkEF9DOmDCN1WcJA64D064LAwrhUhLx0fvXW4xiCk+lAeqX0QuvoIqchB1LWkCgk12y7A881g5kypsD1NDDzEGJMUx6+lODOulHWN+kuHz9PhzVcT2Jnp9Nd7+CQd6DZYdU6GFRQ3PUysvED6hN2eCPM459BiaAw1xGGRgxWhgQLGA9qPPaoFUFBH3TfF7JyCApoQrC/GY2HlyHalkpV/6oTDUWVaoOBrHpckbNZuzWZzfZEXXs6FydBHc/cvV2wyO2cXuGJSe1kjc/jUoQ/fPPu9P5md719M/7AGRZ0k06Kl0JsdoMIT4QyISYiFSSzWhUz8LxN/th5XlBQ4pKGTWC0PqfVb40MrkmWHTK+myc5l+mfjf+K8G+ob8G8YWyWkJupJuH7QeOMIn+RVCxrPjfGBtvq+FB6vnYqRlp86dGSiOYelcDL79GYe+bqoZItHUpaGPVoqwlKoLkv84q3vGO90+nN6NQUONDp3jfGYjDF8UIL1ll5thd+WOTOg38jfgfd9tlyMG3zeevfExlcZTZWcxxj/A5cWCqE=
+sidebar_class_name: "delete api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/accounts/self"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Deletes the account. This operation is irreversible.
+
+    ### Permissions
+    * `account:delete`
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No Content"},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

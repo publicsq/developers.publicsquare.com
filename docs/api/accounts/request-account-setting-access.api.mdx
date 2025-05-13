@@ -1,0 +1,75 @@
+---
+id: request-account-setting-access
+title: "Request account setting access"
+description: "    Request account setting access in the Account."
+sidebar_label: "Request account setting access"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1v2zYQ/ivE5UOAQc5L2w2DvjltmgUZViNpg3WpkZ6li8VGIhWSSuIK+u/DkZLs2Hlx0SH7ki+2TN3Lc/fckTzX4HBqIT6DYZLoSjkL4whSsomRpZNaQQxCCHFMVxVZJzBICUvOSTXl32StkEq4jERrY+uL+qJYa2NjQ4zIFNJaqZUNi7+Ir62V+MZIR18hAl2SQXZ3mEIMjzuDCEwQ2NPpDOIaEq0cKcePWJa5TLyp7W+W4ddgk4wK5CfWk4ZSjtfNSuJY/XcMevKNEgcRlIbBOEmWNcLbGgqp/iQ1dRnEu72OdUaqKSzna7gE20tHQLdYlDnrlTgrSLlBQS7TqY0nqC4H2OW/aSLANJVsDfPRApwLzC1F4KTzZto0te5Ogrehz1H7yttydOtecsG5YGuGbKmVDRG92tnhr7uQPxxB9BMlFcE15tUa6WyDPJfpPLlPpfHwnbjQxvcaIzTo7aoqz3HCeXCmosXsYpKc7/26+7uSBzcHn4++y+lv184cn/5zcHBwCs2Sm3VRtGRaz6ZYlHkMy77idcEE953dsi9a9n1ww7d/CGdQWUzYZlic6cp0WlsMXGFBP4w4APaqjyHdY4j9fthEkKE9b/ccSs/bbWjufKJ1TqhWvB+Tq4yyYpMdbAp5IQoySYbKiQyt6C12u6jTwmXSrux7y03ja7+J/peG7Mqb3eJt73ZnJ/opGMHoIg7O2fr9f7fx215/c19772HanWY/0ueP9zIZo429T+5+9L0cGoMziEA6KuxqPXMUd+t0gfblDK8KhuSsIWkdumrRv1SOpmQgggttCnRh6fWr+5RTcijztfxIZR2qZB1QDzJfzyODU8xl6ikbGT3JqXjnsdi+AHZXC+CTwspl2sjvlP53FfBCSk/KA1S8XqXivTYTmaakXnh4Ph7erPLwl3biva7USz88Ew8cDSWVkW4G8VkNw1IeET/CndEIxs04gnAS89Gs/ZlVIh+xsN2KDrrr2HZ7oRj0c5Ilc018Lp3VUJkcYsicK228vY2l3CqrSS4Te1Whoa1EF8DOOlgnzHOgsgM3P7TCwsqZ3m6rvmDEZCaGo0NxRDMhlZUpdfedTSv+HgxHh4Oj/c8iI0w9g+E+B/0bPhPZaCvAGeMSPJ5PfvvdVaHH9eTVRaoL7eU7ZnwGTnwG+gsfw+ZbPBkb4rreZV1OfoG+B1qsT46pS5frvrOeY6JuU+KHvzJHqTgGXwN1W0B9rfUFNJ+suxIaR5Bx0cVnUNcTtPTJ5E3Dy1cVGS7YMV8IjQw9cTbmy3JgjGvukssG3oa4Bx8Xx6N4dXdpok6DB7fSPSq72BejDycfIYJJ+3dAoVPWMXjDAeENxOD/YvDThJ/ZeK2GHNW0winLBpu+nSvOzWKpX/pSbx84qu6Vmi0gXCzcEAR/ckj3itd1aKKm6eXDqwc1+k4J0kzouGmafwGT0jMn
+sidebar_class_name: "post api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Request account setting access"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/account-settings/request-access"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Request account setting access in the Account.
+
+    ### Permissions
+    * `account:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["type"],"type":"object","properties":{"type":{"minLength":1,"type":"string","description":"Account setting type","example":"payment-methods:bank-accounts"}},"additionalProperties":false,"title":"RequestAccountSettingAccessRequest"}},"text/json":{"schema":{"required":["type"],"type":"object","properties":{"type":{"minLength":1,"type":"string","description":"Account setting type","example":"payment-methods:bank-accounts"}},"additionalProperties":false,"title":"RequestAccountSettingAccessRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["type","value"],"type":"object","properties":{"account_id":{"type":"string","description":"Account ID for the contract","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"description":{"type":"string","description":"Account settings type description","nullable":true,"example":"Enable bank account payment methods for ACH transactions for your account."},"name":{"type":"string","description":"Account setting type name","nullable":true,"example":"Bank Accounts"},"has_requested_access":{"type":"boolean","description":"Returns 'true' if merchant has requested access to this account setting type","example":false},"type":{"minLength":1,"type":"string","description":"Account setting type","example":"payment-methods:bank-accounts"},"value":{"maxLength":100,"minLength":1,"type":"string","description":"Account setting value","example":"true"}},"additionalProperties":false,"title":"AccountSetting"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

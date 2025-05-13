@@ -17,35 +17,56 @@ const sidebars: SidebarsConfig = {
     {
       id: "guides/index",
       type: "doc",
+      customProps: {
+        icon: "/img/icons/rocket.svg",
+      },
     },
     {
       type: "category",
       label: "Payment Methods",
+      customProps: {
+        icon: "/img/icons/payment-methods.svg",
+      },
       items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-bank-accounts"],
     },
     {
       type: "category",
       label: "Payments",
+      customProps: {
+        icon: "/img/icons/credit-card.svg",
+      },
       items: ["guides/payments/process-card-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
     },
     {
       type: "category",
       label: "Refunds",
+      customProps: {
+        icon: "/img/icons/light-receipt-rotate-left.svg",
+      },
       items: ["guides/refunds/refund-payments", "guides/refunds/cancel-refunds"],
     },
     {
       type: "category",
       label: "Payouts",
+      customProps: {
+        icon: "/img/icons/money-bill-wave.svg",
+      },
       items: ["guides/payouts/process-card-payouts", "guides/payouts/process-ach-payouts", "guides/payouts/cancel-payouts"],
     },
     {
       type: "category",
       label: "Transactions",
+      customProps: {
+        icon: "/img/icons/money-bill-transfer.svg",
+      },
       items: ["guides/transactions/search-and-view-transactions", "guides/transactions/view-settlements"],
     },
     {
       type: "category",
       label: "Marketplaces",
+      customProps: {
+        icon: "/img/icons/shop.svg",
+      },
       items: ["guides/marketplaces/onboard-sellers"],
     },
     {
@@ -59,6 +80,9 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Concepts",
+      customProps: {
+        icon: "/img/icons/graduation-cap.svg",
+      },
       link: {
         type: "doc",
         id: "concepts/index",
@@ -73,11 +97,17 @@ const sidebars: SidebarsConfig = {
       type: "link",
       label: "API Reference",
       href: "/api",
+      customProps: {
+        icon: "/img/icons/developers.svg",
+      },
     },
     {
       type: "link",
       label: "SDKs",
       href: "/sdks",
+      customProps: {
+        icon: "/img/icons/cube.svg",
+      },
     },
   ],
   api: [
@@ -142,12 +172,18 @@ const sidebars: SidebarsConfig = {
     {
       type: "link",
       label: "Guides",
-      href: "/",
+      href: "/guides",
+      customProps: {
+        icon: "/img/icons/book.svg",
+      },
     },
     {
       type: "link",
       label: "SDKs",
       href: "/sdks",
+      customProps: {
+        icon: "/img/icons/cube.svg",
+      },
     },
   ],
   sdk: [
@@ -197,12 +233,18 @@ const sidebars: SidebarsConfig = {
     {
       type: "link",
       label: "Guides",
-      href: "/",
+      href: "/guides",
+      customProps: {
+        icon: "/img/icons/book.svg",
+      },
     },
     {
       type: "link",
       label: "API Reference",
       href: "/api",
+      customProps: {
+        icon: "/img/icons/developers.svg",
+      },
     },
   ],
 };

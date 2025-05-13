@@ -10,7 +10,7 @@ import Java from "@site/static/img/sdk/logos/java.svg";
 import Shopify from "@site/static/img/plugins/platforms/shopify.svg";
 import WooCommerce from "@site/static/img/plugins/platforms/woocommerce.svg";
 import Magento from "@site/static/img/plugins/platforms/magento.svg";
-import BigCommerce from "@site/static/img/plugins/platforms/bigcommerce.svg";
+import BigCommerce from "@site/static/img/plugins/platforms/bigcommerce-dark.svg";
 
 export const getSdkIcon = (icon: SDK | `${SDK}`) =>
   ({
