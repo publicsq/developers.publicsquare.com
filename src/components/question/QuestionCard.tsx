@@ -62,22 +62,22 @@ export const QuestionCard = ({ question, showDefault = false, yesType = "right",
 
   return (
     <Card className={styles.card}>
-      <div className={styles.grid}>
-        <div className={styles.icon}>
-          <QuestionCheckbox state={state} />
-        </div>
-        <div className={styles.question}>
-          <ReactMarkdown>{question}</ReactMarkdown>
+      <div className={styles.questionRow}>
+        <div className={styles.questionRowCol}>
+          <div className={styles.icon}>
+            <QuestionCheckbox state={state} />
+          </div>
+          <ReactMarkdown className={styles.questionText}>{question}</ReactMarkdown>
         </div>
         <div className={styles["button-group"]}>
           <AnswerButtons state={state} value={answer} onChange={updateAnswer} />
         </div>
-        <div className={styles.content}>
-          {answer === "yes" && yesContent}
-          {answer === "no" && noContent}
-          {answer === "na" && naContent}
-          {answer === null && showDefault && defaultContent}
-        </div>
+      </div>
+      <div className={styles.content}>
+        {answer === "yes" && yesContent}
+        {answer === "no" && noContent}
+        {answer === "na" && naContent}
+        {answer === null && showDefault && defaultContent}
       </div>
     </Card>
   );

@@ -24,6 +24,12 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
   </Content>
 </QuestionCard>
 
+<QuestionCard question="Have you configured and requested your payment methods">
+  <Content type="na">
+    <Alert type="neutral">You can request additional payment methods to be enabled in your [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+  </Content>
+</QuestionCard>
+
 <QuestionCard showDefault={true} question="Is your descriptor properly configured with the processor?">
   <Content type="default">
     <Alert type="question">What is a <Tooltip text="This is a default piece of information (often your business name or phone number) that’s pre-configured with PSQ. It remains the same for every transaction.">descriptor</Tooltip>?</Alert>
@@ -61,7 +67,7 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
     <Alert type="warning">Testing this is as simple as checking out like a normal customer would and selecting ACH as your payment option using one of these [test bank accounts](https://developers.publicsquare.com/api/testing).</Alert>
   </Content>
   <Content type="na">
-    <Alert type="neutral">You can request ACH transactions to be enabled in your [merchant portal settings].</Alert>
+    <Alert type="neutral">You can request ACH transactions to be enabled in your [account settings](https://portal.publicsquare.com/settings/features).</Alert>
   </Content>
 </QuestionCard>
 
@@ -75,13 +81,13 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
 
 <QuestionCard question="Have you successfully processed both **full and partial refunds**?">
   <Content type="no">
-    <Alert type="warning">Follow the steps to process a refund [here].</Alert>
+    <Alert type="warning">Follow the steps to process a refund [here](https://developers.publicsquare.com/guides/refunds/refund-payments).</Alert>
   </Content>
 </QuestionCard>
 
 <QuestionCard question="Have you tested a **same-day refund** (pre-settlement) by marking the order as “Cancelled” in the PSQ Portal?">
   <Content type="no">
-    <Alert type="warning">Follow the steps to cancel a payment [here].</Alert>
+    <Alert type="warning">Follow the steps to cancel a payment [here](https://developers.publicsquare.com/guides/payments/cancel-payments).</Alert>
   </Content>
 </QuestionCard>
 
@@ -99,18 +105,18 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Have you verified that PSQ is receiving **order creation webhooks** from your eCommerce platform (e.g., BigCommerce, Woo, Magento)?">
+<QuestionCard question="Do **payment statuses** sync correctly between PSQ Portal and your eCommerce platform?">
+</QuestionCard>
+
+<QuestionCard question="Have you verified that PSQ is receiving order creation webhooks from your eCommerce platform?">
   <Content type="no">
     <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Do **payment statuses** sync correctly between PSQ Portal and your eCommerce platform?">
-</QuestionCard>
-
 <QuestionCard question="Do you understand how the Authorization → Capture Flow works for a payment?">
   <Content type="no">
-    <Alert type="warning">Learn how this works [here].</Alert>
+    <Alert type="warning">Learn how this works [here](https://developers.publicsquare.com/guides/payments/authorize-and-capture-payments).</Alert>
   </Content>
 </QuestionCard>
 
