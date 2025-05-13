@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.29.0...v1.30.0) (2025-05-13)
+
+
+### Features
+
+* add account management endpoints ([2103761](https://github.com/publicsq/developers.publicsquare.com/commit/210376126b916b609bdb0165fcce99be57b4e0f9))
+
 # [1.29.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.28.0...v1.29.0) (2025-05-12)
 
 
