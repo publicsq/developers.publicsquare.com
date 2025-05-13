@@ -1,0 +1,75 @@
+---
+id: add-product
+title: "Add product"
+description: "    Add a product to the Account."
+sidebar_label: "Add product"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1vEzEQ/SvW9ICEtk35uuwtfElVEUQUEChEYrKeJIZd27W9bcNq/zsaezfdpgkqSHDqJdl4Z8Zv5j3Hr4GASw/5FMZFYWodPMwykOQLp2xQRkMOQggxllKgsM7IuggiGBFWJLqUo6/6q+agg4MDMSFXKe+V0T4tPhTfMMXll04F+gYZGEsOufqJhBy4dlcZMnB0XpMPz41cQ95AYXQgHfgRrS1VEfNG3z1Da8AXK6qQn8LaEuRg5t8p1rGOdwmKPL/t6+cNVHj1hvQyrCB/dpz1eT44pZew3ftkg0vXZYnzkiAPrqYM6Aoryz/B4roinlzbZoBSKs7FcjIAsMDSUwZBhZhxhhfUVX6f2oWWk7l35UimPeKCt0b71MPj40f8dRPgC0cYSEL2x5NC53ANGahAlR+sd5No2wjp6fHx7U2foxQ98D/feA9F5Jxxflfc7pnevZFt8tqe9e3QXYGJsjtE+oChHu6vdKAlOchgYVyFIS09ebwrWVJAVd5pH6V9QF3cBdRePTbXncEnLJWMlE2cmZdUvYxYPPQC2KG6jxrrsDJO/fwr6e1RwD0pG1L2UPHkNhWvjZsrKUnf8/D/eHh6m4e3JojXptb35+E/8cDdUFE7FdaQTxsYW3VK/Ag3/AbM2lkGFYWVYbNhTbyzLPL9D6Mu1I88lYtR5xI8cGl3QXwdTRuoXQk5rEKwPh+N0KojW89LVfjzGh0dFaYC3qNHc8b0JgZ7TNd3VVrYthnj7t806kTM12I8ORGntBZKeyVJdKbogRefD8eTk8PTV1/EilBG4jRWXHrzhq9CLtoF8KBYee+vjdWr3rsMjNHAxnD+wkTU/fhjv2ex3972eQYJGfCYUhcXjziXJ1xhFHqH7KbBu9H5wOD9A5/ZDT3QVRjZEpVmfJHNplPARiyJ83KRDmFSwSyDFcsln0LTzNHTR1e2LS+f1+RYarMMLtCppObprM36obNsfjDz8CL1d/iBsXB4WSchbP0vtFmfMS4KsuG3sUNFT96dfYAM5p1hrozkHIeXbKbxEnKIjpuzoybjWgMl6mWNS45NNeNBrHkoQ7X+iGrtHrir/pVeDxAOtZea4E9uaWd406Rz0Lab+PRqb8ZG7CmamZy1bfsL+PBmSQ==
+sidebar_class_name: "post api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add product"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/accounts/self/products"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Add a product to the Account.
+
+    ### Permissions
+    * `account:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"product":{"maxLength":50,"type":"string","description":"Product","nullable":true,"example":"payments"}},"additionalProperties":false,"title":"SaveProductRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
