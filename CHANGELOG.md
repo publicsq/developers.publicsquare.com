@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.30.0...v1.31.0) (2025-05-14)
+
+
+### Features
+
+* add endpoints for seller onboarding ([cefcb58](https://github.com/publicsq/developers.publicsquare.com/commit/cefcb58fe29923f7baf00557f347c9ef8f1e4658))
+
 # [1.30.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.29.0...v1.30.0) (2025-05-13)
 
 
