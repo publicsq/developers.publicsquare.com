@@ -45,14 +45,8 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
 ## Payment Method Testing
 
 <QuestionCard showDefault={true} question="Have you integrated PSQ payments into your test environment for your website?">
-  <Content type="default">
-    <Alert type="question">What is a test <Tooltip text="Missing info here">environment</Tooltip>?</Alert>
-  </Content>
   <Content type="no">
-    <Alert type="warning" subQuestion={<>What is a test <Tooltip text='Missing info here'>environment</Tooltip>?</>}>Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
-  </Content>
-  <Content type="na">
-    <Alert type="question">What is a test <Tooltip text="Missing info here">environment</Tooltip>?</Alert>
+    <Alert type="warning">Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
   </Content>
 </QuestionCard>
 
@@ -71,11 +65,12 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Did each test payment display the correct status and amount in the PSQ Portal?">
+<QuestionCard question="Can you see the test transaction(s) you just created in the merchant portal?">
   <Content type="no">
-    <Alert type="warning">Did you run into one of these common [issues/errors](mailto:payment-support@publicsq.com)?</Alert>
+    <Alert type="warning">Follow the [steps](https://developers.publicsquare/guides/transactions/search-and-view-transactions) to view transaction.</Alert>
   </Content>
 </QuestionCard>
+
 
 ## Refund & Reconciliation
 
@@ -91,26 +86,11 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Did the refunded amounts reflect in both the PSQ Portal and your eCommerce platform?">
-  <Content type="no">
-    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
-  </Content>
-</QuestionCard>
-
 ## Additional Testing
 
 <QuestionCard question="Did each payment correctly associate with the order in your eCommerce platform?">
   <Content type="no">
-    <Alert type="warning">Did you run into one of these [common issues/errors](mailto:payment-support@publicsq.com)?</Alert>
-  </Content>
-</QuestionCard>
-
-<QuestionCard question="Do **payment statuses** sync correctly between PSQ Portal and your eCommerce platform?">
-</QuestionCard>
-
-<QuestionCard question="Have you verified that PSQ is receiving order creation webhooks from your eCommerce platform?">
-  <Content type="no">
-    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
+    <Alert type="warning">Check our [SDKs](https://developers.publicsquare.com/sdks) documentation for your platform to validate your setup.</Alert>
   </Content>
 </QuestionCard>
 
@@ -121,13 +101,7 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
 </QuestionCard>
 
 <QuestionCard question="Have you manually captured a payment using the portal?">
-  <Content type="no">
-    <Alert type="warning">Capture a payment in your merchant portal by following [these steps].</Alert>
-  </Content>
 </QuestionCard>
 
 <QuestionCard question="Have you tested error handling in cases where the webhook fails or is delayed?">
-  <Content type="no">
-    <Alert type="warning">[Reach out](mailto:payment-support@publicsq.com) to our integrations team with this issue.</Alert>
-  </Content>
 </QuestionCard>
