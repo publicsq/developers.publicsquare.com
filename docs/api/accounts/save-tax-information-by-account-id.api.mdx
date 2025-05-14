@@ -1,0 +1,75 @@
+---
+id: save-tax-information-by-account-id
+title: "Save tax information by account ID"
+description: "    Save the business tax information by account ID."
+sidebar_label: "Save tax information by account ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWFlv20YQ/iuLyUMP0NYRO234Uth14rgOWsNHUMcRlBE5kjYhd5ndpSxF4H8vhpdoU1IcNAjQwn6Qecz9zcwOZwkOJxb8GzhMrVRkrbjEuThRY21idFIrGHgQkg2MTPJbH4QQ4gJnJNyUxKhiczgXcsUmRguBQaBT5cTJ0e479U4x35MnT8QZmVhaK7WyxcOfxftKjH9rpKP34IFOyOSSTkLwodC3TQV4kKDBmBwZdmgJCmMCH0qSkxA8kGx/gm4KHhj6lEpDIfjOpOSBDaYUI/hLcIuEGa0zUk0gywYFMVl3qMMFUwRaOVKOLzFJIhnkBnU+WA7QsiFqpeQGUKkUo+FMR2lM4AHOyOCEhs6gshiwhCHGbCt4UAVkKFWYWmcW7J/RYRq4YROOgVeZq0cfKHAFWULGSbJswTomfwkxzl+Tmrgp+P1u14NYquq+592LwP0EOFrdCT0WpQahjbBkZjIgCx7QHOMkYikXFEUiiLSbSjURqEJGjazVhk3M1vnKBn6FQXXuNoK10h/oOEkdmaGhBKVhjXehWEEulaMJmZaCg5xeNJASNYxFPhbMT/tNzb1+l/+yrVA/QHnBfEd7nSdbtO/nqqdoh4nRHHAKmwbYhuqR1hGhaql+hVYsdGoExxDVQoRakeCLCjOPYa/l56+aOsSIxtrQb+CBSqMIR2xZUW+1oWOMLGUcpTCUzIXRWSOF89ceOOmKbMIZVXhf4rzRqc6LGoWMZd2t7vyBTbSyRVH0u13+d9fZv07B+y9VtgzbzWpjZdzvnXnD3AgJjNx8+Pz568n+9bnrJ696v7z446O72n+FY3t5nVdQ0VWHDzHioNmkN+vEIBge7vd+VfL49vj69LOcPJs5c/7m7fHx8RvWGRhCR+EQ3Zd1HqFrHxi3aEUppFk6ITracTKHbrN5/W5/b6f7bOdp97Lb87t9v/98t9/rv2XLYh3Ksfy3plVSvq1tjwfA4wHwfzoA1jd/7vqZB3vrGvshhqI6HL6iw2/vvmSMNnYd3Xovajo0Bjk/paPYtrsFe3E3UlmV/e3G0iYsgvQASuvQpXZt9rVSqsUckkMZPUiPVNahCh5i1MYMWK48gzcYyTCH7MzoUUTxUW6LrROg106AK4Wpm2ojP+fN9RtlwCMoNSgboHjahuKlNiMZhqQecfh+OOy1cfhTO/FSp+qxHr4TDuwNBamRbpFvJw4SeUp8CXd3HzDgfUNMbqp58ZGkeaB5ZeFDp5y6bWdZbzWyTsXfcTjfacyUwBrNrFqHpCYCH6bOJdbvdDCRu0k6imRgP6VoaDfQMbDmysgLRr0AtjJ1dYQVD1pzStlk6+3MwdmJOKWFkMrKkES5RPnBir93Ds5Odk5fXIspYZjjWW5r6jfVtqYk4PhxQp6vFjEvqvlhw5LjC3Pn2rGzNSu2RsVypts+0vHotX3yKmYe9nGs88hWmZNjcpFjIsoPJ8uBBA8YysKzWS+f7LV1MeY1WkbvQWuyex8CdfV/p8VemUOO5q6TRCgVu5In57LM85vq65JB8pv7u0oai7mX7AMPpto65l4uR2jpykRZxo8/pcTQ3gw8mKGRRS3fLCGUlq/DesLcGJgfz8uP/Z/EJgeqylBcFjOMUr4DDz5y4TR2kNmAR/Iip9mI4v3vhaqdS5ay4m9148yrOA6CgBK3lbbZRs6uLjl85foy1iGzGLzlPSjeFqbqpP4qyJ8tIUI1SXHCtIXIvPuljFGzF3zMe0F5wU6tDUazsgsf+Jc9Wku+XBZdJstq+uLVRo66lRTUjMsgy7J/ALzm/XU=
+sidebar_class_name: "put api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save tax information by account ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/accounts/{accountId}/business/tax-information"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Save the business tax information by account ID.
+
+    ### Permissions
+    * `business:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"accountId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["annual_volume","average_transaction_amount","business_industry","product_description"],"type":"object","properties":{"product_description":{"maxLength":200,"minLength":1,"type":"string","description":"Description of product or services","example":"Sell clothing and accessories"},"business_industry":{"minLength":1,"type":"string","description":"Business industry","example":"computer_repair"},"annual_volume":{"type":"integer","description":"Annual transaction volume","format":"int32","example":1200000},"average_transaction_amount":{"type":"integer","description":"Average transaction amount","format":"int32","example":1500},"has_processed_transactions":{"type":"boolean","description":"Has your company done any business, or processed any transactions before?","nullable":true,"example":false}},"additionalProperties":false,"title":"SaveBusinessTaxInformationRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["annual_volume","average_transaction_amount","business_industry","product_description"],"type":"object","properties":{"id":{"type":"string","description":"Business tax information ID","nullable":true,"example":"btx_99Lg5YRt2pH17EJktU5HafsTY"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"created_at":{"type":"string","description":"Date tax information was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date tax information was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"product_description":{"maxLength":200,"minLength":1,"type":"string","description":"Description of product or services","example":"Sell clothing and accessories"},"business_industry":{"minLength":1,"type":"string","description":"Business industry","example":"computer_repair"},"annual_volume":{"type":"integer","description":"Annual transaction volume","format":"int32","example":1200000},"average_transaction_amount":{"type":"integer","description":"Average transaction amount","format":"int32","example":1500},"has_processed_transactions":{"type":"boolean","description":"Has your company done any business, or processed any transactions before?","nullable":true,"example":false}},"additionalProperties":false,"title":"BusinessTaxInformation"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
