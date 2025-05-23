@@ -47,13 +47,11 @@ The key parts of the webhook request are:
 
 PublicSquare publishes several events which can be subscribed to via webhooks:
 
-| Event Type                     | Description                                                                                                                                                                                          |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `connection:update`            | This event publishes a [Connection](/api/accounts/get-connection-by-id) entity when a seller invitation is accepted, a seller completes onboarding, or when a seller's onboarding has been approved. |
-| `connection:delete`            | This event publishes a [Connection](/api/accounts/get-connection-by-id) entity with a `removed` status when a seller or merchant removes the connection.                                             |
-| `connection-invitation:accept` | This event publishes a [Connection Invitation](/api/accounts/create-connection-invitation) entity when a seller accepts the invitation.                                                              |
-| `onboarding:merchant:update`   | This event publishes the Account entity when the merchant onboarding status changes.                                                                                                                 |
-| `onboarding:seller:update`     | This event publishes the Account entity when the seller onboarding status changes.                                                                                                                   |
+| Event Type                   | Description                                                                          |
+|------------------------------|--------------------------------------------------------------------------------------|
+| `onboarding:payments:update` | This event publishes the Account entity when the payments onboarding status changes. |
+| `onboarding:credit:update`   | This event publishes the Account entity when the credit onboarding status changes.   |
+| `onboarding:seller:update`   | This event publishes the Account entity when the seller onboarding status changes.   |
 
 <Alert>PublicSquare always publishes the current instance of the entity in the webhook notification.</Alert>
 

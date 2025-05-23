@@ -220,6 +220,18 @@ const sidebar: SidebarsConfig = {
           label: "Save bank account by account ID",
           className: "api-method put",
         },
+        {
+          type: "doc",
+          id: "api/accounts/get-bank-verification-url",
+          label: "Get bank verification URL",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-bank-verification-code",
+          label: "Save Bank verification code",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -572,54 +584,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/accounts/delete-ultimate-beneficial-owner-by-id-and-account-id",
           label: "Delete ultimate beneficial owner by ID and account ID",
-          className: "api-method delete",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Connections",
-      items: [
-        {
-          type: "doc",
-          id: "api/accounts/get-all-connection-invitations",
-          label: "Get all connection invitations",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/create-connection-invitation",
-          label: "Create connection invitation",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/delete-connection-invitation",
-          label: "Delete connection invitation",
-          className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-all-merchant-connections",
-          label: "Get all merchant connections",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-all-seller-connections",
-          label: "Get all seller connections",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-connection-by-id",
-          label: "Get connection by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/delete-connection",
-          label: "Delete connection",
           className: "api-method delete",
         },
       ],

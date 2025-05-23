@@ -1,0 +1,75 @@
+---
+id: save-bank-verification-code
+title: "Save Bank verification code"
+description: "    Save the bank account verification code for the Account."
+sidebar_label: "Save Bank verification code"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01v2zgQ/SvE5FCgYOJ+nXRzsi0QBGiMpi124RrbkTS22UikQlJOvYL++2JIyZZjp/AhyCkXW6Ye5+s9Ss8NeFw4SKZwXjulyTlxjvpWjLPM1NrDTEJOLrOq8spoSEAIIW5wRcIvSaQMxQgVK7JqrjJkoMhMTmJubIB1wc5+6B+a95+cnIgJ2VI5p4x2cfG1+Jl2JST3Vnn6CRJMRTYEvMwhgZA3lLeXCyRYuqvJ+XOTryFpIDPak/Z8iVVVdODRL8dtNOCyJZXIV35dESRg0l+UeZBQWc7qFTm+O8z0b8i03eK8VXoBD0f0fVjcRSxO10WBaUGQeFuTBPqNZcU/D6DbVgLmueIVLCaDcuZYOJLglQ9beR48jm6+w0hf4jCg5WA8GWUpj8nDgquMdrHDd2/e8NduD9dXIJ9qhM6jr93F7uyU9rQgCxLmxpbo49L7d4FIzK91se7KPXYan81FV28buv5wqK9zzEU/mydrkKw11h3CHS58g0NrcQ0SlKfS7QuLu9gVTis7yL4G94FxLkcgI0HHkbO3OSePqjgqj9LOo86OKepR0pttZ/AdC5UHyibWpAWVf4Va3EYAb/cF8E1j7ZfGqv8ofzoFvJCyIeURKt7vU/HJ2FTlOekXHp6Phw/7PHw2XnwytX45D8/EA3dDWW2VX0MybWBcqSviS9h1QDBrZxJK8kvD9qcy4aVVoV9CAqMeO2IXdtq5sNHQrwDnsSvid9O0gdoWkMDS+8oloxFW6qyq00Jl7q5GS2eZKYHz9aXdMNeRzr7A7YsrLjx0PuPu0RrNTLoW48mluKK1UNqpnERn0V458ffpeHJ5evXxH7EkzAOLGksOvbnD70UO2gF4aizDL1ub97E3UQdt2iFnxSHnJjTS0xNGcBNG0BtVx3WD5KAuNrZ6y3uZgBLDQeiK/bMj3RnOwJE+s4nuOPP024+qApXmXoIYmk5MW+GBhKGc4hC2gppJWLIKkyk0TYqOvtmibXn5ribLEp5JWKFV8ZRMZ63s+WMF3rKIoLNpp1+5LoYXddTUg+dNK/sd4yyjyv8ROzwok+ubr9xI90+gjHKweM/mEu8hgfDXgncHeYe1BgrUixoXjI0xwwGveUBD4d8G4XcX3FV/S68HFQ5lHJvgT27pILxp4pFq2w0+3np0x+bcRDSzOmvb9n/sl8wM
+sidebar_class_name: "post api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save Bank verification code"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/business/bank-account/verification"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Save the bank account verification code for the Account.
+
+    ### Permissions
+    * `business:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"verification_code":{"type":"string","description":"Verification Code","nullable":true,"example":"Verification Code"}},"additionalProperties":false,"title":"SaveBankAccountVerificationRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"statusCode":{"type":"integer","format":"int32","readOnly":true}},"additionalProperties":false,"title":"NoContent"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

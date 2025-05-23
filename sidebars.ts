@@ -62,14 +62,6 @@ const sidebars: SidebarsConfig = {
       items: ["guides/transactions/search-and-view-transactions", "guides/transactions/view-settlements"],
     },
     {
-      type: "category",
-      label: "Marketplaces",
-      customProps: {
-        icon: "/img/icons/shop.svg",
-      },
-      items: ["guides/marketplaces/onboard-sellers"],
-    },
-    {
       type: "html",
       value: "<hr />",
     },
@@ -83,7 +75,7 @@ const sidebars: SidebarsConfig = {
         type: "doc",
         id: "concepts/index",
       },
-      items: ["concepts/accounts", "concepts/api-keys", "concepts/connections", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
+      items: ["concepts/accounts", "concepts/api-keys", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
     },
     {
       type: "html",
