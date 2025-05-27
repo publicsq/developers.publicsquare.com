@@ -1,6 +1,6 @@
 {
   "name": "developers-publicsquare-com",
-  "version": "1.29.0",
+  "version": "1.31.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -23,7 +23,7 @@
     "@docusaurus/plugin-client-redirects": "^3.7.0",
     "@docusaurus/plugin-ideal-image": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
-    "@docusaurus/theme-mermaid": "3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
     "@mdx-js/react": "^3.1.0",
     "add": "^2.0.6",
     "clsx": "^2.0.0",

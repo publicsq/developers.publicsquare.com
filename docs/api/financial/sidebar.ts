@@ -8,6 +8,24 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Dispute Cases",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-dispute-cases",
+          label: "Get all dispute cases",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-dispute-case-by-id",
+          label: "Get dispute case by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Bank Accounts",
       items: [
         {

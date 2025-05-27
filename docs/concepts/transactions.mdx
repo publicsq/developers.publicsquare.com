@@ -7,13 +7,13 @@ PublicSquare leverages double entry account to track all transactions. Payments 
 
 PublicSquare uses different transaction types to track the flow of money for different use cases.
 
-| Type         | Description                                                                                                                                                                                                                        |
-|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `payment`    | Payments are used to collect funds from customers. Payments are recorded in PublicSquare as a debit transaction type.                                                                                                              |
-| `refund`     | Refunds enable you to return funds to a payment method associated with a payment. PublicSquare will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund.              |
-| `payout`     | Payouts are used to send funds to customers, merchants, and vendors.                                                                                                                                                               |
-| `settlement` | Settlements are batches created during end of day reconciliation processes and are associated with payments, refunds, and payouts. This represents money being deposited or withdrawn from your primary bank account.              |
-| `transfer`   | Transfers are used to send funds to [connected sellers](/concepts/connections) when creating a payment. For instance, if you charge a customer $300, you can transfer $100 to three different sellers as part of the same payment. |
+| Type         | Description                                                                                                                                                                                                           |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `payment`    | Payments are used to collect funds from customers. Payments are recorded in PublicSquare as a debit transaction type.                                                                                                 |
+| `refund`     | Refunds enable you to return funds to a payment method associated with a payment. PublicSquare will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund. |
+| `payout`     | Payouts are used to send funds to customers, merchants, and vendors.                                                                                                                                                  |
+| `settlement` | Settlements are batches created during end of day reconciliation processes and are associated with payments, refunds, and payouts. This represents money being deposited or withdrawn from your primary bank account. |
+| `transfer`   | Transfers are used to send funds to seller accounts when creating a payment. For instance, if you charge a customer $300, you can transfer $100 to three different sellers as part of the same payment.               |
 
 ## Statuses
 

@@ -1,3 +1,17 @@
+# [1.31.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.30.0...v1.31.0) (2025-05-14)
+
+
+### Features
+
+* add endpoints for seller onboarding ([cefcb58](https://github.com/publicsq/developers.publicsquare.com/commit/cefcb58fe29923f7baf00557f347c9ef8f1e4658))
+
+# [1.30.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.29.0...v1.30.0) (2025-05-13)
+
+
+### Features
+
+* add account management endpoints ([2103761](https://github.com/publicsq/developers.publicsquare.com/commit/210376126b916b609bdb0165fcce99be57b4e0f9))
+
 # [1.29.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.28.0...v1.29.0) (2025-05-12)
 
 

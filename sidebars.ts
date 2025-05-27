@@ -87,7 +87,7 @@ const sidebars: SidebarsConfig = {
         type: "doc",
         id: "concepts/index",
       },
-      items: ["concepts/accounts", "concepts/api-keys", "concepts/connections", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
+      items: ["concepts/accounts", "concepts/api-keys", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
     },
     {
       type: "html",
