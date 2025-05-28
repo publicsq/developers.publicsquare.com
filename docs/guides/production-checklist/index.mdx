@@ -16,92 +16,80 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
   caption="An interactive checklist to help you review best practices before going to production."
 />
 
-## Account & Setup
+## Onboarding
 
-<QuestionCard question="Has your PSQ merchant account been fully approved and verified?">
+<QuestionCard question="Have you completed onboarding with your PSQ merchant account?" showNA={false}>
   <Content type="no">
-    <Alert type="warning">Complete your onboarding [here](https://portal.publicsquare.com/).</Alert>
+    <Alert type="warning"> Review our onboarding guide [here](https://developers.publicsquare.com/concepts/onboarding), and complete the steps in the PSQ merchant [portal](https://portal.publicsquare.com/onboarding/review). </Alert>
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Have you configured and requested your payment methods">
-  <Content type="na">
-    <Alert type="neutral">You can request additional payment methods to be enabled in your [account settings](https://portal.publicsquare.com/settings/features).</Alert>
-  </Content>
-</QuestionCard>
+## Installation
 
-<QuestionCard showDefault={true} question="Is your descriptor properly configured with the processor?">
-  <Content type="default">
-    <Alert type="question">What is a <Tooltip text="This is a default piece of information (often your business name or phone number) that’s pre-configured with PSQ. It remains the same for every transaction.">descriptor</Tooltip>?</Alert>
-  </Content>
+<QuestionCard question="Have you installed the appropriate SDK for your e-commerce provider or website?" showNA={false}>
   <Content type="no">
-    <Alert type="warning" subQuestion={<>What is a <Tooltip text='This is a default piece of information (often your business name or phone number) that’s pre-configured with PSQ. It remains the same for every transaction.'>descriptor</Tooltip>?</>}>Configure your onboarding [here](https://portal.publicsquare.com/onboarding).</Alert>
-  </Content>
-  <Content type="na">
-    <Alert type="neutral" subQuestion={<>What is a <Tooltip text='This is a default piece of information (often your business name or phone number) that’s pre-configured with PSQ. It remains the same for every transaction.'>descriptor</Tooltip>?</>}>This is not necessary, but many merchants prefer to control how their charges look on a customer’s bank statements.</Alert>
+    <Alert type="warning"> Review our e-commerce and custom integration guides [here](https://developers.publicsquare.com/sdks). </Alert>
   </Content>
 </QuestionCard>
 
-## Payment Method Testing
+## Collect Payment Methods
 
-<QuestionCard showDefault={true} question="Have you integrated PSQ payments into your test environment for your website?">
-  <Content type="no">
-    <Alert type="warning">Please complete [this process](https://developers.publicsquare.com/sdks/) in order to test various payment flows.</Alert>
+<QuestionCard question="Do you collect [credit cards](https://developers.publicsquare.com/guides/payments/process-card-payments)?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">You can test your integration using these [test cards](https://developers.publicsquare.com/api/testing#cards).</Alert>
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Have you successfully tested a **credit card** transaction?">
-  <Content type="no">
-    <Alert type="warning">Testing this is as simple as checking out like a normal customer would on the test environment of your website using one of these [test cards](https://developers.publicsquare.com/api/testing).</Alert>
+<QuestionCard question="Do you collect [bank accounts](https://developers.publicsquare.com/guides/payments/process-ach-payments)?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">You can test your integration using these [test accounts](https://developers.publicsquare.com/api/testing#bank-accounts).</Alert>
+  </Content>
+    <Content type="no">
+    <Alert type="neutral">You can request access to other payment methods in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Have you tested at least one **ACH** transaction, if applicable?">
-  <Content type="no">
-    <Alert type="warning">Testing this is as simple as checking out like a normal customer would and selecting ACH as your payment option using one of these [test bank accounts](https://developers.publicsquare.com/api/testing).</Alert>
+## Process Payments
+
+<QuestionCard question="Do you collect payments from customers?" showNA={false}>
+ <Content type="yes">
+    <Alert type="neutral">[Guide](https://developers.publicsquare.com/guides/payments/authorize-and-capture-payments) to authorize and capture payments.</Alert>
   </Content>
-  <Content type="na">
-    <Alert type="neutral">You can request ACH transactions to be enabled in your [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+   <Content type="yes">
+    <Alert type="neutral">[How](https://developers.publicsquare.com/guides/payments/authorize-and-capture-payments) to test capturing funds.</Alert>
   </Content>
-</QuestionCard>
-
-<QuestionCard question="Can you see the test transaction(s) you just created in the merchant portal?">
-  <Content type="no">
-    <Alert type="warning">Follow the [steps](https://developers.publicsquare/guides/transactions/search-and-view-transactions) to view transaction.</Alert>
-  </Content>
-</QuestionCard>
-
-
-## Refund & Reconciliation
-
-<QuestionCard question="Have you successfully processed both **full and partial refunds**?">
-  <Content type="no">
-    <Alert type="warning">Follow the steps to process a refund [here](https://developers.publicsquare.com/guides/refunds/refund-payments).</Alert>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](https://developers.publicsquare.com/guides/payments/authorize-and-capture-payments) to test refunding payments.</Alert>
   </Content>
 </QuestionCard>
 
-<QuestionCard question="Have you tested a **same-day refund** (pre-settlement) by marking the order as “Cancelled” in the PSQ Portal?">
-  <Content type="no">
-    <Alert type="warning">Follow the steps to cancel a payment [here](https://developers.publicsquare.com/guides/payments/cancel-payments).</Alert>
+<QuestionCard question="Have you configured your [fraud rules](https://developers.publicsquare.com/concepts/fraud-details-and-prevention)?" showNA={false}>
+</QuestionCard>
+
+## Process Payouts
+
+<QuestionCard question="Do you send funds to customers or businesses?" showNA={false}>
+ <Content type="yes">
+    <Alert type="neutral">Request access to payouts in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+  </Content>
+  <Content type="yes">
+    <Alert type="neutral">[Guide](https://developers.publicsquare.com/guides/payouts/process-card-payouts) on how to perform card payouts.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](https://developers.publicsquare.com/guides/payouts/process-ach-payouts) on how to perform ACH payouts.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](https://developers.publicsquare.com/guides/payouts/cancel-payouts) on how to cancel payouts.</Alert>
   </Content>
 </QuestionCard>
 
-## Additional Testing
+## Receive Notifications
 
-<QuestionCard question="Did each payment correctly associate with the order in your eCommerce platform?">
-  <Content type="no">
-    <Alert type="warning">Check our [SDKs](https://developers.publicsquare.com/sdks) documentation for your platform to validate your setup.</Alert>
+<QuestionCard question="Do you need to receive notifications for account activity?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">Learn more about [Webhooks](https://developers.publicsquare.com/concepts/webhooks).</Alert>
   </Content>
-</QuestionCard>
-
-<QuestionCard question="Do you understand how the Authorization → Capture Flow works for a payment?">
-  <Content type="no">
-    <Alert type="warning">Learn how this works [here](https://developers.publicsquare.com/guides/payments/authorize-and-capture-payments).</Alert>
+   <Content type="yes">
+    <Alert type="neutral">Configure webhooks in your portal developers [page](https://portal.publicsquare.com/developers/webhooks).</Alert>
   </Content>
-</QuestionCard>
-
-<QuestionCard question="Have you manually captured a payment using the portal?">
-</QuestionCard>
-
-<QuestionCard question="Have you tested error handling in cases where the webhook fails or is delayed?">
 </QuestionCard>

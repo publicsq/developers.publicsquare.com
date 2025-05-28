@@ -12,6 +12,7 @@ interface Props extends PropsWithChildren {
   showDefault?: boolean;
   yesType?: AnswerType;
   noType?: AnswerType;
+  showNA?: boolean;
 }
 
 interface ContentProps extends PropsWithChildren {
@@ -36,7 +37,7 @@ const resolveState = (answer: Answer, yesType: AnswerType, noType: AnswerType): 
   }
   return "wrong";
 };
-export const QuestionCard = ({ question, showDefault = false, yesType = "right", noType = "wrong", children }: Props) => {
+export const QuestionCard = ({ question, showDefault = false, yesType = "right", noType = "wrong", showNA = true, children }: Props) => {
   const [answer, setAnswer] = useState<Answer>(null);
 
   const childrenArray = React.Children.toArray(children);
@@ -70,7 +71,7 @@ export const QuestionCard = ({ question, showDefault = false, yesType = "right",
           <ReactMarkdown className={styles.questionText}>{question}</ReactMarkdown>
         </div>
         <div className={styles["button-group"]}>
-          <AnswerButtons state={state} value={answer} onChange={updateAnswer} />
+          <AnswerButtons state={state} value={answer} onChange={updateAnswer} showNA={showNA} />
         </div>
       </div>
       <div className={styles.content}>

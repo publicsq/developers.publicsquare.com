@@ -8,9 +8,10 @@ interface Props {
   onChange: (value: Answer) => unknown;
   state: State;
   value: Answer;
+  showNA?: boolean;
 }
 
-export const AnswerButtons = ({ state, value, onChange }: Props) => {
+export const AnswerButtons = ({ state, value, onChange, showNA = true }: Props) => {
   return (
     <div className={styles.buttons}>
       <button className={clsx(value === "yes" && styles[state])} onClick={() => onChange("yes")}>
@@ -19,9 +20,11 @@ export const AnswerButtons = ({ state, value, onChange }: Props) => {
       <button className={clsx(value === "no" && styles[state])} onClick={() => onChange("no")}>
         No
       </button>
-      <button className={clsx(value === "na" && styles[state])} onClick={() => onChange("na")} title="Not Applicable">
-        N/A
-      </button>
+      {showNA && (
+        <button className={clsx(value === "na" && styles[state])} onClick={() => onChange("na")} title="Not Applicable">
+          N/A
+        </button>
+      )}
     </div>
   );
 };
