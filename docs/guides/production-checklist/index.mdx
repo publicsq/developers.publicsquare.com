@@ -20,7 +20,7 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
 
 <QuestionCard question="Have you completed onboarding with your PSQ merchant account?" showNA={false}>
   <Content type="no">
-    <Alert type="warning"> Review our onboarding guide [here](https://developers.publicsquare.com/concepts/onboarding), and complete the steps in the PSQ merchant [portal](https://portal.publicsquare.com/onboarding/review). </Alert>
+    <Alert type="warning"> Review our onboarding guide [here](https://developers.publicsquare.com/concepts/onboarding), and complete the steps in the [merchant portal](https://portal.publicsquare.com/onboarding/review). </Alert>
   </Content>
 </QuestionCard>
 
@@ -43,6 +43,9 @@ import { Tooltip } from "@site/src/components/shared/Tooltip";
 <QuestionCard question="Do you collect [bank accounts](https://developers.publicsquare.com/guides/payments/process-ach-payments)?" showNA={false}>
   <Content type="yes">
     <Alert type="neutral">You can test your integration using these [test accounts](https://developers.publicsquare.com/api/testing#bank-accounts).</Alert>
+  </Content>
+      <Content type="yes">
+    <Alert type="neutral">You can request access to other payment methods in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
   </Content>
     <Content type="no">
     <Alert type="neutral">You can request access to other payment methods in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
