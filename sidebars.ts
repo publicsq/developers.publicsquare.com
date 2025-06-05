@@ -62,6 +62,13 @@ const sidebars: SidebarsConfig = {
       items: ["guides/transactions/search-and-view-transactions", "guides/transactions/view-settlements"],
     },
     {
+      id: "guides/production-checklist/index",
+      type: "doc",
+      customProps: {
+        icon: "/img/icons/ballot-check-light.svg",
+      },
+    },
+    {
       type: "html",
       value: "<hr />",
     },
@@ -75,7 +82,7 @@ const sidebars: SidebarsConfig = {
         type: "doc",
         id: "concepts/index",
       },
-      items: ["concepts/accounts", "concepts/api-keys", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks"],
+      items: ["concepts/accounts", "concepts/api-keys", "concepts/transactions", "concepts/fraud-details-and-prevention", "concepts/webhooks", "concepts/onboarding"],
     },
     {
       type: "html",

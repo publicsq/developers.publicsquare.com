@@ -1,0 +1,98 @@
+---
+title: Production Checklist
+description: An interactive checklist to help you review best practices before going to production.
+hide_title: true
+sidebar_label: Production Checklist
+hide_table_of_contents: true
+---
+
+import { Alert } from "@site/src/components/shared/Alert";
+import { Intro } from "@site/src/components/shared/Intro";
+import { Content, QuestionCard } from "@site/src/components/question/QuestionCard";
+import { Tooltip } from "@site/src/components/shared/Tooltip";
+
+<Intro
+  title="Production Checklist"
+  caption="An interactive checklist to help you review best practices before going to production."
+/>
+
+## Onboarding
+
+<QuestionCard question="Have you completed onboarding with your PSQ merchant account?" showNA={false}>
+  <Content type="no">
+    <Alert type="warning"> Review our onboarding guide [here](/concepts/onboarding), and complete the steps in the [merchant portal](https://portal.publicsquare.com/onboarding/review). </Alert>
+  </Content>
+</QuestionCard>
+
+## Installation
+
+<QuestionCard question="Have you installed the appropriate SDK for your e-commerce provider or website?" showNA={false}>
+  <Content type="no">
+    <Alert type="warning"> Review our e-commerce and custom integration guides [here](/sdks). </Alert>
+  </Content>
+</QuestionCard>
+
+## Collect Payment Methods
+
+<QuestionCard question="Do you collect [credit cards](/guides/payments/process-card-payments)?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">You can test your integration using these [test cards](/api/testing#cards).</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Do you collect [bank accounts](/guides/payments/process-ach-payments)?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">You can test your integration using these [test accounts](/api/testing#bank-accounts).</Alert>
+  </Content>
+      <Content type="yes">
+    <Alert type="neutral">You can request access to other payment methods in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+  </Content>
+    <Content type="no">
+    <Alert type="neutral">You can request access to other payment methods in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+  </Content>
+</QuestionCard>
+
+## Process Payments
+
+<QuestionCard question="Do you collect payments from customers?" showNA={false}>
+ <Content type="yes">
+    <Alert type="neutral">[Guide](/guides/payments/authorize-and-capture-payments) to authorize and capture payments.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[How](/guides/payments/authorize-and-capture-payments) to test capturing funds.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](/guides/payments/authorize-and-capture-payments) to test refunding payments.</Alert>
+  </Content>
+</QuestionCard>
+
+<QuestionCard question="Have you configured your [fraud rules](/concepts/fraud-details-and-prevention)?" showNA={false}>
+</QuestionCard>
+
+## Process Payouts
+
+<QuestionCard question="Do you send funds to customers or businesses?" showNA={false}>
+ <Content type="yes">
+    <Alert type="neutral">Request access to payouts in your portal [account settings](https://portal.publicsquare.com/settings/features).</Alert>
+  </Content>
+  <Content type="yes">
+    <Alert type="neutral">[Guide](/guides/payouts/process-card-payouts) on how to perform card payouts.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](/guides/payouts/process-ach-payouts) on how to perform ACH payouts.</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">[Guide](/guides/payouts/cancel-payouts) on how to cancel payouts.</Alert>
+  </Content>
+</QuestionCard>
+
+## Receive Notifications
+
+<QuestionCard question="Do you need to receive notifications for account activity?" showNA={false}>
+  <Content type="yes">
+    <Alert type="neutral">Learn more about [Webhooks](/concepts/webhooks).</Alert>
+  </Content>
+   <Content type="yes">
+    <Alert type="neutral">Configure webhooks in your portal developers [page](https://portal.publicsquare.com/developers/webhooks).</Alert>
+  </Content>
+</QuestionCard>
