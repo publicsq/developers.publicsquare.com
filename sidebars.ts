@@ -64,6 +64,9 @@ const sidebars: SidebarsConfig = {
     {
       id: "guides/production-checklist/index",
       type: "doc",
+      customProps: {
+        icon: "/img/icons/ballot-check-light.svg",
+      },
     },
     {
       type: "html",
