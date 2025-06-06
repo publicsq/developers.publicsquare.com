@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.31.0...v1.32.0) (2025-06-06)
+
+
+### Features
+
+* add payment and refund transfers ([6fa0c83](https://github.com/publicsq/developers.publicsquare.com/commit/6fa0c830e5a204f3e9839c9d91c7f716ef6b4db0))
+
 # [1.31.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.30.0...v1.31.0) (2025-05-14)
 
 
