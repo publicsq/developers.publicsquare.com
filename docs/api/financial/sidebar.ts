@@ -206,6 +206,48 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Transfers",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-transfers",
+          label: "Get all payment transfers",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-payment-transfer",
+          label: "Create payment transfer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payment-transfer-by-id",
+          label: "Get payment transfer by ID.",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-refund-transfers",
+          label: "Get all refund transfers",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-refund-transfer",
+          label: "Create refund transfer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-refund-transfer-by-id",
+          label: "Get refund transfer by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Payouts",
       items: [
         {
@@ -339,30 +381,6 @@ const sidebar: SidebarsConfig = {
           id: "api/financial/get-all-transactions-for-a-settlement",
           label: "Get all transactions for a settlement",
           className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Transfers",
-      items: [
-        {
-          type: "doc",
-          id: "api/financial/get-all-transfers",
-          label: "Get all transfers",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-transfer-by-id",
-          label: "Get transfer by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/create-payment-transfer",
-          label: "Create payment transfer",
-          className: "api-method post",
         },
       ],
     },
