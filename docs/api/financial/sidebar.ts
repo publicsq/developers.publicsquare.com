@@ -210,6 +210,12 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/financial/get-payment-transfer-for-the-payment",
+          label: "Get payment transfer for the payment",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-payment-transfers",
           label: "Get all payment transfers",
           className: "api-method get",
@@ -224,6 +230,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/financial/get-payment-transfer-by-id",
           label: "Get payment transfer by ID.",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-refund-transfer-for-the-refund",
+          label: "Get refund transfer for the refund",
           className: "api-method get",
         },
         {
