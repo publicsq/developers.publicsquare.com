@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.32.0...v1.33.0) (2025-06-18)
+
+
+### Features
+
+* update webhooks, api key permissions, and transaction types ([#131](https://github.com/publicsq/developers.publicsquare.com/issues/131)) ([38c39e8](https://github.com/publicsq/developers.publicsquare.com/commit/38c39e80758e93938ff08c67566e95ef32f30d5f))
+
 # [1.32.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.31.0...v1.32.0) (2025-06-06)
 
 
