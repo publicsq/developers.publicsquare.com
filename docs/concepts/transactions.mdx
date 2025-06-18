@@ -7,13 +7,15 @@ PublicSquare leverages double entry account to track all transactions. Payments 
 
 PublicSquare uses different transaction types to track the flow of money for different use cases.
 
-| Type         | Description                                                                                                                                                                                                           |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `payment`    | Payments are used to collect funds from customers. Payments are recorded in PublicSquare as a debit transaction type.                                                                                                 |
-| `refund`     | Refunds enable you to return funds to a payment method associated with a payment. PublicSquare will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund. |
-| `payout`     | Payouts are used to send funds to customers, merchants, and vendors.                                                                                                                                                  |
-| `settlement` | Settlements are batches created during end of day reconciliation processes and are associated with payments, refunds, and payouts. This represents money being deposited or withdrawn from your primary bank account. |
-| `transfer`   | Transfers are used to send funds to seller accounts when creating a payment. For instance, if you charge a customer $300, you can transfer $100 to three different sellers as part of the same payment.               |
+| Type               | Description                                                                                                                                                                                                                              |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `payment`          | Payments are used to collect funds from customers. Payments are recorded in PublicSquare as a debit transaction type.                                                                                                                    |
+| `refund`           | Refunds enable you to return funds to a payment method associated with a payment. PublicSquare will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund.                    |
+| `payout`           | Payouts are used to send funds to customers, merchants, and vendors.                                                                                                                                                                     |
+| `settlement`       | Settlements are batches created during end of day reconciliation processes and are associated with payments, refunds, and payouts. This represents money being deposited or withdrawn from your primary bank account.                    |
+| `payment_transfer` | Payment transfers are used to send funds to seller accounts from an existing `payment`. For instance, if you charge a customer $300, you can transfer $100 to three different sellers.                                                   |
+| `refund_transfer`  | Refund transfers are used to retrieve funds from seller accounts from an existing `refund` referencing the original `payment_transfer`. For instance, if you refund a customer $300, you can transfer $100 from three different sellers. |
+| `adjustment`       | Adjustments are created during the dispute process when a chargeback is created or a dispute is won/lost. These represent funds moving to or from your account balance. Several adjustments may be possible for a single dispute case.   |
 
 ## Statuses
 
