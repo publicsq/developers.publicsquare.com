@@ -206,14 +206,8 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Transfers",
+      label: "Payment Transfers",
       items: [
-        {
-          type: "doc",
-          id: "api/financial/get-payment-transfer-for-the-payment",
-          label: "Get payment transfer for the payment",
-          className: "api-method get",
-        },
         {
           type: "doc",
           id: "api/financial/get-all-payment-transfers",
@@ -229,31 +223,13 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/financial/get-payment-transfer-by-id",
-          label: "Get payment transfer by ID.",
+          label: "Get payment transfer by ID",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/financial/get-refund-transfer-for-the-refund",
-          label: "Get refund transfer for the refund",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-all-refund-transfers",
-          label: "Get all refund transfers",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/create-refund-transfer",
-          label: "Create refund transfer",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-refund-transfer-by-id",
-          label: "Get refund transfer by ID",
+          id: "api/financial/get-payment-transfer-for-payment",
+          label: "Get payment transfer for payment",
           className: "api-method get",
         },
       ],
@@ -369,6 +345,36 @@ const sidebar: SidebarsConfig = {
           id: "api/financial/cancels-a-refund",
           label: "Cancels a refund",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Refund Transfers",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-refund-transfers",
+          label: "Get all refund transfers",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-refund-transfer",
+          label: "Create refund transfer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-refund-transfer-by-id",
+          label: "Get refund transfer by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-refund-transfer-for-refund",
+          label: "Get refund transfer for refund",
+          className: "api-method get",
         },
       ],
     },

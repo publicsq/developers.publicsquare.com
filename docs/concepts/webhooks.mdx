@@ -47,11 +47,17 @@ The key parts of the webhook request are:
 
 PublicSquare publishes several events which can be subscribed to via webhooks:
 
-| Event Type                   | Description                                                                          |
-|------------------------------|--------------------------------------------------------------------------------------|
-| `onboarding:payments:update` | This event publishes the Account entity when the payments onboarding status changes. |
-| `onboarding:credit:update`   | This event publishes the Account entity when the credit onboarding status changes.   |
-| `onboarding:seller:update`   | This event publishes the Account entity when the seller onboarding status changes.   |
+| Event Type                   | Description                                                                                                                                                                              |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onboarding:payments:update` | This event publishes the Account entity when the payments onboarding status changes.                                                                                                     |
+| `onboarding:credit:update`   | This event publishes the Account entity when the credit onboarding status changes.                                                                                                       |
+| `onboarding:seller:update`   | This event publishes the Account entity when the seller onboarding status changes.                                                                                                       |
+| `payment:update`             | This event publishes the [Payment](/api/financial/get-payment-by-id) entity when a payment is created or updated.                                                                        |
+| `payout:update`              | This event publishes the [Payout](/api/financial/get-payout-by-id) entity when a payout is created or updated.                                                                           |
+| `refund:update`              | This event publishes the [Refund](/api/financial/get-refund-by-id) entity when a refund is created or updated.                                                                           |
+| `transfer:update`            | This event publishes the [Payment Transfer](/api/financial/get-payment-transfer-by-id) or [Refund Transfer](/api/financial/get-refund-transfer-by-id) entity when a transfer is created. |
+| `settlement:update`          | This event publishes the [Settlement](/api/financial/get-settlement-by-id) entity when a settlement is created or updated.                                                               |
+| `disputecase:update`         | This event publishes the [Dispute Case](/api/financial/get-dispute-case-by-id) entity when a dispute case is created or updated.                                                         |
 
 <Alert>PublicSquare always publishes the current instance of the entity in the webhook notification.</Alert>
 
@@ -89,7 +95,7 @@ The Webhook Event will contain information about the last delivery attempt:
   },
   "response": {
     "success": true
-  }
+  },
   "created_at": "2024-06-30T01:02:29.212Z"
 }
 ```
