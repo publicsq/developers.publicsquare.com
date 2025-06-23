@@ -154,6 +154,18 @@ const sidebar: SidebarsConfig = {
           label: "Get payment method by ID",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/get-bank-verification-url",
+          label: "Get bank verification URL",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/save-bank-verification-code",
+          label: "Save Bank verification code",
+          className: "api-method post",
+        },
       ],
     },
     {

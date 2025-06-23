@@ -1,0 +1,67 @@
+---
+id: get-bank-verification-url
+title: "Get bank verification URL"
+description: "    Get URL to initiate the bank account verification process for the Account."
+sidebar_label: "Get bank verification URL"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVltr20oQ/ivL5KFwWMe5tkFQDi69ENKeY9KmtKSmXUnjeGtpV9kdhbpC/73MruzIsXMopZTzkBdb3p3LN/N98kwDpK48JJcwVosSDYk3SDObe5hIyNFnTlekrYEEhBDiFZK4OH8tyAptNGlFKGiGIlVmLlSW2dqQuEGnpzpT7CcqZzP0XkytC5ajaLT7yXwyHHFnZ0eM0ZXae22Nj4d/iS9VhDMoA5zEocq/gARboQuBT3NIgOGE1GspL85fgwSHvrLGo4ekgYO9Pf5aL+jfM5CQWUNoiG9VVRVdjOFXzyYN+GyGpeInWlQICdj0K2YEEirHWEjHBKqmmXX6e/D+XLui5+LJaXMFd/v5S30ECaYuCpUWCAm5GiXgN1VW/BNmRJVPhsO+425Vp4XO/HWtHO5mthz+vcSK7+wczdP88fF0X+Xp4ATTbHB0kmeDFE/SwcFe9uTJYar2jx8fQ9tKUHmuOaQqxr3ap6rwKIE0BQzPlJl3HL/vwYC25RBH23h4pnJxjtc1evp9hKBz1vltdtvLWNkp59QCJGjC0m+yyFWsM9DKzmST8E3D2KWfsPSkqO7n14bwCh1ImFpXKopHhwfbnHMkpbdKcMNUG0/KZD8D6l4JNLeVwXtV6DxQNnY2LbB8HrD4lQD2NwVwYVaSzH+fAh5IWZFyDxWHm1S8tC7VeY7mgYc/x8PRJg//WBIvbW0e3oc/xANXg1ntNC0guWxgVOkz5EfYsonApJ1IiAeQwBWGbiuaQQLDdXs/5Jk+6Gb62mgGTulukMfUZQNhaVjNcFXpjdENnHWJ8i3THpldYr2dYfHg7sYx6i8pIl2I0fhUnOFCaON1jsLFIfzIiw+D0fh0cPbio5ihygOhRpUcenXDI5KDdgZtoGlqA4plmwP+twG/6PZLz0lBApcdUd3sQyuhsp5KFQTdZfqv5W6trub2Dfl/LKkdC4TfaFgVShsusNsJo0ruqor3ur5OYoNulTKRMLOe2LFpUuXxwhVty8fXNTqW6UTCjXI6vgmXk1YuiWFpzVkdMMoyrEJoVdRRJnf+TdZU/erFO96WasbbV9Y8KKt74OjLK7Poxe7rJKbnz1beY940UbNtu7KPV/d6rIQZrbnJk7ZtfwC2THFD
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get bank verification URL"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/payment-methods/bank-account/verification"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get URL to initiate the bank account verification process for the Account.
+
+    ### Permissions
+    * `payment-method:read`
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"authorization_url":{"type":"string","description":"URL to initiate the bank account verification process","nullable":true,"example":"https://verification.publicsquare.com/?authorizeToken=d65f1adb-8ebc-48dc-be8b-20c773ba1565"}},"additionalProperties":false,"title":"BankAccountVerification"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
