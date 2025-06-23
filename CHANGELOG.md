@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.33.0...v1.34.0) (2025-06-23)
+
+
+### Features
+
+* update settlement with new debit and credit fields ([5a6f828](https://github.com/publicsq/developers.publicsquare.com/commit/5a6f82840743039a15caa3f21533943c3d7761f1))
+
 # [1.33.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.32.0...v1.33.0) (2025-06-18)
 
 
