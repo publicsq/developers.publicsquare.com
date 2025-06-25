@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.34.0...v1.35.0) (2025-06-25)
+
+
+### Features
+
+* add onboard sellers guide ([#132](https://github.com/publicsq/developers.publicsquare.com/issues/132)) ([6193be3](https://github.com/publicsq/developers.publicsquare.com/commit/6193be306742046bf000684a407ea836185bd317))
+
 # [1.34.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.33.0...v1.34.0) (2025-06-23)
 
 
