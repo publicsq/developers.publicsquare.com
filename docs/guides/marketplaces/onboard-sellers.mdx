@@ -101,7 +101,7 @@ Using the bank account verification iFrame URL from the previous step, we can mo
         if (data && typeof data === 'object') {
             if (data.step === 'APP_MOUNTED') {
                 setIsLoading(false);
-            } else if (data.step === 'REDIRECT' && data.loginId) {
+            } else if (data.step === 'REDIRECT' && data.loginId && data.requestId) {
                 const res = await fetch('https://yourapi.com/bank-account-verification', {
                     method: 'POST',
                     body: {
