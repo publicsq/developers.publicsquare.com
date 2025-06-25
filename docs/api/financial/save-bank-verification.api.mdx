@@ -1,0 +1,75 @@
+---
+id: save-bank-verification
+title: "Save bank verification"
+description: "    Save the bank account verification for the Account."
+sidebar_label: "Save bank verification"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9tu2zgQ/RVh8lBgIcU3OXb05mxaIMju1mjaoovUSClpbDORKIWknHgF/ftiSNmRb4WxW+QpL4lMzQxnzjkjDkvQbKYguIUxW6YotPMn6nkWK5i4EKOKJM81zwQE4DiOc8MW6Og5OiETDw6LoqwQ2lmg5FMeMTJ0ppk0FiP78vS7+C7I9eTkxBmjTLlSPBPKLv7m/Mjtvl5q9g2eJNf4A1zIcpQm4lUMAZiNzabNzcAFiY8FKn2RxUsISogyoVFoemR5ntR2rXtFJZSgojmmjJ7Ij0uMqfQ6xh2PwYVm/Lsoi5GQ0MscIYAsvMdIgwu5pPQ0R0Wxdl2CElL2/AeKmZ5D0G+7kHKx+tlZx1NacjGDbaQvDoJrgruAzyzNE4rQx06njyzyOt32uedPO+femd+JvPYwPov9oY/dKULlNkv8f7l9soGcq0vD9GEdKDREb2TL+uGgd45t79z3h54/9GMv7Pd73mAQD6bhsH82wDZUlQssjjlFYcm4gfSUJQpd0FybaKQJgqpW2tfG7nWWUFV17ZZqLQs0CyrPhLLkddtt+rdZ5cdrcI/X0s/VQRDd1RDdbUjFkvFftXB1CS6IIklYSHBQbU2sQ7a464a9yI/7eDYdzIbzc96+7zx0k17qHw/yAYAJ2coFfx94Fyx2VgT8MhRRykyqfXb7y1jbMSnZElzgGlO1izdVsQlitWqBXWp2DS1KR1gqzXTR3J8LjTOU4MI0kynTdqnX3ecco2Y8OWofLpRmIjomqYMSKF8qg68s4bGhbCyzMMH00uSi1gLo7Argi2CFnmeS/4Pxr1PAGylrUg5Q0dul4kMmQx7HKN54eD0e/F0e/sq08yErxFs/vBIPVA1GheR6CcFtCaOcXyM9wr6BEybVxAW7AgHkmTm6ckYjEbQ2PVSLTnSvPpNbW/OoQrlAOqhuSyhkAgHMtc5V0GqxnJ/mRZjwSD0WTOJplKVA267yvCHiLberbF9OMbuwPR2M6u+snQjCpTMaXznXuHS4UDxGpx773innmzcaX3nX7/925shiQ6lgKYVev6FDkoLWBgQhafLTy4T9fjVd7J15jxtGN2fRI0dCymyaGTxWlBskbwySTn13UVS+HeGVxWfRIV+iM2WmueqaD14nNuBtXCde+/ZT067xWbfyhHFBdRg9lbUst4WswIWmMLeuMnSLmZOsg1soy5Ap/CKTqqLlxwIldcbEhQWT3Dbf7aRyV0ogLT+QHOF3i4f3mdIj86Sw6tz6jFXuymMURZjrn9o2O2/88eYzFVJf51IrLMmeSDfsCQIwV0PyNo1i1kpImJgVbEa2Nqb5bhSEU7OFHkwL1Q9U1eqVWDYybDaELYL+Ukl7zcvSNmdVre3tq4Me6w601kTupKqqfwG4c1lh
+sidebar_class_name: "post api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save bank verification"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/payment-methods/bank-account/verification"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Save the bank account verification for the Account.
+
+    ### Permissions
+    * `payment-method:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["request_id","verification_code"],"type":"object","properties":{"verification_code":{"maxLength":50,"minLength":1,"type":"string","description":"Bank account verification code","example":"5e115eac-1209-4f19-641c-08d6d484e2fe"},"request_id":{"maxLength":50,"minLength":1,"type":"string","description":"Request ID for bank account verification session","example":"a5b739e0-9448-484d-b553-77d7fb8567e0"}},"additionalProperties":false,"title":"SaveBankAccountVerificationRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"bank_account_verification_id":{"type":"string","description":"Bank account verification ID","nullable":true,"example":"bav_2b3c4d5e6f7g8h9i0j1k2l3m4"}},"additionalProperties":false,"title":"BankAccountVerification"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

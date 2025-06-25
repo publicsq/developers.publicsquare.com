@@ -90,12 +90,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/create-card",
-          label: "Create card",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/financial/get-all-cards-for-a-customer",
           label: "Get all cards for a customer",
           className: "api-method get",
@@ -162,8 +156,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/save-bank-verification-code",
-          label: "Save Bank verification code",
+          id: "api/financial/save-bank-verification",
+          label: "Save bank verification",
           className: "api-method post",
         },
       ],

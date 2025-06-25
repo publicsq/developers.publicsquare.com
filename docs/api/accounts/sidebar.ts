@@ -228,14 +228,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/accounts/save-bank-verification-code",
-          label: "Save Bank verification code",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/accounts/get-bank-account-verification-result",
-          label: "Get bank account verification result",
+          id: "api/accounts/save-bank-verification",
+          label: "Save bank verification",
           className: "api-method post",
         },
       ],
