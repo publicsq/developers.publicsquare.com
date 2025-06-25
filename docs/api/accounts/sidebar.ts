@@ -702,8 +702,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/accounts/review-seller-onboarding-by-account-id",
-          label: "Review seller onboarding by account ID",
+          id: "api/accounts/review-onboarding-by-account-id",
+          label: "Review onboarding by account ID",
           className: "api-method get",
         },
         {
