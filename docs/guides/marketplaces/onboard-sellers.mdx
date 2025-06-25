@@ -1,0 +1,307 @@
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+
+# Onboard Sellers
+
+As a marketplace, you will need to create and onboard your sellers to be able to transfer funds to them. Every seller within your marketplace will need a seller account created with PublicSquare.
+
+This guide will walk you through how to create and onboard seller accounts.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Secret Key
+
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+
+<Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
+
+## Create a Seller Account
+
+The first step is to create a seller account that will be fully managed by your merchant account.
+
+We need to make a call to [Create Account](/api/accounts/create-account) endpoint:
+
+```shell showLineNumbers title="Create a Seller Account"
+curl 'https://api.publicsquare.com/accounts' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'Content-Type: application/json' \
+-d '{
+  "name": "Test Seller",
+  "type": "seller"
+}'
+```
+
+This will return a seller account result similar to:
+
+```json showLineNumbers
+{
+  // highlight-next-line
+  "id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+  "name": "Test Seller",
+  "type": "seller",
+  "payments_onboarding_status": "not_started",
+  "credit_onboarding_status": "not_started",
+  "seller_onboarding_status": "not_started",
+  "products": ["seller"],
+  "managed_by": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+## Save Business Details
+
+Referencing the `id` of the previously created seller account, we can now save business details for our seller account.
+
+PublicSquare exposes several endpoints to enable you to submit all of the required business details:
+
+* [Save Business Details](/api/accounts/save-business-by-account-id)
+* [Save Business Representative](/api/accounts/save-business-representative-by-account-id)
+* [Save Business Tax Information](/api/accounts/save-tax-information-by-account-id)
+* [Create Ultimate Beneficial Owner](/api/accounts/create-ultimate-beneficial-owner-by-account-id)
+* [Upload Business Document](/api/accounts/upload-business-document-by-account-id)
+
+<Alert>For all of the endpoints listed above, be sure to replace the `accountId` field with the seller's account ID from the previous step.</Alert>
+
+## Collect Business Bank Account
+
+PublicSquare has partnered with [Flinks](https://www.flinks.com/) to provide a secure way to collect bank accounts.
+
+### Retrieve the iFrame URL
+
+To start the process, we need to [get a bank account verification iFrame URL](/api/accounts/get-bank-verification-url):
+
+```shell showLineNumbers title="Create a Seller Account"
+curl -L 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account/verification' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+This will return a response containing an iFrame URL you can mount on your site to prompt the seller to provide their business bank account:
+
+```json showLineNumbers
+{
+  // highlight-next-line
+  "authorization_url": "https://verification.publicsquare.com?authorizeToken=d65f1adb-8ebc-48dc-be8b-20c773ba1565&tag=acc_w6dogDaHuU6h1N5e5vfXLUYf"
+}
+```
+
+### Process Bank Verification
+
+Using the bank account verification iFrame URL from the previous step, we can mount it to our page and setup an event listener:
+
+```html showLineNumbers title="onboarding.html"
+<script type="text/javascript">
+    const handleMessage = async (e) => {
+        const data = e.data;
+
+        if (data && typeof data === 'object') {
+            if (data.step === 'APP_MOUNTED') {
+                setIsLoading(false);
+            } else if (data.step === 'REDIRECT' && data.loginId && data.requestId) {
+                const res = await fetch('https://yourapi.com/bank-account-verification', {
+                    method: 'POST',
+                    body: {
+                        verification_code: data.loginId,
+                        request_id: data.requestId,
+                    },
+                });
+            }
+        }
+    };
+
+    window.addEventListener('message', handleMessage);
+</script>
+
+<iframe
+    height="760"
+    src={bankAccountVerification.authorization_url}
+    title="Bank Account Verification"
+/>
+```
+
+Using the code above, your API should receive a `verification_code` and `request_id` which we can then [trigger the bank verification process](/api/accounts/save-bank-verification):
+
+```shell showLineNumbers title="API call on your server"
+curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account/verification' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'Content-Type: application/json' \
+-d '{
+  "verification_code": "5e115eac-1209-4f19-641c-08d6d484e2fe",
+  "request_id": "a5b739e0-9448-484d-b553-77d7fb8567e0"
+}'
+```
+
+This will return a bank account verification result:
+
+```json showLineNumbers
+{
+  // highlight-next-line
+  "bank_account_verification_id": "bav_2b3c4d5e6f7g8h9i0j1k2l3m4"
+}
+```
+
+### Save Seller Bank Account
+
+Once we have the `bank_account_verification_id`, we can then [save the bank account](/api/accounts/save-bank-account-by-account-id) for the seller:
+
+```shell showLineNumbers
+curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account' \
+-X 'PUT' \
+-H 'Content-Type: application/json' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-d '{
+  "bank_account_verification_id": "bav_2b3c4d5e6f7g8h9i0j1k2l3m4"
+}'
+```
+
+This will save the business bank account for the seller and return the resulting bank account:
+
+```json showLineNumbers
+{
+  "id": "bba_A4Ud7DxT2mGyj8hEyHx2KSfsp",
+  "account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+  "bank_account_verification_id": "bav_2b3c4d5e6f7g8h9i0j1k2l3m4",
+  "account_holder_name": "Test Corporation",
+  "account_holder_type": "company",
+  "account_type": "checking",
+  "routing_number": "110000000",
+  "account_number_last4": "1720",
+  "status": "verified",
+  "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+<Alert>If PublicSquare has not yet received a response back from Flinks, we will return a `202 - Accepted` HTTP status code. Please retry the request.</Alert>
+
+## Submit Onboarding
+
+Now that we have the required business information saved, documents uploaded, and the bank account setup, we can finally submit our seller account for onboarding.
+
+### Check Seller Onboarding Requirements
+
+PublicSquare provides an [onboarding review endpoint](/api/accounts/review-onboarding-by-account-id) to be able to check the status of your onboarding requirements and submission status:
+
+```shell showLineNumbers
+curl -L 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/onboarding/seller/review' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+If you have completed all of the previous steps, this should return a seller onboarding review response similar to:
+
+```json showLineNumbers
+{
+  "account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+  "product": "seller",
+  "onboarding_status": "in_progress",
+  "step_requirements": [
+    {
+      "name": "business",
+      "status": "complete"
+    },
+    {
+      "name": "representative",
+      "status": "complete"
+    },
+    {
+      "name": "bank_account",
+      "status": "complete"
+    },
+    {
+      "name": "tax_information",
+      "status": "complete"
+    },
+    {
+      "name": "ultimate_beneficial_owners",
+      "status": "complete"
+    }
+  ],
+  "document_requirements": [
+    {
+      "document_id": "doc_5JqeKG6PJnWsR8Q2VRaaFL",
+      "document_filename": "sample.pdf",
+      "document_type": {
+        "value": "articles_of_incorporation",
+        "name": "Articles of Incorporation",
+        "description": "Government issued document showing proof of business or articles of incorporation",
+        "can_opt_out": true,
+        "max_allowed_files": 1
+      },
+      "status": "complete"
+    },
+    {
+      "document_id": "doc_Bqdgp1JhHBgvWHD8WdLhP5",
+      "document_filename": "sample.jpg",
+      "document_type": {
+        "value": "personal_identification_front",
+        "name": "Personal Identification (Front)",
+        "description": "Picture of the front of valid government issued driver’s license, passport, or government issued identification",
+        "can_opt_out": false,
+        "max_allowed_files": 1
+      },
+      "status": "complete",
+      "entity_id": "rep_LhDXFEioK3KLGW3Q4Q7mv3",
+      "entity_type": "business_representative"
+    },
+    {
+      "document_id": "doc_8KfFweP7BkT9GrvVk5VyPa",
+      "document_filename": "sample.jpg",
+      "document_type": {
+        "value": "personal_identification_front",
+        "name": "Personal Identification (Front)",
+        "description": "Picture of the front of valid government issued driver’s license, passport, or government issued identification",
+        "can_opt_out": false,
+        "max_allowed_files": 1
+      },
+      "status": "complete",
+      "entity_id": "ubo_K9Hjpm8cpE46CwmMhiMxm6",
+      "entity_type": "ultimate_beneficial_owner"
+    }
+  ]
+}
+```
+
+### Submit Seller Onboarding
+
+Now that all of your requirements are `complete`, we can [submit the seller for underwriting](/api/accounts/onboard-by-account-id):
+
+```shell showLineNumbers
+curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/onboarding/seller' \
+-X 'POST' \
+-H 'Accept: application/json' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+You should receive a response similar to:
+
+```json showLineNumbers
+{
+  "account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+  "product": "seller",
+  // highlight-next-line
+  "onboarding_status": "pending_review",
+  ...
+}
+```
+
+This will submit all of the provided information to our underwriting team to review the seller application.
+
+You can receive automated notifications as your seller's onboarding status changes by [creating a webhook](/concepts/webhooks) and subscribing to the `onboarding:seller:update` event type.
+
+## Conclusion
+
+Following this guide, you have successfully onboarded a seller. Next, we need to transfer funds to a seller. Proceed with the [Transfer Funds to Sellers](/guides/marketplaces/transfer-funds-to-sellers) guide.
+
+Follow these guides to learn more:
+
+- [Transfer Funds to Sellers](/guides/marketplaces/transfer-funds-to-sellers)
+- [Collect Cards](/guides/payment-methods/collect-cards)
+- [Process Card Payments](/guides/payments/process-card-payments)
+- [Webhooks](/concepts/webhooks)

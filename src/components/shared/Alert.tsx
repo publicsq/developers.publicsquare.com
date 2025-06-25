@@ -17,7 +17,7 @@ export enum Alerts {
   INFO = "info",
   SUCCESS = "success",
   NEUTRAL = "neutral",
-  QUESTION = "question"
+  QUESTION = "question",
 }
 
 interface Alert {
@@ -27,13 +27,7 @@ interface Alert {
   subQuestion?: React.ReactNode;
 }
 
-export const Alert = ({
-  type = Alerts.INFO,
-  title,
-  content,
-  subQuestion,
-  children,
-}: PropsWithChildren<Alert>) => {
+export const Alert = ({ type = Alerts.INFO, title, content, subQuestion, children }: PropsWithChildren<Alert>) => {
   const containerClass = clsx({
     [styles.error]: type == Alerts.ERROR,
     [styles.warning]: type == Alerts.WARNING,
@@ -53,19 +47,24 @@ export const Alert = ({
   }[type];
 
   return (
-    <div className={clsx([styles.container, containerClass])}>
+    <div className={clsx([styles.container, containerClass])} style={{ marginBottom: "20px" }}>
       <div>
-        {Svg &&<div>
-          <Svg className={clsx(styles.svg)} />
-        </div>}
+        {Svg && (
+          <div>
+            <Svg className={clsx(styles.svg)} />
+          </div>
+        )}
         <div className={styles.content}>
           {title && <div className={styles.title}>{title}</div>}
-          <div className={styles.contentText}><div>{content ?? children}</div></div>
-          {subQuestion && 
-          <div className={styles.subquestion}>
-            <Subquestion className={clsx(styles.svg, styles.small)} />
-            {subQuestion}
-          </div>}
+          <div className={styles.contentText}>
+            <div>{content ?? children}</div>
+          </div>
+          {subQuestion && (
+            <div className={styles.subquestion}>
+              <Subquestion className={clsx(styles.svg, styles.small)} />
+              {subQuestion}
+            </div>
+          )}
         </div>
       </div>
     </div>

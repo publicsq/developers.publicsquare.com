@@ -120,6 +120,8 @@ html[data-theme="dark"] .header-github-link:before {
 .card-img-container svg {
   width: 50%;
   height: 50%;
+  max-width: 30px;
+  max-height: 30px;
 }
 
 @media only screen and (max-width: 600px) {

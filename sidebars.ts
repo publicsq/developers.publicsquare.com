@@ -62,6 +62,14 @@ const sidebars: SidebarsConfig = {
       items: ["guides/transactions/search-and-view-transactions", "guides/transactions/view-settlements"],
     },
     {
+      type: "category",
+      label: "Marketplaces",
+      customProps: {
+        icon: "/img/icons/shop.svg",
+      },
+      items: ["guides/marketplaces/onboard-sellers"],
+    },
+    {
       id: "guides/production-checklist/index",
       type: "doc",
       customProps: {
