@@ -232,6 +232,18 @@ const sidebar: SidebarsConfig = {
           label: "Save bank verification",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/accounts/get-bank-verification-url-by-account-id",
+          label: "Get bank verification URL by account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-bank-verification-by-account-id",
+          label: "Save bank verification by account ID",
+          className: "api-method post",
+        },
       ],
     },
     {

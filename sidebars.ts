@@ -67,7 +67,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/shop.svg",
       },
-      items: ["guides/marketplaces/onboard-sellers"],
+      items: ["guides/marketplaces/onboard-sellers", "guides/marketplaces/transfer-funds-to-sellers"],
     },
     {
       id: "guides/production-checklist/index",
