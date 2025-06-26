@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.35.0...v1.36.0) (2025-06-26)
+
+
+### Features
+
+* add transfer funds to sellers guide ([#133](https://github.com/publicsq/developers.publicsquare.com/issues/133)) ([a7168ca](https://github.com/publicsq/developers.publicsquare.com/commit/a7168ca33af91f5129a24eabbc36c465f7720c88))
+
 # [1.35.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.34.0...v1.35.0) (2025-06-25)
 
 
