@@ -1,0 +1,75 @@
+---
+id: get-all-apple-pay-domains
+title: "Get all Apple Pay domains"
+description: "    Get a list of registered Apple Pay domains for the Account."
+sidebar_label: "Get all Apple Pay domains"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWNtS20gQ/ZWp4WGrtmQsm0uyfjOXeFmSrHOBSkJc0NY09iTSjDIzMjgu/ftWayTbYGMMS/HEC8hST5/uPqfnNuEOBpa3zng7TWNkXRizA52AVJb3Ai7QRkamTmrFW5wxxjroGLBYWsf0JTM4kNahQcFm44Ufzy61YW6IrB1FOlNu87v6rsjFxsYG66JJpLVSK+tf/skugDzUUhi3DIK44AHXKRog8CPBW7yAjuNFJB7wFAwk6NBQLhOuIEHe4ikMkAdcUvC/MjRjfjulrrew0RAT4K0JT+BaJlnCW83G9qvt11u7268CnkjlX4YBx+sozqwc4bvqpTMZBtyNU4KUyuEAzV1Al9ok4LzdVpMHXGVxDP0YKzd4DUlKP1/neTBNxMrfayTCSrMl2TTC8MnSqGDWz6UZ5nkv4AZtqpVFS6E1w5D+3XT/7zEPeKSVQ+XoK0lCRoUE6j8smUzmsitj1f0fGDkSgSHBOOkBUhhIBd7xfbZOO4jPpcPEzhnfVYTPZM1UlvTR+C6ItBH2QSVphM0wDwqFnntPawDvZ8agcoxGlfgP42GrgiwovB9wJd3z9AZlCcn5Y0roxz0kl51GngcchJDkEuLuHKGXEFvSsnRkSVlUSsgDLsBVvXHkCS+aowwYjAHqrttauEM4UszZWGekGizkenu+YkcHqxLjkIrzV+3xThKdfGlfX5n3u1cfDj+cnB7+vbf/D2UAfkI9Xwvc296LGUXnezuN10p2rjpfj3/Lwe7ImY+n3zqdzilhohpJo1VSNuZq0MOZMauxfVCsj+zCoXUXTBt2kRotsoiML1ZGNbMriCuqdz/6yce3JKnbZV+JVD5dYd9Kh5uRTgjROnCZfQTD5cBViCM08lKiIJzIIDgU57BGbQ/A4UJu7AosK73Md5EAhzUnE1wZSjNsbtfC3dpW+DlstMJmq/nXZrPR/EahJVoUYf7P2Co3Txncuu1fBNSFsd/XUFI30R7pqJxVULyV1vE8Jzfbyxa1PRDsI/7K0LqnW93QGG2WTlDLU5ncN8GVlOaL5anmxkX2Fw19pdawXGit2UpxzxpAMwE6kPFaOFJZBypaJ6g7ZTCZZcZPIZaioKxrdD/G5KCIxU4F0FgUwImCzA21kb+LBngiBbyQMlvgl1OxtUjFG236UghULzw8Hw/bizy814690Zl66Ydn4oGywSgz0o2LE3I7lcdIj/zmsZv36KSWoBtqOnMPsCg0uCFv8XoKY9rT1fxnW58Orc9O4hbNqDqGZybmLT50LrWteh1SuZlm/VhG9lcGptxl9WaBfSKmPZlVeLNly79Y2HmVE2shGdYfs3b3iB3jmEllpUBm/Lr7h2Vfau3uUe348CsbIoiCw/JwPf1SnbBLg7xg5lIXUVSVLeL/VMRPexwqhyVQHtCOzvqoRg3aZaTaugQKDZdIq24wbuQ1mTXF89+6lBV3eO3qaVxumQoqJ6USzvgtJdC2o/LDq516cYM01NbRgMmkDxZPTJzn9NpfYpBGhLQkbzHdbd1ZiPIKZWl4P0ks1X3PCOKMTDjdoDzMf3XYXQFSWsxAevTDSN+kZ708qARE6fkx7SjC1M2NWpjobnRd5/AzVTSjWs93wM+iA8oH8l59UuM53/N69vD0l2qx1Hwy8b2V51N7/+nOEdMG8tZUnF6e5/8BmWzwuQ==
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all Apple Pay domains"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/payment-methods/apple-pay/domains"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get a list of registered Apple Pay domains for the Account.
+
+    ### Permissions
+    * `apple-pay:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"page","in":"query","description":"Page","schema":{"maximum":2147483647,"minimum":0,"exclusiveMinimum":true,"type":"integer","description":"Page","format":"int32","nullable":true,"example":8}},{"name":"size","in":"query","description":"Page size","schema":{"maximum":100,"minimum":0,"exclusiveMinimum":true,"type":"integer","description":"Page size","format":"int32","nullable":true,"example":20}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"pagination":{"type":"object","properties":{"total_items":{"type":"integer","description":"Total number of records","format":"int32","nullable":true,"example":1020},"page_number":{"type":"integer","description":"Current page number","format":"int32","nullable":true,"example":23},"page_size":{"type":"integer","description":"Page size","format":"int32","example":20},"total_pages":{"type":"integer","description":"Total number of pages","format":"int32","nullable":true,"example":51}},"additionalProperties":false,"title":"Pagination"},"data":{"maxItems":100,"type":"array","items":{"type":"object","properties":{"id":{"type":"string","description":"Apple Pay domain ID","nullable":true,"example":"apd_7Ay5mcUXAxwrN6wQEQUVEHBCJ"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"type":"string","description":"Environment - Can be `test` or `production`","nullable":true,"example":"production"},"domain":{"type":"string","description":"URL of Apple Pay domain","nullable":true,"example":"examplewebsite.com"},"status":{"type":"string","description":"Apple Pay domain status","nullable":true,"example":"verified"},"created_at":{"type":"string","description":"Date Apple Pay domain was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date Apple Pay domain was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}},"additionalProperties":false,"title":"ApplePayDomain"},"nullable":true}},"additionalProperties":false,"title":"ApplePayDomainPaginatedList"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

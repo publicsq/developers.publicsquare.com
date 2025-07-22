@@ -26,6 +26,120 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Holding Accounts",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-holding-accounts",
+          label: "Get all holding accounts",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-holding-account-by-id",
+          label: "Get holding account by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-holding-account-balance-by-id",
+          label: "Get holding account balance by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Apple Pay",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-apple-pay-payment-methods",
+          label: "Get all Apple Pay payment methods",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-apple-pay-token",
+          label: "Create Apple Pay token",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-apple-pay-payment-methods-for-a-customer",
+          label: "Get all Apple Pay payment methods for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-apple-pay-token-by-id",
+          label: "Get Apple Pay token by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/update-apple-pay-payment-method",
+          label: "Update Apple Pay payment method",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/delete-apple-pay-payment-method",
+          label: "Delete Apple Pay payment method",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-apple-pay-session",
+          label: "Create Apple Pay Session",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/attach-apple-pay-to-customer",
+          label: "Attach Apple Pay to customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/detach-apple-pay-from-customer",
+          label: "Detach Apple Pay from customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/delete-apple-pay-domain",
+          label: "Delete Apple Pay domain",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Apple Pay Domains",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-apple-pay-domain-by-id",
+          label: "Get Apple Pay domain by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-apple-pay-domains",
+          label: "Get all Apple Pay domains",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/register-apple-pay-domain",
+          label: "Register Apple Pay domain",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Bank Accounts",
       items: [
         {
@@ -80,6 +194,42 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Payment Methods",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-bank-verification-url",
+          label: "Get bank verification URL",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/save-bank-verification",
+          label: "Save bank verification",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods",
+          label: "Get all payment methods",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods-for-a-customer",
+          label: "Get all payment methods for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payment-method-by-id",
+          label: "Get payment method by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Cards",
       items: [
         {
@@ -123,42 +273,6 @@ const sidebar: SidebarsConfig = {
           id: "api/financial/detach-card-from-customer",
           label: "Detach card from customer",
           className: "api-method put",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Payment Methods",
-      items: [
-        {
-          type: "doc",
-          id: "api/financial/get-all-payment-methods",
-          label: "Get all payment methods",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-all-payment-methods-for-a-customer",
-          label: "Get all payment methods for a customer",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-payment-method-by-id",
-          label: "Get payment method by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-bank-verification-url",
-          label: "Get bank verification URL",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/save-bank-verification",
-          label: "Save bank verification",
-          className: "api-method post",
         },
       ],
     },

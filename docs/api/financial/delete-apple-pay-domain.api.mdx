@@ -1,0 +1,75 @@
+---
+id: delete-apple-pay-domain
+title: "Delete Apple Pay domain"
+description: "    Delete an Apple Pay domain by ID from the Account."
+sidebar_label: "Delete Apple Pay domain"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1PGzEQ/SvWcOiHDAHKaW9RAxKiqqJSpFYQCWc9IYZd29izqOnK/72a9SaEQCpOnLgku/aM582b55ltgdRNhOISht5XKMZqARMJGmMZjCfjLBQghBAjrJBQKCtWhkK7WhkrpgtxOhKz4GpBcxTDsnSNpb0re2XZc2dnR4wx1CZG42zMi5/FteJzdr1aFLo7+xokOI9BcdRTDQX0MTcDggSvgqqRMDD0FqyqEQowGiQYRuwVzUFCwPvGBNRQUGhQQiznWCsoWqCFZ49IwdgbSGnCxtE7GzHy/uH+Ef895eG7E1+dJbQEScLR/sFzkwurGpq7YP4igyl786IFTteUXXKD28jG7XM8bnqLJXGCgakgk9Hk3U3UEmxTVWpaYc4vSSBD1essIylq1g4HYwlvMICEmQu1orz05fAlZ42kTPWqOMZGUrZ8DagkQWltmCFVjdcJeMwMxsFNK6xHHYIIKaWuFF+el+LEhanRGu17Hd6uDi/eGhInrrHv9+GN6sDZYNkEQ4uuOw69OUN+hM2WCxNufDXS3HG/7Rdlbp8FDLxa1GhpN1vEwcp/kDtxHLRGJ+B44WHZjJtQQQFzIh+LwUB5s+ebaWXKeN+ogHulq4GjLiGec81zWZdAV8yovLA5j4Z9i+3Ew+NnOD4VZ7gQxkajUXDbx0gfovi1Oxyf7p4d/xZzVLqrZj8rVjvLkdEbpK5GM9ehWHLc4T/v8PMcYk4iBwUJnHZG9XDAU8G7SLXq1NxH2j7FnmTVPl6ONxy4PdGEf2jgK4aVZK5g26vgEjZUAPJRR5xEVgJIKIzmb4e5i8RubTtVES9ClRIv3zcYWIQTCQ8qmKzzyxa0ifysoZipKuJ/WPn4ox/nn8Q25EvdWEb2oKqG30DCHcuKvw/SJMllqTl63hiWJXpac3nWnJ7ck9Hxt+Ofx8xDwwyty/Wuk2v/wAFeRLQuvoyAf5PcYt62+SKktLLPW1s9VmrvE+cEUkr/AKiWYlg=
+sidebar_class_name: "delete api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Apple Pay domain"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/payment-methods/apple-pay/domains/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Delete an Apple Pay domain by ID from the Account.
+
+    ### Permissions
+    * `apple-pay:delete`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No Content"},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
