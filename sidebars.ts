@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/payment-methods.svg",
       },
-      items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-bank-accounts"],
+      items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-apple-pay", "guides/payment-methods/collect-bank-accounts"],
     },
     {
       type: "category",
@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/credit-card.svg",
       },
-      items: ["guides/payments/process-card-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
+      items: ["guides/payments/process-card-payments", "guides/payments/process-apple-pay-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
     },
     {
       type: "category",

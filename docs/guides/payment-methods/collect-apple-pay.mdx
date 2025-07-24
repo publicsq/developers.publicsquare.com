@@ -1,0 +1,282 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+import ConfigureElementsSection from "@site/src/components/docs/_configure-elements-section.mdx";
+
+# Collect Apple Pay
+
+In this guide, we will set up PublicSquare Elements SDKs to capture Apple Pay in a frontend application and securely authorize and store the Apple Pay data while avoiding PCI requirements.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Publishable Key
+
+Next you will need your `Publishable Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+
+<Alert>Save the Publishable Key as it will be used in the next steps of this guide.</Alert>
+
+
+### Domain Verification
+
+Domain verification is a key step in getting Apple Pay up and running on your site. It is a required step for development and production servers, to confirm that you own the domain where Apple Pay will be implemented, preventing unauthorized use and maintaining the integrity of the payment system.
+
+1. Download and serve the [domain association file](https://portal.publicsquare.com/.well-known/apple-developer-merchantid-domain-association) on your server at `https://<YOUR_DOMAIN>/.well-known/apple-developer-merchantid-domain-association`.
+2. Add the public domain to your tenant using the [merchant portal](https://portal.publicsquare.com/settings/apple-pay) or the [API](/api/financial/register-apple-pay-domain)
+
+<Alert>
+  Apple requires the website to be served via HTTPS, which can be tricky during the development phase. Tunneling may represent a good option to preview local projects through a working HTTPS connection. [Cloudflare tunnel](https://developers.cloudflare.com/pages/how-to/preview-with-cloudflare-tunnel/) may be worth checking out.
+</Alert>
+
+## Configuring PublicSquare Elements
+
+<ConfigureElementsSection />
+
+## Adding Apple Pay Elements
+
+Once installed and configured, add the Apple Pay Elements to your application.
+
+## Creating an Apple Pay session
+
+To initiate the payment modal, an Apple Pay session must be started.
+
+### Configure Apple Pay
+
+Let's add the Apple Pay button to initiate the Apple Pay session.
+
+<Tabs className="publicsquare-tabs" queryString="sdk">
+  <TabItem value="javascript" label="JavaScript">
+
+```html showLineNumbers title=index.html
+<html>
+<head>
+    // highlight-start
+    <script crossorigin src="https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js"></script>
+    // highlight-end
+    <style>
+      apple-pay-button {
+        --apple-pay-button-width: 194px;
+        --apple-pay-button-height: 64px;
+        --apple-pay-button-border-radius: 13px;
+        --apple-pay-button-padding: 0px 0px;
+        --apple-pay-button-box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+      import { PublicSquare } from '@publicsquare/elements-js';
+      
+      let publicsquare;
+
+      function onApplePayButtonClicked() {
+        if (!ApplePaySession) {
+          return;
+        }
+
+        const session = createApplePaySession();
+
+        // highlight-start
+        session.onvalidatemerchant = async event => {
+          const merchantSession = await validateMerchant();
+          session.completeMerchantValidation(merchantSession);
+        };
+        // highlight-end
+
+        session.begin();
+      }
+
+      function createApplePaySession() { ... }
+
+      // highlight-start
+      async function validateMerchant() {
+        try {
+          const session = await publicsquare?.applePay.createSession({
+            display_name: 'PublicSquare Payments Demo',
+            domain: window.location.host,
+          });
+
+          console.log(session);
+          return session;
+        } catch (error) {
+          console.error('Error validating merchant:', error);
+          throw error;
+        }
+      }
+      // highlight-end
+    </script>
+</head>
+<body>
+  // highlight-start
+  <apple-pay-button buttonstyle="black" type="plain" locale="en-US"></apple-pay-button>
+  // highlight-end
+  <script>
+    // Set up the onclick handler for the Apple Pay button
+    document.querySelector('apple-pay-button')
+      .addEventListener('click', onApplePayButtonClicked);
+  </script>
+</body>
+</html>
+```
+  </TabItem>
+
+  <TabItem value="react" label="React">
+
+```jsx showLineNumbers title=App.jsx
+import React, { useRef, useState } from 'react';
+import {
+  PublicSquareProvider,
+  // highlight-start
+  ApplePayButtonElement,
+  //highlight-end
+  usePublicSquare,
+} from '@publicsquare/elements-react';
+
+export default function App() {
+
+  return (
+    <PublicSquareProvider apiKey={apiKey}>
+      <form onSubmit={handleSubmit}>
+        // highlight-start
+        <ApplePayButtonElement
+            id="apple-pay-element"
+            onClick={createApplePaySession}}
+        />
+        // highlight-end
+      </form>
+    </PublicSquareProvider>
+  );
+}
+```
+  </TabItem>
+</Tabs>
+
+Adding the js code will enable the `<apple-pay-button>` directive to your website.
+The `validateMerchant` function calls Public Square to initiate the Apple Pay session.
+
+Next, implement the `createApplePaySession` function.
+
+```javascript
+function createApplePaySession() {
+  return new ApplePaySession(3, {
+    "countryCode": "US",
+    "currencyCode": "USD",
+    "merchantCapabilities": [
+      "supports3DS"
+    ],
+    "supportedNetworks": [
+      "visa",
+      "masterCard",
+      "amex",
+      "discover"
+    ],
+    "total": {
+      "label": "Demo (Card is not charged)",
+      "type": "final",
+      "amount": "1.99"
+    }
+  });
+}
+```
+
+## Tokenization and Storing Apple Pay
+
+After the customer has authorized the payment, your application will need to call our API with the encrypted Apple Pay token to store the apple pay in your account.
+
+To do this, we will call the `create` method from the SDK or add the `session.onpaymentauthorized` event to call Public Square, passing the Apple Pay Elements as data points in the payload.
+
+```html showLineNumbers
+<html>
+<head>
+    <script crossorigin src="https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js"></script>
+    <style>
+      apple-pay-button {
+        --apple-pay-button-width: 194px;
+        --apple-pay-button-height: 64px;
+        --apple-pay-button-border-radius: 13px;
+        --apple-pay-button-padding: 0px 0px;
+        --apple-pay-button-box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+      function onApplePayButtonClicked() {
+        if (!ApplePaySession) {
+          return;
+        }
+
+        const session = createApplePaySession();
+
+        session.onvalidatemerchant = async (event) => { ... };
+
+        // highlight-start
+        session.onpaymentauthorized = async (event) => {
+          try {
+            // decrypt and tokenize Apple Pay
+            const applePayToken  = await publicsquare?.applePay.createApplePay(event.payment.token);
+            // present green check to the user before the timeout (30 seconds)
+            session.completePayment(ApplePaySession.STATUS_SUCCESS);
+          } catch (e) {
+            console.error(e);
+            session.completePayment(ApplePaySession.STATUS_FAILURE);
+          }
+        };
+        // highlight-end
+
+        session.begin();
+      }
+
+      function createApplePaySession() { ... }
+
+      async function validateMerchant() { ... }
+
+      // highlight-end
+    </script>
+</head>
+<body>
+  <apple-pay-button buttonstyle="black" type="plain" locale="en-US"></apple-pay-button>
+  <script>
+    // Set up the onclick handler for the Apple Pay button
+    document.querySelector('apple-pay-button')
+      .addEventListener('click', onApplePayButtonClicked);
+  </script>
+</body>
+</html>
+```
+
+The created `Apple Pay` object contains the non-sensitive information about the Apple Pay:
+
+```json showLineNumbers title=apple-pay.json
+{
+  "id": "appl_Aw3U2eESBnq6DoYEFn8qaSMrA",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+  "billing_details": {
+    "address_line_1": "111 Colorado Ave.",
+    "address_line_2": "Apt 403",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "expires_at": "2024-06-31T01:02:29.212Z",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z",
+  "token_type": "dpan",
+  "last4": "4242",
+  "exp_month": "12",
+  "exp_year": "2025",
+  "brand": "visa"
+}
+```
+
+You can safely store the Apple Pay's `id` value in your database to link it with the appropriate payment or customer association.
+
+You can optionally pass in a `customer_id` to associate with an existing [Created Customer](/api/accounts/create-customer) and `billing_details` to remove the requirement to pass them when [Creating a Payment](/api/financial/create-payment).
+
+## Conclusion
+
+Following this guide, you have successfully collected a customer's Apple Pay. To use this Apple Pay, proceed with the [Process Apple Pay Payments](/guides/payments/process-apple-pay-payments) guide.
