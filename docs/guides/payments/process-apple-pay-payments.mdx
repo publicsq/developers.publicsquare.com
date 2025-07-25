@@ -3,7 +3,7 @@ import GettingStartedSection from "@site/src/components/docs/_getting-started-se
 
 # Process Apple Pay Payments
 
-Now that you have completed the [Collect Apple Pay](/guides/payment-methods/collect-apple-pay) guide, let's process an Apple Pay payment with the newly captured Apple Pay.
+Now that you have completed the [Collect Apple Pay](/guides/payment-methods/collect-apple-pay) guide, let's process an Apple Pay payment with the newly collected Apple Pay payment method.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 ## Process the Payment
 
-We will need to use the information from the [previously collected Apple Pay](/guides/payment-methods/collect-apple-pay) to create a new payment.
+We will need to use the information from the [previously collected Apple Pay payment method](/guides/payment-methods/collect-apple-pay) to create a new payment.
 
 For example, given you have a previously collected Apple Pay:
 
@@ -113,7 +113,7 @@ curl 'https://api.publicsquare.com/payments' \
 
 ### Create with Customer's Payment Method
 
-If you [attached the Apple Pay to a customer](/api/financial/attach-apple-pay-to-customer), then you can omit the `customer` section when processing the payment:
+If you [attached the Apple Pay payment method to a customer](/api/financial/attach-apple-pay-to-customer), then you can omit the `customer` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Payment Method"
 curl 'https://api.publicsquare.com/payments' \
@@ -139,7 +139,7 @@ curl 'https://api.publicsquare.com/payments' \
 
 ### Create with Payment Method's Billing Details
 
-If you supplied the `billing_details` or [updated the Apple Pay](/api/financial/update-apple-pay-payment-method), then you can omit the `billing_details` section when processing the payment:
+If you supplied the `billing_details` or [updated the Apple Pay payment method](/api/financial/update-apple-pay-payment-method), then you can omit the `billing_details` section when processing the payment:
 
 ```shell showLineNumbers title="Create a Payment with Payment Method"
 curl 'https://api.publicsquare.com/payments' \
@@ -232,7 +232,7 @@ Given the above examples, you should see a payment result similar to:
 
 ## Conclusion
 
-Now that we have seen how to process payments with a collected Apple Pay, we may need to manage the payment or view information about the payment.
+Now that we have seen how to process payments with a collected Apple Pay payment method, we may need to manage the payment or view information about the payment.
 Follow these guides to learn more:
 
 - [Issue a Refund](/guides/refunds/refund-payments)
