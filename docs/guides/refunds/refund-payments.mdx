@@ -27,7 +27,7 @@ For example, given you have a payment:
   "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "succeeded",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "amount": 1000,
   "amount_capturable": 0,
@@ -69,7 +69,7 @@ Given the above examples, you should see a refund result similar to:
   "id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "succeeded",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "amount": 1000,
@@ -79,7 +79,7 @@ Given the above examples, you should see a refund result similar to:
     "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
     "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
     "environment": "test",
-    "status": "successful",
+    "status": "succeeded",
     "amount": -1000,
     "fee_amount": 0,
     "net_amount": -1000,
@@ -113,7 +113,7 @@ Given the above examples, you should see a payment result similar to:
   "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   ...
   //highlight-start
-  "status": "successful",
+  "status": "succeeded",
   "amount": 0,
   "amount_capturable": 0,
   "amount_charged": 1000,
@@ -128,7 +128,7 @@ Given the above examples, you should see a payment result similar to:
 
 ## Payment Cancellation
 
-PublicSquare will attempt to cancel a payment first if it has not been settled and the refund amount matches the payment amount. In that situation, a successful refund will still be created, but the associated payment will be cancelled.
+PublicSquare will attempt to cancel a payment first if it has not been settled and the refund amount matches the payment amount. In that situation, a succeeded refund will still be created, but the associated payment will be cancelled.
 
 ### Refund Response
 
@@ -139,7 +139,7 @@ You should see a refund result similar to:
   "id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "succeeded",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "amount": 1000,
@@ -149,7 +149,7 @@ You should see a refund result similar to:
     "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
     "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
     "environment": "test",
-    "status": "successful",
+    "status": "succeeded",
     "amount": -1000,
     "fee_amount": 0,
     "net_amount": -1000,

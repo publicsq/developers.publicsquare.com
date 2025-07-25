@@ -172,7 +172,7 @@ You can capture up to, but not exceeding, the original authorized payment amount
 
 ### Captured Payment Response
 
-You should see a payment response with a `successful` status similar to:
+You should see a payment response with a `succeeded` status similar to:
 
 ```json showLineNumbers title="Captured Payment Response"
 {
@@ -180,7 +180,7 @@ You should see a payment response with a `successful` status similar to:
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
   // highlight-next-line
-  "status": "successful",
+  "status": "succeeded",
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "amount": 1000,
   "amount_charged": 1000,
@@ -191,7 +191,7 @@ You should see a payment response with a `successful` status similar to:
     "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
     "environment": "test",
     // highlight-next-line
-    "status": "successful",
+    "status": "succeeded",
     "amount": 1000,
     "fee_amount": 0,
     "net_amount": 1000,
