@@ -49,7 +49,6 @@ Let's add the Apple Pay button to initiate the Apple Pay session.
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
-
 ```html showLineNumbers title=index.html
 <html>
 <head>
@@ -75,7 +74,8 @@ Let's add the Apple Pay button to initiate the Apple Pay session.
         if (!ApplePaySession) {
           return;
         }
-
+        
+        // See below for createApplePaySession function
         const session = createApplePaySession();
 
         // highlight-start
@@ -121,31 +121,71 @@ Let's add the Apple Pay button to initiate the Apple Pay session.
 </html>
 ```
   </TabItem>
-
   <TabItem value="react" label="React">
-
 ```jsx showLineNumbers title=App.jsx
-import React, { useRef, useState } from 'react';
 import {
-  PublicSquareProvider,
+  PublicSquareProvider, usePublicSquare
+} from '@publicsquare/elements-react'
+// highlight-start
+import ApplePayButtonElement from '@publicsquare/elements-react/elements/ApplePayButtonElement';
+// highlight-end
+
+declare global {
+  interface Window {
+    ApplePaySession: any;
+  }
+}
+
+async function onSubmitApplePay() {
+  if (!window.ApplePaySession) {
+    return;
+  }
+
+  // See below for createApplePaySession function
+  const session = createApplePaySession();
+
   // highlight-start
-  ApplePayButtonElement,
-  //highlight-end
-  usePublicSquare,
-} from '@publicsquare/elements-react';
+  session.onvalidatemerchant = async () => {
+    const merchantSession = await validateMerchant();
+    session.completeMerchantValidation(merchantSession);
+  };
+  // highlight-end
+
+  session.begin();
+}
+
+function createApplePaySession() { ... }
+
+// highlight-start
+async function validateMerchant() {
+  try {
+    const session = await publicsquare?.applePay.createSession({
+      display_name: 'PublicSquare Payments Demo',
+      domain: window.location.host,
+    });
+
+    console.log(session);
+    return session;
+  } catch (error) {
+    console.error('Error validating merchant:', error);
+    throw error;
+  }
+}
+// highlight-end
 
 export default function App() {
+  const { publicsquare } = usePublicSquare();
 
   return (
     <PublicSquareProvider apiKey={apiKey}>
-      <form onSubmit={handleSubmit}>
+      <div style={{ display: 'flex' }}>
         // highlight-start
         <ApplePayButtonElement
-            id="apple-pay-element"
-            onClick={createApplePaySession}}
+          id="apple-pay-element"
+          onClick={onSubmitApplePay}
         />
         // highlight-end
-      </form>
+      </div>
     </PublicSquareProvider>
   );
 }
@@ -153,7 +193,7 @@ export default function App() {
   </TabItem>
 </Tabs>
 
-Adding the js code will enable the `<apple-pay-button>` directive to your website.
+Adding the code above will enable the `Apple Pay` directive to your website.
 The `validateMerchant` function calls Public Square to initiate the Apple Pay session.
 
 Next, implement the `createApplePaySession` function.
@@ -183,10 +223,12 @@ function createApplePaySession() {
 
 ## Tokenization and Storing Apple Pay
 
-After the customer has authorized the payment, your application will need to call our API with the encrypted Apple Pay token to store the apple pay in your account.
+After the customer has authorized the payment, your application will need to call our `create` method from the SDK with the encrypted Apple Pay token to store the apple pay in your account.
 
-To do this, we will call the `create` method from the SDK or add the `session.onpaymentauthorized` event to call Public Square, passing the Apple Pay Elements as data points in the payload.
+To do this, we will call `session.onpaymentauthorized` event to call Public Square, passing the Apple Pay Elements as data points in the payload.
 
+<Tabs className="publicsquare-tabs" queryString="sdk">
+  <TabItem value="javascript" label="JavaScript">
 ```html showLineNumbers
 <html>
 <head>
@@ -245,7 +287,87 @@ To do this, we will call the `create` method from the SDK or add the `session.on
 </body>
 </html>
 ```
+  </TabItem>
+  <TabItem value="react" label="React">
+```jsx showLineNumbers title=App.jsx
+import {
+  PublicSquareProvider, usePublicSquare
+} from '@publicsquare/elements-react'
+import ApplePayButtonElement from '@publicsquare/elements-react/elements/ApplePayButtonElement';
 
+
+declare global {
+  interface Window {
+    ApplePaySession: any;
+  }
+}
+
+async function onSubmitApplePay() {
+  if (!window.ApplePaySession) {
+    return;
+  }
+
+  const session = createApplePaySession();
+
+  session.onvalidatemerchant = async () => { ... };
+
+  // highlight-start
+  session.onpaymentauthorized = async (event: any) => {
+    try {
+      // decrypt and tokenize Apple Pay
+      await createApplePay(event);
+      // present green check to the user before the timeout (30 seconds)
+      session.completePayment(window.ApplePaySession.STATUS_SUCCESS);
+    } catch (e) {
+      console.error(e);
+      session.completePayment(window.ApplePaySession.STATUS_FAILURE);
+    }
+  };
+  // highlight-end
+
+  session.begin();
+}
+
+function createApplePaySession() { ... }
+
+async function validateMerchant() { ... }
+
+// highlight-start
+async function createApplePay(event: any) {
+  if (publicsquare) {
+    try {
+      console.log('Apple Pay token', event.payment.token);
+
+      const response = await publicsquare.applePay.create({
+        apple_payment_data: event.payment.token,
+      });
+      if (response) {
+        return response;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+// highlight-end
+
+export default function App() {
+  const { publicsquare } = usePublicSquare();
+
+  return (
+    <PublicSquareProvider apiKey={apiKey}>
+      <div style={{ display: 'flex' }}>
+        <ApplePayButtonElement
+          id="apple-pay-element"
+          onClick={onSubmitApplePay}
+        />
+      </div>
+    </PublicSquareProvider>
+  );
+}
+```
+  </TabItem>
+</Tabs>
 The created `Apple Pay` object contains the non-sensitive information about the Apple Pay:
 
 ```json showLineNumbers title=apple-pay.json
