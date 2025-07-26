@@ -1,0 +1,75 @@
+---
+id: register-apple-pay-domain
+title: "Register Apple Pay domain"
+description: "    Register an Apple Pay domain for the Account."
+sidebar_label: "Register Apple Pay domain"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWNtu2zgQ/RVi+rAXSLHjpt1dYbGAc2maTbd1kyZo6xoJLU5sthKpkpQdV9C/L0aUbCd2vEa36FNfDJmay+Gcw8uoAMdHFqI+dLMsQdbjMxgEINDGRmZOagURMMbYGY6kdWgYV2xuyoROuVTsRhvmxsi6caxz5XY+qA+KnB49esR6aFJprdTK+sFf2TWnAGHGZ9HUSIfXEIDO0HDKdyIggnm2+6kgAIOfc7RuX4sZRAXEWjlUjh4prIyrKK2PlqAXYOMxppyeyE8aFDTZOtggADfLECLQw48YOwggM4TESbTkU9tFBaT89gWqkRtD1HnSDiCVqvm/O49inZFqBPfrt1Kv6RgNsn4vHyYyPv+cc4Ps4Pxs8PPYucxGrVamjePJTlYZ2MpgJ9Zpa2eKSRJ+UnqqWr6IAieYEOQwRROPuXJShD5NyK3Vsazq8QuTlpm6qiiYzeMx45ZdNxn/PHz1T/fk5V9fn4JYxFueZgmVojG10lXQoSwD4EJIMuVJb6nMNzyxGICTrvI8MMgdVjXr8dlhlefMcw4lRVkQ6UyO1YDNtLKesk57t2LuDgM+poBge7lsFoYUSzbb0n5yCAGoPEn4kGZK6JdLxjNx9Vt39iSNL952b6fm5dPp66PXF5dHz/cP/gYqn19eV1sl97b/mTOOr/af7P6u5PH0+N3pFzl6OnHm7PL98fHxJeVENZFGq7Su2eakRwtjFrIDrtgQ2bVD666ZNuw6M1rkcSOWh1Et7AjCYhFuzn5x9oLpm3VbxsOZ6qcpDhdCDcA67nL7FQzXjpsyTtDIG4mC8sRelld8i9oecoerO++UWxbPxX2jTUqxQHCHoZMpboTSaXf2wvbT8HH7TXs3aneizh87nd3Oe4KWalHB/J/YmjDfEty2G8ndLYT2jjKAvXZ7dXvY54I1W8w32yLQGG3sOrv16Od23Bg+gwCkw3SNCGkWd8tWNgfQKk+rhr44W1iuLAKpHI7QLFMplXvcWecs0HGZbJVHKuu4ircB9SDzxWJmcMkTKSrKekYPE0wPKyx2LoA158OF4rkbayO/fMtD4gcpc1IeoOLxKhXPtBlKIVD94OH78bC3ysNL7dgznasf6+E78UCzwTg30s0g6hfQzeQp0iPca5dgUA4CSNGNNfVKma5OrYxTLwKtjM/o/hX697Y1d275Y5luJxbNBOls6heQmwQiaNoAnsmVrgMoXQPtnLj2dDYAFweXH1i5JdVbayUaNpyxbu+EneKMSWWlQFY3dD9Z9jbs9k7C06N3bIxcVCwqnlLo+Rs6FylobUBVIxmeLZrCo+YKsWjf1nQjFOZGV+AbSpa7sZ6voiWsENClzfrJTHbJl2qe8kr8NcBNHeudcix1rN+lsa65cXjrWllSXYQCT3pRa6YP9zRDV5QmEDT3b0vd8pi0FvWhKIbc4oVJypKGP+doSKmDACbcSL8Y+oMyaGgioX0ircCBn3z4hmCReZJ76dzbVsqg8ejGMWZuo+3ycui9On8DAQzrzwOpFuRj+JQ+HfApRFB9bSDvSsXVWAEJV6Ocj8jWx6zWcU71Wdb3p0rf9QPNqnmlZksIl9XqJ0G/NKW15kXhV05Zzu39qwc95svDWxOpg7Is/wWKsiXG
+sidebar_class_name: "post api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Register Apple Pay domain"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/payment-methods/apple-pay/domains"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Register an Apple Pay domain for the Account.
+
+    ### Permissions
+    * `apple-pay:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["domain"],"type":"object","properties":{"domain":{"maxLength":250,"minLength":1,"type":"string","description":"Apple Pay domain where [PublicSquare CSR](https://portal.publicsquare.com/.well-known/apple-developer-merchantid-domain-association) is registered such as `https://<DOMAIN>/.well-known/apple-developer-merchantid-domain-association`","example":"merchantsite.com"}},"additionalProperties":false,"title":"CreateApplePayDomainRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"Apple Pay domain ID","nullable":true,"example":"apd_7Ay5mcUXAxwrN6wQEQUVEHBCJ"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"type":"string","description":"Environment - Can be `test` or `production`","nullable":true,"example":"production"},"domain":{"type":"string","description":"URL of Apple Pay domain","nullable":true,"example":"examplewebsite.com"},"status":{"type":"string","description":"Apple Pay domain status","nullable":true,"example":"verified"},"created_at":{"type":"string","description":"Date Apple Pay domain was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date Apple Pay domain was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}},"additionalProperties":false,"title":"ApplePayDomain"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

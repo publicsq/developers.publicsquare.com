@@ -1,0 +1,75 @@
+---
+id: get-holding-account-by-id
+title: "Get holding account by ID"
+description: "    Get a holding account by ID."
+sidebar_label: "Get holding account by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9ty2zYQ/RXM+qGXoS3LdtKM3uTakT1KUo2TeOpaGgsi1iISEqCBpWKFw3/vLEldrEuqTto8+UUiiMXuwZ6z4CIHkmMPrVu4sLHSZizaYWgzQx4GASj0odMpaWugBUII0UESUkS1raxsxWgqLs8O+qZv2GZvb0/00CXae22N75tfxbBesV+vaDmUaggB2BSdZP+XClrA3jf6hgBS6WSChI7R5mBkgtACrSAAzehSSREE4PAh0w4VtMhlGIAPI0wktHKgacorPDltxlAUAzb2qTUePc8fHR7y39M9/9GFAEJrCA3xrEzTWIcl4sYnzyb5UohF8FtAM9HOmoQXBpCgCyNp6K4EnDobovfWQVDCKpNd47OjTxhSZZSiI12h02p9D6sEXaykrsybyeJYjmKcJQQfZZLyEKJY3R3ddPHLqTWdExp/bh69jfDmuKcvzqZQBFD7udsldnu3mDIM705fNF8Z3fnSuel+1eOXE3JX1391Op1rjrmctlYOiXx8g2ZMEbSah4cBJNrMx8E/QDpfuBL74ndpxAjFkNDTUFgnhqmzKgvZmJW4wLh4z4CWmftOQG9rV2KRLKGNwEdCZ2Qs/NQTJk+wNI+OT1789vIVI1mo5jtxvJMJCnsvKEKxcFrMtMjetbkkTPyyM+mcnHK1VRNrBbUa5QM74zArFX0wp0KG0Z3CkaZhUA1Ch6oahdKp1eHc1GMcoxsePMnUbR/m/voQiGpYuejDAAoWtFKa0cm4t1Rc9zL2GABpKh3VVVRzBEXBK082HQ6nUokrfMjQ0785Jb5d6OicdX6T3Wb0+a78FKt1WcyoXa/tdcMqOTtYepKULcfXhnCMfNTdW5dIql4dH21arJCkjneKo40nacJdQG1lPl/sDK5lrFVJWc/ZUYzJWYnFzwXQXBfARyMziqzTX1H9dwp4JmVOyhYqjtepeG3dSCuF5pmHH8fDyToP7yyJ1zYzz/Xwg3jg3WCYOU3TsjFup7qL/Aibem4YcN+bIEWWG+4xlunm1rkFjZUFvpFrVQD7d5NZ3525mFtHotS3Gg2Z6oM0G8U69A+ZdHgQ2gQ4wgzSe+a4onEGbPHBql6sdZL1kVqKhdv/du9SdHEqtPFaoXDVF/cnL/7cb/cu97vnNyJCqUr26mvBfGZ2O6gNipKTe1uimOW0xP++xC96csr9ouegEABvu0I1aZYtmPWUyFK9daRvXVme7CtflMP/cpOqk0r4SI00lrpsXku28prgNUV4CKClFV8+IuuJLfJ8JD1+dHFR8OuHDB1raRDARDpdyfU2B6U9P6t587R1qz9f1XeiX8Q2kDM5GNbCRMYZjyCAz6wWvvgUgyKYMcjRq4l2GGJKS0vWzpgnUu+cf+AeKuNMLEvwcynB+oG9b4SzLKgqPP8WwRbzPK/EXRRz+2pq64q5gutdM/qiKP4GKaNdeA==
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get holding account by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/holding-accounts/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get a holding account by ID.
+
+    ### Permissions
+* `holding-account:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["environment","merchant_id","processor","types"],"type":"object","properties":{"id":{"type":"string","description":"Holding account ID","nullable":true,"example":"hld_2YKewBonG4tgk12MheY3PiHDy"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"maxLength":100,"minLength":1,"type":"string","description":"Environment - Can be `test` or `production`","example":"production"},"merchant_id":{"maxLength":100,"minLength":1,"type":"string","description":"Merchant Account ID in external system","example":"12345768"},"processor":{"maxLength":100,"minLength":1,"type":"string","description":"Name of the processor"},"types":{"minItems":1,"type":"array","items":{"type":"string"},"description":"Types of holding account. Can be `ach_debit`, `ach_credit`, `card_credit`, `card_debit`, `seller`.","example":"[\"ach_debit\", \"ach_credit\"]"}},"additionalProperties":false,"title":"HoldingAccount"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

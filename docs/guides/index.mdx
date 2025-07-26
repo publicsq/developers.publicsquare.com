@@ -9,6 +9,7 @@ hide_table_of_contents: true
 import { Intro } from "@site/src/components/shared/Intro";
 import { AuthButtons } from "@site/src/components/docs/AuthButtons";
 import { Card } from "@site/src/components/shared/Card";
+import ApplePayImage from "@site/static/img/icons/apple-pay-brands-gradient.svg";
 import CollectCardsImage from "@site/static/img/icons/hand-holding-card-gradient.svg";
 import CollectBankAccountsImage from "@site/static/img/icons/hand-holding-bank-gradient.svg";
 import ProcessCardPaymentsImage from "@site/static/img/icons/process-card-gradient.svg";
@@ -52,6 +53,12 @@ Jump into action with a step-by-step guide tailored to your use case.
     heading="Collect Bank Accounts"
     img={<div className="card-img-container"><CollectBankAccountsImage /></div>}
   >Collect bank accounts in your web application.</Card>
+
+  <Card
+    href="/guides/payment-methods/collect-apple-pay"
+    heading="Collect Apple Pay"
+    img={<div className="card-img-container"><ApplePayImage /></div>}
+  >Collect Apple Pay in your web application.</Card>
 
   <Card
     href="/guides/payments/process-card-payments"

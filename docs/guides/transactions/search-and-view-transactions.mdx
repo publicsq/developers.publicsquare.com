@@ -29,7 +29,7 @@ For example, given you have a payment:
   "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "succeeded",
   // highlight-next-line
   "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   ...
@@ -55,7 +55,7 @@ Given the above examples, you should see a transaction response similar to:
   "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
-  "status": "successful",
+  "status": "succeeded",
   "amount": 1000,
   "fee_amount": 36,
   "net_amount": 964,
@@ -68,7 +68,7 @@ Given the above examples, you should see a transaction response similar to:
     "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
     "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
     "environment": "test",
-    "status": "successful",
+    "status": "succeeded",
     "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
     "amount": 1000,
     "amount_capturable": 0,
@@ -146,7 +146,7 @@ This should return a [paginated result](/api/pagination):
       "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
       "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
       "environment": "test",
-      "status": "successful",
+      "status": "succeeded",
       // highlight-next-line
       "external_id": "order1234",
       "amount": 1000,

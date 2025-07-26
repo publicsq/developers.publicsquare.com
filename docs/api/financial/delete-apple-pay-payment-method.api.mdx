@@ -1,0 +1,75 @@
+---
+id: delete-apple-pay-payment-method
+title: "Delete Apple Pay payment method"
+description: "    Delete an Apple Pay payment method by ID from the Account."
+sidebar_label: "Delete Apple Pay payment method"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v2zAM/SsCe9gHlKbtevItWFIg6DAE6wpsaANUsZlarS2pEl0sM/TfB9pOmjTJ1lN36SWxRUp8j3wiXQOp2wDJFQycK1BM1AKmEjIMqdeOtDWQgBBCDLFAQqGMWDkKpxYlGhIlUm4zMVuI8VDMvS0F5SgGaWorQ4fX5trwCQcHB2KCvtQhaGtCu/hR3HSn9NpTkqwJdAMSrEOvGMI4gwQ6APuigwSnvCqR0DOfGowqERLQbNJMwynKQYLHh0p7zCAhX6GEkOZYKkhqoIXjHYG8NrcQ45Sdg7MmYGD7ydEp/20m56sVn60hNARRwunR8bbLpVEV5dbr38hg0s49qUE5V+i0Idm/C+xcb+OxsztMiQl6TgnpFk1rfY5agqmKQs0KbPlFCaSpeJlnIEXV2uGgDeEtepAwt75U1C59Otm1OUNSunhRHG0CKZO+BFSUoLJMc4ZUMVlPwBMzmHg7K7AcNggCxBibUnzaLsWZ9TOdZWje6vB6ddh5a0ic2cq83YdXqgOzwbTymhZNdxw4fY78CDv7L0y5+3WtNYFuUbY9NIH+5qbQ58Jhz6lFv9ZZBA7mH5eduPIFJJATuZD0+8rpQ1fNCp2Gh0p5PExtCRxtie+CC97WdIlylRbVLjyfUIOuvzbK4UE0mIzFOS6ENkFnKLjnY6B3QfzoDSbj3vnop8hRZU0pu0GxsiznRecQmwLNbYNimeAG/0WDn4cR5yJwUJDAtFtUj8c8EpwNVKpGyl2kf4+yDXb10w35X6O4yz7hL+q7QmnDxJqy1p0knusogISVKEBCojP+sMhtIHau65kKeOmLGHn5oULPYpxKeFRet3q/qiHTgZ8zSOaqCPiXxLz/1o31D2If3qWEDON5VEXFbyDhnhXG3wlxGuWy6hy9NQzSFB2tbdlqUhtXZTj6Mvo+YvYV52VdufeNcrsHDrAT0boOWwT8G+Ue97pu70SMK//WtHfHSvgdcSYQY/wDBClu6A==
+sidebar_class_name: "delete api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Apple Pay payment method"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/payment-methods/apple-pay/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Delete an Apple Pay payment method by ID from the Account.
+
+    ### Permissions
+    * `payment-method:delete`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No Content"},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
