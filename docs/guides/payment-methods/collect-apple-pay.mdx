@@ -49,12 +49,11 @@ Let's add the Apple Pay button to initiate the Apple Pay session.
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
-```html showLineNumbers title=index.html
-//highlight-start
+```html showLineNumbers title="index.html"
 <div ref={buttonContainerRef}></div>
-//highlight-end
 ```
-```javascript showLineNumbers title=index.js
+
+```javascript showLineNumbers title="index.js"
 import { PublicSquare } from "@publicsquare/elements-js"
 
 declare global {
@@ -66,34 +65,26 @@ let publicsquare;
 async function init() {
   publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
-  //highlight-start
-   publicsquare.applePay.renderButton(buttonContainerRef.current!, {
+  publicsquare.applePay.renderButton(buttonContainerRef.current!, {
     id: 'apple-pay-btn',
     onClick: onSubmitApplePay
   });
-  //highlight-end
 
   function onSubmitApplePay() {
     if (!ApplePaySession) {
       return;
     }
-    
-    // highlight-start
-    const session = createApplePaySession();
-    // highlight-end
 
-    // highlight-start
+    const session = createApplePaySession();
+
     session.onvalidatemerchant = async () => {
       const merchantSession = await validateMerchant();
       session.completeMerchantValidation(merchantSession);
     };
-    // highlight-end
 
     session.begin();
-
   }
 
-  // highlight-start
   function createApplePaySession() {
     return new ApplePaySession(3, {
       countryCode: 'US',
@@ -106,38 +97,30 @@ async function init() {
         amount: '1.99',
     },
   });
-  // highlight-end
 
-  // highlight-start
   async function validateMerchant() {
     try {
-      const session = await publicsquare?.applePay.createSession({
+      return await publicsquare?.applePay.createSession({
         display_name: 'PublicSquare Payments Demo',
         domain: window.location.host,
       });
-
-      console.log(session);
-      return session;
     } catch (error) {
       console.error('Error validating merchant:', error);
       throw error;
     }
   }
-  // highlight-end
-
 }
 
 init();
 ```
   </TabItem>
+
   <TabItem value="react" label="React">
-```jsx showLineNumbers title=App.jsx
+```jsx showLineNumbers title="App.jsx"
 import {
   PublicSquareProvider, usePublicSquare
 } from '@publicsquare/elements-react'
-// highlight-start
 import ApplePayButtonElement from '@publicsquare/elements-react/elements/ApplePayButtonElement';
-// highlight-end
 
 declare global {
   interface Window {
@@ -150,21 +133,16 @@ async function onSubmitApplePay() {
     return;
   }
 
-  // highlight-start
   const session = createApplePaySession();
-  // highlight-end
 
-  // highlight-start
   session.onvalidatemerchant = async () => {
     const merchantSession = await validateMerchant();
     session.completeMerchantValidation(merchantSession);
   };
-  // highlight-end
 
   session.begin();
 }
 
-// highlight-start
 function createApplePaySession() {
   return new window.ApplePaySession(3, {
     countryCode: 'US',
@@ -178,24 +156,18 @@ function createApplePaySession() {
     },
   });
 }
-// highlight-end
 
-// highlight-start
 async function validateMerchant() {
   try {
-    const session = await publicsquare?.applePay.createSession({
+    return await publicsquare?.applePay.createSession({
       display_name: 'PublicSquare Payments Demo',
       domain: window.location.host,
     });
-
-    console.log(session);
-    return session;
   } catch (error) {
     console.error('Error validating merchant:', error);
     throw error;
   }
 }
-// highlight-end
 
 export default function App() {
   const { publicsquare } = usePublicSquare();
@@ -231,10 +203,11 @@ To do this, we will call `session.onpaymentauthorized` event to call Public Squa
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
-```html showLineNumbers title=index.html
+```html showLineNumbers title="index.html"
 <div ref={buttonContainerRef}></div>
 ```
-```javascript showLineNumbers title=index.js
+
+```javascript showLineNumbers title="index.js"
 import { PublicSquare } from "@publicsquare/elements-js"
 
 declare global {
@@ -255,7 +228,7 @@ async function init() {
     if (!ApplePaySession) {
       return;
     }
-    
+
     const session = createApplePaySession();
 
     session.onvalidatemerchant = async () =>{ ... };
@@ -275,7 +248,6 @@ async function init() {
     // highlight-end
 
     session.begin();
-
   }
 
   function createApplePaySession() { ... }
@@ -300,14 +272,14 @@ async function init() {
     }
   }
   // highlight-end
-
 }
 
 init();
 ```
   </TabItem>
+
   <TabItem value="react" label="React">
-```jsx showLineNumbers title=App.jsx
+```jsx showLineNumbers title="App.jsx"
 import {
   PublicSquareProvider, usePublicSquare
 } from '@publicsquare/elements-react'
@@ -386,6 +358,7 @@ export default function App() {
 ```
   </TabItem>
 </Tabs>
+
 The created `Apple Pay` object contains the non-sensitive information about the Apple Pay:
 
 ```json showLineNumbers title=apple-pay.json

@@ -31,52 +31,53 @@ Once installed and configured, add the Card Elements to your application.
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
+    ```html showLineNumbers title="index.html"
+    <input
+      type="text"
+      id="cardholderName"
+      placeholder="Cardholder name"
+      style={{ display: 'flex', width: '100%' }}
+    />
 
-```html showLineNumbers title=index.html
-<input
-  type="text"
-  id="cardholderName"
-  placeholder="Cardholder name"
-  style={{ display: 'flex', width: '100%' }}
-/>
-<div id="cardNumber"></div>
-<div style="display: flex;">
-  <div id="cardExpirationDate" style="width: 100%;"></div>
-  <div id="cardVerificationCode" style="width: 100%;"></div>
-</div>
-```
+    <div id="cardNumber"></div>
 
-```javascript showLineNumbers title=index.js
-import { PublicSquare } from '@publicsquare/elements-js';
+    <div style="display: flex;">
+      <div id="cardExpirationDate" style="width: 100%;"></div>
+      <div id="cardVerificationCode" style="width: 100%;"></div>
+    </div>
+    ```
 
-let publicsquare;
-let cardNumberElement;
-let cardExpirationDateElement;
-let cardVerificationCodeElement;
+    ```javascript showLineNumbers title="index.js"
+    import { PublicSquare } from '@publicsquare/elements-js';
 
-async function init() {
-  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+    let publicsquare;
+    let cardNumberElement;
+    let cardExpirationDateElement;
+    let cardVerificationCodeElement;
 
-  //highlight-start
-  // Creates Elements instances
-  cardNumberElement = publicsquare.createCardNumberElement();
-  cardNumberElement.mount('#cardNumber');
+    async function init() {
+      publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
-  cardExpirationDateElement = publicsquare.createCardExpirationDateElement();
-  cardExpirationDateElement.mount('#cardExpirationDate');
+      //highlight-start
+      // Creates Elements instances
+      cardNumberElement = publicsquare.createCardNumberElement();
+      cardNumberElement.mount('#cardNumber');
 
-  cardVerificationCodeElement = publicsquare.createCardVerificationCodeElement();
-  cardExpirationDateElement.mount('#cardVerificationCode');
-  //highlight-end
-}
+      cardExpirationDateElement = publicsquare.createCardExpirationDateElement();
+      cardExpirationDateElement.mount('#cardExpirationDate');
 
-init();
-```
+      cardVerificationCodeElement = publicsquare.createCardVerificationCodeElement();
+      cardExpirationDateElement.mount('#cardVerificationCode');
+      //highlight-end
+    }
+
+    init();
+    ```
   </TabItem>
 
   <TabItem value="react" label="React">
 
-```jsx showLineNumbers title=App.jsx
+```jsx showLineNumbers title="App.jsx"
 import React, { useRef, useState } from 'react';
 import {
   PublicSquareProvider,
@@ -152,13 +153,13 @@ Add a submit function along with a button to trigger it:
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
 
-```html showLineNumbers title=index.html
+```html showLineNumbers title="index.html"
 <!-- Form from above -->
 // highlight-next-line
 <button id="submit">Submit</button>
 ```
 
-```javascript showLineNumbers title=index.js
+```javascript showLineNumbers title="index.js"
 async function init () {
   ...
   //highlight-next-line
@@ -191,7 +192,7 @@ init();
   </TabItem>
   <TabItem value="react" label="React">
 
-```jsx showLineNumbers title=App.jsx
+```jsx showLineNumbers title="App.jsx"
 export default function App() {
   // highlight-start
   const submit = async () => {
@@ -250,7 +251,7 @@ curl -L 'https://collect.publicsquare.com' \
 
 The created `card` object contains the non-sensitive information about the card:
 
-```json showLineNumbers title=card.json
+```json showLineNumbers title="card.json"
 {
   "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",

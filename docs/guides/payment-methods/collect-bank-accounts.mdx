@@ -30,14 +30,14 @@ Once installed and configured, add the Bank Account Elements to your application
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
 
-```html showLineNumbers title=index.html
+```html showLineNumbers title="index.html"
 <form>
   <input type="text" id="accountHolderName" placeholder="Account holder name" />
   <div id="bankAccount" style="width: 100%;"></div>
 </form>
 ```
 
-```javascript showLineNumbers title=index.js
+```javascript showLineNumbers title="index.js"
 import { PublicSquare } from '@publicsquare/elements-js'
 
 let publicsquare;
@@ -57,7 +57,7 @@ init();
 ```
   </TabItem>
   <TabItem value="react" label="React">
-```jsx showLineNumbers title=App.jsx
+```jsx showLineNumbers title="App.jsx"
 import React, { useRef, useState } from 'react';
 import {
   PublicSquareProvider,

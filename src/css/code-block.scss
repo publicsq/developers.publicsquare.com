@@ -27,11 +27,3 @@
     border-radius: var(--ifm-global-radius);
   }
 }
-
-.theme-code-block-highlighted-line {
-  display: table-row !important;
-}
-
-.theme-code-block-highlighted-line .codeLineNumber_Tfdd {
-  background-color: var(--docusaurus-highlighted-code-line-bg);
-}
