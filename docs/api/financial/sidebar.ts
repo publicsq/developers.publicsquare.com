@@ -108,21 +108,15 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/delete-apple-pay-domain",
-          label: "Delete Apple Pay domain",
-          className: "api-method delete",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Apple Pay Domains",
-      items: [
-        {
-          type: "doc",
           id: "api/financial/get-apple-pay-domain-by-id",
           label: "Get Apple Pay domain by ID",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/delete-apple-pay-domain",
+          label: "Delete Apple Pay domain",
+          className: "api-method delete",
         },
         {
           type: "doc",
@@ -180,24 +174,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/attach-bank-account-to-customer",
-          label: "Attach bank account to customer",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "api/financial/detach-bank-account-from-customer",
-          label: "Detach bank account from customer",
-          className: "api-method put",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Payment Methods",
-      items: [
-        {
-          type: "doc",
           id: "api/financial/get-bank-verification-url",
           label: "Get bank verification URL",
           className: "api-method get",
@@ -210,21 +186,15 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/financial/get-all-payment-methods",
-          label: "Get all payment methods",
-          className: "api-method get",
+          id: "api/financial/attach-bank-account-to-customer",
+          label: "Attach bank account to customer",
+          className: "api-method put",
         },
         {
           type: "doc",
-          id: "api/financial/get-all-payment-methods-for-a-customer",
-          label: "Get all payment methods for a customer",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-payment-method-by-id",
-          label: "Get payment method by ID",
-          className: "api-method get",
+          id: "api/financial/detach-bank-account-from-customer",
+          label: "Detach bank account from customer",
+          className: "api-method put",
         },
       ],
     },
@@ -273,6 +243,30 @@ const sidebar: SidebarsConfig = {
           id: "api/financial/detach-card-from-customer",
           label: "Detach card from customer",
           className: "api-method put",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Payment Methods",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods",
+          label: "Get all payment methods",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-methods-for-a-customer",
+          label: "Get all payment methods for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payment-method-by-id",
+          label: "Get payment method by ID",
+          className: "api-method get",
         },
       ],
     },
