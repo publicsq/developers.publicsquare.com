@@ -1,3 +1,10 @@
+# [1.37.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.36.0...v1.37.0) (2025-07-27)
+
+
+### Features
+
+* add Apple Pay guides ([853f974](https://github.com/publicsq/developers.publicsquare.com/commit/853f9743bdd3de497f4717e8583e5f4ac26f72e0))
+
 # [1.36.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.35.0...v1.36.0) (2025-06-26)
 
 
