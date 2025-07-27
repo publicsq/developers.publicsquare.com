@@ -95,47 +95,47 @@ Using the bank account verification iFrame URL from the previous step, we can mo
 
 ```html showLineNumbers title="onboarding.html"
 <script type="text/javascript">
-    const handleMessage = async (e) => {
-        const data = e.data;
+  const handleMessage = async (e) => {
+    const data = e.data;
 
-        if (data && typeof data === 'object') {
-            switch (data.step) {
-                case 'APP_MOUNTED': {
-                    // Show iFrame
-                    setIsLoading(false);
-                    break;
-                }
-                case 'REDIRECT': {
-                    if (data.loginId && data.requestId) {
-                        const res = await fetch('https://yourapi.com/bank-account-verification', {
-                            method: 'POST',
-                            body: {
-                                verification_code: data.loginId,
-                                request_id: data.requestId,
-                            },
-                        });
-                    }
-                    break;
-                }
-                case 'INSTITUTION_NOT_AVAILABLE':
-                case 'INSTITUTION_SEARCH_NO_RESULT': {
-                    // Show manual bank account collection
-                    setShowManualBankAccountForm(true);
-                    break;
-                }
-                default:
-                    break;
-            }
+    if (data && typeof data === 'object') {
+      switch (data.step) {
+        case 'APP_MOUNTED': {
+          // Show iFrame
+          setIsLoading(false);
+          break;
         }
-    };
+        case 'REDIRECT': {
+          if (data.loginId && data.requestId) {
+            const res = await fetch('https://yourapi.com/bank-account-verification', {
+              method: 'POST',
+              body: {
+                verification_code: data.loginId,
+                request_id: data.requestId,
+              },
+            });
+          }
+          break;
+        }
+        case 'INSTITUTION_NOT_AVAILABLE':
+        case 'INSTITUTION_SEARCH_NO_RESULT': {
+          // Show manual bank account collection
+          setShowManualBankAccountForm(true);
+          break;
+        }
+        default:
+          break;
+      }
+    }
+  };
 
-    window.addEventListener('message', handleMessage);
+  window.addEventListener('message', handleMessage);
 </script>
 
 <iframe
-    height="760"
-    src={bankAccountVerification.authorization_url}
-    title="Bank Account Verification"
+  height="760"
+  src={bankAccountVerification.authorization_url}
+  title="Bank Account Verification"
 />
 ```
 
