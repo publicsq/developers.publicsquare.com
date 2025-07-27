@@ -28,6 +28,11 @@ For example, given you have a previously collected Apple Pay:
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
   "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+  "token_type": "dpan",
+  "last4": "4242",
+  "exp_month": "12",
+  "exp_year": "2025",
+  "brand": "visa",
   "billing_details": {
     "address_line_1": "111 Colorado Ave.",
     "address_line_2": "Apt 403",
@@ -38,12 +43,7 @@ For example, given you have a previously collected Apple Pay:
   },
   "expires_at": "2024-06-31T01:02:29.212Z",
   "created_at": "2024-06-30T01:02:29.212Z",
-  "modified_at": "2024-06-30T01:02:29.212Z",
-  "token_type": "dpan",
-  "last4": "4242",
-  "exp_month": "12",
-  "exp_year": "2025",
-  "brand": "visa"
+  "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
 
@@ -61,7 +61,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "payment_method": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "apple_pay": "appl_Aw3U2eESBnq6DoYEFn8qaSMrA"
   },
   "customer": {
     "first_name": "John",
@@ -96,7 +96,7 @@ curl 'https://api.publicsquare.com/payments' \
   "amount": 1000,
   "currency": "USD",
   "payment_method": {
-    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+    "apple_pay": "appl_Aw3U2eESBnq6DoYEFn8qaSMrA"
   },
   "customer": {
     "customer_id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ"

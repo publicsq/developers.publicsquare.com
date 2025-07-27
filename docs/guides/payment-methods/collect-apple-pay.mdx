@@ -235,10 +235,13 @@ async function init() {
     session.onpaymentauthorized = async (event: any) => {
       try {
         // Create an Apple Pay payment method from the encrypted payment token
-        await createApplePayPaymentMethod(event);
+        const paymentMethod = await createApplePayPaymentMethod(event);
 
         // Present green check to the user before the timeout (30 seconds)
         session.completePayment(ApplePaySession.STATUS_SUCCESS);
+
+        // Send the payment method to the backend for payment processing
+        await chargePayment(paymentMethod.id);
       } catch (e) {
         console.error(e);
         session.completePayment(ApplePaySession.STATUS_FAILURE);
@@ -301,10 +304,13 @@ async function onSubmitApplePay() {
   session.onpaymentauthorized = async (event: any) => {
     try {
       // Create an Apple Pay payment method from the encrypted payment token
-      await createApplePay(event);
+      const paymentMethod = await createApplePayPaymentMethod(event);
 
       // Present green check to the user before the timeout (30 seconds)
       session.completePayment(window.ApplePaySession.STATUS_SUCCESS);
+
+      // Send the payment method to the backend for payment processing
+      await chargePayment(paymentMethod.id);
     } catch (e) {
       console.error(e);
       session.completePayment(window.ApplePaySession.STATUS_FAILURE);
@@ -320,7 +326,7 @@ function createApplePaySession() { ... }
 async function validateMerchant() { ... }
 
 // highlight-start
-async function createApplePay(event: any) {
+async function createApplePayPaymentMethod(event: any) {
   if (publicsquare) {
     try {
       const response = await publicsquare.applePay.create({
