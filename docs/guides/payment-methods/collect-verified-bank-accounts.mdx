@@ -42,12 +42,11 @@ Once installed and configured, add the Bank Account Verification Elements to you
 
 ```html showLineNumbers title="index.html"
 <div id="bank-account-verification-element">
-  <Button
-    onClick={onConnectBankAccountWithVerification}
-    className="mb-4"
+  <button
+    onclick={onConnectBankAccountWithVerification}
   >
     Connect Bank Account
-  </Button>
+  </button>
 </div>
 ```
 
@@ -65,7 +64,6 @@ async function init() {
       `#${'bank-account-verification-element'}`
     )
   }
-
 }
 
 init();
@@ -85,11 +83,8 @@ export default function App() {
   // Refs to get access to the Elements instance
   const bankAccountVerificationElementRef = useRef(null);
 
-  // See below for handleSubmit function
-
   return (
     <PublicSquareProvider apiKey={apiKey}>
-      <form onSubmit={handleSubmit}>
         <BankAccountVerificationElement
           id="bankAccountVerificationElement"
           ref={bankAccountVerificationElementRef}
@@ -97,7 +92,6 @@ export default function App() {
             console.log('Bank account verification completed:', result.bank_account_verification_id);
           }}
         />
-      </form>
     </PublicSquareProvider>
   );
 }
@@ -107,36 +101,104 @@ export default function App() {
 
 ## Storing Bank Accounts
 
-Now that you verified bank account data in your web application, it is time to store the bank account in your account.
+Now that your customer has verified their bank account information, we need to create a bank account payment method from the results.
 
-To do this, we will call the `create bank account` method from the SDK passing the `bank_account_verification_id`, returned from the bank account verification result, as data points in the payload.
+To do this, we will call the `create bank account` method from the SDK passing the `bank_account_verification_id`, returned from the bank account verification result.
 
 Add a submit function along with a button to trigger it:
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
+  
+```html showLineNumbers title="index.html"
+<div id="bank-account-verification-element">
+  <button
+    onclick={onConnectBankAccountWithVerification}
+  >
+    Connect Bank Account
+  </button>
+</div>
+
+// highlight-next-line
+<button id="submit">Submit</button>
+```
+
 ```javascript showLineNumbers title=index.js
+import { PublicSquare } from '@publicsquare/elements-js';
+
+let publicsquare;
+let result;
+
+async function init () {
+  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+
+  async function onConnectBankAccountWithVerification() {
+    result = await publicsquare?.bankAccounts.openVerification(
+      `#${'bank-account-verification-element'}`
+    )
+  }
+  
+  //highlight-next-line
+  document.getElementById("submit").addEventListener("click", submit);
+}
+
+// highlight-start
 async function submit (e: FormEvent<HTMLFormElement>,) {
   try {
     const bankAccount = await publicsquare?.bankAccounts.create({
-        bank_account_verification_id: result?.bank_account_verification_id
-      });
+      bank_account_verification_id: result?.bank_account_verification_id
+    });
     console.log(bankAccount); // e.g { id: 'ba_1234567890', ... }
   } catch (error) {
     console.error(error);
   }
 }
+// highlight-end
+
+init();
 ```
   </TabItem>
   <TabItem value="react" label="React">
 
 ```jsx showLineNumbers title=App.jsx
-async function handleSubmit(e) {
-  e.preventDefault();
-  const bankAccount = await publicsquare.bankAccounts.create({
-    bank_account_verification_id: result?.bank_account_verification_id
-  });
-  console.log(bankAccount); // e.g { id: 'ba_1234567890', ... }
+import React, { useRef } from 'react';
+import {
+  PublicSquareProvider,
+  BankAccountVerificationElement,
+  usePublicSquare,
+} from '@publicsquare/elements-react';
+
+export default function App() {
+  const { publicsquare } = usePublicSquare();
+  // Refs to get access to the Elements instance
+  const bankAccountVerificationElementRef = useRef(null);
+
+  // highlight-start
+  const submit = async () => {
+    try {
+      const bankAccount = await publicsquare.bankAccounts.create({
+        bank_account_verification_id: bankAccountVerificationElementRef.current.bank_account_verification_id
+      });
+      console.log(bankAccount); // e.g { id: 'ba_1234567890', ... }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  // highlight-end
+
+  return (
+    <PublicSquareProvider apiKey={apiKey}>
+      <BankAccountVerificationElement
+        id="bankAccountVerificationElement"
+        ref={bankAccountVerificationElementRef}
+        onVerificationComplete={(result) => {
+          console.log('Bank account verification completed:', result.bank_account_verification_id);
+        }}
+      />
+      // highlight-next-line
+      <button onClick={submit}>Submit</button>
+    </PublicSquareProvider>
+  );
 }
 ```
   </TabItem>
