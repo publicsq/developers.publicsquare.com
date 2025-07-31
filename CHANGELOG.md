@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.37.0...v1.38.0) (2025-07-31)
+
+
+### Features
+
+* add collect verified bank account guide ([34cc881](https://github.com/publicsq/developers.publicsquare.com/commit/34cc881d681aaacdf97bde7d123c8c22294b0fb1))
+
 # [1.37.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.36.0...v1.37.0) (2025-07-27)
 
 
