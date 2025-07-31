@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/payment-methods.svg",
       },
-      items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-apple-pay", "guides/payment-methods/collect-bank-accounts"],
+      items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-apple-pay", "guides/payment-methods/collect-bank-accounts", "guides/payment-methods/collect-verified-bank-accounts"],
     },
     {
       type: "category",

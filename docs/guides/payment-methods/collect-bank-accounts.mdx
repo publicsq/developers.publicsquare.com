@@ -5,7 +5,7 @@ import { Alert } from "@site/src/components/shared/Alert";
 import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
 import ConfigureElementsSection from "@site/src/components/docs/_configure-elements-section.mdx";
 
-# Collect Bank Accounts
+# Collect Bank Accounts Manually
 
 In this guide, we will set up PublicSquare Elements SDKs to capture bank accounts in a frontend application and securely authorize and store the bank account data while avoiding PCI requirements.
 
@@ -18,6 +18,15 @@ In this guide, we will set up PublicSquare Elements SDKs to capture bank account
 Next you will need your `Publishable Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
 
 <Alert>Save the Publishable Key as it will be used in the next steps of this guide.</Alert>
+
+## Request Account Setting Access
+
+First, you will need to request access to the `payment-methods:bank-accounts:manual-creation` account setting type.
+
+To do this, go to the [merchant portal](https://portal.publicsquare.com/settings/features) and click on the `Request this feature` button next to the `Manual Bank Account Creation` setting.
+Alternatively, you can request access via the [API](/api/accounts/request-account-setting-access).
+
+This is required to enable manual bank account creation for your account.
 
 ## Configuring PublicSquare Elements
 
@@ -38,7 +47,7 @@ Once installed and configured, add the Bank Account Elements to your application
 ```
 
 ```javascript showLineNumbers title="index.js"
-import { PublicSquare } from '@publicsquare/elements-js'
+import { PublicSquare } from '@publicsquare/elements-js';
 
 let publicsquare;
 let bankAccountElement;

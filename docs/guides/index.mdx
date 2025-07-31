@@ -12,6 +12,7 @@ import { Card } from "@site/src/components/shared/Card";
 import ApplePayImage from "@site/static/img/icons/apple-pay-brands-gradient.svg";
 import CollectCardsImage from "@site/static/img/icons/hand-holding-card-gradient.svg";
 import CollectBankAccountsImage from "@site/static/img/icons/hand-holding-bank-gradient.svg";
+import CollectVerifiedBankAccountsImage from "@site/static/img/icons/light-building-columns-circle-check-full-gradient.svg";
 import ProcessCardPaymentsImage from "@site/static/img/icons/process-card-gradient.svg";
 import ProcessAchPaymentsImage from "@site/static/img/icons/process-bank-gradient.svg";
 import ProcessCardPayoutsImage from "@site/static/img/icons/light-credit-card-circle-arrow-right-gradient.svg";
@@ -50,9 +51,15 @@ Jump into action with a step-by-step guide tailored to your use case.
 
   <Card
     href="/guides/payment-methods/collect-bank-accounts"
-    heading="Collect Bank Accounts"
+    heading="Collect Bank Accounts Manually"
     img={<div className="card-img-container"><CollectBankAccountsImage /></div>}
-  >Collect bank accounts in your web application.</Card>
+  >Manually collect bank accounts manually in your web application.</Card>
+
+  <Card
+    href="/guides/payment-methods/collect-verified-bank-accounts"
+    heading="Collect Verified Bank Accounts"
+    img={<div className="card-img-container"><CollectVerifiedBankAccountsImage /></div>}
+  >Collect verified bank accounts in your web application.</Card>
 
   <Card
     href="/guides/payment-methods/collect-apple-pay"
