@@ -1,3 +1,10 @@
+## [1.38.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.38.0...v1.38.1) (2025-08-05)
+
+
+### Bug Fixes
+
+* fixes documented business permissions ([774ba00](https://github.com/publicsq/developers.publicsquare.com/commit/774ba00997736c6f4d1d21aada61052db373f476))
+
 # [1.38.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.37.0...v1.38.0) (2025-07-31)
 
 
