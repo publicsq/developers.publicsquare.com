@@ -1,0 +1,75 @@
+---
+id: get-all-holding-accounts
+title: "Get all holding accounts"
+description: "    Get a list of holding accounts for the Account."
+sidebar_label: "Get all holding accounts"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWFtP4zoQ/iuWeTjSUYC2lIv6BgtbELt7qr2gw2Gr1o2H1ktiB9thKVX++9HEubSkLYFFPPECdTIz38x8M7YzM2rZ2NDOFT1VARdyTA59X8XSGtr3KAfjaxFZoSTtUEII6YIljATCWKKuySTTYZkOuVaa2AnkRrZ+yp8S1TY2NkgPdCiMEUoa9/BvMswMbGYGOhoYH1KPqgg0Q9gzTjs0BQ2CChz1aMQ0C8GCxhhmVLIQaIfaaQTUowK9vo1BT+njWE4XTZFMw/gTCBntzJyJDjVWCzmuqy7jIGCjAGjH6hg8CvcsjHB5kCRe4V2klQ/GKL3exV4uRlK9+s5VFBfdWnCFjZ9IVM9JlNghuxdhHNJOq9nebx/s7LX3PRoK6R42MGg/iI24g8/5Q5eMzGkhLYxBrwK6Vjpk1snttGrn1IiHGoGQTGxJNM1G49XCyGHqx9JqJEnfoxpMpKQBg661Gg38t2j+n3PqUV9JC9LiWxZFgfDTVtn+ZVBkVq0TNfoFvsVu0dhYVjiAiI2FZM7wU7JWWRYMhIXQzAmvSsJ3lCYyDkegcZ/Q4CvNzbNS0my0GomXVujAWaoB/CHWGqQlqJXhP4+HnRwypfBpwLV0z9PrZSlE4y9JodN7Tiy7zSTxKONcoEkW9OYIvWaBwVoWFiUxirwSEo9yZvPeOHOEp82ROcy0ZthdRS1ouI2FBo6HSAjanzBpB4K7Eio2OtROz5T1dSb48zffs+N1aaCTgA9al+fw+0jJbtuOb5qtzxO43OmJ0+MpxpvZGdTBPqyHyXx/cLTbPJCi+7t7ef4gxnt3Vn+9+K/b7V4gJsg7oZUMszZeD3pSCpNN8oFJMgIytGDskChNhpFWPPZReLjWq1IOXZjnyrH9CeTYTsq9sFh7Tzj4OTNFyvQQIQncW9CSBcRMjYVwviNos7XT3t3fO0BPyjr5Qz++sBCwWfAKUhpN8upD60LmNb26ohdBkkprorEl15+tghrmTwYcRsIOPbfwNXC38pnmj5eFqIEgAD3cms/UFS2sUY+Wxmi/dntnDZORgwFVbgQvMZTtGsA/CWNpkqCZ9rJD64hx8hVuYzD29U4v0Fpps0xueSizunRX05NXSrVPq4IuUzUkjWU2Xn4SPLHHpwVpmQhq4QhpLJN+HadWlsGsjIxesEDwlLKeVqMAwuPUF1MUQLNaAD8ki+1EafEA/PUq4J2U8gBfTsVOlYqPSo8E5yDfeXg7HtpVHr4oSz6qWL73wxvxgNGAH2thp+mo4DAS54A/6bIhBO3j91gIdqJwAjGGNN0MbyF0+5ECXssN6Lt8CBHrAK+d1kams73NIrEVxaNA+OY2Zhq2fBVSNJ578w3pdQzmPpVnlXtQuYVmu2laJ2Q0JYe9M3IOUyKkERyIdoftX4b8u3nYO9s8P7kkE2A8JS77Yi7e5J/NmUCS0nGtUi/ydKb+f0v9LwZECEo9imE7r+6a6WVOGRuytHAzpDXjm4WwZmUjvOWsKUu1hXu7HQVMpJfjlMNZxnilRNIPmYkyFt/NZiNm4IcOkgQfu+kD1gEXBuuWF9eoldGuGCct9ewGCySfcN2xIEYRiqOQ+niVCdEapPmPuJfCudHOOhAn8Qf284/wNSCZRAnSx4UWbnO56ide3gPIntM59H2I7JxWZYNe2Ce6J9/xAhpj1cw38U3axNkPtJ6/ktM52/Mt6eDxL+Ziqfhs5raHJCnk3auVGsUe4KQxOf0kSf4HDjaQwQ==
+sidebar_class_name: "get api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all holding accounts"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/holding-accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get a list of holding accounts for the Account.
+
+    ### Permissions
+    * `holding-account:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"type","in":"query","description":"Holding account type","schema":{"type":"string","description":"Holding account type","nullable":true,"example":8}},{"name":"processor","in":"query","description":"Processor name","schema":{"type":"string","description":"Processor name","nullable":true}},{"name":"page","in":"query","description":"Page","schema":{"maximum":2147483647,"minimum":0,"exclusiveMinimum":true,"type":"integer","description":"Page","format":"int32","nullable":true,"example":8}},{"name":"size","in":"query","description":"Page size","schema":{"maximum":100,"minimum":0,"exclusiveMinimum":true,"type":"integer","description":"Page size","format":"int32","nullable":true,"example":20}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"pagination":{"type":"object","properties":{"total_items":{"type":"integer","description":"Total number of records","format":"int32","nullable":true,"example":1020},"page_number":{"type":"integer","description":"Current page number","format":"int32","nullable":true,"example":23},"page_size":{"type":"integer","description":"Page size","format":"int32","example":20},"total_pages":{"type":"integer","description":"Total number of pages","format":"int32","nullable":true,"example":51}},"additionalProperties":false,"title":"Pagination"},"data":{"maxItems":100,"type":"array","items":{"required":["merchant_id","processor","types"],"type":"object","properties":{"id":{"type":"string","description":"Holding account ID","nullable":true,"example":"hld_2YKewBonG4tgk12MheY3PiHDy"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"type":"string","description":"Environment - Can be `test` or `production`","nullable":true,"example":"production"},"merchant_id":{"maxLength":100,"minLength":1,"type":"string","description":"Merchant Account ID in external system","example":"12345768"},"processor":{"maxLength":100,"minLength":1,"type":"string","description":"Name of the processor"},"types":{"minItems":1,"type":"array","items":{"type":"string"},"description":"Types of holding account. Can be `ach_debit`, `ach_credit`, `card_credit`, `card_debit`, `seller`.","example":["ach_debit","ach_credit"]}},"additionalProperties":false,"title":"HoldingAccount"},"nullable":true}},"additionalProperties":false,"title":"HoldingAccountPaginatedList"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

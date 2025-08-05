@@ -26,30 +26,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Holding Accounts",
-      items: [
-        {
-          type: "doc",
-          id: "api/financial/get-all-holding-accounts",
-          label: "Get all holding accounts",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-holding-account-by-id",
-          label: "Get holding account by ID",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-holding-account-balance-by-id",
-          label: "Get holding account balance by ID",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Apple Pay",
       items: [
         {

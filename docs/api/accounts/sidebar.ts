@@ -704,6 +704,30 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Holding Accounts",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-holding-accounts",
+          label: "Get all holding accounts",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-holding-account-by-id",
+          label: "Get holding account by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-holding-account-balance-by-id",
+          label: "Get holding account balance by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Onboarding",
       items: [
         {
@@ -729,6 +753,42 @@ const sidebar: SidebarsConfig = {
           id: "api/accounts/onboard-by-account-id",
           label: "Onboard by account ID",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Onboarding Invitations",
+      items: [
+        {
+          type: "doc",
+          id: "api/accounts/get-all-onboarding-invitations",
+          label: "Get all onboarding invitations",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/create-onboarding-invitation",
+          label: "Create onboarding invitation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-onboarding-invitation-by-id",
+          label: "Get onboarding invitation by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/update-onboarding-invitation",
+          label: "Update onboarding invitation",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/delete-onboarding-invitation",
+          label: "Delete onboarding invitation",
+          className: "api-method delete",
         },
       ],
     },
