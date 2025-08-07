@@ -480,14 +480,32 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/financial/get-all-settlements-by-account-id",
+          label: "Get all settlements by account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-settlement-by-id",
           label: "Get settlement by ID",
           className: "api-method get",
         },
         {
           type: "doc",
+          id: "api/financial/get-settlement-by-id-and-account-id",
+          label: "Get settlement by ID and account ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-transactions-for-a-settlement",
           label: "Get all transactions for a settlement",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-transactions-for-a-settlement-by-account-id",
+          label: "Get all transactions for a settlement by account ID",
           className: "api-method get",
         },
       ],
