@@ -1,3 +1,10 @@
+# [1.39.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.38.1...v1.39.0) (2025-08-07)
+
+
+### Features
+
+* add get managed settlements api docs ([2226f13](https://github.com/publicsq/developers.publicsquare.com/commit/2226f13ee67f75f428fb35fe49f6a9345f0f8c0c))
+
 ## [1.38.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.38.0...v1.38.1) (2025-08-05)
 
 
