@@ -1,6 +1,6 @@
 ---
 title: WooCommerce Payments Plugin
-sidebar_label: WooCommerce Plugin 
+sidebar_label: WooCommerce Plugin
 ---
 
 import Tabs from "@theme/Tabs";
@@ -10,11 +10,16 @@ import Image from '@theme/IdealImage'
 import { Alert, Alerts } from "@site/src/components/shared/Alert";
 import { GithubCard } from "@site/src/components/sdks/GithubCard";
 import { SDK } from "@site/src/components/types";
-import SettingsSetupImage from "@site/static/img/plugins/woocommerce/settings-setup.png";
 import PluginInstallStep2Image from "@site/static/img/plugins/woocommerce/plugin-install-step-2.png";
 import PluginInstallStep3Image from "@site/static/img/plugins/woocommerce/plugin-install-step-3.png";
-import PluginInstallStep4Image from "@site/static/img/plugins/woocommerce/plugin-install-step-4.png";
+import PluginInstallStep4aImage from "@site/static/img/plugins/woocommerce/plugin-install-step-4a.png";
+import PluginInstallStep4bImage from "@site/static/img/plugins/woocommerce/plugin-install-step-4b.png";
+import PluginInstallStep4cImage from "@site/static/img/plugins/woocommerce/plugin-install-step-4c.png";
 import PluginInstallStep5Image from "@site/static/img/plugins/woocommerce/plugin-install-step-5.png";
+import PluginInstallStep6Image from "@site/static/img/plugins/woocommerce/plugin-install-step-6.png";
+import SettingsSetupImage1 from "@site/static/img/plugins/woocommerce/settings-setup-1.png";
+import SettingsSetupImage2 from "@site/static/img/plugins/woocommerce/settings-setup-2.png";
+import SettingsSetupImage3 from "@site/static/img/plugins/woocommerce/settings-setup-3.png";
 
 # Integrating PublicSquare Payments with WooCommerce
 
@@ -22,7 +27,7 @@ PublicSquare WooCommerce Payments Plugin is a 1-click plugin for WooCommerce tha
 
 ## Before You Begin
 
-This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and copy the value.
+This SDK requires the use of a Publishable API Key. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Publishable Key` and `Secret Key` copy these values.
 
 If you have not yet created an account, [schedule a demo](https://payments.publicsquare.com/#demo) with our team to get started.
 
@@ -47,27 +52,34 @@ This guide will walk you through setting up the PublicSquare Payments app in Woo
 
 4. **Upload the Plugin**
    - Click **Upload Plugin** at the top of the page
-   - Select the .zip file provided and click **Install Now**
-
-<Image img={PluginInstallStep4Image} alt="Plugin Install Step 4" />
+   - Click **Choose File** and select the .zip file provided
+   - Click **Install Now** to install the plugin
+<Image img={PluginInstallStep4aImage} alt="Plugin Install Step 4a" />
+Choose File
+<Image img={PluginInstallStep4bImage} alt="Plugin Install Step 4b" />
+Install Now
+<Image img={PluginInstallStep4cImage} alt="Plugin Install Step 4c" />
 
 5. **Activate the Plugin**
    - Once installed, click **Activate** to enable the plugin on your site
-
 <Image img={PluginInstallStep5Image} alt="Plugin Install Step 5" />
+
+6. **Plugins page**
+- You should see the PublicSquare Payments plugin listed and activated under **Installed Plugins**
+<Image img={PluginInstallStep6Image} alt="Plugin Install Step 6" />
 
 ## Step 2: Configure Payment Settings in WooCommerce
 
 1. **Navigate to Payment Settings**
    - Go to **WooCommerce > Settings > Payments**
+   - If it is not Enabled click on **Enable**
+   - Click on **Manage**
 
-2. **Enable PublicSquare Payments**
-   - Find **PublicSquare Payments** in the list of payment methods
-   - Click the toggle to enable it, then click **Manage** to configure the settings
+<Image img={SettingsSetupImage1} alt="Settings Setup 1" />
 
-3. **Complete the Setup Steps**
+2. **Enter configuration data**
 
-<Image img={SettingsSetupImage} alt="Settings Setup" />
+<Image img={SettingsSetupImage2} alt="Settings Setup 2" />
 
 <table>
    <thead>
@@ -83,34 +95,26 @@ This guide will walk you through setting up the PublicSquare Payments app in Woo
          <td><em>This text will be shown to the customer at checkout.</em></td>
          <td>Defaults to *"Credit/Debit Card"*</td>
       </tr>
-
       <tr>
          <td>**Description**</td>
          <td><em>This text will appear below the payment title during checkout.</em></td>
          <td>Defaults to *"Pay with your credit card via PublicSquare"*</td>
       </tr>
-
       <tr>
          <td>**PublicSquare Public API Key**</td>
          <td><em>The public API key that is used by the PublicSquare credit card form.</em></td>
          <td>Obtain your **Public API Key** from the [PublicSquare Portal](https://portal.publicsquare.com/developers/api-keys)</td>
       </tr>
-
       <tr>
          <td>**PublicSquare Secret API Key**</td>
          <td><em>The secret API key that is used by the PublicSquare credit card form.</em></td>
          <td>Obtain your **Secret API Key** from the [PublicSquare Portal](https://portal.publicsquare.com/developers/api-keys)</td>
       </tr>
-
-      <tr>
-         <td>**Payment Capture Action**</td>
-         <td><em>This setting ensures that payments are authorized and captured in a single action.</em></td>
-         <td>Defaults to *"Authorize & Capture"*</td>
-      </tr>
    </tbody>
 </table>
 
-Click the **Save Changes** button to apply the settings
+3. Click the **Save Changes** button to apply the settings
+<Image img={SettingsSetupImage3} alt="Settings Setup 3" />
 
 ## Step 3: Test the Payment Gateway
 
@@ -139,8 +143,8 @@ For testing purposes, refer to the [PublicSquare Testing Cards Documentation](ht
 1. **Where do I find my PublicSquare API Keys?**
    - Log in to the [PublicSquare Portal](https://portal.publicsquare.com), navigate to the API section, and generate your Public and Secret API keys
 
-2. **What does "Authorize & Capture" mean?**
-   - This setting ensures that funds are authorized and captured immediately upon checkout, reducing the risk of payment declines
+2. **Is "Authorize & Capture" on by default?**
+   - Yes, This setting ensures that funds are authorized and captured immediately upon checkout, reducing the risk of payment declines
 
 3. **What should I do if payments fail?**
    - Check the error message displayed on the checkout page.
@@ -154,17 +158,15 @@ For testing purposes, refer to the [PublicSquare Testing Cards Documentation](ht
    - You can test payments using the PublicSquare test environment.
    - Use the [PublicSquare Testing Cards](https://developers.publicsquare.com/api/testing#cards) to simulate various payment scenarios, such as succeeded transactions, declined cards, or errors.
 
-6. **What happens if I don't set the payment capture action to "Authorize & Capture"?**
-   - If you choose **Authorize Only**, payments will require manual capture in the WooCommerce dashboard or the PublicSquare Portal after authorization. This is typically used for merchants who want more control over their payment workflow.
-
-7. **How do I troubleshoot if payments don't appear in the [PublicSquare Portal](https://portal.publicsquare.com)?**
+6. **How do I troubleshoot if payments don't appear in the [PublicSquare Portal](https://portal.publicsquare.com)?**
    - Verify that the API keys in the WooCommerce settings are correct.
    - Ensure your site has a stable internet connection during the payment process.
    - Check your WooCommerce logs (WooCommerce > Status > Logs) for any error messages related to the payment gateway.
 
 8. **How do I update the plugin to the latest version?**
    - Download the updated .zip file from PublicSquare.
-   - Follow the same steps to upload and activate the plugin in WordPress, ensuring you overwrite the existing plugin files.
+   - Follow the same steps to install the plugin above, the activate page will show the new and existing plugin versions.
+   - Clicking Activate in step 5. will overwrite your existing version.
    - Your existing settings will not be affected.
 
 9. **Does this plugin support refunds?**
