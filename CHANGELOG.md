@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.39.0...v1.40.0) (2025-08-20)
+
+
+### Features
+
+* add balance transfers and payment amount testing section ([5cb487b](https://github.com/publicsq/developers.publicsquare.com/commit/5cb487bcd165d5e1fe02b7d23f269a2d095fe410))
+
 # [1.39.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.38.1...v1.39.0) (2025-08-07)
 
 
