@@ -8,6 +8,30 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Balance Transfers",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-balance-transfers",
+          label: "Get all balance transfers",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-balance-transfer",
+          label: "Create balance transfer",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-balance-transfer-by-id",
+          label: "Get balance transfer by ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Dispute Cases",
       items: [
         {
@@ -218,6 +242,60 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/financial/detach-card-from-customer",
           label: "Detach card from customer",
+          className: "api-method put",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Google Pay",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-google-pay-payment-methods",
+          label: "Get all Google Pay payment methods",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-google-pay-token",
+          label: "Create Google Pay token",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-all-google-pay-payment-methods-for-a-customer",
+          label: "Get all Google Pay payment methods for a customer",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-google-pay-token-by-id",
+          label: "Get Google Pay token by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/update-google-pay-payment-method",
+          label: "Update Google Pay payment method",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/delete-google-pay-payment-method",
+          label: "Delete Google Pay payment method",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/financial/attach-google-pay-to-customer",
+          label: "Attach Google Pay to customer",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/financial/detach-google-pay-from-customer",
+          label: "Detach Google Pay from customer",
           className: "api-method put",
         },
       ],
