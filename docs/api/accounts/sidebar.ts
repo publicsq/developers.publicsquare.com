@@ -474,12 +474,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/accounts/copy-business-representative-as-owner",
-          label: "Copy business representative as owner",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/accounts/get-business-representative-by-account-id",
           label: "Get business representative by account ID",
           className: "api-method get",
@@ -489,6 +483,12 @@ const sidebar: SidebarsConfig = {
           id: "api/accounts/save-business-representative-by-account-id",
           label: "Save business representative by account ID",
           className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/copy-business-representative-as-owner",
+          label: "Copy business representative as owner",
+          className: "api-method post",
         },
         {
           type: "doc",

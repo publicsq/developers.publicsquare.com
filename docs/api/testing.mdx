@@ -56,7 +56,7 @@ The following card numbers can be used for testing your integration while in `Te
 
 ### Fraudulent payments
 
-| Description               | Number             | Payment Status | Fraud decision | AVS Code | CVV2 Reply |
+| Description               | Number             | Payment Status | Fraud Decision | AVS Code | CVV2 Reply |
 |---------------------------|--------------------|----------------|----------------|----------|------------|
 | Rejected fraud decision   | `4100000000000019` | `rejected`     | `reject`       | `Y`      | `M`        |
 | Review fraud decision     | `4000000000009235` | `succeeded`    | `review`       | `Y`      | `M`        |
@@ -81,3 +81,16 @@ a `payout:update` [Webhook](/concepts/webhooks) will be sent with the payout in 
 | `110000000` | `000555555559` | `declined`     | Decline. Customer cancellation |
 | `110000000` | `000333333335` | `declined`     | Stop Payment Order             |
 | `110000000` | `000444444440` | `declined`     | Account Locked                 |
+
+
+## Transaction amounts
+
+You can use specific payment amounts to trigger different responses during processing. The test payment methods will be evaluated first before checking the payment amount:
+
+| Amount($) | Authorize/Sale     | Capture    | Fraud Decision |
+|-----------|--------------------|------------|----------------|
+| 2000      | `rejected`         | N/A        | `accept`       |
+| 3000      | `succeeded`        | N/A        | `review`       |
+| 4000      | `error`            | N/A        | `accept`       |
+| 5000      | `declined`         | N/A        | `accept`       |
+| 6000      | `requires_capture` | `declined` | `accept`       |
