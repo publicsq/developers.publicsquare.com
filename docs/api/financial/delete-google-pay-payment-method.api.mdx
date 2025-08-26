@@ -1,0 +1,75 @@
+---
+id: delete-google-pay-payment-method
+title: "Delete Google Pay payment method"
+description: "    Delete a Google Pay payment method by ID from the Account."
+sidebar_label: "Delete Google Pay payment method"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt9P2zAQ/les42E/5FJgPOWtWmFCTFM1hrQJKuHGR2NIbGNf0LrI//t0SQqUthNP7IWXNvGdfd939/kuDZCaR8gu4Itz8xLFRC1gKkFjzIPxZJyFDIQQYowlEgolHh2FV4sKLYkKqXBazBbiZCyug6sEFShGee5qS7uX9tLyCTs7O2KCoTIxGmdjt/hRXPWnDLpTMt0GugIJzmNQDOFEQwY9gK3hQYJXQVVIGJhRA1ZVCBkYNhnm4RUVICHgXW0Casgo1Cgh5gVWCrIGaOF5R6Rg7BxSmrJz9M5GjGw/2Dvkv9XsfHPis7OEliBJONzbX3c5t6qmwgXzBxlM3rtnDSjvS5O3LIc3kZ2bdTxudoM5McHAOSHToemsz1FLsHVZqlmJHb8kgQyVL/OMpKh+cjgYSzjHABKuXagUdUufDjZt1kjKlC+KY2wkZfOXgEoSlNaGM6TKydMEPDKDSXCzEqtxiyBCSqktxaf1Uhy7MDNao32rw+vVYeOtIXHsavt2H16pDswG8zoYWrTdceTNKfIjbGzAMOXu17fWDPpF2fXQDIarm+Jw3vblgVeLYWN0Ao4W7petuA4lZFAQ+ZgNh8qbXV/PSpPHu1oF3M1dBRxuCfCMK94VdQnzIS+qW3g+o0Z9g22lw6NoNDkRp7gQxkajUXDTx0jvovg5GE1OBqdHv0SBSre17CfFg2U5MHqH1Fbo2rUolhlu8Z+1+HkacTIiBwUJTLtDdb/PM8G7SJVqtdxHesEwW6HXPN6R/zWN+/QT/qahL5WxzKyta9OL4rmSIkh4lAVIyIzmj4vCRWLvppmpiOehTImX72oMrMephHsVTCf5iwa0ifysIbtWZcR/ZOb9936yfxDbAC9FZBnPvSprfgMJt6wx/lRI0ySXdefonWGU5+jpyZa1PrVyW8ZHX49+HIEEHvur2r1ttds/cICNiJ4qsUPAv0lucW+a7lak9ODfmbbueJB+T5wJpJT+AjmvcPk=
+sidebar_class_name: "delete api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Google Pay payment method"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/payment-methods/google-pay/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Delete a Google Pay payment method by ID from the Account.
+
+    ### Permissions
+    * `payment-method:delete`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"No Content"},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
