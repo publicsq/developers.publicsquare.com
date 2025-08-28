@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.40.0...v1.40.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* update WoodCommerce plugin setup guide ([53cea3f](https://github.com/publicsq/developers.publicsquare.com/commit/53cea3f7ee70e7994cfe01ae0a9838a5f8a75da1))
+
 # [1.40.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.39.0...v1.40.0) (2025-08-20)
 
 
