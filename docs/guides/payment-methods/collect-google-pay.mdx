@@ -296,6 +296,14 @@ You can safely store the Google Pay payment method `id` value in your database t
 
 You can optionally pass in a `customer_id` to associate with an existing [Created Customer](/api/accounts/create-customer) and `billing_details` to remove the requirement to pass them when [Creating a Payment](/api/financial/create-payment).
 
+## Testing 
+
+If you don't have a Google Pay `merchantId` yet from Google's [setup guide](https://developers.google.com/pay/api/web/guides/setup), you can use the `TEST` environment in the Google Pay button configuration. 
+Also retrieve your `Test` API Keys from your [Account](https://portal.publicsquare.com/developers/api-keys) in `Test mode` to simulate production.
+This environment allows you to test your integration. 
+
+For more information about testing, refer to the [Testing](https://developers.publicsquare.com/api/testing) documentation.
+
 ## Preparing for Production
 
 Once you're ready for production, you'll want to publish your integration with Google Pay by following the [official guide](https://developers.google.com/pay/api/web/guides/test-and-deploy/publish-your-integration). 
