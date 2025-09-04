@@ -67,6 +67,9 @@ async function init() {
       countryCode: 'US'
     },
     disabled: loading,
+    onClick: async () => {
+      // Handle button click (optional)
+    },
     onPaymentDataLoaded: async (paymentData) => {
       onPaymentAuthorized(paymentData)
     }
@@ -113,6 +116,9 @@ export default function App() {
             countryCode: 'US'
           }}
           disabled={loading}
+          onClick={async () => {
+            // Handle button click (optional)
+          }}
           onPaymentDataLoaded={async (paymentData) => {
             onPaymentAuthorized(paymentData)
           }}
