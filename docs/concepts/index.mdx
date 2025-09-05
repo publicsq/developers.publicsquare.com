@@ -7,6 +7,7 @@ hide_table_of_contents: true
 import { Intro } from "@site/src/components/shared/Intro";
 import { Card } from "@site/src/components/shared/Card";
 import TransactionsImage from "@site/static/img/icons/money-bill-transfer-gradient.svg";
+import DisputesImage from "@site/static/img/icons/comments-dollar-gradient.svg";
 import FraudDetailsImage from "@site/static/img/icons/shield-check-gradient.svg";
 import ApiKeysImage from "@site/static/img/icons/key-gradient.svg";
 import WebhooksImage from "@site/static/img/icons/webhook-gradient.svg";
@@ -29,6 +30,12 @@ Explore the knowledge base about the core concepts, terminology, and FAQ's relat
     heading="Transactions"
     img={<div className="card-img-container"><TransactionsImage /></div>}
   >Learn about transactions types and statuses.</Card>
+
+  <Card
+    href="/concepts/disputes"
+    heading="Disputes"
+    img={<div className="card-img-container"><DisputesImage /></div>}
+  >Learn how disputes work and how to manage them.</Card>
 
   <Card
     href="/concepts/fraud-details-and-prevention"

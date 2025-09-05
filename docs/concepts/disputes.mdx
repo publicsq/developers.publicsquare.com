@@ -1,0 +1,197 @@
+import { Alert } from "@site/src/components/shared/Alert";
+
+# Disputes
+
+A dispute occurs when a cardholder questions a payment with their card issuer. The card issuer then reverses the payment creating a dispute case, at which point you have the opportunity to provide evidence defending the original transaction.
+
+## How Disputes Work
+
+When a dispute is initiated a typical flow is as follows:
+
+1. **Dispute Creation**: The cardholder contacts their bank to contest a payment
+2. **Immediate Reversal**: The bank issues a chargeback and the disputed amount is immediately debited from your account
+3. **Dispute Case**: PublicSquare creates a dispute case to track the process
+4. **Adjustment Creation**: Financial adjustments are automatically created to reflect the dispute
+5. **Evidence Period**: You have a limited time to submit evidence defending the transaction (if the dispute reason is contestable)
+6. **Resolution**: The card issuer makes a final decision to uphold or reverse the dispute
+
+<Alert>Chargebacks generally result in immediate financial adjustments to your account balance, regardless of the final outcome.</Alert>
+
+### Inquiries / Warnings
+
+In some cases, an inquiry or warning may precede a formal chargeback. These notifications give you an opportunity to resolve the issue before it escalates to a full chargeback by providing additional information or issuing a refund.
+
+Responding promptly to warnings is critical, as it can prevent the progression to a formal chargeback. In many cases, issuing a refund may be the most appropriate response to avoid the fees and complications associated with an unwinnable chargeback.
+
+## Dispute Statuses
+
+The status field indicates the current state and any required actions:
+
+| Status | Description |
+|--------|-------------|
+| `warning_needs_response` | Pre-dispute warning that requires a response to prevent a formal chargeback |
+| `warning_under_review` | Warning response submitted and under review |
+| `warning_closed` | Warning resolved without becoming a formal chargeback |
+| `needs_response` | Formal dispute requiring evidence submission |
+| `under_review` | Evidence submitted and dispute is under review |
+| `won` | Dispute decided in your favor, funds returned |
+| `lost` | Dispute decided against you, funds remain with cardholder |
+
+<Alert>
+Depending on the card brand and issuer, funds may be preliminarily returned to you immediately shortly after documents are uploaded. This bypasses the `under_review` state, moving the case temporarily to a `won` status.
+<br />
+If upon review the issuer decides in the cardholder's favor, another adjustment will be made moving the case to a final `lost` status.
+</Alert>
+
+## Financial Adjustments
+
+When a dispute occurs, PublicSquare automatically creates adjustments to track the financial impact:
+
+### Adjustment Types
+
+| Type | Description |
+|------|-------------|
+| `decided_against_merchant` | Funds deducted when dispute is filed or lost |
+| `decided_for_merchant` | Funds returned when dispute is won |
+
+### Example Dispute with Adjustments
+
+```json showLineNumbers
+{
+  "id": "dsp_BGDLZjBLAgNbyqCzJxchSoh5k",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  "status": "lost",
+  "evidence_submitted": true,
+  "processor": "nuvei",
+  "processor_id": "id132456798",
+  "disputed_transaction_id": "trx_8iYxBRnk79e4KXGjeN5RrD",
+  "disputed_transaction_type": "payment",
+  "retrieval_reference_number": "123456789012345",
+  "acquirer_reference_number": "123456789012",
+  "amount_disputed": 50000,
+  "currency": "USD",
+  "reason": "13.7",
+  "card_brand": "visa",
+  "description": "Cancelled Merchandise/Services",
+  "disputed_at": "2024-01-15T10:30:00Z",
+  "due_at": "2024-01-29T23:59:59Z",
+  "created_at": "2024-01-15T10:30:00Z",
+  "modified_at": "2024-01-16T14:22:00Z",
+  //highlight-start
+  "adjustments": [
+    {
+      "id": "adj_BGDLZjBLAgNbyqCzJxchSoh5k",
+      "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+      "environment": "production",
+      "dispute_case_id": "dsp_BGDLZjBLAgNbyqCzJxchSoh5k",
+      "transaction_id": "tx_EZpTTf58cwb2SHw5FfDWmX",
+      "amount": 50000,
+      "currency": "USD",
+      "type": "decided_against_merchant",
+      "created_at": "2024-01-15T10:30:00Z",
+      "modified_at": "2024-01-15T10:30:00Z"
+    }
+  ],
+  //highlight-end
+  "disputed_transaction": {
+    "id": "trx_8iYxBRnk79e4KXGjeN5RrD",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "production",
+    "external_id": "order-12345",
+    "status": "succeeded",
+    "amount": 50000,
+    "fee_amount": 360,
+    "net_amount": 49640,
+    "currency": "USD",
+    "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+    "type": "payment",
+    "processor": "nuvei",
+    "processor_id": "7110000000010554769",
+    "acquirer_id": "2630000240513800",
+    "created_at": "2024-01-10T15:20:00Z",
+    "modified_at": "2024-01-11T09:15:00Z"
+  }
+}
+```
+
+## Common Dispute Reasons
+
+Disputes can occur for various reasons. Here are some examples:
+
+| Reason | Prevention Tips |
+|--------|-----------------|
+| `Cancelled Merchandise/Services` | Clear cancellation policies, process cancellations promptly |
+| `Merchandise/Services Not Received` | Provide tracking information, delivery confirmations |
+| `No Cardholder Authorization` | Use AVS and CVV verification, implement fraud monitoring |
+| `Cardholder Dispute - Defective/Not as Described` | Accurate product descriptions, quality control processes |
+| `Fraud - Card not present transaction` | Strong customer authentication, fraud detection |
+| `Credit Not Processed` | Process refunds promptly, provide confirmation |
+| `Non-receipt of Goods or services` | Reliable shipping, delivery tracking |
+| `Incorrect Amount` | Clear pricing, accurate billing descriptors |
+| `Cardholder Does Not Recognize` | Descriptive billing names, transaction confirmations |
+| `Duplicate Processing/Paid by Other Means` | Implement idempotency keys, clear billing descriptors |
+
+## Disputes Best Practices
+
+### Clear Communication
+- Use descriptive billing descriptors that customers will recognize
+- Send confirmation emails with transaction details
+- Provide clear contact information for customer inquiries
+
+### Customer Service
+- Respond quickly to customer inquiries before they escalate to disputes
+- Have a clear refund and return policy
+- Maintain detailed records of customer communications
+
+### Documentation
+- Keep detailed records of all transactions and customer interactions
+- Maintain proof of delivery for physical goods
+- Document service completion for digital products
+
+### Responding to Disputes
+- Submit evidence promptly within the deadline to avoid automatic loss
+- Provide comprehensive documentation that directly addresses the dispute reason
+- Include transaction records, customer communications, and delivery confirmations
+- Use clear, factual language when describing the transaction and customer interaction
+
+## Webhook Notifications
+
+PublicSquare sends webhook notifications when dispute cases are created or updated:
+
+```json showLineNumbers title="Dispute Case Webhook"
+{
+  "id": "evnt_5jxWRFNLCAWeegrkCAG3a9DGc",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  //highlight-next-line
+  "event_type": "disputecase:update",
+  "entity_type": "DisputeCase",
+  "entity_id": "dsp_BGDLZjBLAgNbyqCzJxchSoh5k",
+  "entity": {
+    "id": "dsp_BGDLZjBLAgNbyqCzJxchSoh5k",
+    "status": "needs_response",
+    "disputed_transaction_id": "trx_123465689",
+    "amount_disputed": 50000,
+    // ... full dispute case object
+  },
+  "created_at": "2024-01-15T10:30:00Z"
+}
+```
+
+<Alert>Subscribe to `disputecase:update` webhooks to receive real-time notifications about dispute status changes and take appropriate action.</Alert>
+
+## Managing Disputes
+
+### Retrieving Disputes
+Use the [Get All Dispute Cases](/api/financial/get-all-dispute-cases) endpoint to retrieve disputes for your account:
+
+### Viewing Dispute Details
+Use the [Get Dispute Case by ID](/api/financial/get-dispute-case-by-id) endpoint to get complete details including adjustments:
+
+### Monitoring in the Portal
+The PublicSquare Portal provides a comprehensive dispute management interface where you can:
+- View all dispute cases with filtering and search
+- Monitor dispute status and due dates
+- Track associated adjustments and financial impact
+- Access dispute details and related transaction information
