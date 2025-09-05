@@ -1,15 +1,15 @@
 import { Alert } from "@site/src/components/shared/Alert";
 
-# Disputes
+# Dispute cases
 
 A dispute occurs when a cardholder questions a payment with their card issuer. The card issuer then reverses the payment creating a dispute case, at which point you have the opportunity to provide evidence defending the original transaction.
 
-## How Disputes Work
+## How disputes work
 
 When a dispute is initiated a typical flow is as follows:
 
 1. **Dispute Creation**: The cardholder contacts their bank to contest a payment
-2. **Immediate Reversal**: The bank issues a chargeback and the disputed amount is immediately debited from your account
+2. **Immediate Reversal**: The bank issues a chargeback and the disputed amount is immediately deducted from your daily settlement
 3. **Dispute Case**: PublicSquare creates a dispute case to track the process
 4. **Adjustment Creation**: Financial adjustments are automatically created to reflect the dispute
 5. **Evidence Period**: You have a limited time to submit evidence defending the transaction (if the dispute reason is contestable)
@@ -17,13 +17,13 @@ When a dispute is initiated a typical flow is as follows:
 
 <Alert>Chargebacks generally result in immediate financial adjustments to your account balance, regardless of the final outcome.</Alert>
 
-### Inquiries / Warnings
+### Inquiries / warnings
 
 In some cases, an inquiry or warning may precede a formal chargeback. These notifications give you an opportunity to resolve the issue before it escalates to a full chargeback by providing additional information or issuing a refund.
 
 Responding promptly to warnings is critical, as it can prevent the progression to a formal chargeback. In many cases, issuing a refund may be the most appropriate response to avoid the fees and complications associated with an unwinnable chargeback.
 
-## Dispute Statuses
+## Dispute statuses
 
 The status field indicates the current state and any required actions:
 
@@ -43,18 +43,18 @@ Depending on the card brand and issuer, funds may be preliminarily returned to y
 If upon review the issuer decides in the cardholder's favor, another adjustment will be made moving the case to a final `lost` status.
 </Alert>
 
-## Financial Adjustments
+## Financial adjustments
 
 When a dispute occurs, PublicSquare automatically creates adjustments to track the financial impact:
 
-### Adjustment Types
+### Adjustment types
 
 | Type | Description |
 |------|-------------|
 | `decided_against_merchant` | Funds deducted when dispute is filed or lost |
 | `decided_for_merchant` | Funds returned when dispute is won |
 
-### Example Dispute with Adjustments
+### Example dispute with adjustments
 
 ```json showLineNumbers
 {
@@ -115,7 +115,7 @@ When a dispute occurs, PublicSquare automatically creates adjustments to track t
 }
 ```
 
-## Common Dispute Reasons
+## Common dispute reasons
 
 Disputes can occur for various reasons. Here are some examples:
 
@@ -132,14 +132,14 @@ Disputes can occur for various reasons. Here are some examples:
 | `Cardholder Does Not Recognize` | Descriptive billing names, transaction confirmations |
 | `Duplicate Processing/Paid by Other Means` | Implement idempotency keys, clear billing descriptors |
 
-## Disputes Best Practices
+## Dispute best practices
 
-### Clear Communication
+### Clear communication
 - Use descriptive billing descriptors that customers will recognize
 - Send confirmation emails with transaction details
 - Provide clear contact information for customer inquiries
 
-### Customer Service
+### Customer service
 - Respond quickly to customer inquiries before they escalate to disputes
 - Have a clear refund and return policy
 - Maintain detailed records of customer communications
@@ -149,13 +149,13 @@ Disputes can occur for various reasons. Here are some examples:
 - Maintain proof of delivery for physical goods
 - Document service completion for digital products
 
-### Responding to Disputes
+### Responding to disputes
 - Submit evidence promptly within the deadline to avoid automatic loss
 - Provide comprehensive documentation that directly addresses the dispute reason
 - Include transaction records, customer communications, and delivery confirmations
 - Use clear, factual language when describing the transaction and customer interaction
 
-## Webhook Notifications
+## Webhook notifications
 
 PublicSquare sends webhook notifications when dispute cases are created or updated:
 
@@ -181,15 +181,15 @@ PublicSquare sends webhook notifications when dispute cases are created or updat
 
 <Alert>Subscribe to `disputecase:update` webhooks to receive real-time notifications about dispute status changes and take appropriate action.</Alert>
 
-## Managing Disputes
+## Managing disputes
 
-### Retrieving Disputes
+### Retrieving disputes
 Use the [Get All Dispute Cases](/api/financial/get-all-dispute-cases) endpoint to retrieve disputes for your account:
 
-### Viewing Dispute Details
+### Viewing dispute details
 Use the [Get Dispute Case by ID](/api/financial/get-dispute-case-by-id) endpoint to get complete details including adjustments:
 
-### Monitoring in the Portal
+### Monitoring in the portal
 The PublicSquare Portal provides a comprehensive dispute management interface where you can:
 - View all dispute cases with filtering and search
 - Monitor dispute status and due dates
