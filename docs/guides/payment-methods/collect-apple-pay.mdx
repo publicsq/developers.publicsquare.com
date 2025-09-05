@@ -61,12 +61,14 @@ let publicsquare;
 async function init() {
   publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
+  // highlight-start
   // Step 1: Render the Apple Pay button
   publicsquare.applePay.renderButton(buttonContainerRef.current!, {
     id: 'apple-pay-btn',
     onClick: onSubmitApplePay
   });
-
+  // highlight-end
+  
   function onSubmitApplePay() {
     if (!ApplePaySession) {
       return;
