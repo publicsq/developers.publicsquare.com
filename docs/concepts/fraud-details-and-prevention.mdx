@@ -1,9 +1,9 @@
-# Fraud Details and Prevention
+# Fraud details and prevention
 
 This document provides an overview of fraud prevention tools available through PublicSquare. It includes steps for setting up
 Address Verification Service (AVS) and Card Verification Value (CVV) checks, essential tools for minimizing fraudulent transactions and chargebacks.
 
-## Why use Fraud Prevention Tools?
+## Why use fraud prevention tools?
 
 Fraud prevention tools like AVS and CVV checks add layers of security by verifying critical payment details. These tools help:
 
@@ -11,7 +11,7 @@ Fraud prevention tools like AVS and CVV checks add layers of security by verifyi
 - Reduce the likelihood of chargebacks
 - Increase customer trust by safeguarding sensitive information
 
-## Address Verification Service (AVS)
+## Address verification service (AVS)
 
 AVS verifies the billing address provided by the customer during a transaction. It checks this information against the card issuer's records and returns a response code indicating the level of match.
 
@@ -24,13 +24,13 @@ When a configured AVS rule is triggered to cause the payment to fail, the paymen
 3.	The issuer compares the address with the one on file.
 4.	A response code is returned, indicating whether the address matches.
 
-### Recommended AVS Best Practices
+### Recommended AVS best practices
 
 - Require a full AVS match for high-value transactions.
 - For partial matches, flag the transaction for manual review.
 - Regularly review AVS reports to refine your risk settings.
 
-### AVS Response Codes
+### AVS response codes
 
 | Code | Description                                                 |
 |------|-------------------------------------------------------------|
@@ -50,26 +50,26 @@ When a configured AVS rule is triggered to cause the payment to fail, the paymen
 | B    | Address matches, but ZIP code not verified.                 |
 | D    | Address and postal code match for international cards.      |
 
-## Card Verification Value (CVV)
+## Card verification value (CVV)
 
 CVV is the 3-digit or 4-digit code printed on a customer's payment card. It verifies that the cardholder has physical access to the card,
 adding a layer of protection against card-not-present (CNP) fraud.
 
 When a configured CVV rule is triggered to cause the payment to fail, the payment status will be set to `declined`.
 
-### How does CVV Work?
+### How does CVV work?
 
 1.	Customer enters their card details, including the CVV, during checkout.
 2.	The CVV is sent to the card issuer for verification.
 3.	The issuer verifies the CVV and returns a response indicating whether it matches.
 
-### Recommended CVV Best Practices
+### Recommended CVV best practices
 
 -	Always require CVV for card-not-present transactions.
 -	Decline transactions with missing or invalid CVVs.
 -	Use CVV in combination with AVS for enhanced fraud protection.
 
-### CVV Response Codes
+### CVV response codes
 
 | Code | Description                                                   |
 |------|---------------------------------------------------------------|
@@ -80,7 +80,7 @@ When a configured CVV rule is triggered to cause the payment to fail, the paymen
 | U    | Issuer is not certified or has not provided CVV verification. |
 | I    | Invalid CVV.                                                  |
 
-## Fraud Details
+## Fraud details
 
 Based upon your fraud decisioning tool, a payment can be rejected or marked for review.
 This enables you to customize a level of control suitable to your business type, average transaction size, and payment methods accepted.
@@ -88,12 +88,12 @@ This enables you to customize a level of control suitable to your business type,
 All payments will contain a `fraud_details` section with a `decision` and list of `rules`. This information is set based upon the response from your fraud decisioning tool.
 Any payment that has a fraud decision of `reject` will have the payment status set to `rejected`.
 
-### Recommended Fraud Best Practices
+### Recommended fraud best practices
 
 -	Periodically review your payments marked for review to adjust thresholds and rules.
 -	Set rules for your businesses risk based upon product, size of sale, accepted payment methods, and customer purchasing behaviors.
 
-### Fraud Decisions
+### Fraud decisions
 
 | Type     | Description                                                                                                                                   |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -101,7 +101,7 @@ Any payment that has a fraud decision of `reject` will have the payment status s
 | `review` | Some fraud decision rules failed, but the payment was still processed.                                                                        |
 | `reject` | The payment was not processed because the risk of the payment exceeded a threshold or a rule to trigger an automatic rejection was triggered. |
 
-## Payment Response with Fraud information
+## Payment response with fraud information
 
 ```json showLineNumbers
 {

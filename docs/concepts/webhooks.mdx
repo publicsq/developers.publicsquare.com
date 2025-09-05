@@ -6,7 +6,7 @@ import TabItem from "@theme/TabItem";
 
 Webhooks provide asynchronous notifications from the PublicSquare platform to your system. These are important for events around onboarding, connections, and settlements where an event may happen in the PublicSquare platform and your system needs to be notified so it can take action.
 
-## Webhook Request
+## Webhook request
 
 Every webhook notification will contain an [Event](/api/accounts/get-event-by-id) as the body of the request.
 
@@ -43,7 +43,7 @@ The key parts of the webhook request are:
 | `entity_type` | The entity type.                                                                                          |
 | `entity`      | The current instance of the entity at the time of the notification.                                       |
 
-## Event Types
+## Event types
 
 PublicSquare publishes several events which can be subscribed to via webhooks:
 
@@ -61,7 +61,7 @@ PublicSquare publishes several events which can be subscribed to via webhooks:
 
 <Alert>PublicSquare always publishes the current instance of the entity in the webhook notification.</Alert>
 
-## Notification Delivery Attempts
+## Notification delivery attempts
 
 PublicSquare will attempt to deliver a notification once an hour, for up to 24 hours. PublicSquare requires a `2XX` status code response from the registered endpoint to mark the webhook notification as being successfully delivered.
 
@@ -102,7 +102,7 @@ The Webhook Event will contain information about the last delivery attempt:
 
 This will show the raw request made and the response received (if any) as well as the status code.
 
-## Verifying the Notification
+## Verifying the notification
 
 Every webhook notification will contain a `X-SIGNATURE` header which will be a signed HMAC signature of the request body.
 
@@ -141,7 +141,7 @@ var signature = request.Headers["X-SIGNATURE"].First();
 using var rsa = RSA.Create();
 rsa.ImportRSAPublicKey(Convert.FromBase64String(webhook.key), out _);
 
-// Use SHA256 as the hashing aigorithm
+// Use SHA256 as the hashing algorithm
 var rsaFormatter = new RSAPKCS1SignatureDeformatter(rsa);
 rsaFormatter.SetHashAlgorithm(nameof(SHA256));
 
