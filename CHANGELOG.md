@@ -1,3 +1,10 @@
+# [1.42.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.41.0...v1.42.0) (2025-09-05)
+
+
+### Features
+
+* add Google Pay guide ([2857a31](https://github.com/publicsq/developers.publicsquare.com/commit/2857a312bed6d2fe8dd82df0f5dbda958fc95840))
+
 # [1.41.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.40.1...v1.41.0) (2025-09-05)
 
 
