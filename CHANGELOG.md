@@ -1,3 +1,10 @@
+# [1.43.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.42.0...v1.43.0) (2025-09-05)
+
+
+### Features
+
+* add Disputes concept page ([#147](https://github.com/publicsq/developers.publicsquare.com/issues/147)) ([c4218b7](https://github.com/publicsq/developers.publicsquare.com/commit/c4218b742401e9a613382cfdff0c0587c40e6a9f))
+
 # [1.42.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.41.0...v1.42.0) (2025-09-05)
 
 
