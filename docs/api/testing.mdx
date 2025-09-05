@@ -21,7 +21,7 @@ When you're ready to take your integration live, replace your `Test` publishable
 
 The following card numbers can be used for testing your integration while in `Test` environment.
 
-### Cards by Brand
+### Cards by brand
 
 | Brand            | Number             | CVC          | Expiration Date |
 |------------------|--------------------|--------------|-----------------|
@@ -66,7 +66,7 @@ The following card numbers can be used for testing your integration while in `Te
 | Address check fails       | `4000000000000010` | `rejected`     | `reject`       | `N`      | `M`        |
 
 
-## Bank Accounts
+## Bank accounts
 
 The following bank accounts can be used for testing your integration while in `Test` environment. The payment/payment status will initially be `pending`. For payments, after a short period of time, the payment status will be updated and
 a `payment:update` [Webhook](/concepts/webhooks) will be sent with the payment in the `entity` of the payload. For payouts, the payout status will be updated and
@@ -94,3 +94,19 @@ You can use specific payment amounts to trigger different responses during proce
 | 4000      | `error`            | N/A        | `accept`       |
 | 5000      | `declined`         | N/A        | `accept`       |
 | 6000      | `requires_capture` | `declined` | `accept`       |
+
+
+## Dispute cases
+
+You can use specific card payment amounts to trigger the generation of dipute cases to simulate chargebacks and inquries from the credit card networks. The test amount will be evaluated **only** for card payments, and generate
+a dispute with the defined status. Adjustments to simulate the flow of back-and-forth of funds during a chargeback process will also be created:
+
+| Amount($) | Status                   | Evidence Submitted | # of Adjustments |
+|-----------|--------------------------|--------------------|------------------|
+| 7000      | `needs_response`         | `false`            | 1                |
+| 7100      | `under_review`           | `true`             | 2                |
+| 7200      | `won`                    | `true`             | 2                |
+| 7300      | `lost`                   | `true`             | 3                |
+| 7400      | `warning_needs_response` | `false`            | 0                |
+| 7500      | `warning_under_review`   | `true`             | 0                |
+| 7600      | `warning_close`          | `true`             | 0                |
