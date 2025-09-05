@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.40.1...v1.41.0) (2025-09-05)
+
+
+### Features
+
+* add dispute cases test data ([#148](https://github.com/publicsq/developers.publicsquare.com/issues/148)) ([af8cd99](https://github.com/publicsq/developers.publicsquare.com/commit/af8cd9964ee6bc5954dce16cc1316b4d96c7bb17))
+
 ## [1.40.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.40.0...v1.40.1) (2025-08-28)
 
 
