@@ -1,3 +1,10 @@
+## [1.43.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.0...v1.43.1) (2025-09-10)
+
+
+### Bug Fixes
+
+* update sign up and sign in button URL's ([41f8f77](https://github.com/publicsq/developers.publicsquare.com/commit/41f8f779cc085d2356940f07166c5bd67377fac2))
+
 # [1.43.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.42.0...v1.43.0) (2025-09-05)
 
 
