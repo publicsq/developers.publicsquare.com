@@ -7,16 +7,12 @@ export const AuthButtons = () => {
   return (
     <div className={styles.container}>
       <div>
-        <Button href="https://portal.publicsquare.com/api/auth/signup" target="_blank">
+        <Button href="https://portal.publicsquare.com/auth/login?screen_hint=signup" target="_blank">
           Sign Up
         </Button>
       </div>
       <div>
-        <Button
-          href="https://portal.publicsquare.com/"
-          target="_blank"
-          variant="secondary"
-        >
+        <Button href="https://portal.publicsquare.com/" target="_blank" variant="secondary">
           Sign In
         </Button>
       </div>
