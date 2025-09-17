@@ -1,0 +1,75 @@
+---
+id: get-bank-account-balance-by-id
+title: "Get bank account balance by ID"
+description: "    Get a bank account payment method balance by ID."
+sidebar_label: "Get bank account balance by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9tS20gQ/ZWpzlbtpWRb5pZdvRlCvIStrEOASjZx4ZHU4AnSSMy0DI5K/77VuviCbUKqEp54sWXptPp0nzPjnhxIXlnwPsG+1NeiFwRJpsnC0IEQbWBUSirR4IEQQvSRhBQ+A2UFFKmcxqhJxEjjJBS+jKQOUPhTcfSq/Vl/1hz34sULMUATK2tVom118w8xqoNbVbBnUIYjcCBJ0UhOexSCB5x0KeVSDnAglUbGSGi4jBy0jBE8UCE4oJh5KmkMDhi8yZTBEDwyGTpggzHGErwcaJpyhCWj9BUUxZDBNk20RcvPt1yXv5b78e8xOBAkmlATP5VpGqmgpN35YhmSr6ZI/C8YEHM2XCSpKoEKV2nc7/+iPFXdOosi6UfYFIR3Mk75J/jy4mVvuhsHZx96d7fm7d7tu8N3Z+eHf+8fvIHCgbqTF4/J+8iUMggu9ne7f2rVv+1/PP6qrvYmZE7O/+v3++ecE/VEmUTHdbseTno4B4uWOJBa+ChGhJZGIjFilJokzAIGjx5kNceVZU+kKoEXtYUWiChNeIVmtfwmZmY7pUWAmmxbdF3XFcqKX7pu23XBgcvExJKqt+3tPMSMQwsHgswY1PQdfA6qiJ/CJlKx+h4u/zD+5zCRli4MXhq042+75XSMgiMEqRgFjeda3Uor6tdg+KBTttyt3ZbbbW13T7svvR3X291p7+79tbXXhYKtE4aKs8losLByL2Vk0QFSVL6Dl2i9XPbrJhYFR++s20D2ZShO8CZDSz9uJ0FjEmPX4dZXMMNJY+SUd0zC2K7bFO83r3BqyKo6q8CqQY9AWpKU2bXeWzTR9ta64BBJquhReZS2dM/lm8Ab1c/nlcG5jFRYSjYwiR9h/KrkYmcG6K4a4EzLjMaJUV9Lb/4gBzyLMhNlgxTbq1K8ToyvwhD1sw5Pp8POqg5vExKvk0w/r4cn0oGrwSAziqbl8NxL1THyJayZzWHIo3F1Azy4wrLbPF170FnG2w6P7K160LSdXIVFp5ksOKeZNPN6ZiLwYEyUWq/Tkalqp5kfqcDeZNJgO0hi4LQNzfeseyVtQ3b+J1bdWJnh6m22NBAfG3qDI3GMU6G0VSEKU/0L/2rFh1ZvcNQ6PvwoxijDUtH6ODF70pwqakBR6nSZlCyaPpf835f8xaDqi+Wk4ACXXbGadHkmTRNLsSwdXWf65nlnqbh8vk6e8ohWN5zwjjppJFU5X5dK5rUj7jvIggNLngAHvPKQ1thi6MA4scShee5Li2cmKgq+fZOhYVMOHZhIoyrff8ohVJavw9kktrE1v53Up7/fxSb2jYc0G2gio4x/gQPXbDE+ohXDwmlk5+zVg14QYEoLISub1dKi6R+e8jCW0XjZt9elb+sLfvtaOosurNLzZ+FsgOd5tSKKYoavHm2MmNm+rprZF0XxP+cngZg=
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get bank account balance by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/payment-methods/bank-accounts/{id}/balance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get a bank account payment method balance by ID.
+
+    ### Permissions
+    * `payment-method:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"Bank Account ID","nullable":true,"example":"ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"environment":{"type":"string","description":"Environment - Can be `test` or `production`","nullable":true,"example":"production"},"available_balance":{"type":"integer","description":"Available balance in cents. 1000 is $10.00","format":"int64","nullable":true,"example":1000},"current_balance":{"type":"integer","description":"Current balance in cents. 1000 is $10.00","format":"int64","nullable":true,"example":1000},"limit_balance":{"type":"integer","description":"Limit balance in cents. 1000 is $10.00","format":"int64","nullable":true,"example":1000},"last_refresh":{"type":"string","description":"The last time the balance was refreshed","nullable":true,"example":"2025-01-31T17:40:54.569261"}},"additionalProperties":false,"title":"BankAccountBalance"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

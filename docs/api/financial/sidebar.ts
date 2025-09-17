@@ -186,6 +186,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/financial/get-bank-account-balance-by-id",
+          label: "Get bank account balance by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/financial/attach-bank-account-to-customer",
           label: "Attach bank account to customer",
           className: "api-method put",
