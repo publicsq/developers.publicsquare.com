@@ -1,3 +1,11 @@
+## [1.43.2](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.1...v1.43.2) (2025-09-25)
+
+
+### Bug Fixes
+
+* add transfer item ID to transaction ([4d8e97a](https://github.com/publicsq/developers.publicsquare.com/commit/4d8e97a90282aa697a2b8e2426b4c9d726eee5f2))
+* update Google Pay data examples ([5401b35](https://github.com/publicsq/developers.publicsquare.com/commit/5401b359623aeb10e68d38c713a910371b00697e))
+
 ## [1.43.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.0...v1.43.1) (2025-09-10)
 
 
