@@ -1,3 +1,10 @@
+# [1.44.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.2...v1.44.0) (2025-10-01)
+
+
+### Features
+
+* update managed account documentation and fix collect card payment methods examples ([3f32798](https://github.com/publicsq/developers.publicsquare.com/commit/3f3279869b22846987a1bb97c6c7b632be396db2))
+
 ## [1.43.2](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.1...v1.43.2) (2025-09-25)
 
 
