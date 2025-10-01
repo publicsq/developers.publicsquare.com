@@ -175,8 +175,8 @@ async function submit (e: FormEvent<HTMLFormElement>,) {
       cardholder_name: formData.cardholderName,
       card: {
         number: cardNumberElement,
-        expiration_month: cardExpirationDateElement.month(),
-        expiration_year: cardExpirationDateElement.year(),
+        expirationMonth: cardExpirationDateElement.month(),
+        expirationYear: cardExpirationDateElement.year(),
         cvc: cardVerificationCodeElement,
       }
     });
@@ -204,8 +204,8 @@ export default function App() {
           // cardNumberRef.current is the CardNumberElement instance that will be decrypted within the secure
           // iFrame on the DOM so that the client never sees the card information.
           number: cardNumberRef.current,
-          expiration_month: cardExpirationRef.current.month(),
-          expiration_year: cardExpirationRef.current.year(),
+          expirationMonth: cardExpirationRef.current.month(),
+          expirationYear: cardExpirationRef.current.year(),
           cvc: cardVerificationRef.current,
         }
       });
@@ -239,8 +239,8 @@ curl -L 'https://collect.publicsquare.com' \
   "cardholder_name": "John Smith",
   "card": {
     "number": "4242424242424242",
-    "expiration_month": 12,
-    "expiration_year": 2025,
+    "expirationMonth": 12,
+    "expirationYear": 2025,
     "cvc": "123"
   }
 }'
