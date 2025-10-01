@@ -52,17 +52,23 @@ This will return a seller account result similar to:
 }
 ```
 
+<Alert type="warning">
+All seller API requests must include the <code>X-ACCOUNT-ID</code> header set to the seller's account ID. For example:
+
+<code>X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf</code>
+</Alert>
+
 ## Save Business Details
 
 Referencing the `id` of the previously created seller account, we can now save business details for our seller account.
 
 PublicSquare exposes several endpoints to enable you to submit all of the required business details:
 
-* [Save Business Details](/api/accounts/save-business-by-account-id)
-* [Save Business Representative](/api/accounts/save-business-representative-by-account-id)
-* [Save Business Tax Information](/api/accounts/save-tax-information-by-account-id)
-* [Create Ultimate Beneficial Owner](/api/accounts/create-ultimate-beneficial-owner-by-account-id)
-* [Upload Business Document](/api/accounts/upload-business-document-by-account-id)
+* [Save Business Details](/api/accounts/save-business)
+* [Save Business Representative](/api/accounts/save-business-representative)
+* [Save Business Tax Information](/api/accounts/save-tax-information)
+* [Create Ultimate Beneficial Owner](/api/accounts/create-ultimate-beneficial-owner)
+* [Upload Business Document](/api/accounts/upload-business-document)
 
 <Alert>For all of the endpoints listed above, be sure to replace the `accountId` field with the seller's account ID from the previous step.</Alert>
 
@@ -74,10 +80,11 @@ PublicSquare has partnered with [Flinks](https://www.flinks.com/) to provide a s
 
 To start the process, we need to [get a bank account verification iFrame URL](/api/accounts/get-bank-verification-url):
 
-```shell showLineNumbers title="Create a Seller Account"
+```shell showLineNumbers title="Get Bank Account Verification iFrame URL"
 curl -L 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account/verification' \
 -H 'Accept: application/json' \
--H 'X-API-KEY: <SECRET_API_KEY>'
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf'
 ```
 
 This will return a response containing an iFrame URL you can mount on your site to prompt the seller to provide their business bank account:
@@ -146,6 +153,7 @@ Using the code above, your API should receive a `verification_code`, `request_id
 curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account/verification' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf' \
 -H 'Content-Type: application/json' \
 -d '{
   "verification_code": "5e115eac-1209-4f19-641c-08d6d484e2fe",
@@ -165,7 +173,7 @@ This will return a bank account verification result:
 
 ### Save Seller Bank Account
 
-Once we have the `bank_account_verification_id`, we can then [save the bank account](/api/accounts/save-bank-account-by-account-id) for the seller:
+Once we have the `bank_account_verification_id`, we can then [save the bank account](/api/accounts/save-bank-account) for the seller:
 
 ```shell showLineNumbers
 curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account' \
@@ -173,6 +181,7 @@ curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/busines
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf' \
 -d '{
   "bank_account_verification_id": "bav_2b3c4d5e6f7g8h9i0j1k2l3m4"
 }'
@@ -204,12 +213,13 @@ Now that we have the required business information saved, documents uploaded, an
 
 ### Check Seller Onboarding Requirements
 
-PublicSquare provides an [onboarding review endpoint](/api/accounts/review-onboarding-by-account-id) to be able to check the status of your onboarding requirements and submission status:
+PublicSquare provides an [onboarding review endpoint](/api/accounts/review-onboarding) to be able to check the status of your onboarding requirements and submission status:
 
 ```shell showLineNumbers
 curl -L 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/onboarding/seller/review' \
 -H 'Accept: application/json' \
--H 'X-API-KEY: <SECRET_API_KEY>'
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf'
 ```
 
 If you have completed all of the previous steps, this should return a seller onboarding review response similar to:
@@ -288,13 +298,14 @@ If you have completed all of the previous steps, this should return a seller onb
 
 ### Submit Seller Onboarding
 
-Now that all of your requirements are `complete`, we can [submit the seller for underwriting](/api/accounts/onboard-by-account-id):
+Now that all of your requirements are `complete`, we can [submit the seller for underwriting](/api/accounts/onboard):
 
 ```shell showLineNumbers
 curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/onboarding/seller' \
 -X 'POST' \
 -H 'Accept: application/json' \
--H 'X-API-KEY: <SECRET_API_KEY>'
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'X-ACCOUNT-ID: acc_w6dogDaHuU6h1N5e5vfXLUYf'
 ```
 
 You should receive a response similar to:
