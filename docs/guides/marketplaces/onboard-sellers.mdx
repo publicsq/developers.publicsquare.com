@@ -112,6 +112,7 @@ Using the bank account verification iFrame URL from the previous step, we can mo
               body: {
                 verification_code: data.loginId,
                 request_id: data.requestId,
+                bank_account_id: data.accountId,
               },
             });
           }
@@ -139,7 +140,7 @@ Using the bank account verification iFrame URL from the previous step, we can mo
 />
 ```
 
-Using the code above, your API should receive a `verification_code` and `request_id` which we can then [trigger the bank verification process](/api/accounts/save-bank-verification):
+Using the code above, your API should receive a `verification_code`, `request_id` and `bank_account_id` which we can then [trigger the bank verification process](/api/accounts/save-bank-verification):
 
 ```shell showLineNumbers title="API call on your server"
 curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/business/bank-account/verification' \
@@ -148,7 +149,8 @@ curl 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/busines
 -H 'Content-Type: application/json' \
 -d '{
   "verification_code": "5e115eac-1209-4f19-641c-08d6d484e2fe",
-  "request_id": "a5b739e0-9448-484d-b553-77d7fb8567e0"
+  "request_id": "a5b739e0-9448-484d-b553-77d7fb8567e0",
+  "bank_account_id": data.accountId
 }'
 ```
 
