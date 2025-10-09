@@ -112,6 +112,12 @@ const sidebar: SidebarsConfig = {
           label: "Request account setting access",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/accounts/get-all-account-types",
+          label: "Get all account types",
+          className: "api-method get",
+        },
       ],
     },
     {

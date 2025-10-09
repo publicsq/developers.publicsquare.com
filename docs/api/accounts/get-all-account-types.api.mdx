@@ -1,0 +1,64 @@
+---
+id: get-all-account-types
+title: "Get all account types"
+description: "Get a list of account types."
+sidebar_label: "Get all account types"
+hide_title: true
+hide_table_of_contents: true
+api: eJztlstu2zoQhl+FmE02TNzbSjsf9IIgaBv0hlMYRjGWxhZbilTIUVBX0LsXQ0mOXMdtWhRdxQtbJn/N7RuJ0wLjJkK2gHme+8ZxhKWGgmIeTM3GO8jgBbFCZU1k5dcKe53ibU3xDDT4mgKK9LwYxdbuy0BDoFh7FylC1sKjBw/kZ9/N6wvQkHvH5Fh2sa6tyZPl2ecokhZiXlKFciV2IQMMAbegwTBVcbLuV58pZ9BQB4mPTe/4Gm1DE1nkYNwGfsx4PgkeNLjGWlxZgoxDQxroK1a1/IWKQl6iY+g0OKx+07RKt/zM/suJfRM/VehwQ8XEy8p7S+gO3LwhboKL6kQsniizVlyauKNiohpsqdVWofNcUhh3YRrBGm0k6DoNWBRGrKO9nNQ07Wtgw0k+pPdOouvko+HJbbD/w0K9oauGIv8B9SN0KQQfbu2C22P/ZRcNDCWLfUadHiSHuA+FfWnuoIyM3Ez9G8e0oQAa1j5UyP3S40e33VwQo7F38mNcZHT5XYI6yr29yQw+oDVFQnYZ/MpS9TTFEmFsgIeHDfDeYcOlD+YbFX+vA+6h7KAcQfH4EMVzH1amKMjdc/h3HJ4ccnjlWT33jbt/Hv4RB8mG8iYY3kK2aGFemwuSy2W31FARl15Gmg2lwiKXkMFsOCRPx8EmUrgmOXUWLTTBQgYlcx2z2Qxrc1Y3K2vyeNVgoLPcVyCWR6dvhWIPanR9cyT1Cwfjw/DSTO0gZ/f88lxd0FYZF01BKvRn6klU/5/OL89PL559VCVhkfj0EwrsduTEE6ODoEtVX/sUxVi1FP/bFL8aR0RxChok7T6q64cyoNQ+coWpPwdPx4bBvZzam2b/1ag51IbpK89qi8aJ21T0duCzgH0+Sw2ljywbbbvCSO+D7TpZvmooJNYarjGYvp0Wy06P5RCgX4SJDDVUSw8M4+PhI7nXLy+evZORo5F4pjy/JJ7DhVgft9x2YntKp3cv350+Im/bvlO6bqfvt47esWuHXi1FXHZd9x07Jyom
+sidebar_class_name: "get api-method"
+info_path: api/accounts/publicsquare-accounts-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all account types"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/account-types"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of account types.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string","description":"Account type","nullable":true,"example":"merchant"},"name":{"type":"string","description":"Account type name","nullable":true,"example":"Merchant"},"is_managed":{"type":"boolean","description":"Returns 'true' if this account is managed by another account","example":"false"}},"additionalProperties":false,"title":"AccountType"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

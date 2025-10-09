@@ -6,7 +6,32 @@ An Account in the PublicSquare platform is equivalent to a business. If you have
 
 When you sign up with PublicSquare, your first account is automatically created for you using your name (e.g. John Smith). You can optionally rename this to match your business name from the settings page.
 
-### Environments
+## Account types
+
+All accounts in the PublicSquare platform have a single account type. The account type determines if the account is a standalone or a managed account and also determines which products an account can add.
+
+| Type           | Managed | Description                                                                                                                                                                                                 |
+|----------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `merchant`     | No      | Merchant type is the default account type. Merchant accounts are independent sales organization (ISO) accounts and can add any PublicSquare products.                                                       |
+| `sub_merchant` | Yes     | Sub-merchant account type are similar to `merchant` account types, however they are managed by a Merchant account type.                                                                                     |
+| `seller`       | Yes     | Seller type are marketplace account types. Seller accounts are managed by a Merchant account type. Seller accounts are automatically added to the `seller` product and can only complete seller onboarding. |
+
+To create a new account, you can make a call to the [Create Account](/api/accounts/create-account) endpoint:
+
+```shell showLineNumbers title="Create a Seller Account"
+curl 'https://api.publicsquare.com/accounts' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'Content-Type: application/json' \
+-d '{
+  "name": "Test Seller",
+  "type": "seller"
+}'
+```
+
+For more information about onboarding and managing seller accounts, please see the [Onboard Sellers](/guides/marketplaces/onboard-sellers) guide.
+
+## Environments
 
 PublicSquare offers two environments for each Account, `Test` and `Production`. When you initially create a new Account, you will only have the Test environment available until you have successfully onboarded.
 
@@ -33,21 +58,20 @@ Any resource that is scoped to an environment will have the `environment` attrib
 
 The two environments have unique behaviors:
 
-* **Test Environment** - This environment is meant for testing and developer integration. You can have a production-like experience without actually processing real payment methods or incurring charges.
-* **Production Environment** - This is your live environment where payments will be charged and settlements will transfer to your bank account on record. This environment is only available after your Account has been successfully onboarded.
+| Type         | Description                                                                                                                                                                                                       |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `test`       | This environment is meant for testing and developer integration. You can have a production-like experience without actually processing real payment methods or incurring charges.                                 |
+| `production` | This is your live environment where payments will be charged and settlements will transfer to your bank account on record. This environment is only available after your Account has been successfully onboarded. |
 
-### Onboarding
+## Onboarding
 
-All Accounts must complete onboarding to be able to use the Production environment. There are two types of onboarding that can take place for an account:
-
-* **Payments** - This type of onboarding is available immediately after logging into your account. This is meant for Independent Sales Organizations (ISO) merchants who want to collect payment methods and process payments directly within their systems.
-* **Seller** - This type of onboarding is available when an account is managed by a `merchant` account type. Accounts onboarded only as a seller cannot process payments directly with PublicSquare.
+All Accounts must complete onboarding to be able to use the Production environment.
 
 <Alert>Each account is required to complete onboarding as they are tracked as independent businesses.</Alert>
 
 All business-related information is shared between both Merchant and Seller onboarding. Once you have provided your business details, that information can be re-used to streamline onboarding in the future.
 
-For both Merchant and Seller onboarding status changes, it is recommended to leverage [webhooks](/concepts/webhooks) to subscribe to notifications about the onboarding progress:
+For onboarding status changes, it is recommended to leverage [webhooks](/concepts/webhooks) to subscribe to notifications about the onboarding progress:
 
 ```shell showLineNumbers title="Create an Onboarding Status Webhook"
 curl -L 'https://api.publicsquare.com/webhooks' \
@@ -63,7 +87,7 @@ curl -L 'https://api.publicsquare.com/webhooks' \
 }'
 ```
 
-### Members
+## Members
 
 You can invite one or more users to join your Account as a member. This enables you invite other members of your organization to help manage the account or integrate with PublicSquare.
 
