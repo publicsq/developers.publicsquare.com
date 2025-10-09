@@ -1,3 +1,10 @@
+# [1.45.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.44.0...v1.45.0) (2025-10-09)
+
+
+### Features
+
+* update accounts concept to include account types ([d83491d](https://github.com/publicsq/developers.publicsquare.com/commit/d83491dc06e6026067b7dbd1b92a95e64f5e8a87))
+
 # [1.44.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.43.2...v1.44.0) (2025-10-01)
 
 
