@@ -84,7 +84,7 @@ import {
   // highlight-start
   CardNumberElement,
   CardExpirationDateElement,
-  CardVerifcationCodeElement,
+  CardVerificationCodeElement,
   //highlight-end
   usePublicSquare,
 } from '@publicsquare/elements-react';
@@ -102,6 +102,7 @@ export default function App() {
   return (
     <PublicSquareProvider apiKey={apiKey}>
       <input
+
         type="text"
         id="cardholderName"
         placeholder="Cardholder name"
