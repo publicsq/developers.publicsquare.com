@@ -39,7 +39,7 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
+    "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.1",
     "@docusaurus/types": "^3.7.0",
     "@semantic-release/changelog": "^6.0.3",
