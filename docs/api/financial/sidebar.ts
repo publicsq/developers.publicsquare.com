@@ -462,6 +462,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/financial/export-refunds",
+          label: "Export refunds",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/financial/get-all-transactions",
           label: "Get all transactions",
           className: "api-method get",

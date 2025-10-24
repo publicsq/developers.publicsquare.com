@@ -90,6 +90,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/accounts/get-managed-accounts",
+          label: "Get managed accounts",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/accounts/get-account-permissions",
           label: "Get account permissions",
           className: "api-method get",
