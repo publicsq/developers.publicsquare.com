@@ -1,0 +1,75 @@
+---
+id: export-refunds
+title: "Export refunds"
+description: "    Export a list of refunds for the Account."
+sidebar_label: "Export refunds"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1P40YQ/iur4UOlypAXwqnyt1BeSrleo4OTSrmI23gnyYK9a3bHKbnI/70aO84LgVxy135AypfEeOflmZlnJ8xMgOTAQ3gLH7GfGeWhG4BCHzmdkrYGQhBCiNOn1DoSUsTak7B94Upp0bdO0BBFO4psZujgs/lsWGFvb0900CXae22NL1/+LL6UeqFDqb5AADZFJ9nPhYIQpl6mtiGAVDqZIKFjhBMwMkEIwZN0dKcIAtAM8DFDN4bnsC9MFGdej1AU8kJJQkFW9HVM6ITDyDrlRY81fTTEREI4ARqnpQunzeCHbOKTTNKYjTXrzdZ+/Wj/sH7daIaNVnj0DvI8mMWDRn0zmtOnyjMa9Z/EsrlFk8Wx7HEo5DJcjezdfr113fglbDbDVmMpMk+SMr8+srPSY28syEnjZcTvRamJ/qWApHOS7WjCxK8Gmm/t4dUAb8FnUYSoUEF3KTAkijFBQ3dabcBDhYu+59dmbkdcnGxLxE2Nvl4/T/Hd8fnJ+7/vj9+3Bx9648dfv/7+FA2v7PDoYamSVWwbFbI63zSaVc3XIacJ3TVvLvGfY2vOWzR4aDT/GOLNYUf/djKGPO8G4NCn1nBpwwk063X+Wnb45yUEEFlDaKiAh09Ui/yIn18H3bcukQQh9LSRjp0FINM01lHRwmr3no1vZ4FttF6CeCyV+IiPGXraAqvt3WPECqnj1koaFy7IKp7lNOcBkKZ4M8np1Z6LakM4QLcYpTZ02HxJWSFJHW/kRxtP0kSbgOJyKKU5gTLuLCZgHhl0nO3FmJwUCPzmNdxlduvMltxurHL7k5EZDa3TX1HtyL0j91vMbEnuw1Vyn1nX00qh2TF7x+y3mNmS2a1VZn+wJM5sZnY9e8fsN5nZgtoeo8xpGhcbhXaqL5EfYWExAV2eIhKkoeWtxACLLEsaQgi16XKihsWugoccdKNqQZG5GEIYEqU+rNVkqg/SrBfryD9m0uFBZBNg0xWEK65pWbYKyHzILV88H5Xa03+cCnLwxNTuXIhLHAttvFYoXDky/OTFX/vtzsX+5emNGKJURbWms9zspJrnpgJ5UYO+LVBUOSzwXxX4RUeOear07BQC4LBLVKMGT92p9ZTIgq1TTysLnaVgJvMu8r8umaYZLfpUGkttGGxRqsm0rFX5fbG3KQrbDWBoPfHZZNKTHj+5OM/5dTmjcrmV9sxJBWFfxh7XhLfN4uhFuA9MjsXN10jGGYsBD+mbA9l867MGxmxh9Z0gvrmQWZ+CcqX0nb632pysw/FsA/TDqahWH2t8ViJzX13+w+myM95286C6y0zPUqkdRZguFmv2e73U5c5PryEAnsuWm9BD0YSmD2y1OjKLSBZbSumWPzkVL4pPJmV7y/OZfHn0qsash5XSnJVunuf/Ak+02pk=
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export refunds"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/refunds/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Export a list of refunds for the Account.
+
+    ### Permissions
+    * `refund:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"start_dt","in":"query","description":"Inclusive start date to filter records by","schema":{"type":"string","description":"Inclusive start date to filter records by","example":"2024-05-30T12:14:56"}},{"name":"end_dt","in":"query","description":"Exclusive end date to filter records by","schema":{"type":"string","description":"Exclusive end date to filter records by","nullable":true,"example":"2024-06-04T18:22:41"}},{"name":"status","in":"query","description":"Filter by transaction statuses","schema":{"type":"array","items":{"type":"string"},"description":"Filter by transaction statuses","nullable":true,"example":["succeeded"]}},{"name":"settlement_id","in":"query","description":"Include transactions for the settlement ID","schema":{"type":"string","description":"Include transactions for the settlement ID","nullable":true,"example":"stl_BGDLZjBLAgNbyqCzJxchSoh5k"}},{"name":"query","in":"query","description":"Filter by query","schema":{"type":"string","description":"Filter by query","nullable":true,"example":"pmt_2YKewBonG4tgk12MheY3PiHDy"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"text/csv":{"schema":{"type":"string","format":"binary"}},"application/json":{"schema":{"type":"string","format":"binary"}}}},"400":{"description":"Bad Request","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"text/csv":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}},"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

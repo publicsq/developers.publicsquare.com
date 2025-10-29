@@ -520,6 +520,12 @@ const sidebar: SidebarsConfig = {
           label: "Cancels a refund",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "api/financial/export-refunds",
+          label: "Export refunds",
+          className: "api-method get",
+        },
       ],
     },
     {
