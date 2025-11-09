@@ -235,6 +235,15 @@ You can safely store the bank account's `id` value in your database to link it w
 
 You can optionally pass in a `customer_id` to associate with an existing [Created Customer](/api/accounts/create-customer) and `billing_details` to remove the requirement to pass them when [Creating a Payment](/api/financial/create-payment).
 
+## Nightly Balance Refresh
+
+We automatically refresh the balance for all verified bank accounts for up to 30 days after verification. 
+To obtain the most recent balance, you can make a call to the [Get Bank Account Balance](/api/financial/get-bank-account-balance-by-id) endpoint.
+
+If more than 30 days have passed since the account was verified, you must re-verify the bank account to update its balance.
+
+<Alert>Bank accounts with MFA enabled do not support nightly balance refresh.</Alert>
+
 ## Conclusion
 
 Following this guide, you have successfully verified a customer's bank account. To use this bank account, proceed with the [Process ACH Payments](/guides/payments/process-ach-payments) guide.
