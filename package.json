@@ -34,7 +34,7 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.89.1",
+    "sass": "^1.93.3",
     "semver": "^7.7.1",
     "yarn": "^1.22.22"
   },
@@ -46,9 +46,9 @@
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/github": "^12.0.2",
     "@semantic-release/release-notes-generator": "^14.0.3",
-    "semantic-release": "^24.2.3",
+    "semantic-release": "^25.0.2",
     "typescript": "^5.8.2"
   },
   "browserslist": {
