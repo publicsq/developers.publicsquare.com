@@ -1,0 +1,100 @@
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import {GithubCard} from "@site/src/components/sdks/GithubCard";
+import {SDK} from "@site/src/components/types";
+
+# Elements SDK Styling
+
+<GithubCard heading="JavaScript Elements SDK" icon={SDK.JAVASCRIPT} organization="publicsquare-financial" repository="publicsquare-elements"/>
+
+## Configuring Styles
+
+<Tabs className="publicsquare-tabs" queryString="sdk">
+<TabItem value="javascript" label="JavaScript">
+  ```javascript showLineNumbers title="index.js"
+
+  // highlight-start
+  const elementOptions = {
+    style: {
+      base: {
+      color: '#222',
+      fontSize: '16px',
+      fontFamily: 'Arial, sans-serif',
+        '::placeholder': {
+        color: '#2222aa'
+      }
+    }
+  };
+  // highlight-end
+
+  publicsquare.createCardNumberElement(elementOptions);
+  cardNumberElement.mount('#cardNumber');
+
+  cardExpirationDateElement = publicsquare.createCardExpirationDateElement(elementOptions);
+  cardExpirationDateElement.mount('#cardExpirationDate');
+
+  cardVerificationCodeElement = publicsquare.createCardVerificationCodeElement(elementOptions);
+  cardExpirationDateElement.mount('#cardVerificationCode');
+  ```
+  </TabItem>
+</Tabs>
+
+
+## Configuration Options
+
+| Name | Type | Description |
+|---   |---   |---  |
+| style | [Style Object](#style-object) | Base and state driven styles. |
+| enableCopy | boolean | If the input can be copied to the clipboard.  |
+| placeholder | [Placeholder Object](#placeholder-object) |  |
+
+
+### Style Object
+<span id="style-object" />
+
+| Name | Type | Description |
+|---   |---   |---  |
+| base | [Supported CSS](#supported-css) | Base styles |
+| invalid | [Supported CSS](#supported-css) | Base styles |
+| empty | [Supported CSS](#supported-css) | Base styles |
+| complete | [Supported CSS](#supported-css) | Base styles |
+
+### Supported CSS
+<span id="supported-css" />
+
+#### CSS Properties
+<span id="css-properties" />
+
+| Name | Type | Description |
+|---   |---   |---  |
+| backgroundColor | CSS Color    |  |
+| color | CSS Color    |  |
+| fontSize | CSS Font Size |  |
+| fontStyle | CSS Font Style |  |
+| fontFamily | CSS Font Family | _Custom fonts are restricted to Google Fonts_ |
+| fontWeight | CSS Font Weight |  |
+| letterSpacing | CSS Letter Spacing |  |
+| lineHeight | CSS Line Height |  |
+| padding | CSS Padding |  |
+| textAlign | CSS Text Align |  |
+| textDecoration | CSS Text Decoration |  |
+| textShadow | CSS Text Shadow |  |
+| textTransform | CSS Text Transform |  |
+| ::placeholder | [CSS Styles](#supported-css) | Custom css styles for the placeholder text. |
+| ::selection | [CSS Styles](#supported-css) | Custom css styles for the selected input. |
+| :hover | [CSS Styles](#supported-css) | Custom css styles for the hovered input. |
+| :focus | [CSS Styles](#supported-css) | Custom css styles for the focused input. |
+| :disabled | [CSS Styles](#supported-css) | Custom css styles for disabled inputs. |
+
+
+
+### Placeholder Object
+<span id="placeholer-object" />
+
+| Name | Type | Description |
+|---   |---   |--- |
+| cardNumber | string | Placeholder text for the card number input. |
+| cardExpirationDate | string | Placeholder text for the expiration date input. |
+| cardSecurityCode | string | Placeholder text for the security code input. |
