@@ -46,9 +46,9 @@ import {SDK} from "@site/src/components/types";
 
 | Name | Type | Description |
 |---   |---   |---  |
-| style | [Style Object](#style-object) | Base and state driven styles. |
-| enableCopy | boolean | If the input can be copied to the clipboard.  |
-| placeholder | [Placeholder Object](#placeholder-object) |  |
+| style | [Style Object](#style-object) | Base and state driven styles for customizing the card element. |
+| enableCopy | boolean | Allows input value to be copied to the clipboard.  |
+| placeholder | [Placeholder Object](#placeholder-object) | Defines placeholder text for card number, expiration date, and security code. |
 
 
 ### Style Object
@@ -56,10 +56,10 @@ import {SDK} from "@site/src/components/types";
 
 | Name | Type | Description |
 |---   |---   |---  |
-| base | [Supported CSS](#supported-css) | Base styles |
-| invalid | [Supported CSS](#supported-css) | Base styles |
-| empty | [Supported CSS](#supported-css) | Base styles |
-| complete | [Supported CSS](#supported-css) | Base styles |
+| base | [Supported CSS](#supported-css) | Default/base styles applied to the input element. |
+| invalid | [Supported CSS](#supported-css) | Styles applied when the input value is invalid. |
+| empty | [Supported CSS](#supported-css) | Styles applied when the field has no value. |
+| complete | [Supported CSS](#supported-css) | Styles applied when the field is fully completed. |
 
 ### Supported CSS
 <span id="supported-css" />
@@ -69,24 +69,24 @@ import {SDK} from "@site/src/components/types";
 
 | Name | Type | Description |
 |---   |---   |---  |
-| backgroundColor | CSS Color    |  |
-| color | CSS Color    |  |
-| fontSize | CSS Font Size |  |
-| fontStyle | CSS Font Style |  |
-| fontFamily | CSS Font Family | _Custom fonts are restricted to Google Fonts_ |
-| fontWeight | CSS Font Weight |  |
-| letterSpacing | CSS Letter Spacing |  |
-| lineHeight | CSS Line Height |  |
-| padding | CSS Padding |  |
-| textAlign | CSS Text Align |  |
-| textDecoration | CSS Text Decoration |  |
-| textShadow | CSS Text Shadow |  |
-| textTransform | CSS Text Transform |  |
-| ::placeholder | [CSS Styles](#supported-css) | Custom css styles for the placeholder text. |
-| ::selection | [CSS Styles](#supported-css) | Custom css styles for the selected input. |
-| :hover | [CSS Styles](#supported-css) | Custom css styles for the hovered input. |
-| :focus | [CSS Styles](#supported-css) | Custom css styles for the focused input. |
-| :disabled | [CSS Styles](#supported-css) | Custom css styles for disabled inputs. |
+| backgroundColor | CSS Color    | Background color of the field. |
+| color | CSS Color    | Text color |
+| fontSize | CSS Font Size | Size of the text inside the field |
+| fontStyle | CSS Font Style | Font style (normal, italic, etc.). |
+| fontFamily | CSS Font Family | _Custom fonts are limited to Google Fonts_ |
+| fontWeight | CSS Font Weight | Weight of the text (400, 500, bold, etc.). |
+| letterSpacing | CSS Letter Spacing | Spacing between letters. |
+| lineHeight | CSS Line Height | Vertical spacing of text lines. |
+| padding | CSS Padding | Inner spacing of the input. |
+| textAlign | CSS Text Align | Alignment of text inside the field. |
+| textDecoration | CSS Text Decoration | Additional decoration sucha s underline or strike-through. |
+| textShadow | CSS Text Shadow | Shadow effect applied to text. |
+| textTransform | CSS Text Transform | Controls capitalization (uppercase/lowercase). |
+| ::placeholder | [CSS Styles](#supported-css) | Custom styles for placeholder text.. |
+| ::selection | [CSS Styles](#supported-css) | Styles applied when text is selected.. |
+| :hover | [CSS Styles](#supported-css) | Styles applied for hover state.. |
+| :focus | [CSS Styles](#supported-css) | Styles applied when the field is focused. |
+| :disabled | [CSS Styles](#supported-css) | Styles applied when the field is disabled. |
 
 
 
@@ -95,6 +95,6 @@ import {SDK} from "@site/src/components/types";
 
 | Name | Type | Description |
 |---   |---   |--- |
-| cardNumber | string | Placeholder text for the card number input. |
-| cardExpirationDate | string | Placeholder text for the expiration date input. |
-| cardSecurityCode | string | Placeholder text for the security code input. |
+| cardNumber | string | Placeholder card number input. |
+| cardExpirationDate | string | Placeholder expiration date input. |
+| cardSecurityCode | string | Placeholder CVC/security code input. |
