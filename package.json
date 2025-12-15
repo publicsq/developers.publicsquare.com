@@ -32,7 +32,7 @@
     "docusaurus-plugin-sass": "^0.2.5",
     "docusaurus-theme-openapi-docs": "^4.3.7",
     "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
+    "react": "^19.2.3",
     "react-dom": "^19.0.0",
     "sass": "^1.93.3",
     "semver": "^7.7.1",
