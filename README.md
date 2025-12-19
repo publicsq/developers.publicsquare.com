@@ -20,13 +20,7 @@ Most changes are reflected live without having to restart the server.
 ### Generate Update API Documentation
 
 ```
-yarn docusaurus gen-api-docs all
-```
-
-Clean up existing documentation with:
-
-```
-yarn docusaurus clean-api-docs all
+yarn regenerate-docs
 ```
 
 ### Build
