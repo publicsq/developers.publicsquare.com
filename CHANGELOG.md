@@ -1,3 +1,11 @@
+# [1.46.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.45.0...v1.46.0) (2026-01-05)
+
+
+### Features
+
+* add managed accounts and export refund ([#172](https://github.com/publicsq/developers.publicsquare.com/issues/172)) ([3145e47](https://github.com/publicsq/developers.publicsquare.com/commit/3145e477e1ebc3ad01559b6618ff65cb8fcd41cd))
+* add recurring transaction support ([#176](https://github.com/publicsq/developers.publicsquare.com/issues/176)) ([fffc3ca](https://github.com/publicsq/developers.publicsquare.com/commit/fffc3cac413fa3d2c35887e4b4652936c9308ce3))
+
 # [1.45.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.44.0...v1.45.0) (2025-10-09)
 
 
