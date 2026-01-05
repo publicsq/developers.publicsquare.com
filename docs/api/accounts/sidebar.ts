@@ -90,6 +90,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/accounts/create-managed-account",
+          label: "Create managed account",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/accounts/get-managed-accounts",
           label: "Get managed accounts",
           className: "api-method get",
@@ -278,6 +284,18 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/accounts/save-business-firearms-questionnaire",
           label: "Save business firearms questionnaire",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-pharmaceutical-questionnaire",
+          label: "Get business pharmaceutical questionnaire",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-pharmaceutical-questionnaire",
+          label: "Save business pharmaceutical questionnaire",
           className: "api-method put",
         },
       ],
