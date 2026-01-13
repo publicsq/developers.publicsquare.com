@@ -1,0 +1,100 @@
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import {GithubCard} from "@site/src/components/sdks/GithubCard";
+import {SDK} from "@site/src/components/types";
+
+# Elements SDK Styling
+
+<GithubCard heading="JavaScript Elements SDK" icon={SDK.JAVASCRIPT} organization="publicsquare-financial" repository="publicsquare-elements"/>
+
+## Configuring Styles
+
+<Tabs className="publicsquare-tabs" queryString="sdk">
+<TabItem value="javascript" label="JavaScript">
+  ```javascript showLineNumbers title="index.js"
+
+  // highlight-start
+  const elementOptions = {
+    style: {
+      base: {
+      color: '#222',
+      fontSize: '16px',
+      fontFamily: 'Arial, sans-serif',
+        '::placeholder': {
+        color: '#2222aa'
+      }
+    }
+  };
+  // highlight-end
+
+  publicsquare.createCardNumberElement(elementOptions);
+  cardNumberElement.mount('#cardNumber');
+
+  cardExpirationDateElement = publicsquare.createCardExpirationDateElement(elementOptions);
+  cardExpirationDateElement.mount('#cardExpirationDate');
+
+  cardVerificationCodeElement = publicsquare.createCardVerificationCodeElement(elementOptions);
+  cardExpirationDateElement.mount('#cardVerificationCode');
+  ```
+  </TabItem>
+</Tabs>
+
+
+## Configuration Options
+
+| Name | Type | Description |
+|---   |---   |---  |
+| style | [Style Object](#style-object) | Base and state driven styles for customizing the card element. |
+| enableCopy | boolean | Allows input value to be copied to the clipboard.  |
+| placeholder | [Placeholder Object](#placeholder-object) | Defines placeholder text for card number, expiration date, and security code. |
+
+
+### Style Object
+<span id="style-object" />
+
+| Name | Type | Description |
+|---   |---   |---  |
+| base | [Supported CSS](#supported-css) | Default/base styles applied to the input element. |
+| invalid | [Supported CSS](#supported-css) | Styles applied when the input value is invalid. |
+| empty | [Supported CSS](#supported-css) | Styles applied when the field has no value. |
+| complete | [Supported CSS](#supported-css) | Styles applied when the field is fully completed. |
+
+### Supported CSS
+<span id="supported-css" />
+
+#### CSS Properties
+<span id="css-properties" />
+
+| Name | Type | Description |
+|---   |---   |---  |
+| backgroundColor | CSS Color    | Background color of the field. |
+| color | CSS Color    | Text color |
+| fontSize | CSS Font Size | Size of the text inside the field |
+| fontStyle | CSS Font Style | Font style (normal, italic, etc.). |
+| fontFamily | CSS Font Family | _Custom fonts are limited to Google Fonts_ |
+| fontWeight | CSS Font Weight | Weight of the text (400, 500, bold, etc.). |
+| letterSpacing | CSS Letter Spacing | Spacing between letters. |
+| lineHeight | CSS Line Height | Vertical spacing of text lines. |
+| padding | CSS Padding | Inner spacing of the input. |
+| textAlign | CSS Text Align | Alignment of text inside the field. |
+| textDecoration | CSS Text Decoration | Additional decoration sucha s underline or strike-through. |
+| textShadow | CSS Text Shadow | Shadow effect applied to text. |
+| textTransform | CSS Text Transform | Controls capitalization (uppercase/lowercase). |
+| ::placeholder | [CSS Styles](#supported-css) | Custom styles for placeholder text.. |
+| ::selection | [CSS Styles](#supported-css) | Styles applied when text is selected.. |
+| :hover | [CSS Styles](#supported-css) | Styles applied for hover state.. |
+| :focus | [CSS Styles](#supported-css) | Styles applied when the field is focused. |
+| :disabled | [CSS Styles](#supported-css) | Styles applied when the field is disabled. |
+
+
+
+### Placeholder Object
+<span id="placeholer-object" />
+
+| Name | Type | Description |
+|---   |---   |--- |
+| cardNumber | string | Placeholder card number input. |
+| cardExpirationDate | string | Placeholder expiration date input. |
+| cardSecurityCode | string | Placeholder CVC/security code input. |
