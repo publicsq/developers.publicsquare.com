@@ -258,6 +258,42 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/accounts/get-business-ach-information",
+          label: "Get business ACH information",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-ach-information",
+          label: "Save business ACH information",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-card-information",
+          label: "Get business card information",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-card-information",
+          label: "Save business card information",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/get-business-fulfillment-information",
+          label: "Get business fulfillment information",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/accounts/save-business-fulfillment-information",
+          label: "Save business fulfillment information",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/accounts/get-all-business-structures",
           label: "Get all business structures",
           className: "api-method get",

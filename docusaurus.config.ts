@@ -22,7 +22,7 @@ const config: Config = {
   },
 
   // Mermaid
-  markdown: {    
+  markdown: {
     hooks: {
       onBrokenMarkdownLinks: "throw",
     },
@@ -139,7 +139,9 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
           financial: {
-            specPath: "https://api.publicsquare.com/swagger/financial/swagger.yaml",
+            // TEMP: Use local API for verification feature docs. Revert to remote after API is deployed.
+            // specPath: "https://api.publicsquare.com/swagger/financial/swagger.yaml",
+            specPath: "http://localhost:5090/swagger/financial/swagger.yaml",
             outputDir: "docs/api/financial",
             showExtensions: true,
             sidebarOptions: {
