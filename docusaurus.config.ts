@@ -22,7 +22,7 @@ const config: Config = {
   },
 
   // Mermaid
-  markdown: {    
+  markdown: {
     hooks: {
       onBrokenMarkdownLinks: "throw",
     },

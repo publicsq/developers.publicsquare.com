@@ -1,4 +1,4 @@
-import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+import type {SidebarsConfig} from "@docusaurus/plugin-content-docs";
 import apiSidebar from "./docs/api/accounts/sidebar";
 import financialApiSidebar from "./docs/api/financial/sidebar";
 
@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/credit-card.svg",
       },
-      items: ["guides/payments/process-card-payments", "guides/payments/process-apple-pay-payments", "guides/payments/process-google-pay-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
+      items: ["guides/payments/process-card-payments", "guides/payments/process-apple-pay-payments", "guides/payments/process-google-pay-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/verify-cards", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
     },
     {
       type: "category",

@@ -1,0 +1,254 @@
+import { Alert } from "@site/src/components/shared/Alert";
+import GettingStartedSection from "@site/src/components/docs/_getting-started-section.mdx";
+
+# Verify Cards (Zero-Dollar Authorization)
+
+Zero-dollar authorization allows you to verify a payment card is valid without charging the customer. This is useful when you want to validate card details before saving them, set up recurring payments, or confirm a card works before the first charge.
+
+Common use cases include:
+- **Adding cards to customer profiles** - Validate card details before saving for future use
+- **Setting up recurring payments** - Verify the card works before initiating a subscription
+- **Pre-order validation** - Confirm card validity without immediate payment
+- **Card-on-file updates** - Verify a new card before replacing an existing one
+
+Now that you have completed the [Collect Cards](/guides/payment-methods/collect-cards) guide, let's verify a card with a zero-dollar authorization.
+
+## Getting Started
+
+<GettingStartedSection />
+
+### Get your Secret Key
+
+Next you will need your `Secret Key`. [Go to your Developers section](https://portal.publicsquare.com/developers/api-keys) and click `Reveal` for your `Secret Key` and copy the value.
+
+<Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
+
+## Create a Verification Payment
+
+We will use the information from the previously collected card to create a verification payment.
+
+For example, given you have a previously collected card:
+
+```json showLineNumbers title=card.json
+{
+  // highlight-next-line
+  "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  "cardholder_name": "John Smith",
+  "last4": "4242",
+  "exp_month": "12",
+  "exp_year": "2025",
+  "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL",
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+### Verify Card for Adding to Profile
+
+When a customer adds a new payment method, use `add_card` verification type to validate it before saving:
+
+```shell showLineNumbers title="Verify Card for Storage"
+curl 'https://api.publicsquare.com/payments' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'IDEMPOTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
+-H 'Content-Type: application/json' \
+-d '{
+  // highlight-next-line
+  "amount": 0,
+  "currency": "USD",
+  // highlight-next-line
+  "capture": false,
+  // highlight-next-line
+  "verification": {
+  // highlight-next-line
+    "type": "add_card"
+  // highlight-next-line
+  },
+  "payment_method": {
+    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+  },
+  "customer": {
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com"
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  }
+}'
+```
+
+<Alert type="warning">The `amount` must be `0` and `capture` must be `false` for verification payments.</Alert>
+
+### Verify Card for Recurring Payments
+
+When setting up a subscription or recurring billing, use `recurring` verification type:
+
+```shell showLineNumbers title="Verify Card for Recurring"
+curl 'https://api.publicsquare.com/payments' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'IDEMPOTENCY-KEY: '19ec2c87-7fb8-44ca-bb18-5c71a76974db' \
+-H 'Content-Type: application/json' \
+-d '{
+  // highlight-next-line
+  "amount": 0,
+  "currency": "USD",
+  // highlight-next-line
+  "capture": false,
+  // highlight-next-line
+  "verification": {
+  // highlight-next-line
+    "type": "recurring"
+  // highlight-next-line
+  },
+  "payment_method": {
+    "card": "card_AjkCFKAYiTsjghXWMzoXFPMxj"
+  },
+  "customer": {
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com"
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  }
+}'
+```
+
+### Verification Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| `add_card` | Verify card for storage | Customer adds a new payment method |
+| `recurring` | Verify card for recurring billing | Setting up subscriptions or recurring charges |
+
+## Verification Response
+
+You should see a payment response with a `succeeded` status:
+
+```json showLineNumbers title="Verification Payment Response"
+{
+  "id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  // highlight-next-line
+  "status": "succeeded",
+  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+  // highlight-start
+  "amount": 0,
+  "amount_charged": 0,
+  // highlight-end
+  "amount_capturable": 0,
+  "amount_refunded": 0,
+  "refunded": false,
+  "currency": "USD",
+  // highlight-start
+  "verification": {
+    "type": "add_card"
+  },
+  // highlight-end
+  "payment_method": {
+    "card": {
+      "id": "card_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "cardholder_name": "John Smith",
+      "last4": "4242",
+      "exp_month": "12",
+      "exp_year": "2025",
+      "brand": "visa",
+      "avs_code": "Y",
+      "cvv2_reply": "M",
+      "fingerprint": "CC2XvyoohnqecEq4r3FtXv6MdCx4TbaW1UUTdCCN5MNL"
+    }
+  },
+  "customer": {
+    "id": "cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ",
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "john.smith@email.com"
+  },
+  "billing_details": {
+    "address_line_1": "111 Test St.",
+    "city": "Des Moines",
+    "state": "IA",
+    "postal_code": "51111",
+    "country": "US"
+  },
+  "fraud_decision": {
+    "decision": "accept"
+  },
+  "transaction": {
+    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
+    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+    "environment": "test",
+    // highlight-next-line
+    "status": "succeeded",
+    "amount": 0,
+    "fee_amount": 0,
+    "net_amount": 0,
+    "currency": "USD",
+    "type_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+    "type": "payment",
+    "processor": "nuvei",
+    "created_at": "2024-06-30T01:02:29.212Z",
+    "modified_at": "2024-06-30T01:02:29.212Z"
+  },
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+<Alert>Unlike standard authorizations that require capture, verification payments return a `succeeded` status immediately since there is no amount to capture.</Alert>
+
+## Validation Rules
+
+When creating verification payments, the following rules apply:
+
+- `amount` must be `0` when `verification` is provided
+- `verification` is required when `amount` is `0`
+- `capture` must be `false` for verification payments
+- `verification.type` must be either `add_card` or `recurring`
+
+## Handling Declined Verifications
+
+If the card verification fails (e.g., invalid card, expired, or blocked by fraud rules), the response will have a `declined` or `rejected` status:
+
+```json showLineNumbers title="Declined Verification Response"
+{
+  "id": "pmt_3ZLfwCpnH5ukl23OifZ4QPNzk",
+  "status": "declined",
+  "amount": 0,
+  "verification": {
+    "type": "add_card"
+  },
+  "decline_reason": "do_not_honor",
+  ...
+}
+```
+
+You should inform the customer that their card could not be verified and request an alternative payment method.
+
+## Conclusion
+
+Zero-dollar authorizations provide a secure way to validate payment cards without processing an actual charge. This is particularly useful for:
+
+- Building trust with customers by verifying cards upfront
+- Reducing failed transactions in recurring billing scenarios
+- Improving the checkout experience for card-on-file workflows
+
+Follow these guides to learn more:
+
+- [Process Card Payments](/guides/payments/process-card-payments) - Charge verified cards
+- [Authorize and Capture Payments](/guides/payments/authorize-and-capture-payments) - Pre-authorize payments
+- [Search and View Transactions](/guides/transactions/search-and-view-transactions) - Monitor verification transactions
