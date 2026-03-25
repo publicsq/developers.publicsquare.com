@@ -68,7 +68,7 @@ export const QuestionCard = ({ question, showDefault = false, yesType = "right",
           <div className={styles.icon}>
             <QuestionCheckbox state={state} />
           </div>
-          <ReactMarkdown className={styles.questionText}>{question}</ReactMarkdown>
+          <div className={styles.questionText}><ReactMarkdown>{question}</ReactMarkdown></div>
         </div>
         <div className={styles["button-group"]}>
           <AnswerButtons state={state} value={answer} onChange={updateAnswer} showNA={showNA} />
