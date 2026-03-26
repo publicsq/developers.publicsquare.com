@@ -32,7 +32,10 @@
     "serialize-javascript": "^7.0.4",
     "diff": "^8.0.3",
     "lodash-es": "^4.17.23",
-    "lodash": "^4.17.23"
+    "lodash": "^4.17.23",
+    "picomatch": "^2.3.2",
+    "mdast-util-to-hast": "^13.2.1",
+    "yaml": "^2.0.0"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
