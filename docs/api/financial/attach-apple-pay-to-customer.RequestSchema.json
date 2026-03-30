@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["customer_id"],"type":"object","properties":{"customer_id":{"minLength":1,"type":"string","description":"Customer ID","example":"cus_7Ay5mcUXAxwrN6wQEQUVEHBCJ"}},"additionalProperties":false,"title":"AttachPaymentMethodRequest"}}},"required":true}}

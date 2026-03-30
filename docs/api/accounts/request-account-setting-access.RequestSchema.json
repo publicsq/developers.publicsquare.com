@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["type"],"type":"object","properties":{"type":{"minLength":1,"type":"string","description":"Account setting type","example":"payment-methods:bank-accounts"}},"additionalProperties":false,"title":"RequestAccountSettingAccessRequest"}}}}}

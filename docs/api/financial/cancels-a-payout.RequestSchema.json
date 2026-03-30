@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["payout_id"],"type":"object","properties":{"payout_id":{"minLength":1,"type":"string","description":"Payout ID to cancel","example":"pyt_24NFPd3jSZFTxiaH9UwjuqNdP"}},"additionalProperties":false,"title":"CancelPayoutRequest"}}},"required":true}}

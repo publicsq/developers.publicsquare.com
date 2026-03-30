@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["credit_product_line"],"type":"object","properties":{"credit_product_line":{"minLength":1,"type":"string","description":"Business Credit Product Line","example":"firearms"}},"additionalProperties":false,"title":"SaveBusinessCreditInformationRequest"}}},"required":true}}

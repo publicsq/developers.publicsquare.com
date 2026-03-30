@@ -600,6 +600,24 @@ const sidebar: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Statements",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/statements-get-all",
+          label: "Statements_GetAll",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-pdf-statement-by-id",
+          label: "Get PDF Statement by ID",
+          className: "api-method get",
+        },
+      ],
+    },
   ],
 };
 
