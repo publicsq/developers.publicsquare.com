@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["role"],"type":"object","properties":{"role":{"maxLength":50,"minLength":1,"type":"string","description":"Account role","example":"admin"}},"additionalProperties":false,"title":"SaveAccountMemberRequest"}}},"required":true}}

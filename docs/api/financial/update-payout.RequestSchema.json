@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"external_id":{"maxLength":100,"type":"string","description":"Payment ID in merchant's system","nullable":true,"example":"e797ef3c-b586-4333-af90-7168d8427d85"}},"additionalProperties":false,"title":"UpdateTransactionRequest"}}},"required":true}}

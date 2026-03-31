@@ -19,6 +19,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -47,8 +48,8 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
@@ -58,16 +59,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"content":{"application/json":{"schema":{"required":["display_name","domain","validation_url"],"type":"object","properties":{"validation_url":{"minLength":1,"type":"string","description":"Validation URL returned from the [onvalidatemerchant](https://developer.apple.com/documentation/apple_pay_on_the_web/applepaysession/1778021-onvalidatemerchant) event. Default: https://apple-pay-gateway.apple.com/paymentservices/paymentSession","example":"https://apple-pay-gateway.apple.com/paymentservices/paymentSession"},"display_name":{"maxLength":64,"minLength":1,"type":"string","description":"A string of 64 or fewer UTF-8 characters containing the canonical name for your store, suitable for display. A good display name remains a consistent value for the store and doesn't contain dynamic values such as incrementing order numbers. Don’t localize the name. Use only characters from the supported character sets in the fonts [listed in the table below](https://developer.apple.com/documentation/applepayontheweb/requesting-an-apple-pay-payment-session#Provide-request-parameters).","example":"My Ecommerce Store"},"domain":{"minLength":1,"type":"string","description":"The fully qualified domain name of the website requesting the Apple Pay session.","example":"my-site.example.com"}},"additionalProperties":false,"title":"CreateApplePaySessionRequest"}}},"required":true}}
+  {...require("./create-apple-pay-session.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+  {...require("./create-apple-pay-session.StatusCodes.json")}
 >
   
 </StatusCodes>

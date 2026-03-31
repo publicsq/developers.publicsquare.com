@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"type":"object","properties":{"product":{"maxLength":50,"type":"string","description":"Product","nullable":true,"example":"payments"}},"additionalProperties":false,"title":"SaveProductRequest"}}},"required":true}}

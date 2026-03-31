@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["refund_id"],"type":"object","properties":{"refund_id":{"minLength":1,"type":"string","description":"Refund ID to cancel","example":"rfd_2YKewBonG4tgk12MheY3PiHDy"}},"additionalProperties":false,"title":"CancelRefundRequest"}}},"required":true}}

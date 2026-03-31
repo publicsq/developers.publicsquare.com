@@ -19,6 +19,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -46,8 +47,8 @@ import Heading from "@theme/Heading";
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
@@ -57,16 +58,13 @@ import Heading from "@theme/Heading";
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"content":{"application/json":{"schema":{"required":["product"],"type":"object","properties":{"product":{"maxLength":50,"minLength":1,"type":"string","description":"Product for the contract","example":"payments"},"recipient_name":{"maxLength":250,"type":"string","description":"Name of the contract recipient","nullable":true,"example":"John Smith"},"recipient_email":{"maxLength":250,"type":"string","description":"Email address of the contract recipient","format":"email","nullable":true,"example":"john.smith@email.com"}},"additionalProperties":false,"title":"CreateContractRequest"}}},"required":true}}
+  {...require("./create-contract.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"Contract ID","nullable":true,"example":"doc_BK44jiqsyJvWK3xH7pMaPd6qK"},"account_id":{"type":"string","description":"Account ID","nullable":true,"example":"acc_B518niGwGYKzig6vtrRVZGGGV"},"product":{"type":"string","description":"Product","nullable":true,"example":"payments"},"status":{"type":"string","description":"Contract status","nullable":true,"example":"signed"},"recipient_name":{"type":"string","description":"Recipient name of digital contract","nullable":true,"example":"John Smith"},"recipient_email":{"type":"string","description":"Recipient email of digital contract","nullable":true,"example":"john.smith@email.com"},"recipient_url":{"type":"string","description":"Contract URL for reviewing and signing of contract","nullable":true,"example":"https://contractsigningurl.com/"},"created_at":{"type":"string","description":"Date contract was created","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"},"modified_at":{"type":"string","description":"Date contract was modified","format":"date-time","nullable":true,"example":"2024-06-30T01:02:29.212Z"}},"additionalProperties":false,"title":"Contract"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"type":"object","properties":{"errors":{"type":"object","additionalProperties":{"type":"array","items":{"type":"string"}},"nullable":true},"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ValidationProblemDetails"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"403":{"description":"Forbidden","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}},"404":{"description":"Not Found","content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string","nullable":true},"title":{"type":"string","nullable":true},"status":{"type":"integer","format":"int32","nullable":true},"detail":{"type":"string","nullable":true},"instance":{"type":"string","nullable":true}},"additionalProperties":{},"title":"ProblemDetails"}}}}}}
+  {...require("./create-contract.StatusCodes.json")}
 >
   
 </StatusCodes>

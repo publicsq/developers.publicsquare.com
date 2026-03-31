@@ -121,6 +121,20 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    function () {
+      return {
+        name: "node-polyfill-fallbacks",
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: false,
+              },
+            },
+          };
+        },
+      };
+    },
     require.resolve("docusaurus-lunr-search"),
     require.resolve("docusaurus-plugin-sass"),
     [

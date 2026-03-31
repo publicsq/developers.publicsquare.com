@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"required":["payment_id"],"type":"object","properties":{"payment_id":{"minLength":1,"type":"string","description":"Payment ID to cancel","example":"pmt_2YKewBonG4tgk12MheY3PiHDy"}},"additionalProperties":false,"title":"CancelPaymentRequest"}}},"required":true}}
