@@ -1,3 +1,16 @@
+# [1.47.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.46.0...v1.47.0) (2026-04-06)
+
+
+### Bug Fixes
+
+* bump semver from 7.7.3 to 7.7.4 ([#210](https://github.com/publicsq/developers.publicsquare.com/issues/210)) ([6143a0e](https://github.com/publicsq/developers.publicsquare.com/commit/6143a0e5562bcf5d93b1f5c70881515efd4afdef))
+* update financial EPs and bump dependencies to address vulnerabilities ([a681b42](https://github.com/publicsq/developers.publicsquare.com/commit/a681b4221a060e9a2d6b64c1537583cade58b639))
+
+
+### Features
+
+* Dev Docs deployment issue ([#213](https://github.com/publicsq/developers.publicsquare.com/issues/213)) ([c9a64b4](https://github.com/publicsq/developers.publicsquare.com/commit/c9a64b4234623a1ec74fb301de771db2a0752865))
+
 # [1.46.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.45.0...v1.46.0) (2026-01-05)
 
 
