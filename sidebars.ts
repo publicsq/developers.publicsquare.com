@@ -27,7 +27,13 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/payment-methods.svg",
       },
-      items: ["guides/payment-methods/collect-cards", "guides/payment-methods/collect-apple-pay", "guides/payment-methods/collect-google-pay", "guides/payment-methods/collect-bank-accounts", "guides/payment-methods/collect-verified-bank-accounts"],
+      items: [
+        "guides/payment-methods/collect-cards",
+        "guides/payment-methods/collect-apple-pay",
+        "guides/payment-methods/collect-google-pay",
+        "guides/payment-methods/collect-bank-accounts",
+        "guides/payment-methods/collect-verified-bank-accounts"
+      ],
     },
     {
       type: "category",
@@ -35,7 +41,15 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/credit-card.svg",
       },
-      items: ["guides/payments/process-card-payments", "guides/payments/process-apple-pay-payments", "guides/payments/process-google-pay-payments", "guides/payments/authorize-and-capture-payments", "guides/payments/verify-cards", "guides/payments/process-ach-payments", "guides/payments/cancel-payments"],
+      items: [
+        "guides/payments/process-card-payments",
+        "guides/payments/process-apple-pay-payments",
+        "guides/payments/process-google-pay-payments",
+        "guides/payments/authorize-and-capture-payments",
+        "guides/payments/verify-cards",
+        "guides/payments/process-ach-payments",
+        "guides/payments/cancel-payments"
+      ],
     },
     {
       type: "category",
@@ -67,7 +81,7 @@ const sidebars: SidebarsConfig = {
       customProps: {
         icon: "/img/icons/shop.svg",
       },
-      items: ["guides/marketplaces/onboard-sellers", "guides/marketplaces/transfer-funds-to-sellers"],
+      items: ["guides/marketplaces/onboard-sellers", "guides/marketplaces/transfer-funds-to-sellers", "guides/marketplaces/transfer-funds-from-sellers"],
     },
     {
       id: "guides/production-checklist/index",
@@ -90,7 +104,16 @@ const sidebars: SidebarsConfig = {
         type: "doc",
         id: "concepts/index",
       },
-      items: ["concepts/accounts", "concepts/api-keys", "concepts/transactions", "concepts/dispute-cases", "concepts/fraud-details-and-prevention", "concepts/webhooks", "concepts/onboarding"],
+      items: [
+        "concepts/accounts",
+        "concepts/api-keys",
+        "concepts/transactions",
+        "concepts/payment-transfer-intents",
+        "concepts/dispute-cases",
+        "concepts/fraud-details-and-prevention",
+        "concepts/webhooks",
+        "concepts/onboarding"
+      ],
     },
     {
       type: "html",

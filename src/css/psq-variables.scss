@@ -31,9 +31,22 @@
   --psq-alert-info-background: linear-gradient(90deg, rgba(0, 152, 179, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
   --psq-alert-neutral-background: linear-gradient(90deg, rgba(119, 119, 119, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
 
-  --psq-mermaid-text-color: #000;
+  /* Mermaid */
+  --psq-mermaid-text-color: #27282B;
   --psq-mermaid-actor-color: #FFF;
   --psq-mermaid-primary-border-color: var(--ifm-color-primary-lighter);
+  --psq-mermaid-line-color: #5A6273;
+  --psq-mermaid-edge-label-bg: #FFFFFF;
+  --psq-mermaid-cluster-bg: #F1F6F6;
+  --psq-mermaid-cluster-border: rgba(0, 111, 145, 0.3);
+
+  /* Mermaid — semantic node palette (process / terminal / exception) */
+  --psq-mermaid-process-fill: #E5F5F8;
+  --psq-mermaid-process-border: #006F91;
+  --psq-mermaid-terminal-fill: #F1F6F6;
+  --psq-mermaid-terminal-border: #6B7280;
+  --psq-mermaid-exception-fill: #FFF1F0;
+  --psq-mermaid-exception-border: #EF3E36;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -60,9 +73,19 @@
   --psq-card-border-shadow-hover: 0px 8px 10px rgba(4, 6, 17, 0.2), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.18);
 
   /* Mermaid */
-  /* Base */
-  /* Flowchart */
-  --psq-mermaid-text-color: #FFF;
-  --psq-mermaid-actor-color: #FFF;
+  --psq-mermaid-text-color: #FFFFFF;
+  --psq-mermaid-actor-color: #FFFFFF;
   --psq-mermaid-primary-border-color: var(--ifm-color-primary-lighter);
+  --psq-mermaid-line-color: #A0A8B8;
+  --psq-mermaid-edge-label-bg: #1A1F2E;
+  --psq-mermaid-cluster-bg: rgba(92, 200, 221, 0.05);
+  --psq-mermaid-cluster-border: rgba(92, 200, 221, 0.3);
+
+  /* Mermaid — semantic node palette (process / terminal / exception) */
+  --psq-mermaid-process-fill: rgba(92, 200, 221, 0.15);
+  --psq-mermaid-process-border: #5CC8DD;
+  --psq-mermaid-terminal-fill: rgba(255, 255, 255, 0.06);
+  --psq-mermaid-terminal-border: #A0A8B8;
+  --psq-mermaid-exception-fill: rgba(239, 62, 54, 0.15);
+  --psq-mermaid-exception-border: #EF5350;
 }

@@ -1,0 +1,71 @@
+---
+id: create-payment-transfer-intent
+title: "Create payment transfer intent"
+description: "    Initialize a new payment transfer intent. Captures transfer details and holds them in a `pending` state until confirmed or cancelled."
+sidebar_label: "Create payment transfer intent"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create payment transfer intent"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/payment-transfer-intents"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Initialize a new payment transfer intent. Captures transfer details and holds them in a `pending` state until confirmed or cancelled.
+
+    ### Permissions
+    * `transfer:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./create-payment-transfer-intent.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./create-payment-transfer-intent.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

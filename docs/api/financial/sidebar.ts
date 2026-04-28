@@ -380,6 +380,42 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Payment Transfer Intents",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-payment-transfer-intents",
+          label: "Get all payment transfer intents",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/create-payment-transfer-intent",
+          label: "Create payment transfer intent",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-payment-transfer-intent-by-id",
+          label: "Get payment transfer intent by ID",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/confirm-payment-transfer-intent",
+          label: "Confirm payment transfer intent",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/financial/cancel-payment-transfer-intent",
+          label: "Cancel payment transfer intent",
+          className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Payment Transfers",
       items: [
         {
@@ -596,6 +632,24 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/financial/get-all-transactions-for-a-settlement-by-account-id",
           label: "Get all transactions for a settlement by account ID",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Statements",
+      items: [
+        {
+          type: "doc",
+          id: "api/financial/get-all-statements",
+          label: "Get all statements",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-pdf-statement-by-id",
+          label: "Get PDF Statement by ID",
           className: "api-method get",
         },
       ],
