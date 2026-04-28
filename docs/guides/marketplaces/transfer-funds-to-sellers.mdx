@@ -110,7 +110,7 @@ Store the `id` (`trnf_int_*`) and optionally the `payment_transfer_id` (`trnf_*`
 
 ## Step 2 — Confirm the Intent
 
-Call [Confirm Payment Transfer Intent](/api/financial/confirm-payment-transfer-intent) to submit the transfer to the processor. No request body is required.
+Call [Confirm Payment Transfer Intent](/api/financial/confirm-payment-transfer-intent) to submit the transfer. No request body is required.
 
 ```shell showLineNumbers title="Confirm Payment Transfer Intent"
 curl 'https://api.publicsquare.com/payment-transfer-intents/trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq/confirm' \
@@ -136,7 +136,7 @@ A successful response returns the intent in `succeeded` status in most cases:
 }
 ```
 
-If the processor response is unresolved, the intent returns in `processing` status instead. In that case the final status will arrive via the `transfer_intent:update` webhook.
+If the transfer is not yet confirmed, the intent returns in `processing` status instead. Final status will arrive via the `transfer_intent:update` webhook.
 
 ## Step 3 — Listen for Completion
 
@@ -174,7 +174,7 @@ app.post('/webhooks/publicsquare', (req, res) => {
     if (intent.status === 'succeeded') {
       // mark transfer complete in your system using intent.payment_transfer_id
     } else if (intent.status === 'error') {
-      // alert your team — intent expired or processor submission failed
+      // intent expired or the transfer failed
     }
   }
 
@@ -193,7 +193,7 @@ curl 'https://api.publicsquare.com/payment-transfer-intents/trnf_int_7yFLQWACr3D
 -H 'X-API-KEY: <SECRET_API_KEY>'
 ```
 
-<Alert>Webhooks are strongly recommended over polling for production integrations. If the intent is in `processing`, it may take seconds to minutes to reach a terminal status depending on the processor.</Alert>
+<Alert>Webhooks are strongly recommended over polling for production integrations. If the intent is in `processing`, it may take seconds to minutes to reach a terminal status.</Alert>
 
 ## Cancelling an Intent
 
@@ -231,12 +231,12 @@ Attempting to cancel while a confirm is already in flight returns `409 Conflict`
 
 ## Error Reference
 
-| HTTP Status | Endpoint | Meaning |
-|-------------|----------|---------|
-| `404 Not Found` | `confirm`, `cancel`, `GET /{id}` | Intent ID does not exist or belongs to a different account. |
-| `409 Conflict` | `confirm`, `cancel` | The opposing operation (confirm or cancel) is already in flight. Retry after a short delay. |
-| `400 Bad Request` | `cancel` | Intent is not in `pending` status. |
-| `202 Accepted` | `confirm` | Transfer submitted but the processor response was unresolved. The intent is in `processing` and will settle asynchronously via webhook. |
+| HTTP Status       | Endpoint                         | Meaning                                                                                                                 |
+|-------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `404 Not Found`   | `confirm`, `cancel`, `GET /{id}` | Intent ID does not exist or belongs to a different account.                                                             |
+| `409 Conflict`    | `confirm`, `cancel`              | The opposing operation (confirm or cancel) is already in flight. Retry after a short delay.                             |
+| `400 Bad Request` | `cancel`                         | Intent is not in `pending` status.                                                                                      |
+| `202 Accepted`    | `confirm`                        | Transfer submitted but is not confirmed yet. The intent is `processing` and its terminal state will arrive via webhook. |
 
 See [Payment Transfer Intents](/concepts/payment-transfer-intents#concurrency-and-error-handling) for a deeper explanation of the concurrency model.
 

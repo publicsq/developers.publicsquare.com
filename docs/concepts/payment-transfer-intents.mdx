@@ -2,7 +2,7 @@ import { Alert } from "@site/src/components/shared/Alert";
 
 # Payment Transfer Intents
 
-A Payment Transfer Intent represents your intent to route funds from an existing payment to a seller, giving you a durable handle on the transfer across its full lifecycle. Standard Payment Transfers execute immediately; intents decouple creation from settlement, so you can persist, validate, and commit on your own terms.
+A Payment Transfer Intent represents your intent to route funds from an existing payment to a seller, giving you a durable handle on the transfer across its full lifecycle. Standard Payment Transfers execute immediately; intents decouple creation from submission, so you can persist, validate, and commit on your own terms.
 
 Intents provide two key advantages:
 
@@ -100,8 +100,8 @@ flowchart TB
     PENDING -- "confirm" --> PROCESSING["PROCESSING"]
     PENDING -- "cancel" --> CANCELLED["CANCELLED"]
     PENDING -- "expires after 24h" --> ERROR["ERROR"]
-    PROCESSING -- "transfer settles" --> SUCCEEDED["SUCCEEDED"]
-    PROCESSING -- "transfer fails" --> ERROR
+    PROCESSING -- "transfer accepted" --> SUCCEEDED["SUCCEEDED"]
+    PROCESSING -- "transfer rejected" --> ERROR
     SUCCEEDED --> End(["End"])
     CANCELLED --> End
     ERROR --> End
@@ -119,21 +119,21 @@ flowchart TB
     classDef terminalNode fill:#A0A8B822,stroke:#A0A8B8,stroke-width:2px
 ```
 
-| Status       | Description                                                                                                                                              |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pending`    | The intent has been created and is awaiting `confirm` or `cancel`. Transitions to `error` if neither is called within 24 hours.                          |
-| `processing` | `confirm` succeeded and the transfer has been submitted for settlement. The intent remains in this state until settlement completes or fails.            |
-| `succeeded`  | Settlement completed and funds are en route to the seller's account. Terminal state.                                                                     |
-| `cancelled`  | `cancel` was called while the intent was `pending`. The intent cannot be confirmed or reused. Terminal state.                                            |
-| `error`      | The transfer did not complete. See [Error conditions](#error-conditions) for the specific causes. Terminal state.                                        |
+| Status       | Description                                                                                                                           |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `pending`    | The intent has been created and is awaiting `confirm` or `cancel`. Transitions to `error` if neither is called within 24 hours.       |
+| `processing` | `confirm` succeeded and the transfer has been submitted. The intent remains in this state until the transfer is accepted or rejected. |
+| `succeeded`  | The transfer was accepted. Funds will be deposited to the seller's account in the standard window. Terminal state.                    |
+| `cancelled`  | `cancel` was called while the intent was `pending`. The intent cannot be confirmed or reused. Terminal state.                         |
+| `error`      | The transfer did not complete. See [Error conditions](#error-conditions) for the specific causes. Terminal state.                     |
 
 ### Error conditions
 
 An intent transitions to `error` when any of the following occur:
 
 - The intent expired in `pending` without `confirm` or `cancel` being called.
-- Submission for settlement failed during `confirm`.
-- Settlement did not complete within 1 hour of submission.
+- Submission failed during `confirm`.
+- The transfer was not accepted within 1 hour of submission.
 
 ## Concurrency
 
@@ -145,9 +145,9 @@ Each intent is backed by a durable workflow that serializes `confirm` and `cance
 | `cancel` while a `confirm` is in flight                   | `409 Conflict`                                            |
 | Concurrent `confirm` requests on the same intent          | `409 Conflict` on the second request                      |
 | `cancel` after the intent has moved to `processing`       | `400 Bad Request`                                         |
-| `confirm` accepted but settlement result not yet received | `202 Accepted`                                            |
+| `confirm` was submitted and is not yet confirmed          | `202 Accepted`                                            |
 
-<Alert>A `202 Accepted` response from `confirm` means the transfer has been submitted for settlement but a final result has not yet been received. The intent will move to `processing`, and its terminal state will be reported via webhook once settlement completes.</Alert>
+<Alert>A `202 Accepted` response from `confirm` means the transfer has been submitted but is not confirmed yet. The intent will move to `processing`, and its terminal state will be reported via webhook once the transfer is accepted or rejected.</Alert>
 
 ## Webhooks
 
