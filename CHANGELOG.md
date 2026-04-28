@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.47.0...v1.48.0) (2026-04-28)
+
+
+### Features
+
+* Add API documentation for payment transfer intents ([#219](https://github.com/publicsq/developers.publicsquare.com/issues/219)) ([a6032c0](https://github.com/publicsq/developers.publicsquare.com/commit/a6032c0c46d4b8dd191b9b1eb1c4a001c8f4b3d7))
+
 # [1.47.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.46.0...v1.47.0) (2026-04-06)
 
 
