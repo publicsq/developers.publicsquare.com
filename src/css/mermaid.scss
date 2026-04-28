@@ -1,0 +1,53 @@
+/* Mermaid theme overrides.
+/* ── Node label text ────────────────────────────────────────────── */
+g.node .nodeLabel,
+g.node foreignObject span,
+g.node foreignObject p,
+g.node foreignObject div,
+g.node text,
+g.node tspan {
+  color: var(--psq-mermaid-text-color) !important;
+  fill: var(--psq-mermaid-text-color) !important;
+}
+
+/* ── Edge paths (lines between nodes) ───────────────────────────── */
+.edgePaths path,
+path.flowchart-link,
+.flowchart-link {
+  stroke: var(--psq-mermaid-line-color) !important;
+  fill: none !important;
+}
+
+/* ── Arrow markers ──────────────────────────────────────────────── */
+marker path,
+.arrowMarkerPath,
+[id*="flowchart-pointEnd"] path,
+[id*="flowchart-pointStart"] path {
+  fill: var(--psq-mermaid-line-color) !important;
+  stroke: var(--psq-mermaid-line-color) !important;
+}
+
+/* ── Edge labels (the cream boxes on lines) ─────────────────────── */
+.edgeLabel,
+span.edgeLabel,
+.edgeLabel p,
+.edgeLabel div,
+.labelBkg,
+.edgeLabels .edgeLabel {
+  background: var(--psq-mermaid-edge-label-bg) !important;
+  background-color: var(--psq-mermaid-edge-label-bg) !important;
+  color: var(--psq-mermaid-text-color) !important;
+}
+
+.edgeLabel rect {
+  fill: var(--psq-mermaid-edge-label-bg) !important;
+  opacity: 1 !important;
+}
+
+.edgeLabel text,
+.edgeLabel tspan,
+.edgeLabel span,
+.edgeLabel p {
+  fill: var(--psq-mermaid-text-color) !important;
+  color: var(--psq-mermaid-text-color) !important;
+}

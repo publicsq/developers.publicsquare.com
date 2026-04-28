@@ -106,12 +106,12 @@ const config: Config = {
       },
       options: {
         themeVariables: {
-          darkMode: false,
-          primaryColor: "#004B68",
-          primaryBorderColor: "var(--psq-mermaid-primary-border-color)",
+          primaryColor: "#E5F5F8",
+          primaryBorderColor: "#006F91",
+          primaryTextColor: "#27282B",
           textColor: "var(--psq-mermaid-text-color)",
           actorTextColor: "var(--psq-mermaid-actor-color)",
-          nodeTextColor: "var(--psq-mermaid-node-text-color)",
+          nodeTextColor: "var(--psq-mermaid-text-color)",
         },
       },
     },

@@ -3,14 +3,9 @@ import GettingStartedSection from "@site/src/components/docs/_getting-started-se
 
 # Transfer Funds to Sellers
 
-In this guide, we will show how marketplaces and other exchanges can transfer funds to and from seller accounts.
+In this guide we will show how marketplaces and other exchanges can use Payment Transfer Intents to send funds to seller accounts from an existing payment.
 
-PublicSquare offers two transaction types for this use case:
-
-| Type               | Description                                                                                                                                                                                                                              |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `payment_transfer` | Payment transfers are used to send funds to seller accounts from an existing `payment`. For instance, if you charge a customer $300, you can transfer $100 to three different sellers.                                                   |
-| `refund_transfer`  | Refund transfers are used to retrieve funds from seller accounts from an existing `refund` referencing the original `payment_transfer`. For instance, if you refund a customer $300, you can transfer $100 from three different sellers. |
+The intent pattern gives you a pre-generated transfer ID before any funds move, and lets you confirm or cancel the transfer as a separate step. See [Payment Transfer Intents](/concepts/payment-transfer-intents) for a full explanation of states, concurrency rules, and webhook events.
 
 ## Getting Started
 
@@ -22,14 +17,14 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
-## Transfer Funds to Sellers
+## Prerequisites
 
-In order to move money from our captured payment to a seller's account, we will need a payment transfer.
-Each payment may have exactly **one** payment transfer, whose total amount cannot exceed the payment's captured amount.
+This guide assumes you have already completed:
 
-We will be using information from our [Process Card Payments](/guides/payments/process-card-payments) and [Onboard Sellers](/guides/marketplaces/onboard-sellers) guides:
+- [Process Card Payments](/guides/payments/process-card-payments) — you will need a captured payment ID.
+- [Onboard Sellers](/guides/marketplaces/onboard-sellers) — you will need one or more seller account IDs.
 
-First, grab the payment `id`:
+Grab the payment `id`:
 
 ```json showLineNumbers title="Payment"
 {
@@ -41,7 +36,7 @@ First, grab the payment `id`:
 }
 ```
 
-Also our seller account `id`:
+And your seller account IDs:
 
 ```json showLineNumbers title="Seller Account"
 {
@@ -53,12 +48,12 @@ Also our seller account `id`:
 }
 ```
 
-### Create a Payment Transfer
+## Step 1 — Create the Intent
 
-We will make a call to the [Create Payment Transfer](/api/financial/create-payment-transfer) endpoint:
+Call [Create Payment Transfer Intent](/api/financial/create-payment-transfer-intent) to initialize the transfer. The response is returned in `pending` status and includes a pre-generated `payment_transfer_id` you can store in your system before committing.
 
-```shell showLineNumbers title="Create a Payment Transfer"
-curl 'https://api.publicsquare.com/payment-transfers' \
+```shell showLineNumbers title="Create a Payment Transfer Intent"
+curl 'https://api.publicsquare.com/payment-transfer-intents' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'Content-Type: application/json' \
@@ -66,174 +61,192 @@ curl 'https://api.publicsquare.com/payment-transfers' \
   // highlight-next-line
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   "currency": "USD",
-  "items": [{
-    // highlight-next-line
-    "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
-    "amount": 1000,
-    "transfer_fee": 100
-  }]
+  "external_id": "e797ef3c-b586-4333-af90-7168d8427d85",
+  "items": [
+    {
+      // highlight-next-line
+      "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+      "external_id": "marketplace-line-1",
+      "amount": 10000,
+      "transfer_fee": 100
+    }
+  ]
 }'
 ```
 
-<Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
+<Alert>Amounts are in cents. `10000` is `$100.00`.</Alert>
 
-### Payment Transfer Response
+You should see a response similar to:
 
-You should see a payment transfer result similar to:
-
-```json showLineNumbers
+```json showLineNumbers title="Payment Transfer Intent (pending)"
 {
-  "id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
+  // highlight-next-line
+  "id": "trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
   "environment": "test",
+  "status": "pending",
+  "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
+  // highlight-next-line
+  "payment_transfer_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
+  "currency": "USD",
+  "total_amount": 10000,
+  "external_id": "e797ef3c-b586-4333-af90-7168d8427d85",
+  "items": [
+    {
+      "id": "trfi_int_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
+      "payment_transfer_item_id": "trfi_AjkCFKAYiTsjghXWMzoXFPMxj",
+      "amount": 10000,
+      "transfer_fee": 100,
+      "external_id": "marketplace-line-1"
+    }
+  ],
+  "created_at": "2024-06-30T01:02:29.212Z",
+  "modified_at": "2024-06-30T01:02:29.212Z"
+}
+```
+
+Store the `id` (`trnf_int_*`) and optionally the `payment_transfer_id` (`trnf_*`) in your system before proceeding.
+
+## Step 2 — Confirm the Intent
+
+Call [Confirm Payment Transfer Intent](/api/financial/confirm-payment-transfer-intent) to submit the transfer. No request body is required.
+
+```shell showLineNumbers title="Confirm Payment Transfer Intent"
+curl 'https://api.publicsquare.com/payment-transfer-intents/trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq/confirm' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+A successful response returns the intent in `succeeded` status in most cases:
+
+```json showLineNumbers title="Payment Transfer Intent (succeeded)"
+{
+  "id": "trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "test",
+  // highlight-next-line
   "status": "succeeded",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
-  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-  "total_amount": 1000,
+  "payment_transfer_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
   "currency": "USD",
-  "items": [{
-    "id": "trfi_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
-    "amount": 1000,
-    "transfer_fee": 100
-  }],
-  "transaction": {
-    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-    "environment": "test",
-    "status": "succeeded",
-    "amount": -1000,
-    "fee_amount": 100,
-    "net_amount": -900,
-    "currency": "USD",
-    "type_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "type": "payment_transfer",
-    "processor": "nuvei",
-    "processor_id": "7110000000010554769",
-    "created_at": "2024-06-30T01:02:29.212Z",
-    "modified_at": "2024-06-30T01:02:29.212Z"
-  },
+  "total_amount": 10000,
   "created_at": "2024-06-30T01:02:29.212Z",
   "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
 
-<Alert>For each `item` in the payment transfer, a payment transaction will be created in the seller's account.</Alert>
+If the transfer is not yet confirmed, the intent returns in `processing` status instead. Final status will arrive via the `transfer_intent:update` webhook.
 
-## Transfer Funds from Sellers
+## Step 3 — Listen for Completion
 
-After you have refunded a customer, you may need to transfer funds from a seller back into your account.
-In order to do this, we will create a refund transfer.
-Each refund may have exactly **one** refund transfer, who's total amount cannot exceed the refund amount.
+PublicSquare sends a `transfer_intent:update` [webhook](/concepts/webhooks) on every status transition. The `entity.status` field in the webhook payload reflects the final state — use it to confirm completion regardless of what the `confirm` response returned.
 
-We will be using information from our [Refund Payment](/guides/refunds/refund-payments) guide:
-
-To start, let's get the refund `id`:
-
-```json showLineNumbers title="Refund"
+```json showLineNumbers title="Webhook: transfer_intent:update (succeeded)"
 {
-  // highlight-next-line
-  "id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "evnt_5jxWRFNLCAWeegrkCAG3a9DGc",
   "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-  "environment": "test",
-  ...
-}
-```
-
-We will also be referencing our payment transfer's `id` and each item's `id`:
-
-```json showLineNumbers title="Payment Transfer"
-{
-  // highlight-next-line
-  "id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
-  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-  "environment": "test",
-  ...
-  "items": [{
+  "environment": "production",
+  "event_type": "transfer_intent:update",
+  "entity_type": "PaymentTransferIntent",
+  "entity_id": "trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq",
+  "entity": {
+    "id": "trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq",
     // highlight-next-line
-    "id": "trfi_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
-    "amount": 1000,
-    "transfer_fee": 100
-  }]
+    "status": "succeeded",
+    "payment_transfer_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
+    "total_amount": 10000,
+    ...
+  },
+  "created_at": "2024-06-30T01:02:29.212Z"
 }
 ```
 
-### Create a Refund Transfer
+A minimal handler that marks the intent as complete in your system:
 
-We will make a call to the [Create Refund Transfer](/api/financial/create-refund-transfer) endpoint:
+```js showLineNumbers title="Webhook handler (Node.js)"
+app.post('/webhooks/publicsquare', (req, res) => {
+  const event = req.body;
 
-```shell showLineNumbers title="Create a Refund Transfer"
-curl 'https://api.publicsquare.com/refund-transfers' \
+  if (event.event_type === 'transfer_intent:update') {
+    const intent = event.entity;
+
+    if (intent.status === 'succeeded') {
+      // mark transfer complete in your system using intent.payment_transfer_id
+    } else if (intent.status === 'error') {
+      // intent expired or the transfer failed
+    }
+  }
+
+  res.sendStatus(200);
+});
+```
+
+See [Webhooks](/concepts/webhooks) for delivery guarantees, signing, and retry behavior.
+
+## Polling (alternative to webhooks)
+
+If you have not set up webhooks, you can poll [Get Payment Transfer Intent](/api/financial/get-payment-transfer-intent-by-id) until status is terminal (`succeeded`, `cancelled`, or `error`).
+
+```shell showLineNumbers title="Poll intent status"
+curl 'https://api.publicsquare.com/payment-transfer-intents/trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq' \
+-H 'X-API-KEY: <SECRET_API_KEY>'
+```
+
+<Alert>Webhooks are strongly recommended over polling for production integrations. If the intent is in `processing`, it may take seconds to minutes to reach a terminal status.</Alert>
+
+## Cancelling an Intent
+
+An intent can only be cancelled while in `pending` status. Call [Cancel Payment Transfer Intent](/api/financial/cancel-payment-transfer-intent):
+
+```shell showLineNumbers title="Cancel Payment Transfer Intent"
+curl 'https://api.publicsquare.com/payment-transfer-intents/trnf_int_7yFLQWACr3DYDSz1xpoEAVfdq/cancel' \
 -X 'POST' \
--H 'X-API-KEY: <SECRET_API_KEY>' \
--H 'Content-Type: application/json' \
--d '{
-  // highlight-next-line
-  "refund_id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
-  // highlight-next-line
-  "payment_transfer_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
-  "items": [{
-    // highlight-next-line
-    "payment_transfer_item_id": "trfi_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "amount": 1000,
-    "transfer_fee": 100
-  }]
-}'
+-H 'X-API-KEY: <SECRET_API_KEY>'
 ```
 
-<Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
+A successful cancel returns `204 No Content`.
 
-### Refund Transfer Response
+Attempting to cancel after the intent has been confirmed returns `400 Bad Request`:
 
-You should see a refund transfer result similar to:
-
-```json showLineNumbers
+```json showLineNumbers title="400 — intent not in pending"
 {
-  "id": "trnf_6Qy74FeCJxoJeXetcyTvbSnVF",
-  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-  "environment": "test",
-  "status": "succeeded",
-  "refund_id": "rfd_2YKewBonG4tgk12MheY3PiHDy",
-  "payment_transfer_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
-  "transaction_id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-  "total_amount": 1000,
-  "currency": "USD",
-  "items": [{
-    "id": "trfi_4iarm41gZ1qyxDoGfEEMXyryJ",
-    "seller_account_id": "acc_w6dogDaHuU6h1N5e5vfXLUYf",
-    "payment_transfer_item_id": "trfi_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "amount": 1000,
-    "transfer_fee": 100
-  }],
-  "transaction": {
-    "id": "trx_95rvMJvAVeG68W4NtLdfkN3LG",
-    "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
-    "environment": "test",
-    "status": "succeeded",
-    "amount": 1000,
-    "fee_amount": 100,
-    "net_amount": 900,
-    "currency": "USD",
-    "type_id": "trnf_7yFLQWACr3DYDSz1xpoEAVfdq",
-    "type": "refund_transfer",
-    "processor": "nuvei",
-    "processor_id": "7110000000010554769",
-    "created_at": "2024-06-30T01:02:29.212Z",
-    "modified_at": "2024-06-30T01:02:29.212Z"
-  },
-  "created_at": "2024-06-30T01:02:29.212Z",
-  "modified_at": "2024-06-30T01:02:29.212Z"
+  "type": "https://httpstatuses.com/400",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Payment transfer intent is not in pending status"
 }
 ```
 
-<Alert>For each `item` in the refund transfer, a refund transaction will be created in the seller's account.</Alert>
+Attempting to cancel while a confirm is already in flight returns `409 Conflict`:
+
+```json showLineNumbers title="409 — confirm in progress"
+{
+  "type": "https://httpstatuses.com/409",
+  "title": "Conflict",
+  "status": 409,
+  "detail": "Confirmation already in progress"
+}
+```
+
+## Error Reference
+
+| HTTP Status       | Endpoint                         | Meaning                                                                                                                 |
+|-------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `404 Not Found`   | `confirm`, `cancel`, `GET /{id}` | Intent ID does not exist or belongs to a different account.                                                             |
+| `409 Conflict`    | `confirm`, `cancel`              | The opposing operation (confirm or cancel) is already in flight. Retry after a short delay.                             |
+| `400 Bad Request` | `cancel`                         | Intent is not in `pending` status.                                                                                      |
+| `202 Accepted`    | `confirm`                        | Transfer submitted but is not confirmed yet. The intent is `processing` and its terminal state will arrive via webhook. |
+
+See [Payment Transfer Intents](/concepts/payment-transfer-intents#concurrency-and-error-handling) for a deeper explanation of the concurrency model.
 
 ## Conclusion
 
-Following this guide, you have successfully moved funds to and from a seller's account.
+Following this guide, you have successfully transferred funds to a seller's account using Payment Transfer Intents.
 
 Follow these guides to learn more:
 
+- [Transfer Funds from Sellers](/guides/marketplaces/transfer-funds-from-sellers) — retrieve funds from sellers via refund transfers
+- [Payment Transfer Intents](/concepts/payment-transfer-intents) — concept page: states, concurrency, webhook events
 - [Search and View Transactions](/guides/transactions/search-and-view-transactions)
 - [Webhooks](/concepts/webhooks)
