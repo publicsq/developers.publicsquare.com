@@ -13,12 +13,12 @@ function LogoThemedImage({ logo, alt, imageClassName }) {
   //workaround to setup custom logos for mobile
   const src = isMobile
     ? {
-        light: "img/publicsquare-logo.svg",
-        dark: "img/publicsquare-logo.svg",
+        light: "img/credova.png",
+        dark: "img/credova.png",
       }
     : {
-        light: "img/publicsquare-dark.svg",
-        dark: "img/publicsquare-light.svg",
+        light: "img/credova.png",
+        dark: "img/credova.png",
       };
 
   const sources = {

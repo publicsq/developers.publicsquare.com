@@ -7,7 +7,7 @@ import ConfigureElementsSection from "@site/src/components/docs/_configure-eleme
 
 # Collect Bank Accounts Manually
 
-In this guide, we will set up PublicSquare Elements SDKs to capture bank accounts in a frontend application and securely authorize and store the bank account data while avoiding PCI requirements.
+In this guide, we will set up Credova Elements SDKs to capture bank accounts in a frontend application and securely authorize and store the bank account data while avoiding PCI requirements.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Alternatively, you can request access via the [API](/api/accounts/request-accoun
 
 This is required to enable manual bank account creation for your account.
 
-## Configuring PublicSquare Elements
+## Configuring Credova Elements
 
 <ConfigureElementsSection />
 
@@ -47,13 +47,13 @@ Once installed and configured, add the Bank Account Elements to your application
 ```
 
 ```javascript showLineNumbers title="index.js"
-import { PublicSquare } from '@publicsquare/elements-js';
+import { Credova } from '@publicsquare/elements-js';
 
 let publicsquare;
 let bankAccountElement;
 
 async function init() {
-  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+  publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
 
   //highlight-start
   // Creates an Bank Account instance that includes the routing number and account number
@@ -69,15 +69,15 @@ init();
 ```jsx showLineNumbers title="App.jsx"
 import React, { useRef, useState } from 'react';
 import {
-  PublicSquareProvider,
+  CredovaProvider,
   // highlight-start
   BankAccountElement,
   //highlight-end
-  usePublicSquare,
+  useCredova,
 } from '@publicsquare/elements-react';
 
 export default function App() {
-  const { publicsquare } = usePublicSquare();
+  const { publicsquare } = useCredova();
   // highlight-start
   // Refs to get access to the Elements instance
   const bankAccountRef = useRef(null);
@@ -86,7 +86,7 @@ export default function App() {
   // See below for handleSubmit function
 
   return (
-    <PublicSquareProvider apiKey={apiKey}>
+    <CredovaProvider apiKey={apiKey}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -101,7 +101,7 @@ export default function App() {
         />
         // highlight-end
       </form>
-    </PublicSquareProvider>
+    </CredovaProvider>
   );
 }
 ```

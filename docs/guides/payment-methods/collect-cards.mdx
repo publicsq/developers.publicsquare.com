@@ -7,7 +7,7 @@ import ConfigureElementsSection from "@site/src/components/docs/_configure-eleme
 
 # Collect Cards
 
-In this guide, we will set up PublicSquare Elements SDKs to capture cards in a frontend application and securely authorize and store the cardholder data while avoiding PCI requirements.
+In this guide, we will set up Credova Elements SDKs to capture cards in a frontend application and securely authorize and store the cardholder data while avoiding PCI requirements.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ Next you will need your `Publishable Key`. [Go to your Developers section](https
 
 <Alert type="warning">If your organization is PCI certified to be able to accept or transmit secure cardholder data, you may [follow our guide](/guides/payment-methods/collect-cards?sdk=shell#storing-cards) for collecting and storing cardholder data.</Alert>
 
-## Configuring PublicSquare Elements
+## Configuring Credova Elements
 
 <ConfigureElementsSection />
 
@@ -48,7 +48,7 @@ Once installed and configured, add the Card Elements to your application.
     ```
 
     ```javascript showLineNumbers title="index.js"
-    import { PublicSquare } from '@publicsquare/elements-js';
+    import { Credova } from '@publicsquare/elements-js';
 
     let publicsquare;
     let cardNumberElement;
@@ -56,7 +56,7 @@ Once installed and configured, add the Card Elements to your application.
     let cardVerificationCodeElement;
 
     async function init() {
-      publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+      publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
 
       //highlight-start
       // Creates Elements instances
@@ -80,17 +80,17 @@ Once installed and configured, add the Card Elements to your application.
 ```jsx showLineNumbers title="App.jsx"
 import React, { useRef, useState } from 'react';
 import {
-  PublicSquareProvider,
+  CredovaProvider,
   // highlight-start
   CardNumberElement,
   CardExpirationDateElement,
   CardVerificationCodeElement,
   //highlight-end
-  usePublicSquare,
+  useCredova,
 } from '@publicsquare/elements-react';
 
 export default function App() {
-  const { publicsquare } = usePublicSquare();
+  const { publicsquare } = useCredova();
   // highlight-start
   // Refs to get access to the Elements instance
   const cardholderNameRef = useRef(null);
@@ -100,7 +100,7 @@ export default function App() {
   // highlight-end
 
   return (
-    <PublicSquareProvider apiKey={apiKey}>
+    <CredovaProvider apiKey={apiKey}>
       <input
         type="text"
         id="cardholderName"
@@ -134,7 +134,7 @@ export default function App() {
           // highlight-end
         </div>
       </div>
-    </PublicSquareProvider>
+    </CredovaProvider>
   );
 }
 ```
@@ -217,11 +217,11 @@ export default function App() {
   // highlight-end
 
   return (
-    <PublicSquareProvider bt={bt}>
+    <CredovaProvider bt={bt}>
       ...
       // highlight-next-line
       <button onClick={submit}>Submit</button>
-    </PublicSquareProvider>
+    </CredovaProvider>
   );
 }
 ```

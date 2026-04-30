@@ -10,7 +10,7 @@ When a dispute is initiated a typical flow is as follows:
 
 1. **Dispute Creation**: The cardholder contacts their bank to contest a payment
 2. **Immediate Reversal**: The bank issues a chargeback and the disputed amount is immediately deducted from your daily settlement
-3. **Dispute Case**: PublicSquare creates a dispute case to track the process
+3. **Dispute Case**: Credova creates a dispute case to track the process
 4. **Adjustment Creation**: Financial adjustments are automatically created to reflect the dispute
 5. **Evidence Period**: You have a limited time to submit evidence defending the transaction (if the dispute reason is contestable)
 6. **Resolution**: The card issuer makes a final decision to uphold or reverse the dispute
@@ -45,7 +45,7 @@ If upon review the issuer decides in the cardholder's favor, another adjustment 
 
 ## Financial adjustments
 
-When a dispute occurs, PublicSquare automatically creates adjustments to track the financial impact:
+When a dispute occurs, Credova automatically creates adjustments to track the financial impact:
 
 ### Adjustment types
 
@@ -157,7 +157,7 @@ Disputes can occur for various reasons. Here are some examples:
 
 ## Webhook notifications
 
-PublicSquare sends webhook notifications when dispute cases are created or updated:
+Credova sends webhook notifications when dispute cases are created or updated:
 
 ```json showLineNumbers title="Dispute Case Webhook"
 {
@@ -190,7 +190,7 @@ Use the [Get All Dispute Cases](/api/financial/get-all-dispute-cases) endpoint t
 Use the [Get Dispute Case by ID](/api/financial/get-dispute-case-by-id) endpoint to get complete details including adjustments:
 
 ### Monitoring in the portal
-The PublicSquare Portal provides a comprehensive dispute management interface where you can:
+The Credova Portal provides a comprehensive dispute management interface where you can:
 - View all dispute cases with filtering and search
 - Monitor dispute status and due dates
 - Track associated adjustments and financial impact

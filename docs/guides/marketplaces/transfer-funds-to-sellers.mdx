@@ -140,7 +140,7 @@ If the transfer is not yet confirmed, the intent returns in `processing` status 
 
 ## Step 3 — Listen for Completion
 
-PublicSquare sends a `transfer_intent:update` [webhook](/concepts/webhooks) on every status transition. The `entity.status` field in the webhook payload reflects the final state — use it to confirm completion regardless of what the `confirm` response returned.
+Credova sends a `transfer_intent:update` [webhook](/concepts/webhooks) on every status transition. The `entity.status` field in the webhook payload reflects the final state — use it to confirm completion regardless of what the `confirm` response returned.
 
 ```json showLineNumbers title="Webhook: transfer_intent:update (succeeded)"
 {

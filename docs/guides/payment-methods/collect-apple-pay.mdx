@@ -7,7 +7,7 @@ import ConfigureElementsSection from "@site/src/components/docs/_configure-eleme
 
 # Collect Apple Pay
 
-In this guide, we will set up PublicSquare Elements SDKs to capture Apple Pay in a frontend application and securely authorize and store the Apple Pay data while avoiding PCI requirements.
+In this guide, we will set up Credova Elements SDKs to capture Apple Pay in a frontend application and securely authorize and store the Apple Pay data while avoiding PCI requirements.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Domain verification is a key step in getting Apple Pay up and running on your si
   Apple requires the website to be served via HTTPS, which can be tricky during the development phase. Tunneling may represent a good option to preview local projects through a working HTTPS connection. [Cloudflare tunnel](https://developers.cloudflare.com/pages/how-to/preview-with-cloudflare-tunnel/) may be worth checking out.
 </Alert>
 
-## Configuring PublicSquare Elements
+## Configuring Credova Elements
 
 <ConfigureElementsSection />
 
@@ -50,7 +50,7 @@ First, let's add the Apple Pay button and initiate the Apple Pay session.
 ```
 
 ```javascript showLineNumbers title="index.js"
-import { PublicSquare } from "@publicsquare/elements-js";
+import { Credova } from "@publicsquare/elements-js";
 
 declare global {
   var ApplePaySession: any;
@@ -59,7 +59,7 @@ declare global {
 let publicsquare;
 
 async function init() {
-  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+  publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
 
   // highlight-start
   // Step 1: Render the Apple Pay button
@@ -119,7 +119,7 @@ await init();
   <TabItem value="react" label="React">
 ```jsx showLineNumbers title="App.jsx"
 import {
-  PublicSquareProvider, usePublicSquare
+  CredovaProvider, useCredova
 } from '@publicsquare/elements-react'
 import ApplePayButtonElement from '@publicsquare/elements-react/elements/ApplePayButtonElement';
 
@@ -163,7 +163,7 @@ function createApplePaySession() {
 async function validateMerchant() {
   try {
     return await publicsquare?.applePay.createSession({
-      display_name: 'PublicSquare Payments Demo',
+      display_name: 'Credova Payments Demo',
       domain: window.location.host,
     });
   } catch (error) {
@@ -173,10 +173,10 @@ async function validateMerchant() {
 }
 
 export default function App() {
-  const { publicsquare } = usePublicSquare();
+  const { publicsquare } = useCredova();
 
   return (
-    <PublicSquareProvider apiKey={apiKey}>
+    <CredovaProvider apiKey={apiKey}>
       <div style={{ display: 'flex' }}>
         // highlight-start
         <!-- Step 1: Render the Apple Pay button -->
@@ -186,7 +186,7 @@ export default function App() {
         />
         // highlight-end
       </div>
-    </PublicSquareProvider>
+    </CredovaProvider>
   );
 }
 ```
@@ -208,7 +208,7 @@ To do this, we will handle the `session.onpaymentauthorized` event to call Publi
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
 ```javascript showLineNumbers title="index.js"
-import { PublicSquare } from "@publicsquare/elements-js"
+import { Credova } from "@publicsquare/elements-js"
 
 declare global {
   var ApplePaySession: any;
@@ -217,7 +217,7 @@ declare global {
 let publicsquare;
 
 async function init() {
-  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
+  publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
 
    publicsquare.applePay.renderButton(buttonContainerRef.current!, {
     id: 'apple-pay-btn',
@@ -283,7 +283,7 @@ await init();
   <TabItem value="react" label="React">
 ```jsx showLineNumbers title="App.jsx"
 import {
-  PublicSquareProvider, usePublicSquare
+  CredovaProvider, useCredova
 } from '@publicsquare/elements-react'
 import ApplePayButtonElement from '@publicsquare/elements-react/elements/ApplePayButtonElement';
 
@@ -345,17 +345,17 @@ async function createApplePayPaymentMethod(event: any) {
 // highlight-end
 
 export default function App() {
-  const { publicsquare } = usePublicSquare();
+  const { publicsquare } = useCredova();
 
   return (
-    <PublicSquareProvider apiKey={apiKey}>
+    <CredovaProvider apiKey={apiKey}>
       <div style={{ display: 'flex' }}>
         <ApplePayButtonElement
           id="apple-pay-element"
           onClick={onSubmitApplePay}
         />
       </div>
-    </PublicSquareProvider>
+    </CredovaProvider>
   );
 }
 ```

@@ -2,17 +2,17 @@ import { Alert } from "@site/src/components/shared/Alert";
 
 # Accounts
 
-An Account in the PublicSquare platform is equivalent to a business. If you have several businesses, you can create one or more Accounts to represent each business. All data such as your business information, members and settings are associated at the Account.
+An Account in the Credova platform is equivalent to a business. If you have several businesses, you can create one or more Accounts to represent each business. All data such as your business information, members and settings are associated at the Account.
 
-When you sign up with PublicSquare, your first account is automatically created for you using your name (e.g. John Smith). You can optionally rename this to match your business name from the settings page.
+When you sign up with Credova, your first account is automatically created for you using your name (e.g. John Smith). You can optionally rename this to match your business name from the settings page.
 
 ## Account types
 
-All accounts in the PublicSquare platform have a single account type. The account type determines if the account is a standalone or a managed account and also determines which products an account can add.
+All accounts in the Credova platform have a single account type. The account type determines if the account is a standalone or a managed account and also determines which products an account can add.
 
 | Type           | Managed | Description                                                                                                                                                                                                 |
 |----------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `merchant`     | No      | Merchant type is the default account type. Merchant accounts are independent sales organization (ISO) accounts and can add any PublicSquare products.                                                       |
+| `merchant`     | No      | Merchant type is the default account type. Merchant accounts are independent sales organization (ISO) accounts and can add any Credova products.                                                       |
 | `sub_merchant` | Yes     | Sub-merchant account type are similar to `merchant` account types, however they are managed by a Merchant account type.                                                                                     |
 | `seller`       | Yes     | Seller type are marketplace account types. Seller accounts are managed by a Merchant account type. Seller accounts are automatically added to the `seller` product and can only complete seller onboarding. |
 
@@ -33,13 +33,13 @@ For more information about onboarding and managing seller accounts, please see t
 
 ## Environments
 
-PublicSquare offers two environments for each Account, `Test` and `Production`. When you initially create a new Account, you will only have the Test environment available until you have successfully onboarded.
+Credova offers two environments for each Account, `Test` and `Production`. When you initially create a new Account, you will only have the Test environment available until you have successfully onboarded.
 
 <div style={{textAlign: 'center'}}>
   <img alt="Environment Toggle" src="/img/concepts/accounts/environment-toggle.png" width="225" />
 </div>
 
-Data such as payments, webhooks, and customers are all scoped to an environment. This enables you to start using the PublicSquare platform, even if you haven't been fully onboarded.
+Data such as payments, webhooks, and customers are all scoped to an environment. This enables you to start using the Credova platform, even if you haven't been fully onboarded.
 
 Any resource that is scoped to an environment will have the `environment` attribute on the response informing which environment the data is for:
 
@@ -89,7 +89,7 @@ curl -L 'https://api.publicsquare.com/webhooks' \
 
 ## Members
 
-You can invite one or more users to join your Account as a member. This enables you invite other members of your organization to help manage the account or integrate with PublicSquare.
+You can invite one or more users to join your Account as a member. This enables you invite other members of your organization to help manage the account or integrate with Credova.
 
 <div style={{textAlign: 'center'}}>
   <img alt="Account invitation" src="/img/concepts/accounts/account-invitations.png" width="950" />

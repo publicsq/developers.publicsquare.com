@@ -4,9 +4,9 @@ title: Errors
 
 # Errors
 
-PublicSquare uses standard HTTP status codes to indicate whether an API request succeeded or failed.
+Credova uses standard HTTP status codes to indicate whether an API request succeeded or failed.
 A response with a `2xx` status code indicates success, a `4xx` status code indicates a failure due to information provided with the request,
-and a `5xx` status code indicates an unexpected error occurred within PublicSquare.
+and a `5xx` status code indicates an unexpected error occurred within Credova.
 
 In general, errors are returned with a response body that conforms to the
 [RFC 7807 - Problem Details for HTTP APIs](https://datatracker.ietf.org/doc/html/rfc7807) specification, as illustrated below.
@@ -45,4 +45,4 @@ In general, errors are returned with a response body that conforms to the
 | `404`      | Resource was not found                                           |
 | `409`      | Conflict with the current state of the request entity            |
 | `422`      | Request does not satisfy requirements for processing             |
-| `500`      | Something went wrong on PublicSquare's side                      |
+| `500`      | Something went wrong on Credova's side                      |
