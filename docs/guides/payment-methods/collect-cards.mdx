@@ -48,7 +48,7 @@ Once installed and configured, add the Card Elements to your application.
     ```
 
     ```javascript showLineNumbers title="index.js"
-    import { Credova } from '@publicsquare/elements-js';
+    import { PublicSquare } from '@publicsquare/elements-js';
 
     let publicsquare;
     let cardNumberElement;
@@ -56,7 +56,7 @@ Once installed and configured, add the Card Elements to your application.
     let cardVerificationCodeElement;
 
     async function init() {
-      publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
+      publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
       //highlight-start
       // Creates Elements instances
@@ -80,17 +80,17 @@ Once installed and configured, add the Card Elements to your application.
 ```jsx showLineNumbers title="App.jsx"
 import React, { useRef, useState } from 'react';
 import {
-  CredovaProvider,
+  PublicSquareProvider,
   // highlight-start
   CardNumberElement,
   CardExpirationDateElement,
   CardVerificationCodeElement,
   //highlight-end
-  useCredova,
+  usePublicSquare,
 } from '@publicsquare/elements-react';
 
 export default function App() {
-  const { publicsquare } = useCredova();
+  const { publicsquare } = usePublicSquare();
   // highlight-start
   // Refs to get access to the Elements instance
   const cardholderNameRef = useRef(null);
@@ -100,7 +100,7 @@ export default function App() {
   // highlight-end
 
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <input
         type="text"
         id="cardholderName"
@@ -134,7 +134,7 @@ export default function App() {
           // highlight-end
         </div>
       </div>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```
@@ -217,11 +217,11 @@ export default function App() {
   // highlight-end
 
   return (
-    <CredovaProvider bt={bt}>
+    <PublicSquareProvider bt={bt}>
       ...
       // highlight-next-line
       <button onClick={submit}>Submit</button>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```

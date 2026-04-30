@@ -10,9 +10,9 @@ import { Alert, Alerts } from "@site/src/components/shared/Alert";
 import { GithubCard } from "@site/src/components/sdks/GithubCard";
 import { SDK } from "@site/src/components/types";
 
-# Integrating Credova Payments with Magento
+# Integrating PublicSquare Payments with Magento
 
-Credova Magento Payments Plugin is a 1-click plugin for Magento that allows you to accept credit and debit card payments instantly.
+PublicSquare Magento Payments Plugin is a 1-click plugin for Magento that allows you to accept credit and debit card payments instantly.
 
 ## Before You Begin
 
@@ -30,16 +30,16 @@ Find the app in the Magento marketplace and install it.
 
 1. Navigate to **Stores > Configuration** in your Magento Admin panel
 2. Under the Sales section, select **Payment Methods**
-3. Locate the Credova Payment Method settings
+3. Locate the PublicSquare Payment Method settings
 4. Fill in the following fields:
    - Checkout page payment method title: Enter "Credit/Debit Card (PSQ - Staging Keys)" or your desired title
-   - Credova Public API Key
-   - Credova Secret API Key
+   - PublicSquare Public API Key
+   - PublicSquare Secret API Key
 5. Click **Save Config** in the top right corner to save the changes
 
 ### Default Settings Configuration
 
-Configure the following fields within the Credova Payment Method section:
+Configure the following fields within the PublicSquare Payment Method section:
 
 - **Security Type**: Set to Hosted iFrame - PCI SAQ A (default, not configurable)
 - **Pre-Authorization Type**: Set to Test (Card number validation only) for testing purposes
@@ -61,20 +61,20 @@ Use the following test card for transaction testing:
 
 1. Go to your Magento storefront
 2. Add any product to the cart and proceed to checkout
-3. In the payment method selection, choose the configured Credit/Debit Card (Credova) option
+3. In the payment method selection, choose the configured Credit/Debit Card (PublicSquare) option
 4. Enter the provided test card details to simulate a transaction
 
 #### Verification
 
 1. Log in to your Magento Admin panel
 2. Navigate to **Sales > Orders** to review the order
-3. Confirm that the payment method displays as Credit/Debit Card (Credova)
+3. Confirm that the payment method displays as Credit/Debit Card (PublicSquare)
 4. Check for the Transaction ID, which should follow the format `pmt_XXXXXXXXXXXXXXXXXX`
 
 ### Additional Notes
 
 - Ensure that the transaction status and order details are displayed accurately
-- For further guidance or troubleshooting, please refer to the Credova API Documentation
+- For further guidance or troubleshooting, please refer to the PublicSquare API Documentation
 - If you encounter issues, ensure your API keys and configuration settings are correctly entered
 
 

@@ -37,14 +37,14 @@ First, let's add the Google Pay button.
 <div ref={buttonContainerRef}></div>
 ```
 ```javascript showLineNumbers title="index.js"
-import { Credova } from "@publicsquare/elements-js";
+import { PublicSquare } from "@publicsquare/elements-js";
 
 let publicsquare;
 let buttonContainerRef;
 let googlePayButtonRef;
 
 async function init() {
-  publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
+  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
   // highlight-start
   // Render the Google Pay button
@@ -84,15 +84,15 @@ await init();
   <TabItem value="react" label="React">
 ```jsx showLineNumbers title="App.jsx"
 import {
-  CredovaProvider, useCredova
+  PublicSquareProvider, usePublicSquare
 } from '@publicsquare/elements-react'
 import GooglePayButtonElement from '@publicsquare/elements-react/elements/GooglePayButtonElement';
 
 export default function App() {
-  const { publicsquare } = useCredova();
+  const { publicsquare } = usePublicSquare();
 
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <div style={{ display: 'flex' }}>
         // highlight-start
         <!-- Render the Google Pay button -->
@@ -124,7 +124,7 @@ export default function App() {
         />
         // highlight-end
       </div>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```
@@ -142,14 +142,14 @@ To do this, we will handle the `onPaymentDataLoaded` event to call Public Square
 <Tabs className="publicsquare-tabs" queryString="sdk">
   <TabItem value="javascript" label="JavaScript">
 ```javascript showLineNumbers title="index.js"
-import { Credova } from "@publicsquare/elements-js";
+import { PublicSquare } from "@publicsquare/elements-js";
 
 let publicsquare;
 let buttonContainerRef;
 let googlePayButtonRef;
 
 async function init() {
-  publicsquare = await new Credova().init('<PUBLISHABLE_API_KEY>');
+  publicsquare = await new PublicSquare().init('<PUBLISHABLE_API_KEY>');
 
   googlePayButtonRef = publicsquare.googlePay.renderButton(
     ...    
@@ -204,7 +204,7 @@ await init();
   <TabItem value="react" label="React">
 ```jsx showLineNumbers title="App.jsx"
 import {
-  CredovaProvider, useCredova
+  PublicSquareProvider, usePublicSquare
 } from '@publicsquare/elements-react'
 import GooglePayButtonElement from '@publicsquare/elements-react/elements/GooglePayButtonElement';
 
@@ -248,10 +248,10 @@ async function createGooglePayPaymentMethod(event: any) {
 // highlight-end
 
 export default function App() {
-  const { publicsquare } = useCredova();
+  const { publicsquare } = usePublicSquare();
 
   return (
-    <CredovaProvider apiKey={apiKey}>
+    <PublicSquareProvider apiKey={apiKey}>
       <div style={{ display: 'flex' }}>
           <GooglePayButtonElement 
             ...
@@ -260,7 +260,7 @@ export default function App() {
             }}
           />
       </div>
-    </CredovaProvider>
+    </PublicSquareProvider>
   );
 }
 ```
