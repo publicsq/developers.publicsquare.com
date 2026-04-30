@@ -25,8 +25,8 @@ export default function Home() {
     <Layout>
       <div className={clsx(["col", styles.container])}>
         <header>
-          <h1>PublicSquare Docs</h1>
-          <p>PublicSquare will guide you on how to safely collect payment methods and process transactions.</p>
+          <h1>Credova Docs</h1>
+          <p>Credova will guide you on how to safely collect payment methods and process transactions.</p>
         </header>
         <main>
           <div className={styles["explore-cards-container"]}>
@@ -44,7 +44,7 @@ export default function Home() {
                   </div>
                 }
               >
-                A quick overview of how PublicSquare works and key concepts.
+                A quick overview of how Credova works and key concepts.
               </Card>
 
               <Card
@@ -59,7 +59,7 @@ export default function Home() {
                   </div>
                 }
               >
-                Integrate PublicSquare Elements to securely collect cards from your customers.
+                Integrate Credova Elements to securely collect cards from your customers.
               </Card>
 
               <Card
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
 
           <div className={styles["sdks"]}>
-            <h2>PublicSquare SDKs</h2>
+            <h2>Credova SDKs</h2>
             <div className={styles["sdks-container"]}>
               <div>
                 Web SDKs
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
 
           <div className={styles["explore-cards-container"]}>
-            <h2>Explore PublicSquare</h2>
+            <h2>Explore Credova</h2>
             <div className={styles["explore-cards"]}>
               <Card
                 href="/api"
@@ -141,7 +141,7 @@ export default function Home() {
                   </div>
                 }
               >
-                API endpoints to manage your account and process transactions with PublicSquare.
+                API endpoints to manage your account and process transactions with Credova.
               </Card>
               <Card
                 href="/concepts"
@@ -154,7 +154,7 @@ export default function Home() {
                   </div>
                 }
               >
-                Learn about key concepts of PublicSquare's platform.
+                Learn about key concepts of Credova's platform.
               </Card>
               <Card
                 href="/guides"
@@ -167,7 +167,7 @@ export default function Home() {
                   </div>
                 }
               >
-                Step-by-step guides to integrate with PublicSquare.
+                Step-by-step guides to integrate with Credova.
               </Card>
             </div>
           </div>
