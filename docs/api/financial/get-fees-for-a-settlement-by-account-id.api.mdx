@@ -1,0 +1,73 @@
+---
+id: get-fees-for-a-settlement-by-account-id
+title: "Get fees for a settlement by account ID"
+description: "    Get fee line items and summary for a settlement by account ID."
+sidebar_label: "Get fees for a settlement by account ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1T20YQ/is3m870TcLGbwn65pZAHSjxhCRtQ1xzllb4gnQn7k4Mjkb/vbOSbAvbgEkz5Eu+gCXt7T67z+7t7WVg+YUB7wxO0doIY5TWwMiBAI2vRWKFkuABY4wdomUhIouERCYsxoZxGTCTxjHXMxYqzTgzCy1sMmPc91UqLRvs73yUHyVpefbsGRuijoUxQklTvvyFnS8Xehp5cA4OqAQ1JwCDADyozJsHDIEDCdc8Roua/MpA8hjBg0pkEIADgnxKuJ2CAxqvUqExAM/qFB0w/hRjDl4GMb85Rnlhp+B1m6TWWtS08t8z7n7uux9GWcvp5eOzXXev7/7xyj0Zuh+4exm7n0e//gAO2FlClo3VQl5AnjsLMOIbohiRNZMoadCQgVazSf9uE/76CBzwlbQoLX3lSRIJv2Cj8cmQSFbDWJlQk0/oW2JAE3dWlAaItZoU15rPyH1KoYdXi2AlCu3e7Sg03T3uhn33YJS9yN36Y+cxj7utfD1aq3VwgFjmWKh0zC14kKYFl3jD4ySile2Qv+iGvY7bfb773O10ey130g59t+Xv9dphr8dD3oPcAaNS7WPN/3tMlrLMZb9zySbIzq3m0nCfRM6Z0uxcKjmuvwQHZBpFfEKYypRaQqwJEpLa47iM9v2I3i7l2WCf9oNLDJhVzE6FoRp1mAhZlTEE4H4sN+O9rr7+89V1/z0e9l781Tmxx0F4edI+PiR0Prd4ofRsu0gtpO+zmWjlozFFOTiUnuOyLLcxUEjep3y4UE6hIAM8po2npl5IixeoN+ovhZmQzC+24lqqCWl7nXqutboUn1RrlP4W8Wkzf8o19y1qNjh9zeYrma+C+316d7pP2xfwIBCkjEfDWo2GPDLogBW2EF42kgPEgcWYYnAbybEwlqlwtZ0IyewUa1v7Giiqm7LfPLxx1NOatqCxVZZHW9DwluTmRKiQ1RS5VbIXjWgrjrqdVjN3YKU+/x8gqaRbU/YINLtNAlPYHa9sy9sa51H0GPe7reaXZY45rYj+wuWQ57Sys6m7/cYD9gavUjT267U51FrpjQ1tM/oHG+Ly3LBeBaXIesWvC5bB2ULSWG7TzRlR57fd2rQ4QMtFtJUdIY3lcnPrWxG+k/ls6Rm855EICsqGWk0ijPcLLMsE2F1PgHeSp3aqtPiMwdfLgO+kLEi5g4r2OhUHSk9EEKD8zsPT8dBZ5+FEWXagUvm9Hp6IB/IG/VQLOyvm1H4ijpB+wsosDCOa2WK0U0WD8AUWkaa50YNGNdaaRrYYcPPGUoFpZCLIG0WvJ3v6ej4WpzoCD6bWJsZrNHgidpJ0EgnfXKVc446vYiCzc4inxHlJ6xzosoGVL1ZPDv1qiy2Sh6b0/nDAjnDGhDQiQKbLDvyjYX+7/eHAPXr5D5siDwo2q0F58WU+L1cCecFRqAoU8xgX+E8L/GzIZ4X/ZBQcILdLVNe7dB5NlLExL7K5srT9/cItL7NlsXybW5KKA4s3tpFEXBQjXUFuViXJ2fzug1LAq9+D1PKEPhWTbJEqIwemylham2UTbvCdjvKcXl+lSIfvs5ED11yLsg7OMgiEod/B4lR2Z5R+elPddfzM7oI/zytJSXXNo5SewIFLSrvaTQ7dqDyhYRFAPsqdeQ6S2+WHvu9jYmtL1nbNWxV8+PItnQpTIqdeRJdFEVU/SPtGOPWSKM3TXwrFRvEsK8szzxfy5ac7VyxqsPKa0Od5/h+bh+Xc
+sidebar_class_name: "get api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get fees for a settlement by account ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/accounts/{accountId}/settlements/{id}/fees"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Get fee line items and summary for a settlement by account ID.
+
+    ### Permissions
+    * `settlement:read`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-fees-for-a-settlement-by-account-id.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-fees-for-a-settlement-by-account-id.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-fees-for-a-settlement-by-account-id.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      
