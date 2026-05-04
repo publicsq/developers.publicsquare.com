@@ -634,6 +634,18 @@ const sidebar: SidebarsConfig = {
           label: "Get all transactions for a settlement by account ID",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/financial/get-fees-for-a-settlement",
+          label: "Get fees for a settlement",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/financial/get-fees-for-a-settlement-by-account-id",
+          label: "Get fees for a settlement by account ID",
+          className: "api-method get",
+        },
       ],
     },
     {
@@ -644,24 +656,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/financial/get-all-statements",
           label: "Get all statements",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/financial/get-pdf-statement-by-id",
-          label: "Get PDF Statement by ID",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Statements",
-      items: [
-        {
-          type: "doc",
-          id: "api/financial/statements-get-all",
-          label: "Statements_GetAll",
           className: "api-method get",
         },
         {

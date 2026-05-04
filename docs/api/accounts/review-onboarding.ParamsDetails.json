@@ -1,1 +1,1 @@
-{"parameters":[{"name":"product","in":"path","required":true,"schema":{"type":"string"}}]}
+{"parameters":[{"name":"product","in":"path","required":true,"schema":{"maxLength":10,"pattern":"^(credit|payments|seller)$","type":"string"}}]}
