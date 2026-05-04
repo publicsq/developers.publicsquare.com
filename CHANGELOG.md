@@ -1,3 +1,10 @@
+## [1.48.1](https://github.com/publicsq/developers.publicsquare.com/compare/v1.48.0...v1.48.1) (2026-05-04)
+
+
+### Bug Fixes
+
+* update api docs to use production endpoint ([#221](https://github.com/publicsq/developers.publicsquare.com/issues/221)) ([5e32ad6](https://github.com/publicsq/developers.publicsquare.com/commit/5e32ad67fc427d048a5e3d0ceec82e8806383540))
+
 # [1.48.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.47.0...v1.48.0) (2026-04-28)
 
 
