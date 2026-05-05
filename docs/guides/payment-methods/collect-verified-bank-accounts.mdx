@@ -7,7 +7,7 @@ import ConfigureElementsSection from "@site/src/components/docs/_configure-eleme
 
 # Collect Verified Bank Accounts
 
-In this guide, we will set up PublicSquare Elements SDKs to capture instantly verified bank accounts in a frontend application, securely authorize them, and store the bank account data while avoiding PCI requirements.
+In this guide, we will set up Credova Elements SDKs to capture instantly verified bank accounts in a frontend application, securely authorize them, and store the bank account data while avoiding PCI requirements.
 
 ## Getting Started
 
@@ -28,13 +28,13 @@ Alternatively, you can request access via the [API](/api/accounts/request-accoun
 
 This is required to enable instant bank account verification for your account.
 
-## Configuring PublicSquare Elements
+## Configuring Credova Elements
 
 <ConfigureElementsSection />
 
 ## Adding Bank Account Verification Elements
 
-PublicSquare has partnered with [Flinks](https://www.flinks.com/) to provide a secure way to collect bank accounts.
+Credova has partnered with [Flinks](https://www.flinks.com/) to provide a secure way to collect bank accounts.
 Once installed and configured, add the Bank Account Verification Elements to your application.
 
 <Tabs className="publicsquare-tabs" queryString="sdk">
@@ -229,7 +229,7 @@ The created `bank account` object contains the non-sensitive information about t
   "account_number_last4": "1011"
 }
 ```
-<Alert>If PublicSquare has not yet received a response back from Flinks, we will return `bank account verification result is still in progress.` validation message.</Alert>
+<Alert>If Credova has not yet received a response back from Flinks, we will return `bank account verification result is still in progress.` validation message.</Alert>
 
 You can safely store the bank account's `id` value in your database to link it with the appropriate payment or customer association.
 

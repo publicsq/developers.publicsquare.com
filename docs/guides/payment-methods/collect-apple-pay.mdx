@@ -7,7 +7,7 @@ import ConfigureElementsSection from "@site/src/components/docs/_configure-eleme
 
 # Collect Apple Pay
 
-In this guide, we will set up PublicSquare Elements SDKs to capture Apple Pay in a frontend application and securely authorize and store the Apple Pay data while avoiding PCI requirements.
+In this guide, we will set up Credova Elements SDKs to capture Apple Pay in a frontend application and securely authorize and store the Apple Pay data while avoiding PCI requirements.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Domain verification is a key step in getting Apple Pay up and running on your si
   Apple requires the website to be served via HTTPS, which can be tricky during the development phase. Tunneling may represent a good option to preview local projects through a working HTTPS connection. [Cloudflare tunnel](https://developers.cloudflare.com/pages/how-to/preview-with-cloudflare-tunnel/) may be worth checking out.
 </Alert>
 
-## Configuring PublicSquare Elements
+## Configuring Credova Elements
 
 <ConfigureElementsSection />
 
@@ -163,7 +163,7 @@ function createApplePaySession() {
 async function validateMerchant() {
   try {
     return await publicsquare?.applePay.createSession({
-      display_name: 'PublicSquare Payments Demo',
+      display_name: 'Credova Payments Demo',
       domain: window.location.host,
     });
   } catch (error) {

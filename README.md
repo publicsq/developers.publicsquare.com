@@ -1,6 +1,6 @@
-# Publicsquare Developer Documentation
+# Credova Developer Documentation
 
-The [PublicSquare](https://publicsquare.com/) developer documentation. This site is hosted at [developers.publicsquare.com](https://developers.publicsquare.com/)
+The [Credova](https://credova.com/) developer documentation. This site is hosted at [developers.credova.com](https://developers.credova.com/)
 
 ### Installation
 

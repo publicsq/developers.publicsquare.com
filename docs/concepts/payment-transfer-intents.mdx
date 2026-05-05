@@ -6,7 +6,7 @@ A Payment Transfer Intent represents your intent to route funds from an existing
 
 Intents provide two key advantages:
 
-**Idempotent retries.** PublicSquare assigns the `payment_transfer_id` and all line-item IDs the moment an intent is created. Persist these IDs in your database before committing, and you can safely retry on network failures or timeouts—the same intent cannot be committed twice, eliminating any risk of double-paying a seller.
+**Idempotent retries.** Credova assigns the `payment_transfer_id` and all line-item IDs the moment an intent is created. Persist these IDs in your database before committing, and you can safely retry on network failures or timeouts—the same intent cannot be committed twice, eliminating any risk of double-paying a seller.
 
 **Inspect before you commit.** Funds don't move until you explicitly commit the intent. That gives you room to validate the payload, surface it for review, or cancel outright—useful for compliance checks, manual approval flows, or anywhere you want certainty before money leaves your account.
 

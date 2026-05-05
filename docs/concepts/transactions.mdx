@@ -1,16 +1,16 @@
 # Transactions
 
-A transaction is the core entity for all payments-related interactions with the PublicSquare API.
-PublicSquare leverages double entry account to track all transactions. Payments are saved as a debit transaction and payouts, refunds, transfers, and settlements are saved as a credit transaction.
+A transaction is the core entity for all payments-related interactions with the Credova API.
+Credova leverages double entry account to track all transactions. Payments are saved as a debit transaction and payouts, refunds, transfers, and settlements are saved as a credit transaction.
 
 ## Types
 
-PublicSquare uses different transaction types to track the flow of money for different use cases.
+Credova uses different transaction types to track the flow of money for different use cases.
 
 | Type               | Description                                                                                                                                                                                                                              |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `payment`          | Payments are used to collect funds from customers. Payments are recorded in PublicSquare as a debit transaction type.                                                                                                                    |
-| `refund`           | Refunds enable you to return funds to a payment method associated with a payment. PublicSquare will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund.                    |
+| `payment`          | Payments are used to collect funds from customers. Payments are recorded in Credova as a debit transaction type.                                                                                                                    |
+| `refund`           | Refunds enable you to return funds to a payment method associated with a payment. Credova will attempt to cancel the payment if the payment has not been settled, and if unable to cancel, will create a refund.                    |
 | `payout`           | Payouts are used to send funds to customers, merchants, and vendors.                                                                                                                                                                     |
 | `settlement`       | Settlements are batches created during end of day reconciliation processes and are associated with payments, refunds, and payouts. This represents money being deposited or withdrawn from your primary bank account.                    |
 | `payment_transfer` | Payment transfers are used to send funds to seller accounts from an existing `payment`. For instance, if you charge a customer $300, you can transfer $100 to three different sellers.                                                   |
@@ -19,7 +19,7 @@ PublicSquare uses different transaction types to track the flow of money for dif
 
 ## Statuses
 
-PublicSquare uses a `status` field on every transaction and transaction type to specify the state the transaction is in.
+Credova uses a `status` field on every transaction and transaction type to specify the state the transaction is in.
 
 | Status             | Description                                                                                                                                                                                      |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

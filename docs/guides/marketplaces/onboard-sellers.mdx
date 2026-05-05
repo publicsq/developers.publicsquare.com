@@ -3,7 +3,7 @@ import GettingStartedSection from "@site/src/components/docs/_getting-started-se
 
 # Onboard Sellers
 
-As a marketplace, you will need to create and onboard your sellers to be able to transfer funds to them. Every seller within your marketplace will need a seller account created with PublicSquare.
+As a marketplace, you will need to create and onboard your sellers to be able to transfer funds to them. Every seller within your marketplace will need a seller account created with Credova.
 
 This guide will walk you through how to create and onboard seller accounts.
 
@@ -61,7 +61,7 @@ All seller API requests must include the <code>X-ACCOUNT-ID</code> header set to
 
 Referencing the `id` of the previously created seller account, we can now save business details for our seller account.
 
-PublicSquare exposes several endpoints to enable you to submit all of the required business details:
+Credova exposes several endpoints to enable you to submit all of the required business details:
 
 * [Save Business Details](/api/accounts/save-business)
 * [Save Business Representative](/api/accounts/save-business-representative)
@@ -73,7 +73,7 @@ PublicSquare exposes several endpoints to enable you to submit all of the requir
 
 ## Collect Business Bank Account
 
-PublicSquare has partnered with [Flinks](https://www.flinks.com/) to provide a secure way to collect bank accounts.
+Credova has partnered with [Flinks](https://www.flinks.com/) to provide a secure way to collect bank accounts.
 
 ### Retrieve the iFrame URL
 
@@ -204,7 +204,7 @@ This will save the business bank account for the seller and return the resulting
   "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
-<Alert>If PublicSquare has not yet received a response back from Flinks, we will return a `202 - Accepted` HTTP status code. Please retry the request.</Alert>
+<Alert>If Credova has not yet received a response back from Flinks, we will return a `202 - Accepted` HTTP status code. Please retry the request.</Alert>
 
 ## Submit Onboarding
 
@@ -212,7 +212,7 @@ Now that we have the required business information saved, documents uploaded, an
 
 ### Check Seller Onboarding Requirements
 
-PublicSquare provides an [onboarding review endpoint](/api/accounts/review-onboarding) to be able to check the status of your onboarding requirements and submission status:
+Credova provides an [onboarding review endpoint](/api/accounts/review-onboarding) to be able to check the status of your onboarding requirements and submission status:
 
 ```shell showLineNumbers
 curl -L 'https://api.publicsquare.com/accounts/acc_w6dogDaHuU6h1N5e5vfXLUYf/onboarding/seller/review' \
