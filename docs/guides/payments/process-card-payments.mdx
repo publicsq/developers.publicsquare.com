@@ -184,7 +184,31 @@ When the processor takes longer to respond, you will receive a `202` with `statu
 }
 ```
 
-<Alert type="warning">When you receive a `202`, subscribe to `payment_intent.succeeded` and `payment_intent.payment_failed` webhook events to receive the final outcome. See the [Webhooks](/concepts/webhooks) guide for setup instructions.</Alert>
+<Alert type="warning">When you receive a `202`, subscribe to the `payment-intents:update` webhook event. The final outcome is in `entity.status` on the Payment Intent in the notification payload. See the [Webhooks](/concepts/webhooks) guide for setup instructions.</Alert>
+
+```json showLineNumbers title="Webhook event: payment-intents:update"
+{
+  "id": "evnt_5jxWRFNLCAWeegrkCAG3a9DGc",
+  "account_id": "acc_B518niGwGYKzig6vtrRVZGGGV",
+  "environment": "production",
+  "event_type": "payment-intents:update",
+  "entity_type": "PaymentIntent",
+  "entity_id": "pmt_int_2xNjK7abcdefghij",
+  "entity": {
+    "id": "pmt_int_2xNjK7abcdefghij",
+    // highlight-next-line
+    "status": "succeeded",
+    "amount": 1000,
+    "currency": "USD",
+    // highlight-next-line
+    "payment_id": "pmt_5mBpT2ghiklmnopq",
+    "succeeded_date": "2026-04-15T14:22:45Z",
+    "created_date": "2026-04-15T14:22:10Z",
+    "modified_date": "2026-04-15T14:22:45Z"
+  },
+  "created_at": "2026-04-15T14:22:45Z"
+}
+```
 
 ### Handling Declines
 
