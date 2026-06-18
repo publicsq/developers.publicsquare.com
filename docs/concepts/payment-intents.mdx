@@ -205,7 +205,7 @@ Every status transition on a Payment Intent emits a `payment-intents:update` eve
 
 Check `entity.status` to determine the final outcome. Webhooks fire on every transition, including intermediate states like `processing` and `requires_capture`, not only terminal states.
 
-<Alert>Register a webhook for `payment-intents:update` if your integration may receive `202 processing` responses from confirm. Without it, you will need to poll [Get Payment Intent](/api/financial/get-payment-intent-by-id) to detect the terminal state.</Alert>
+<Alert>Register a webhook for `payment_intent:update` if your integration may receive `202 processing` responses from confirm. Without it, you will need to poll [Get Payment Intent](/api/financial/get-payment-intent-by-id) to detect the terminal state.</Alert>
 
 See [Webhooks](/concepts/webhooks) for delivery guarantees, retry behavior, and signature verification.
 
