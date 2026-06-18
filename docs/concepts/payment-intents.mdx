@@ -114,7 +114,7 @@ flowchart TB
 |---|---|
 | `requires_payment_method` | The intent was created without a payment method. Call [Update Payment Intent](/api/financial/update-payment-intent) to attach a card or bank account. |
 | `requires_confirmation` | A payment method is attached and the intent is ready to confirm. This is also the state the intent returns to after a decline — attach a new payment method and re-confirm the same intent. |
-| `processing` | The charge was submitted to the processor and the response is pending. Subscribe to the `payment-intents:update` webhook to receive the final outcome. |
+| `processing` | The charge was submitted to the processor and the response is pending. Subscribe to the `payment_intent:update` webhook to receive the final outcome. |
 | `requires_capture` | The card was authorized with `capture_method: manual`. The authorization holds funds for up to 7 days. Call [Capture Payment Intent](/api/financial/capture-payment-intent) to complete the charge. |
 | `succeeded` | The charge was accepted. `payment_id` is populated with the resulting `Payment` record. Terminal state. |
 | `canceled` | The intent was not confirmed within 24 hours, or a `requires_capture` authorization was not captured within 7 days. Terminal state. |
