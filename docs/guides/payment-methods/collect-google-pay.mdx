@@ -202,20 +202,15 @@ Shipping address collection is optional and off by default. Enable it with the `
   </TabItem>
 </Tabs>
 
-When `shippingAddressRequired` is enabled, the shipping address is returned at the root of the `onPaymentDataLoaded` payload as `paymentData.shippingAddress`. We don't store the shipping address on the payment method &mdash; pass it along as `shipping_address` when you [create the payment](/guides/payments/process-google-pay-payments):
+When `shippingAddressRequired` is enabled, the shipping address is returned at the root of the `onPaymentDataLoaded` payload as `paymentData.shippingAddress`. We don't store the shipping address on the payment method &mdash; pass it along as `shipping_address` when you [create the payment](/guides/payments/process-google-pay-payments). The billing address is already stored on the payment method from the earlier tokenization step, so you don't need to read it again here.
 
 ```javascript showLineNumbers title="index.js"
 async function onPaymentAuthorized(paymentData) {
-  // The billing address is already stored on the payment method &mdash; log it if you need it for display
-  const billingAddress = paymentData.paymentMethodData.info?.billingAddress;
-  console.log(billingAddress);
-
   const shippingAddress = paymentData.shippingAddress;
 
   const paymentMethod = await createGooglePayPaymentMethod(paymentData);
 
   // highlight-start
-  // Map the shipping address into the shipping_address field of the create-payment request
   const shippingAddressPayload = shippingAddress && {
     address_line_1: shippingAddress.address1,
     address_line_2: shippingAddress.address2,
