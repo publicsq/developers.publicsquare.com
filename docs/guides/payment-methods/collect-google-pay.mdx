@@ -139,6 +139,8 @@ Adding the code above will render a `Google Pay` button on your site with a `onP
 
 The Google Pay sheet always collects a billing address from the customer &mdash; this is not configurable. The billing address is returned in `onPaymentDataLoaded` as `paymentData.paymentMethodData.info.billingAddress`, and is automatically stored as the payment method's `billing_details` when you [create the payment method](#tokenization-and-storing-google-pay). There's nothing you need to configure to collect billing.
 
+Google Pay collects the billing address in its `FULL` format, meaning customers see and enter a complete street address (not just a postal code); a billing phone number is not requested, so it won't appear on the Google Pay sheet.
+
 Shipping address collection is optional and off by default. Enable it with the `shippingAddressRequired` option, and optionally restrict which countries are allowed or require a phone number with `shippingAddressParameters`:
 
 | Option | Type | Default | Description |
@@ -204,20 +206,27 @@ When `shippingAddressRequired` is enabled, the shipping address is returned at t
 
 ```javascript showLineNumbers title="index.js"
 async function onPaymentAuthorized(paymentData) {
+  // The billing address is already stored on the payment method &mdash; log it if you need it for display
   const billingAddress = paymentData.paymentMethodData.info?.billingAddress;
+  console.log(billingAddress);
+
   const shippingAddress = paymentData.shippingAddress;
 
   const paymentMethod = await createGooglePayPaymentMethod(paymentData);
 
   // highlight-start
-  // Forward the shipping address (if collected) on the payment request
-  await chargePayment(paymentMethod.id, shippingAddress && {
+  // Map the shipping address into the shipping_address field of the create-payment request
+  const shippingAddressPayload = shippingAddress && {
     address_line_1: shippingAddress.address1,
     address_line_2: shippingAddress.address2,
     city: shippingAddress.locality,
     state: shippingAddress.administrativeArea,
     postal_code: shippingAddress.postalCode,
     country: shippingAddress.countryCode
+  };
+
+  await chargePayment(paymentMethod.id, {
+    shipping_address: shippingAddressPayload
   });
   // highlight-end
 }
