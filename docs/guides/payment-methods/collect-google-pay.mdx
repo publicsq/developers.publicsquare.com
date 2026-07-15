@@ -135,7 +135,7 @@ Adding the code above will render a `Google Pay` button on your site with a `onP
 
 ## Billing and Shipping Addresses
 
-<Alert>This behavior requires Credova Elements SDKs v1.15.1 or later. See the [Migration Notes](#migration-notes) below if you're upgrading from an older version.</Alert>
+<Alert>This behavior requires Credova Elements SDKs v1.15.1 or later.</Alert>
 
 The Google Pay sheet always collects a billing address from the customer &mdash; this is not configurable. The billing address is returned in `onPaymentDataLoaded` as `paymentData.paymentMethodData.info.billingAddress`, and is automatically stored as the payment method's `billing_details` when you [create the payment method](#tokenization-and-storing-google-pay). There's nothing you need to configure to collect billing.
 
@@ -390,7 +390,7 @@ The created `Google Pay` object contains the non-sensitive information about the
 
 You can safely store the Google Pay payment method `id` value in your database to use it to process a payment or associate it with a customer.
 
-You can optionally pass in a `customer_id` to associate with an existing [Created Customer](/api/accounts/create-customer). The `billing_details` shown above always comes from the Google Pay sheet (see [Billing and Shipping Addresses](#billing-and-shipping-addresses)) &mdash; there's no need to pass them yourself, and doing so has no effect (see [Migration Notes](#migration-notes)).
+You can optionally pass in a `customer_id` to associate with an existing [Created Customer](/api/accounts/create-customer). The `billing_details` shown above always comes from the Google Pay sheet (see [Billing and Shipping Addresses](#billing-and-shipping-addresses)) &mdash; there's no need to pass them yourself, and doing so has no effect.
 
 ## Testing 
 
@@ -468,13 +468,6 @@ When you have your official `merchantId`, you can set your `merchantId` in the G
 ```
   </TabItem>
 </Tabs>
-
-## Migration Notes
-
-If you're upgrading an existing Google Pay integration, note the following breaking change:
-
-- `billing_details` has been removed from the Google Pay `create()` input on both the JavaScript and React SDKs. It is no longer accepted by [Create a Google Pay Token](/api/financial/create-google-pay-token) (`POST /payment-methods/google-pay`) &mdash; if you still send it, the field is silently ignored. The payment method's `billing_details` now always comes from the address collected by the Google Pay sheet, as described in [Billing and Shipping Addresses](#billing-and-shipping-addresses).
-- As of v1.15.1, the Google Pay sheet also requests a billing **phone number** alongside the full billing address. It needs no configuration and is included in the stored `billing_details`.
 
 ## Conclusion
 
