@@ -234,7 +234,7 @@ The `validateMerchant` function calls Public Square to initiate the Apple Pay se
 
 <Alert>This behavior requires Credova Elements SDKs v1.15.2 or later.</Alert>
 
-Apple Pay should always collects a billing address and phone number from the customer &mdash; this is required to create the payment method. 
+Apple Pay should always collect a billing address and phone number from the customer &mdash; this is required to create the payment method. 
 
 Set `requiredBillingContactFields: ['postalAddress', 'phone']` on the Apple Pay payment request passed to `ApplePaySession`, as shown in the [Configure Apple Pay](#configure-apple-pay) step above.  
 When the customer authorizes the payment, Apple returns this information as `event.payment.billingContact`, and is automatically stored as the payment method's billing_details when you create the payment method. 
