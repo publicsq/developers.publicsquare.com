@@ -300,7 +300,7 @@ We don't store the shipping address on the payment method, pass it along as `shi
 ```javascript showLineNumbers title="index.js"
 session.onpaymentauthorized = async (event: any) => {
   // highlight-start
-  const shippingAddress = event.payment.shippingContact;
+  const shippingContact = event.payment.shippingContact;
 
   const shippingAddressPayload = shippingContact && {
     address_line_1: shippingContact.addressLines?.[0],
