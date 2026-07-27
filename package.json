@@ -55,7 +55,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/tsconfig": "^3.10.0",
-    "@docusaurus/types": "^3.10.0",
+    "@docusaurus/types": "^3.10.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.0.3",
