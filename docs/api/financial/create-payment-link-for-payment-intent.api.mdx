@@ -1,0 +1,74 @@
+---
+id: create-payment-link-for-payment-intent
+title: "Create payment link for payment intent"
+description: "    Mint a hosted payment link for an existing, editable payment intent."
+sidebar_label: "Create payment link for payment intent"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV1tTGzcU/isapTO9efEFmk785kKYUGjiQkgbKMXy6oAVdldC0jo2Hv/3niOtjY3NJTOZzHQGv3hXOpfv3LSfJtyLS8fbp7wrxjkUnh2o4srxsxqX4FKrjFe64G3O8PeHwn3BBtp5kMxUChkqsAttmSgYjJTzqrisMZDKi34GczHUxb+NfwqydAjKuRIFmYWhvgLH/ABF8UXp0jGRejWEYBkVosqLFy9YF2yOiojIxcWfWK+yn5Bw+7NVHnq8xrUBKwj6nkTw2xaEh1XEy9hQzQgrcvBgKSUTXuALqiuJW4qyYIQf4LOF61JZQNPellDjLh1ALnh7wnMxOoDiEqXavzTInkdjpPnvqUhuOsnJ2aRVezk9P20mrzrJm9+Tt93kRCRXeXJz9vN3aNqPDbl03mJ2+HR6Rt6cwYjBkYNWo0F/y8V5t4+aqY5R4K4wJlNpiL/+yZHIZAFj5UL3P0EagraULa+iAwz2VqaCcbcZuouJ3NvB/aLMMir3LCMwErmhV26y81/Huwd//tXZtps7H3eObpojo193PlzIaz6lFAVb57EG51/iPqo8CiAPxh9GUdrscb9vlhvfiEtgx4cHzGvmBsIC+6z8IHRyWjqvc7APAht4b1y7XjfaepFtmLKPRXPXJVraSHVeRz/1x7LnvPCl+8KKRSWWsG0c2T6wXpy3Xo2mSUn6j2MpewynpAcjQ93eezCaaIMwRXF3LvzjuHZoLsPsLwKsLKA0TmlOdrhEwcQrnMdFp61GaytpvEw2G+8bzXaj1W692mg1Wyc4ODUuJJ5B6EZk3YUOvxCZQ+Be+WChSgydeqhEalvrJuw3IfHQui7B+a83amCttm6d3HroczlhrRjTmeQhX1N8imK5UNPZwbJaj1XBmJknSK40Hw3kZej6ed1wabO1TlmCF2rt0K2IqgI9FelTQN1b9sltZPyDyJQMJUMJ1M13AhY3b4DmagMcF6L0A23VDciv1wHPRbkdxPWl2Fwtxa62fSUlFM91+HZ12Fqtw1vt2a4ui+d5+EZ1oGggLZHjjomeEjdEsjrQRHGNdpHAEvXk9RkrjhTJ1SdKTutZoPZkxA5nFDcQnzkVEUat8BBOfmZ+j6iQsVYdo/ZhvPhVigt3P/Gd6twMHcH6Y9bp7jEURPrmlARm42f1e8f+TnAr2X/9kQ1AyMieIgOf78yIeCUwDYm/0AHFLHEB/1HAz6rPuyOnqEthR1TDZiCfmLVchBatPD35qrAU5OR2AP5vN6WqeB5GHtmmwOze0uHYTaf8TjehVjvcibLZXZECJcHJpC8cHNtsOqVlLKylVsXHobAqjgA2nVSOnuWcjd2bzB8Oq6vWj+w+rLPuK6j1hiIr6Q0fr6g56TozPUOpqmHIe9zopCkYv6Cycm4tzVf33dF7ImYlZWTe8oUOC7XZA4aKY/ofmExMMg==
+sidebar_class_name: "post api-method"
+info_path: api/financial/publicsquare-payments-api
+custom_edit_url: null
+show_extensions: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create payment link for payment intent"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/payment-intents/{id}/links"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+    Mint a hosted payment link for an existing, editable payment intent.
+    Reissuing revokes the previous active link.
+
+    ### Permissions
+    * `payment-link:write`
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./create-payment-link-for-payment-intent.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./create-payment-link-for-payment-intent.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./create-payment-link-for-payment-intent.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      
