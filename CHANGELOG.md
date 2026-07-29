@@ -1,3 +1,10 @@
+# [1.54.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.53.0...v1.54.0) (2026-07-29)
+
+
+### Features
+
+* update recurring payments on payments and payment intents ([#238](https://github.com/publicsq/developers.publicsquare.com/issues/238)) ([3b761aa](https://github.com/publicsq/developers.publicsquare.com/commit/3b761aadf6bb70ce3981df380251919cee4f2554))
+
 # [1.53.0](https://github.com/publicsq/developers.publicsquare.com/compare/v1.52.0...v1.53.0) (2026-07-21)
 
 
