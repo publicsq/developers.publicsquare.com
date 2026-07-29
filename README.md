@@ -30,3 +30,11 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Serve
+
+```
+$ yarn serve
+```
+
+This command serves the built site locally from the `build` directory. Use it to test a production build (including search, which only works in production mode) before deploying.
