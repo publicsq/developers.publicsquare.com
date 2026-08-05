@@ -20,6 +20,7 @@ import ProcessCardPayoutsImage from "@site/static/img/icons/light-credit-card-ci
 import ProcessAchPayoutsImage from "@site/static/img/icons/light-building-columns-circle-arrow-right-gradient.svg";
 import RefundPaymentsImage from "@site/static/img/icons/light-receipt-rotate-left-gradient.svg";
 import SearchTransactionsImage from "@site/static/img/icons/magnifying-glass-dollar-gradient.svg";
+import PaymentIntentsImage from "@site/static/img/icons/light-credit-card-circle-arrow-right-gradient.svg";
 import TransactionsImage from "@site/static/img/icons/money-bill-transfer-gradient.svg";
 import FraudDetailsImage from "@site/static/img/icons/shield-check-gradient.svg";
 import ApiKeysImage from "@site/static/img/icons/key-gradient.svg";
@@ -120,6 +121,12 @@ Explore the Guides menu for more developer-centric guides.
 ## Learn More
 
 <Card.TwoColumnLayout>
+  <Card
+    href="/concepts/payment-intents"
+    heading="Payment Intents"
+    img={<div className="card-img-container"><PaymentIntentsImage /></div>}
+  >The recommended way to collect a payment, from creation through capture.</Card>
+
   <Card
     href="/concepts/transactions"
     heading="Transactions"

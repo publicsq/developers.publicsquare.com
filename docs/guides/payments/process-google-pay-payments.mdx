@@ -5,6 +5,12 @@ import GettingStartedSection from "@site/src/components/docs/_getting-started-se
 
 Now that you have completed the [Collect Google Pay](/guides/payment-methods/collect-google-pay) guide, let's process an Google Pay payment with the newly collected Google Pay payment method.
 
+<Alert>
+  New integrations should use [Payment Intents](/concepts/payment-intents), the recommended way to collect a payment. An intent accepts a `google_pay`
+  payment method exactly like the requests below — see [Process Card Payments](/guides/payments/process-card-payments) for the create and confirm steps.
+  This guide covers the direct Payments API.
+</Alert>
+
 ## Getting Started
 
 <GettingStartedSection />

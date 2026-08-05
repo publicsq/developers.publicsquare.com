@@ -72,6 +72,11 @@ curl 'https://api.publicsquare.com/payouts' \
 
 <Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payouts being processed.</Alert>
 
+<Alert>
+  Card payouts are always pushed directly to the card, so the `payout_type` field does not apply. It only affects bank account payouts — see
+  [Payout Types](/guides/payouts/process-ach-payouts#payout-types).
+</Alert>
+
 ### Create with Existing Customer
 
 If you [created a customer](/api/accounts/create-customer), then you can pass the `customer_id` when processing the payout:

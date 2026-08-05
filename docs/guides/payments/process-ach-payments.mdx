@@ -5,6 +5,12 @@ import GettingStartedSection from "@site/src/components/docs/_getting-started-se
 
 Now that you have completed the [Collect Bank Accounts](/guides/payment-methods/collect-bank-accounts) guide, let's process an ACH payment with the newly captured bank account.
 
+<Alert>
+  New integrations should use [Payment Intents](/concepts/payment-intents), the recommended way to collect a payment. An intent accepts a `bank_account`
+  payment method exactly like the requests below — see [Process Card Payments](/guides/payments/process-card-payments) for the create and confirm steps.
+  This guide covers the direct Payments API.
+</Alert>
+
 ## Getting Started
 
 <GettingStartedSection />

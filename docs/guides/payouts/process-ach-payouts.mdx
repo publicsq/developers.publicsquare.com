@@ -15,6 +15,20 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
+## Payout Types
+
+Bank account payouts are sent over one of three rails, selected with the optional `payout_type` field. If you omit it, the payout is sent as `standard`.
+
+| `payout_type` | Rail | Speed | Requirements |
+| --- | --- | --- | --- |
+| `standard` | ACH credit | Settles on the next banking day | Your account is onboarded for payouts |
+| `same_day` | Same-day ACH credit | Settles the same banking day when submitted before the cutoff | Your account is onboarded for payouts, and the receiving bank supports same-day ACH |
+| `instant` | RTP (Real-Time Payments) | Settles in seconds, including weekends and holidays | Instant Payouts is enabled on your account, your account is onboarded for RTP, and the receiving bank participates in the RTP network |
+
+<Alert>
+  Instant Payouts is off by default. [Request access from your account settings](https://portal.publicsquare.com/settings) to enable it.
+</Alert>
+
 ## Process the Payout
 
 We will need to use the information from the previously collected bank account to create a new payout.
@@ -59,6 +73,7 @@ curl 'https://api.publicsquare.com/payouts' \
 -d '{
   "amount": 1000,
   "currency": "USD",
+  "payout_type": "standard",
   "payment_method": {
     "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
   },
@@ -80,6 +95,60 @@ curl 'https://api.publicsquare.com/payouts' \
 <Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
 
 <Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payouts being processed.</Alert>
+
+### Create an Instant (RTP) Payout
+
+To send the funds over RTP instead of ACH, pass `instant` as the `payout_type`. The recipient typically receives the funds within seconds, any day of the week:
+
+```shell showLineNumbers title="Create an Instant Payout"
+curl 'https://api.publicsquare.com/payouts' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
+-H 'Content-Type: application/json' \
+-d '{
+  "amount": 1000,
+  "currency": "USD",
+  "payout_type": "instant",
+  "payment_method": {
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
+  }
+}'
+```
+
+<Alert type="warning">
+  Instant payouts require Instant Payouts to be enabled on your account. If it is not, the payout is rejected with a `Configuration Error`.
+</Alert>
+
+```shell showLineNumbers title="Instant Payouts not enabled"
+{
+  "title": "Configuration Error",
+  "status": 400,
+  "detail": "instant payouts are not enabled for this account. Please request access at https://portal.publicsquare.com/settings"
+}
+```
+
+If the receiving bank does not participate in the RTP network, the payout is rejected with a `payment method does not support instant payouts` detail. Send those payouts as `standard` or `same_day` instead.
+
+### Create a Same-Day ACH Payout
+
+Same-day ACH settles faster than standard ACH without requiring RTP support, as long as the payout is submitted before the same-day cutoff and the receiving bank supports it:
+
+```shell showLineNumbers title="Create a Same-Day Payout"
+curl 'https://api.publicsquare.com/payouts' \
+-X 'POST' \
+-H 'X-API-KEY: <SECRET_API_KEY>' \
+-H 'IDEMPONTENCY-KEY: '09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
+-H 'Content-Type: application/json' \
+-d '{
+  "amount": 1000,
+  "currency": "USD",
+  "payout_type": "same_day",
+  "payment_method": {
+    "bank_account": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ"
+  }
+}'
+```
 
 ### Create with Existing Customer
 
@@ -168,6 +237,7 @@ Given the above examples, you should see a payout result similar to:
   "transaction_id": "trx_6QgmXzQzk3S5K5EsR3DfEiMRj",
   "amount": 1000,
   "currency": "USD",
+  "payout_type": "standard",
   "payment_method": {
     "bank_account": {
       "id": "ba_7Ay5mcUXAxwrN6wQEQUVEHBCJ",

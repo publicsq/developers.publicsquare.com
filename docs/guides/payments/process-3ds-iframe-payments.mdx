@@ -120,7 +120,7 @@ const session = await publicsquare.threeDs.createSession({
 From your backend, call [Confirm Payment Intent](/api/financial/confirm-payment-intent) with `transport: "iframe"` and the session `id` from Step 3.
 
 ```shell showLineNumbers title="Confirm with 3DS (iframe)"
-curl 'https://api.publicsquare.com/payment-intents/pi_2YKewBonG4tgk12MheY3PiHDy/confirm' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2YKewBonG4tgk12MheY3PiHDy/confirm' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -139,7 +139,7 @@ The response is a `PaymentIntent`. There are two outcomes:
 
 ```json showLineNumbers title="Frictionless response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "succeeded",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   ...
@@ -150,7 +150,7 @@ The response is a `PaymentIntent`. There are two outcomes:
 
 ```json showLineNumbers title="Challenge required response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "requires_action",
   "next_action": {
     "type": "three_d_secure",
@@ -219,7 +219,7 @@ await completePayment(nextAction.session_id);
 After the challenge resolves, call [Complete Payment Intent 3DS Challenge](/api/financial/complete-payment-intent-3-ds-challenge) from your backend with the Credova `session_id` (from `next_action.three_d_secure.session_id`). Credova retrieves the authentication result and submits the payment to the processor.
 
 ```shell showLineNumbers title="Complete the 3DS challenge"
-curl 'https://api.publicsquare.com/payment-intents/pi_2YKewBonG4tgk12MheY3PiHDy/three_d_secure/complete' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2YKewBonG4tgk12MheY3PiHDy/three_d_secure/complete' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -235,7 +235,7 @@ The response is the final `PaymentIntent`, `succeeded` when authentication and a
 
 ```json showLineNumbers title="Completed response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "succeeded",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   ...

@@ -26,7 +26,7 @@ A Payment Intent can be canceled from any non-terminal status: `requires_payment
 Call the [Cancel Payment Intent](/api/financial/cancel-payment-intent) endpoint with the intent ID:
 
 ```shell showLineNumbers title="Cancel a Payment Intent"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij/cancel' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij/cancel' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'Content-Type: application/json'
@@ -81,7 +81,13 @@ If a confirm is currently in progress, cancellation will be rejected until the c
 
 ## Legacy
 
-The direct Payments API offers the ability to cancel a payment before it is settled or captured.
+The direct Payments API offers the ability to cancel a payment before it is settled or captured. It remains supported for existing integrations; new
+integrations should use payment intents above.
+
+<Alert type="warning">
+  Payments created by a payment intent cannot be canceled or captured through the legacy endpoints — use the intent's own cancel and capture endpoints so the
+  intent status stays accurate.
+</Alert>
 
 In order to cancel a payment, we will need the ID of an authorized or recently captured payment. Assuming you have a payment similar to:
 
