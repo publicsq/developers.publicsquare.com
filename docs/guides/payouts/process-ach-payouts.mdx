@@ -29,6 +29,10 @@ Bank account payouts are sent over one of three rails, selected with the optiona
   Instant Payouts is off by default. [Request access from your account settings](https://portal.publicsquare.com/settings) to enable it.
 </Alert>
 
+Every payout type also needs an onboarded account and a funded holding account. Payouts draw from your holding account balance, so check the balance with the
+[Get holding account balance](/api/accounts/get-holding-account-balance-by-id) endpoint. A payout is rejected with `holding account does not have sufficient
+funds` when the balance is too low, and with `account has not finished onboarding for payouts.` when your account cannot send funds yet.
+
 ## Process the Payout
 
 We will need to use the information from the previously collected bank account to create a new payout.
