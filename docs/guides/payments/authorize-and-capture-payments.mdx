@@ -26,7 +26,7 @@ Use `capture_method: manual` to authorize the card without immediately capturing
 Call the [Create Payment Intent](/api/financial/create-payment-intent) endpoint with `capture_method: manual`. Including a card at creation time starts the intent in `requires_confirmation` status:
 
 ```shell showLineNumbers title="Create a Payment Intent with Manual Capture"
-curl 'https://api.publicsquare.com/payment_intents' \
+curl 'https://api.publicsquare.com/payment-intents' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -89,7 +89,7 @@ curl 'https://api.publicsquare.com/payment_intents' \
 For multi-step checkout flows where the payment method is collected separately, omit the `payment_method` field. The intent starts in `requires_payment_method` status and can be updated once the card is available:
 
 ```shell showLineNumbers title="Create a Payment Intent without a Payment Method"
-curl 'https://api.publicsquare.com/payment_intents' \
+curl 'https://api.publicsquare.com/payment-intents' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -104,7 +104,7 @@ curl 'https://api.publicsquare.com/payment_intents' \
 Once you have a card, call the [Update Payment Intent](/api/financial/update-payment-intent) endpoint to attach it. The intent will transition to `requires_confirmation`:
 
 ```shell showLineNumbers title="Attach a Payment Method"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij' \
 -X 'PUT' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'Content-Type: application/json' \
@@ -120,7 +120,7 @@ curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij' \
 With the intent in `requires_confirmation`, call the [Confirm Payment Intent](/api/financial/confirm-payment-intent) endpoint to authorize the card. Because `capture_method` is `manual`, a successful authorization moves the intent to `requires_capture` rather than `succeeded`:
 
 ```shell showLineNumbers title="Confirm a Payment Intent"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij/confirm' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij/confirm' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 3a9f1b72-cc4e-4f92-b7d3-1e5a9c8d2041' \
@@ -153,7 +153,7 @@ curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij/conf
 Using the authorized intent, call the [Capture Payment Intent](/api/financial/capture-payment-intent) endpoint:
 
 ```shell showLineNumbers title="Capture a Payment Intent"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij/capture' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij/capture' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 7c2e9a41-fd83-4b1e-a5d9-2f6c8b3e1047' \
@@ -185,7 +185,12 @@ You can capture up to, but not exceeding, the original authorized amount. If no 
 
 ## Legacy
 
-The direct Payments API supports authorize-and-capture by passing `"capture": false` when creating the payment.
+The direct Payments API supports authorize-and-capture by passing `"capture": false` when creating the payment. It remains supported for existing
+integrations; new integrations should use payment intents above.
+
+<Alert type="warning">
+  Payments created by a payment intent cannot be captured through the legacy endpoint — use the intent's capture endpoint so the intent status stays accurate.
+</Alert>
 
 For example, given you have a previously collected card:
 

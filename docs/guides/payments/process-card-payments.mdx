@@ -26,7 +26,7 @@ A Payment Intent represents your intent to collect funds from a customer. It tra
 Call the [Create Payment Intent](/api/financial/create-payment-intent) endpoint. Including a card at creation time starts the intent in `requires_confirmation` status and it is ready to confirm immediately:
 
 ```shell showLineNumbers title="Create a Payment Intent"
-curl 'https://api.publicsquare.com/payment_intents' \
+curl 'https://api.publicsquare.com/payment-intents' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -90,7 +90,7 @@ curl 'https://api.publicsquare.com/payment_intents' \
 For multi-step checkout flows where the payment method is collected separately, omit the `payment_method` field. The intent starts in `requires_payment_method` status and the amount and other details can still be updated before a card is attached:
 
 ```shell showLineNumbers title="Create a Payment Intent without a Payment Method"
-curl 'https://api.publicsquare.com/payment_intents' \
+curl 'https://api.publicsquare.com/payment-intents' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -123,7 +123,7 @@ curl 'https://api.publicsquare.com/payment_intents' \
 Once you have a card, call the [Update Payment Intent](/api/financial/update-payment-intent) endpoint to attach it. The intent will transition to `requires_confirmation`:
 
 ```shell showLineNumbers title="Attach a Payment Method"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij' \
 -X 'PUT' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'Content-Type: application/json' \
@@ -139,7 +139,7 @@ curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij' \
 With the intent in `requires_confirmation`, call the [Confirm Payment Intent](/api/financial/confirm-payment-intent) endpoint to submit the charge to the processor:
 
 ```shell showLineNumbers title="Confirm a Payment Intent"
-curl 'https://api.publicsquare.com/payment_intents/pmt_int_2xNjK7abcdefghij/confirm' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2xNjK7abcdefghij/confirm' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 3a9f1b72-cc4e-4f92-b7d3-1e5a9c8d2041' \
@@ -231,7 +231,8 @@ If the card is hard-declined, the intent returns to `requires_confirmation` and 
 
 ## Legacy
 
-The direct Payments API provides a synchronous, single-request charge. The response contains the final payment result.
+The direct Payments API provides a synchronous, single-request charge. The response contains the final payment result. It remains supported for existing
+integrations; new integrations should use payment intents above.
 
 For example, given you have a previously collected card:
 

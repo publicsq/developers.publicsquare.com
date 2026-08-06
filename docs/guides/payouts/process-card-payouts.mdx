@@ -15,6 +15,50 @@ Next you will need your `Secret Key`. [Go to your Developers section](https://po
 
 <Alert>Save the Secret Key as it will be used in the next steps of this guide.</Alert>
 
+## Card Payout Requirements
+
+A card payout pushes funds straight to the cardholder's card. Three conditions must be met before a card payout succeeds.
+
+**Your account is onboarded for card payouts.** If card payouts are not enabled yet, the request is rejected:
+
+```shell showLineNumbers title="Account not onboarded"
+{
+  "title": "Error",
+  "status": 400,
+  "detail": "account has not finished onboarding for payouts."
+}
+```
+
+**Your holding account holds enough funds.** Card payouts are funded from your holding account balance, not from an incoming payment. Check the balance with the [Get holding account balance](/api/accounts/get-holding-account-balance-by-id) endpoint. Two failures are possible:
+
+```shell showLineNumbers title="Holding account problems"
+{
+  "title": "Error",
+  "status": 400,
+  "detail": "holding account does not have sufficient funds"
+}
+```
+
+```shell showLineNumbers title="No holding account"
+{
+  "title": "Error",
+  "status": 400,
+  "detail": "account does not have a holding account associated with it."
+}
+```
+
+**The card can receive a push payment.** Not every card supports payouts. Cards that support fast funds receive the money within minutes. Cards that support only standard push settle more slowly. Cards that do not support push payments at all are rejected:
+
+```shell showLineNumbers title="Card does not support payouts"
+{
+  "title": "Error",
+  "status": 400,
+  "detail": "payment method does not support payouts"
+}
+```
+
+<Alert>Payouts accept a `card` or a `bank_account` payment method. Apple Pay and Google Pay tokens cannot receive a payout.</Alert>
+
 ## Process the Payout
 
 We will need to use the information from the previously collected card to create a new payout.
@@ -71,6 +115,11 @@ curl 'https://api.publicsquare.com/payouts' \
 <Alert>The amount is provided in cents. 1000 is the equivalent of $10.00</Alert>
 
 <Alert type="warning">The IDEMPONTENCY-KEY header can be passed to protect against duplicate payouts being processed.</Alert>
+
+<Alert>
+  Card payouts are always pushed directly to the card, so the `payout_type` field does not apply. It only affects bank account payouts — see
+  [Payout Types](/guides/payouts/process-ach-payouts#payout-types).
+</Alert>
 
 ### Create with Existing Customer
 
@@ -205,6 +254,11 @@ Given the above examples, you should see a payout result similar to:
   "modified_at": "2024-06-30T01:02:29.212Z"
 }
 ```
+
+The `processor` field shows which processor sent the payout. Your account configuration decides this value.
+
+A card payout does not always finish in one request. The payout can return `pending` and reach `succeeded` later, or reach `declined` if the card network rejects it. Subscribe to
+[webhooks](/concepts/webhooks) for the final status instead of assuming the create response is terminal.
 
 ## Conclusion
 

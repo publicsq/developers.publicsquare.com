@@ -25,14 +25,14 @@ This guide assumes you have:
 - 3DS enabled on your account. 3DS is off by default — contact Credova to enable it.
 - Two callback routes you control — a success URL and a failure URL — that Basis Theory will return the cardholder to after the challenge.
 
-<Alert type="warning">Basis Theory strips query strings when it returns the cardholder. Carry any state you need (such as the payment intent id) in the URL **path**, not the query string — e.g. `https://merchant.example.com/3ds/success/pi_2YKewBonG4tgk12MheY3PiHDy`.</Alert>
+<Alert type="warning">Basis Theory strips query strings when it returns the cardholder. Carry any state you need (such as the payment intent id) in the URL **path**, not the query string — e.g. `https://merchant.example.com/3ds/success/pmt_int_2YKewBonG4tgk12MheY3PiHDy`.</Alert>
 
 ## Step 1 — Confirm the Payment Intent
 
 From your backend, call [Confirm Payment Intent](/api/financial/confirm-payment-intent) with the `three_d_secure` block set to the `redirect` transport and your callback URLs. The session is created server-side, so no `session_id` is supplied here.
 
 ```shell showLineNumbers title="Confirm with 3DS (redirect)"
-curl 'https://api.publicsquare.com/payment-intents/pi_2YKewBonG4tgk12MheY3PiHDy/confirm' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2YKewBonG4tgk12MheY3PiHDy/confirm' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -40,8 +40,8 @@ curl 'https://api.publicsquare.com/payment-intents/pi_2YKewBonG4tgk12MheY3PiHDy/
 -d '{
   "three_d_secure": {
     "transport": "redirect",
-    "success_url": "https://merchant.example.com/3ds/success/pi_2YKewBonG4tgk12MheY3PiHDy",
-    "failure_url": "https://merchant.example.com/3ds/failure/pi_2YKewBonG4tgk12MheY3PiHDy"
+    "success_url": "https://merchant.example.com/3ds/success/pmt_int_2YKewBonG4tgk12MheY3PiHDy",
+    "failure_url": "https://merchant.example.com/3ds/failure/pmt_int_2YKewBonG4tgk12MheY3PiHDy"
   }
 }'
 ```
@@ -52,7 +52,7 @@ The response is a `PaymentIntent`. There are two outcomes:
 
 ```json showLineNumbers title="Frictionless response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "succeeded",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   ...
@@ -63,7 +63,7 @@ The response is a `PaymentIntent`. There are two outcomes:
 
 ```json showLineNumbers title="Challenge required response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "requires_action",
   "next_action": {
     "type": "three_d_secure",
@@ -90,7 +90,7 @@ window.location.href = nextAction.redirect_url;
 When the cardholder lands on your callback route, read the session id (from your stored state or the path) and call [Complete Payment Intent 3DS Challenge](/api/financial/complete-payment-intent-3-ds-challenge) from your backend. Credova retrieves the authentication result and submits the payment to the processor.
 
 ```shell showLineNumbers title="Complete the 3DS challenge"
-curl 'https://api.publicsquare.com/payment-intents/pi_2YKewBonG4tgk12MheY3PiHDy/three_d_secure/complete' \
+curl 'https://api.publicsquare.com/payment-intents/pmt_int_2YKewBonG4tgk12MheY3PiHDy/three_d_secure/complete' \
 -X 'POST' \
 -H 'X-API-KEY: <SECRET_API_KEY>' \
 -H 'IDEMPOTENCY-KEY: 09ec2c87-7fb8-44ca-bb18-5c71a76974da' \
@@ -108,7 +108,7 @@ The response is the final `PaymentIntent`, `succeeded` when authentication and a
 
 ```json showLineNumbers title="Completed response"
 {
-  "id": "pi_2YKewBonG4tgk12MheY3PiHDy",
+  "id": "pmt_int_2YKewBonG4tgk12MheY3PiHDy",
   "status": "succeeded",
   "payment_id": "pmt_2YKewBonG4tgk12MheY3PiHDy",
   ...
